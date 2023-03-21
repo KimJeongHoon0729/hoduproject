@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+<<<<<<< HEAD
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -176,3 +177,14 @@
 	</body>
 </html>
 
+=======
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
+>>>>>>> branch 'master' of https://github.com/orinaldaramg/hoduproject.git
