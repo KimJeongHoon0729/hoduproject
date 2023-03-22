@@ -108,6 +108,7 @@
 						<a href="#" data-nav-section="menu">Menu</a>
 						<a href="#" data-nav-section="events">Events</a>
 						<a href="signin" data-nav-section="reservation">signin</a>
+						<a href="login" data-nav-section="reservation">login</a>
 					</div>
 				</div>8//
 				

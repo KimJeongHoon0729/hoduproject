@@ -5,10 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PagelinkController {
+	
 	@RequestMapping("signin")
 	public String signin() {
-
-		
 		return "signin";
+	}
+	
+	@RequestMapping("login")
+	public String login() {
+		return "login";
 	}
 }
