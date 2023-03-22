@@ -158,7 +158,7 @@
 	<script src="/resources/js/bootstrap.min.js"></script>
 	<!-- Bootstrap DateTimePicker -->
 	<script src="/resources/js/moment.js"></script>
-	<script src="/resources/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="/resources/js/bootstrap-datetimepicker.min.js"></scripte>
 	<!-- Waypoints -->
 	<script src="/resources/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
