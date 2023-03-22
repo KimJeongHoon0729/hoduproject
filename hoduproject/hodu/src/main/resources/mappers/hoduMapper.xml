@@ -7,38 +7,38 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="hodu"> <!-- DAO에서 접근할 이름 -->
 	<!-- user 전체 조회 -->
-	<select id="userAllList" resultType="com.woori.domain.HoduDto">
+	<select id="userAllList" resultType="com.woori.domain.userVO">
 		SELECT userId, userPw, userName, userBirth, sex, userMobile, userEmail, idx FROM userjoin
 	</select>
 	<!-- partner 전체 조회 -->
-	<select id="partnerAllList" resultType="com.woori.domain.HoduDto">
+	<select id="partnerAllList" resultType="com.woori.domain.partnerVO">
 		SELECT partnerId, partnerPw, partnerName, businessNum, partnerMobile, partnerEmail, idx FROM partnerjoin
 	</select>
 	
 	<!-- user삽입 -->
-	<insert id="userInsert" parameterType="com.woori.domain.HoduDto"> 
+	<insert id="userInsert" parameterType="com.woori.domain.userVO"> 
 		INSERT INTO userjoin(userId, userPw, userName, userBirth, sex, userMobile, userEmail, idx)
 		VALUES (#{userId},#{userPw},#{userName},#{userBirth},#{sex}, #{userMobile},#{userEmail},#{idx})
 	</insert>
 	<!-- partner 삽입 -->
-	<insert id="partnerInsert" parameterType="com.woori.domain.HoduDto"> 
+	<insert id="partnerInsert" parameterType="com.woori.domain.partnerVO"> 
 		INSERT INTO partnerjoin(partnerId, partnerPw, partnerName, businessNum, partnerMobile, partnerEmail, idx)
 		VALUES (#{partnerId},#{partnerPw},#{partnerName},#{businessNum}, #{partnerMobile},#{partnerEmail},#{idx})
 	</insert>
 	
 	
 	<!-- user 개별 조회 -->
-	<select id="userOneList" parameterType="String" resultType="com.woori.domain.HoduDto">
+	<select id="userOneList" parameterType="String" resultType="com.woori.domain.userVO">
 		SELECT userId, userPw, userName, userBirth, sex, userMobile, userEmail, idx FROM userjoin WHERE userId = #{userId}
 	</select>
 	
 	<!-- partner 개별 조회 -->
-	<select id="partnerOneList" parameterType="String" resultType="com.woori.domain.HoduDto">
+	<select id="partnerOneList" parameterType="String" resultType="com.woori.domain.partnerVO">
 		SELECT partnerId, partnerPw, partnerName, businessNum, partnerMobile, partnerEmail, idx FROM partnerjoin WHERE partnerId = #{partnerId}
 	</select>
 	
 	<!-- user 수정 -->
-	<update id="userUpdate" parameterType="com.woori.domain.HoduDto">
+	<update id="userUpdate" parameterType="com.woori.domain.userVO">
 		UPDATE userjoin SET
 			userPw = #{userPw},
 			userName = #{userName},
@@ -50,7 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<!-- partner 수정 -->
-	<update id="partnerUpdate" parameterType="com.woori.domain.HoduDto">
+	<update id="partnerUpdate" parameterType="com.woori.domain.partnerVO">
 		UPDATE partnerjoin SET
 			partnerPw = #{partnerPw}, 
 			partnerName = #{partnerName}, 
