@@ -110,7 +110,7 @@
 						<a href="index.html">HODU</a>
 					</div>
 				<c:choose>
-					<c:when test="${sessionScope.userId == null }">
+					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
 						<div class="fh5co-menu-2">
 							<a href="#" data-nav-section="menu">Menu</a>
 							<a href="#" data-nav-section="events">Events</a>
