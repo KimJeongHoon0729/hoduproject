@@ -1,5 +1,8 @@
 package com.woori.hodu;
 
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -31,6 +34,7 @@ public class loginController {
 		if(result == true) { //로그인 성공
 			mav.setViewName("index");
 			mav.addObject("msg", "sucess");
+			
 		} else { //로그인 실패
 			mav.setViewName("login");
 			mav.addObject("msg", "fail");
@@ -42,7 +46,7 @@ public class loginController {
 	public ModelAndView logout(HttpSession session) {
 		loginService.logout(session);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("login");
+		mav.setViewName("index");
 		mav.addObject("msg", "logout");
 		return mav;
 	}
@@ -59,6 +63,7 @@ public class loginController {
 		if(result == true) { //로그인 성공
 			mav.setViewName("index");
 			mav.addObject("msg", "sucess");
+		
 		} else { //로그인 실패
 			mav.setViewName("login");
 			mav.addObject("msg", "fail");
@@ -70,7 +75,7 @@ public class loginController {
 	public ModelAndView plogout(HttpSession psession) {
 		loginService.logout(psession);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("login");
+		mav.setViewName("index");
 		mav.addObject("msg", "logout");
 		return mav;
 	}
