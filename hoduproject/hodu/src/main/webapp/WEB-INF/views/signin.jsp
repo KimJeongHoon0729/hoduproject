@@ -115,26 +115,7 @@
                      <label for="idx" class="sr-only">idx</label>
                      <input id="idx" class="form-control" placeholder="idx" type="text">
                   </div>
-                  <div class="form-group">
-                     <label for="occation" class="sr-only">Occation</label>
-                     <select class="form-control" id="occation">
-                        <option>Select an Occation</option>
-                       <option>Wedding Ceremony</option>
-                       <option>Birthday</option>
-                       <option>Others</option>
-                     </select>
-                  </div>
-                  <div class="form-group ">
-                     <label for="date" class="sr-only">Date</label>
-                     <input id="date" class="form-control" placeholder="Date &amp; Time" type="text">
-                  </div>
-
-
-                     
-                  <div class="form-group ">
-                     <label for="message" class="sr-only">Message</label>
-                     <textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
-                  </div>
+                 
                   <div class="form-group ">
                      <input class="btn btn-primary" value="Send Message" type="submit">
                    </div>
