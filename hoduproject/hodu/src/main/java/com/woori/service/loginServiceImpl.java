@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 
 import com.woori.dao.loginDAO;
+import com.woori.domain.partnerVO;
 import com.woori.domain.userVO;
 
 @Service
@@ -37,6 +38,32 @@ public class loginServiceImpl implements loginService {
 	public void logout(HttpSession session) {
 		// TODO Auto-generated method stub
 		session.invalidate();
+
+	}
+	
+	@Override
+	public boolean plogincheck(partnerVO pvo, HttpSession psession) {
+		// TODO Auto-generated method stub
+		boolean result = loginDao.plogincheck(pvo);
+		if(result) {
+			partnerVO pvo2 = viewPartner(pvo);
+			psession.setAttribute("partnerId", pvo2.getPartnerId());
+			psession.setAttribute("partnerName", pvo2.getPartnerName());
+			
+		}
+		return result;
+	}
+
+	@Override
+	public partnerVO viewPartner(partnerVO pvo) {
+		// TODO Auto-generated method stub
+		return loginDao.viewPartner(pvo);
+	}
+
+	@Override
+	public void plogout(HttpSession psession) {
+		// TODO Auto-generated method stub
+		psession.invalidate();
 
 	}
 

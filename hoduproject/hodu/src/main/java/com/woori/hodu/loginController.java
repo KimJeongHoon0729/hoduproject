@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.woori.domain.partnerVO;
 import com.woori.domain.userVO;
 import com.woori.service.loginService;
 
@@ -40,6 +41,34 @@ public class loginController {
 	@RequestMapping("logout.do")
 	public ModelAndView logout(HttpSession session) {
 		loginService.logout(session);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("login");
+		mav.addObject("msg", "logout");
+		return mav;
+	}
+	
+	@RequestMapping("plogin.do")
+	public String plogin() {
+		return "login";
+	}
+	
+	@RequestMapping("plogincheck.do")
+	public ModelAndView plogincheck(@ModelAttribute partnerVO pvo, HttpSession psession) {
+		boolean result = loginService.plogincheck(pvo, psession);
+		ModelAndView mav = new ModelAndView();
+		if(result == true) { //로그인 성공
+			mav.setViewName("index");
+			mav.addObject("msg", "sucess");
+		} else { //로그인 실패
+			mav.setViewName("login");
+			mav.addObject("msg", "fail");
+		}
+		return mav;
+	}
+	
+	@RequestMapping("plogout.do")
+	public ModelAndView plogout(HttpSession psession) {
+		loginService.logout(psession);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("login");
 		mav.addObject("msg", "logout");

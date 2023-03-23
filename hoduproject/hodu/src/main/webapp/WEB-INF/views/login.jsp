@@ -22,10 +22,10 @@
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
                     <button class="submit">Login</button>
                 </form>
-                <form id="register" action="" class="input-group">
-                    <input type="text" class="input-field" placeholder="Business Registration Number" required>
-                    <input type="email" class="input-field" placeholder="Business name" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                <form id="register" action="plogincheck.do" class="input-group">
+                    <input type="text" id="businessNum" name="businessNum" class="input-field" placeholder="Business Registration Number" required>
+                    <input type="text" id="partnerId" name="partnerId" class="input-field" placeholder="Business name" required>
+                    <input type="password" id="partnerPw" name="partnerPw" class="input-field" placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
                     <button class="submit">Login</button>
                 </form>
