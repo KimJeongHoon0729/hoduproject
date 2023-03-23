@@ -1,6 +1,5 @@
 
 <!DOCTYPE html>
-<<<<<<< HEAD
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -70,28 +69,51 @@
 	</head>
 	<body>
 
-	
       <div id="fh5co-contact" data-section="reservation">
          <div class="container">
             <div class="row text-center fh5co-heading row-padded">
+            
                <div class="col-md-8 col-md-offset-2">
                   <h2 class="heading to-animate">Reserve a Table</h2>
                   <p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                </div>
             </div>
-               <div class="col-md-6 to-animate-2">
+            
+               <div class="col-md-6 to-animate-2 center" style="text-align:center">
+            
+          		
                   <h3>Reservation Form</h3>
                   <div class="form-group ">
-                     <label for="name" class="sr-only">Name</label>
-                     <input id="name" class="form-control" placeholder="Name" type="text">
+                     <label for="JserId" class="sr-only">JserId</label>
+                     <input id="JserId" class="form-control" placeholder="JserId" type="text">
                   </div>
-                  <div class="form-group ">
-                     <label for="name" class="sr-only">Name</label>
-                     <input id="name" class="form-control" placeholder="Name" type="text">
+                   <div class="form-group ">
+                     <label for="userPw" class="sr-only">userPw</label>
+                     <input id="userPw" class="form-control" placeholder="userPw" type="text">
                   </div>
-                  <div class="form-group ">
-                     <label for="email" class="sr-only">Email</label>
-                     <input id="email" class="form-control" placeholder="Email" type="email">
+                   <div class="form-group ">
+                     <label for="userName" class="sr-only">userName</label>
+                     <input id="userName" class="form-control" placeholder="userName" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="userBirth" class="sr-only">userBirth</label>
+                     <input id="userBirth" class="form-control" placeholder="userBirth" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="sex" class="sr-only">sex</label>
+                     <input id="sex" class="form-control" placeholder="sex" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="userMobile" class="sr-only">userMobile</label>
+                     <input id="userMobile" class="form-control" placeholder="userMobile" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="userEmail" class="sr-only">userEmail</label>
+                     <input id="userEmail" class="form-control" placeholder="userEmail" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="idx" class="sr-only">idx</label>
+                     <input id="idx" class="form-control" placeholder="idx" type="text">
                   </div>
                   <div class="form-group">
                      <label for="occation" class="sr-only">Occation</label>
@@ -115,14 +137,14 @@
                   </div>
                   <div class="form-group ">
                      <input class="btn btn-primary" value="Send Message" type="submit">
-                  </div>
-                  </div>
+                   </div>
             </div>
          </div>
       </div>
 
       
-   </div>
+  
+
 
 	<div id="fh5co-footer">
 		<div class="container">
@@ -158,7 +180,7 @@
 	<script src="/resources/js/bootstrap.min.js"></script>
 	<!-- Bootstrap DateTimePicker -->
 	<script src="/resources/js/moment.js"></script>
-	<script src="/resources/js/bootstrap-datetimepicker.min.js"></scripte>
+	<script src="/resources/js/bootstrap-datetimepicker.min.js"></script>
 	<!-- Waypoints -->
 	<script src="/resources/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
@@ -177,14 +199,3 @@
 	</body>
 </html>
 
-=======
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
->>>>>>> branch 'master' of https://github.com/orinaldaramg/hoduproject.git
