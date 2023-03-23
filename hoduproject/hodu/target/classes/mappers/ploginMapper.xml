@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="partner">
+	<select id="plogin" resultType="String">
+		select  
+			partnerId, partnerName  
+		from   
+			partnerjoin   
+		where partnerId = #{partnerId}   
+			and partnerPw = #{partnerPw}  
+			and businessNum = #{businessNum}
+		
+	</select>
+	
+	<select id="viewPartner" resultType="com.woori.domain.partnerVO">
+		select * from partnerjoin where partnerId=#{partnerId} and partnerPw=#{partnerPw} and businessNum=#{businessNum}
+	</select>
+</mapper>

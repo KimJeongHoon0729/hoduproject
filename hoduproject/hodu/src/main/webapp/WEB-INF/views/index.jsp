@@ -1,4 +1,9 @@
 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${pageContext.request.contextPath }"/>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -104,13 +109,25 @@
 					<div class="fh5co-logo">
 						<a href="index.html">HODU</a>
 					</div>
-					<div class="fh5co-menu-2">
-						<a href="#" data-nav-section="menu">Menu</a>
-						<a href="#" data-nav-section="events">Events</a>
-						<a href="signin" data-nav-section="reservation">signin</a>
-						<a href="login" data-nav-section="reservation">login</a>
-					</div>
-				</div>8//
+				<c:choose>
+					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
+						<div class="fh5co-menu-2">
+							<a href="#" data-nav-section="menu">Menu</a>
+							<a href="#" data-nav-section="events">Events</a>
+							<a href="signin" data-nav-section="reservation">signin</a>
+							<a href="login" data-nav-section="reservation">login</a>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="fh5co-menu-2">
+							<a href="#" data-nav-section="menu">Menu</a>
+							<a href="#" data-nav-section="events">Events</a>
+							<a href="logout.do" data-nav-section="reservation">logout</a>
+							
+						</div>
+					</c:otherwise>
+				</c:choose>	
+				</div>
 				
 			</div>
 		</div>
