@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
         <title>login page</title>
@@ -21,6 +24,12 @@
                     <input type="password" id="userPw" name="userPw" class="input-field" placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
                     <button class="submit">Login</button>
+                    <c:if test="${msg == 'fail' }">
+                    	<script>
+                    	 alert("로그인에 실패하였습니다.");
+                    	 history.back();
+                    	 </script>
+                    </c:if>
                 </form>
                 <form id="register" action="plogincheck.do" class="input-group">
                     <input type="text" id="businessNum" name="businessNum" class="input-field" placeholder="Business Registration Number" required>
@@ -28,6 +37,12 @@
                     <input type="password" id="partnerPw" name="partnerPw" class="input-field" placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
                     <button class="submit">Login</button>
+                    <c:if test="${msg == 'fail' }">
+                    	<script>
+                    	 alert("로그인에 실패하였습니다.");
+                    	 history.back();
+                    	 </script>
+                    </c:if>
                 </form>
             </div>
         </div>
