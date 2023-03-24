@@ -5,39 +5,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UserController {
-	@RequestMapping("user/pensionlist")
-	public String pensionList() {
+	@RequestMapping("user/list")
+	public String list() {
 
 		
-		return "user/pensionlist";
+		return "user/list";
 	}
 	
-	@RequestMapping("user/reviewlist")
-	public String reviewList() {
+	@RequestMapping("user/reservation")
+	public String reservation() {
 
 		
-		return "user/reviewlist";
+		return "user/reservation";
 	}
 	
-	@RequestMapping("user/reviewwrite")
-	public String reviewWrite() {
+	@RequestMapping("user/review")
+	public String review() {
 
 		
-		return "user/reviewwrite";
+		return "user/review";
 	}
 	
-	@RequestMapping("user/reviewupdate")
-	public String reviewUpdate() {
+	@RequestMapping("user/qna")
+	public String qna() {
 
 		
-		return "user/reviewupdate";
+		return "user/qna";
 	}
 	
-	@RequestMapping("user/reviewdelete")
-	public String reviewDelete() {
+	@RequestMapping("user/mypage")
+	public String mypage() {
 
 		
-		return "user/reviewDelete";
+		return "user/mypage";
 	}
 	
 }

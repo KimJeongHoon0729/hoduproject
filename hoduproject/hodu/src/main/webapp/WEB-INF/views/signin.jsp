@@ -74,7 +74,7 @@
             <div class="row text-center fh5co-heading row-padded">
             
                <div class="col-md-8 col-md-offset-2">
-                  <h2 class="heading to-animate">Signin</h2>
+                  <h2 class="heading to-animate">SignIn</h2>
                </div>
             </div>
             
