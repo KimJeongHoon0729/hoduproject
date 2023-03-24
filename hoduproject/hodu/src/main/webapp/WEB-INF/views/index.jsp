@@ -102,9 +102,9 @@
 			<div class="fh5co-main-nav">
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" data-nav-section="home">Home</a>
-						<a href="#" data-nav-section="about">About</a>
-						<a href="#" data-nav-section="features">Features</a>
+						<a href="/user/list" data-nav-section="home">List</a>
+						<a href="/user/reservation" data-nav-section="about">Reservation</a>
+						<a href="/user/review" data-nav-section="features">Review</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="index.html">HODU</a>
@@ -112,8 +112,8 @@
 				<c:choose>
 					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
 						<div class="fh5co-menu-2">
-							<a href="#" data-nav-section="menu">Menu</a>
-							<a href="#" data-nav-section="events">Events</a>
+							<a href="/user/qna" data-nav-section="menu">Q&A</a>
+							<a href="/user/mypage" data-nav-section="events">Mypage</a>
 							<a href="signin" data-nav-section="reservation">signin</a>
 							<a href="login" data-nav-section="reservation">login</a>
 						</div>
