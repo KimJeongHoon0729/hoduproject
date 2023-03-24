@@ -13,7 +13,7 @@
                     <div id="btn"></div>
                     <button type="button" class="togglebtn" onclick="login()">Member</button>
                     <button type="button" class="togglebtn" onclick="register()">Business</button>
-                </div>
+               		</div>
                 <div class="social-icons">
                     <img src="/resources/img/fb.png" alt="facebook">
                     <img src="/resources/img/tw.png" alt="twitter">
