@@ -74,17 +74,18 @@
             <div class="row text-center fh5co-heading row-padded">
             
                <div class="col-md-8 col-md-offset-2">
-                  <h2 class="heading to-animate">Reserve a Table</h2>
-                  <p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <h2 class="heading to-animate">Signin</h2>
                </div>
             </div>
             
                <div class="col-md-6 to-animate-2 center" style="text-align:center">
             
+          		<div class="container">
           		
-                  <h3>Reservation Form</h3>
-                  <div class="form-group ">
-                     <label for="JserId" class="sr-only">JserId</label>
+      		    <div class="col-md-6 col-md-offset-3">
+                  <h3>Signin form</h3>
+                  <div class="form-group">
+                     <label for="JserId" class="sr-only">UserId</label>
                      <input id="JserId" class="form-control" placeholder="JserId" type="text">
                   </div>
                    <div class="form-group ">
@@ -110,20 +111,16 @@
                    <div class="form-group ">
                      <label for="userEmail" class="sr-only">userEmail</label>
                      <input id="userEmail" class="form-control" placeholder="userEmail" type="text">
-                  </div>
-                   <div class="form-group ">
-                     <label for="idx" class="sr-only">idx</label>
-                     <input id="idx" class="form-control" placeholder="idx" type="text">
-                  </div>
-                 
+                  </div>             
                   <div class="form-group ">
-                     <input class="btn btn-primary" value="Send Message" type="submit">
+                     <input class="btn btn-primary" value="Submit" type="submit">
                    </div>
             </div>
          </div>
       </div>
-
-      
+	
+   </div>
+  </div>
   
 
 
