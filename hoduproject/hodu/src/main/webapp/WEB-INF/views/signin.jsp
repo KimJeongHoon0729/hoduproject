@@ -226,17 +226,21 @@
 	</script>
 	
 	<script>
-
-	function setDisplay() {
-		if($("input:checkbox[id=chbox]").is(":checked")){
-	
-		$("#user").show();
-		$("#partner").hide();
-	} else {
-		$("#user").hide();
-		$("#partner").show();
-	}
-	}
+	$(function () {
+		$("#chbox").prop("checked", true);
+		setDisplay();
+	 });
+			function setDisplay() {
+				if($("input:checkbox[id=chbox]").is(":checked")){
+			
+				$("#user").show();
+				$("#partner").hide();
+			} else {
+				$("#user").hide();
+				$("#partner").show();
+			}
+			}
+			
 
 	</script>
 	<!-- Main JS -->
