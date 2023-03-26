@@ -98,38 +98,7 @@
 			
 		</div>
 		
-		<div class="js-sticky">
-			<div class="fh5co-main-nav">
-				<div class="container-fluid">
-					<div class="fh5co-menu-1">
-						<a href="/user/list" data-nav-section="home">List</a>
-						<a href="/user/reservation" data-nav-section="about">Reservation</a>
-						<a href="/user/review" data-nav-section="features">Review</a>
-					</div>
-					<div class="fh5co-logo">
-						<a href="index.html">HODU</a>
-					</div>
-				<c:choose>
-					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
-						<div class="fh5co-menu-2">
-							<a href="/user/qna" data-nav-section="menu">Q&A</a>
-							<a href="signin" data-nav-section="reservation">signin</a>
-							<a href="login" data-nav-section="reservation">login</a>
-						</div>
-					</c:when>
-					<c:otherwise>
-						<div class="fh5co-menu-2">
-							<a href="/user/qna" data-nav-section="menu">Q&A</a>
-							<a href="/user/mypage" data-nav-section="events">Mypage</a>
-							<a href="logout.do" data-nav-section="reservation">logout</a>
-							
-						</div>
-					</c:otherwise>
-				</c:choose>	
-				</div>
-				
-			</div>
-		</div>
+	<%@ include file="header.jsp" %>
 
 		<div id="fh5co-about" data-section="about">
 			<div class="fh5co-2col fh5co-bg to-animate-2" style="background-image: url(images/res_img_1.jpg)"></div>
@@ -180,29 +149,7 @@
 			</div>
 		</div>
 
-
-	<div id="fh5co-footer">
-		<div class="container">
-			<div class="row row-padded">
-				<div class="col-md-12 text-center">
-					<p class="to-animate">&copy; 2016 Foodee Free HTML5 Template. <br> Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://pexels.com/" target="_blank">Pexels</a> <br> Tasty Icons Free <a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank">handdrawngoods</a>
-					</p>
-					<p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<ul class="fh5co-social">
-						<li class="to-animate-2"><a href="#"><i class="icon-facebook"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i class="icon-twitter"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i class="icon-instagram"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
+<%@ include file="footer.jsp" %>
 	
 	
 	

@@ -5,15 +5,18 @@
     <head>
         <title>login page</title>
         <link rel="stylesheet" href="/resources/style.css">
+        <%@ include file ="header.jsp" %>
     </head>
-    <body>
+    <body style="font-size: medium;">
+    
         <div class="wrap">
+        
             <div class="form-wrap">
                 <div class="button-wrap">
                     <div id="btn"></div>
-                    <button type="button" class="togglebtn" onclick="login()">User</button>
+                    <button type="button" class="togglebtn" onclick="login()" style="margin-left: 3.4">User</button>
                     <button type="button" class="togglebtn" onclick="register()">Partner</button>
-                     </div>
+                </div>
                 <form id="login" action="logincheck.do" class="input-group">
                     <input type="text" id="userId" name="userId" class="input-field" placeholder="User name or Email" required>
                     <input type="password" id="userPw" name="userPw" class="input-field" placeholder="Enter Password" required>
@@ -42,6 +45,7 @@
                     </c:if>
                 </form>
             </div>
+  	<%@ include file="footer.jsp" %>
         </div>
         <script>
             var x = document.getElementById("login");
