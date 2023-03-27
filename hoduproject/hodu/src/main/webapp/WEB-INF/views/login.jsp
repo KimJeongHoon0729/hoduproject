@@ -11,7 +11,7 @@
     
         <div class="wrap">
         <div id="fh5co-contact" data-section="reservation">
-         <div class="container">
+         <div class="container" style="height: 130px">
             <div class="row text-center fh5co-heading row-padded">
             
                <div class="col-md-8 col-md-offset-2">
@@ -23,12 +23,12 @@
                 <div class="button-wrap">
                     <div id="btn"></div>
                     <button type="button" class="togglebtn" onclick="login()" style="margin-left: 3.4">User</button>
-                    <button type="button" class="togglebtn" onclick="register()">Partner</button>
+                    <button type="button" class="togglebtn" onclick="register()" style="margin-left: 8">Partner</button>
                 </div>
                 <form id="login" action="logincheck.do" class="input-group">
                     <input type="text" id="userId" name="userId" class="input-field" placeholder="User name or Email" required>
                     <input type="password" id="userPw" name="userPw" class="input-field" placeholder="Enter Password" required>
-                    <button class="submit">Login</button>
+                    <button class="submit" style="margin-top: 50;">Login</button>
                     <button class="nextLine"></button>
                     <div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">signin</a></div>
                     <c:if test="${msg == 'fail' }">
@@ -42,7 +42,7 @@
                     <input type="text" id="businessNum" name="businessNum" class="input-field" placeholder="Business Registration Number" required>
                     <input type="text" id="partnerId" name="partnerId" class="input-field" placeholder="Business name" required>
                     <input type="password" id="partnerPw" name="partnerPw" class="input-field" placeholder="Enter Password" required>
-                    <button class="submit">Login</button>
+                    <button class="submit" style="margin-top: 10">Login</button>
                     <button class="nextLine"></button>
            			<div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">signin</a></div>
                     <c:if test="${msg == 'fail' }">
@@ -73,7 +73,7 @@
             function register(){
                 x.style.left = "-400px";
                 y.style.left = "50px";
-                z.style.left = "110px";
+                z.style.left = "120px";
             }
         </script>
     </body>
