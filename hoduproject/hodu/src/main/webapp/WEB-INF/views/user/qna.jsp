@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="header.jsp" %>
 qna 페이지
+<%@ include file="footer.jsp" %>
 </body>
 </html>

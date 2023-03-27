@@ -6,7 +6,7 @@
 .wrap {
     height: 100%;
     width: 100%;
-    background-image: url(/resources/img/background.jpg);
+
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -69,6 +69,17 @@
     background: transparent;
 }
 .submit {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: #fb6e14;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.signin {
     width: 85%;
     padding: 10px 30px;
     cursor: pointer;

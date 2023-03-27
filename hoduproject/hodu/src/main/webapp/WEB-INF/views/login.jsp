@@ -10,7 +10,15 @@
     <body style="font-size: medium;">
     
         <div class="wrap">
-        
+        <div id="fh5co-contact" data-section="reservation">
+         <div class="container">
+            <div class="row text-center fh5co-heading row-padded">
+            
+               <div class="col-md-8 col-md-offset-2">
+                  <h2 class="heading to-animate">LogIn</h2>
+               </div>
+            </div>
+           </div>
             <div class="form-wrap">
                 <div class="button-wrap">
                     <div id="btn"></div>
@@ -22,7 +30,7 @@
                     <input type="password" id="userPw" name="userPw" class="input-field" placeholder="Enter Password" required>
                     <button class="submit">Login</button>
                     <button class="nextLine"></button>
-                    <button class="submit">Signin</button>
+                    <div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">signin</a></div>
                     <c:if test="${msg == 'fail' }">
                        <script>
                         alert("로그인에 실패하였습니다.");
@@ -35,18 +43,21 @@
                     <input type="text" id="partnerId" name="partnerId" class="input-field" placeholder="Business name" required>
                     <input type="password" id="partnerPw" name="partnerPw" class="input-field" placeholder="Enter Password" required>
                     <button class="submit">Login</button>
-                     <button class="nextLine"></button>
-                    <button class="submit">Signin</button>
+                    <button class="nextLine"></button>
+           			<div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">signin</a></div>
                     <c:if test="${msg == 'fail' }">
                        <script>
                         alert("로그인에 실패하였습니다.");
                         history.back();
                         </script>
                     </c:if>
+                    
                 </form>
             </div>
-  	<%@ include file="footer.jsp" %>
-        </div>
+            	<%@ include file="footer.jsp" %>
+            </div>
+  
+       
         <script>
             var x = document.getElementById("login");
             var y = document.getElementById("register");
