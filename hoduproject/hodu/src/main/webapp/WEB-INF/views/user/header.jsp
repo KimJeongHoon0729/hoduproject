@@ -90,15 +90,24 @@
 					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
 						<div class="fh5co-menu-2">
 							<a href="/user/qna" >Q&A</a>
+<<<<<<< HEAD
 							<a href="/signin" >signin</a>
 							<a href="/login" >login</a>
+=======
+							<a href="../../signin" >signin</a>
+							<a href="../../login" >login</a>
+>>>>>>> branch 'master' of https://github.com/orinaldaramg/hoduproject.git
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="fh5co-menu-2">
 							<a href="/user/qna" >Q&A</a>
 							<a href="/user/mypage">Mypage</a>
+<<<<<<< HEAD
 							<a href="/logout.do">logout</a>
+=======
+							<a href="../../logout.do">logout</a>
+>>>>>>> branch 'master' of https://github.com/orinaldaramg/hoduproject.git
 							
 						</div>
 					</c:otherwise>

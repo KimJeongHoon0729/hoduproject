@@ -56,7 +56,7 @@
             </div>
             	<%@ include file="footer.jsp" %>
             </div>
-  
+  			</div>
        
         <script>
             var x = document.getElementById("login");

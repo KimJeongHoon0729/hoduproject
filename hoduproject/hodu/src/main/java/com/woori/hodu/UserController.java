@@ -37,7 +37,18 @@ public class UserController {
 	public String mypage() {
 
 		
-		return "user/mypage";
+		return "user/mypage/mypage";
 	}
 	
+	@RequestMapping("user/mypage/reservationList")
+	public String my_reservationList() {
+		
+		return "user/mypage/reservationList";
+	}
+	
+	@RequestMapping("user/mypage/editProfile")
+	public String my_editProfile() {
+		
+		return "user/mypage/editProfile";
+	}
 }
