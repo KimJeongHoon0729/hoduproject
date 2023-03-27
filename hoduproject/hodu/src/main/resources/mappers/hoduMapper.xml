@@ -17,13 +17,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- user삽입 -->
 	<insert id="userInsert" parameterType="com.woori.domain.userVO"> 
-		INSERT INTO userjoin(userId, userPw, userName, userBirth, sex, userMobile, userEmail, idx)
-		VALUES (#{userId},#{userPw},#{userName},#{userBirth},#{sex}, #{userMobile},#{userEmail},#{idx})
+		INSERT INTO userjoin(userId, userPw, userName, userBirth, sex, userMobile, userEmail)
+		VALUES (#{userId},#{userPw},#{userName},#{userBirth},#{sex}, #{userMobile},#{userEmail})
 	</insert>
+
 	<!-- partner 삽입 -->
 	<insert id="partnerInsert" parameterType="com.woori.domain.partnerVO"> 
-		INSERT INTO partnerjoin(partnerId, partnerPw, partnerName, businessNum, partnerMobile, partnerEmail, idx)
-		VALUES (#{partnerId},#{partnerPw},#{partnerName},#{businessNum}, #{partnerMobile},#{partnerEmail},#{idx})
+		INSERT INTO partnerjoin(partnerId, partnerPw, partnerName, businessNum, partnerMobile, partnerEmail)
+		VALUES (#{partnerId},#{partnerPw},#{partnerName},#{businessNum}, #{partnerMobile},#{partnerEmail})
 	</insert>
 	
 	

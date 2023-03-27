@@ -25,12 +25,7 @@ public class CommonController {
 		return "index";
 	}
 	
-	@RequestMapping("signin")
-	public String signin() {
 
-		
-		return "signin";
-	}
 	
 	@RequestMapping("login")
 	public String login() {

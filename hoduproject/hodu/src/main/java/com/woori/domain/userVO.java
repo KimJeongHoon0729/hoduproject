@@ -2,14 +2,20 @@ package com.woori.domain;
 
 import java.util.Date;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 public class userVO {
 
+	 @NotBlank
 	 String userId;
+	 @NotBlank
 	 String userPw;
 	 String userName;
 	 Date userBirth;
 	 int sex;
 	 String userMobile;
+	 @Email
 	 String userEmail;
 	 int idx;
 	public String getUserId() {
