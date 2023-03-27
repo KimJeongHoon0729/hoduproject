@@ -6,7 +6,7 @@
 </head>
 	<body>
 	<%@ include file="header.jsp" %>
-
+	<link rel="stylesheet" href="/resources/style2.css">
 
       <div id="fh5co-contact" data-section="reservation">
          <div class="container">
@@ -26,7 +26,7 @@
 			</div>
 		
 	   </div>
-		<form id="joinUser" method="post" action="login.do">
+		<form id="user" method="post">
  
           		<div class="container" style="text-align:center;padding-left: 4px">
           		
@@ -65,8 +65,53 @@
                    </div>
             </div>
          </div>
+         
   </form>
 	
+	
+	
+	
+	<form id="partner">
+
+            
+          		<div class="container" style="text-align:center">
+          		
+      		    <div class="col-md-6 col-md-offset-3">
+                  <h3>partner form</h3>
+                  <div class="form-group">
+                     <label for="JserId" class="sr-only">UserId</label>
+                     <input id="JserId" class="form-control" placeholder="JserId" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="userPw" class="sr-only">userPw</label>
+                     <input id="userPw" class="form-control" placeholder="userPw" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="userName" class="sr-only">userName</label>
+                     <input id="userName" class="form-control" placeholder="userName" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="userBirth" class="sr-only">userBirth</label>
+                     <input id="userBirth" class="form-control" placeholder="userBirth" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="sex" class="sr-only">sex</label>
+                     <input id="sex" class="form-control" placeholder="sex" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="userMobile" class="sr-only">userMobile</label>
+                     <input id="userMobile" class="form-control" placeholder="userMobile" type="text">
+                  </div>
+                   <div class="form-group ">
+                     <label for="userEmail" class="sr-only">userEmail</label>
+                     <input id="userEmail" class="form-control" placeholder="userEmail" type="text">
+                  </div>             
+                  <div class="form-group ">
+                     <input class="btn btn-primary" value="Submit" type="submit">
+                   </div>
+            </div>
+         </div>
+  </form>
 
 	
    </div>
