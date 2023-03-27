@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class userVO {
 
 	 @NotBlank
@@ -12,6 +14,8 @@ public class userVO {
 	 @NotBlank
 	 String userPw;
 	 String userName;
+	 
+	 @DateTimeFormat(pattern = "yyyy-MM-dd")
 	 Date userBirth;
 	 int sex;
 	 String userMobile;

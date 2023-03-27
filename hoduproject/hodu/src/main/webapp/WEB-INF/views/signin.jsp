@@ -34,31 +34,31 @@
                   <h3>user form</h3>
                   <div class="form-group">
                      <label for="userId" class="sr-only">UserId</label>
-                     <input id="userId" class="form-control" placeholder="userId" type="text">
+                     <input id="userId" name="userId" class="form-control" placeholder="userId" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userPw" class="sr-only">userPw</label>
-                     <input id="userPw" class="form-control" placeholder="userPw" type="password">
+                     <input id="userPw" name="userPw" class="form-control" placeholder="userPw" type="password">
                   </div>
                    <div class="form-group ">
                      <label for="userName" class="sr-only">userName</label>
-                     <input id="userName" class="form-control" placeholder="userName" type="text">
+                     <input id="userName" name="userName" class="form-control" placeholder="userName" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userBirth" class="sr-only">userBirth</label>
-                     <input id="userBirth" class="form-control" placeholder="userBirth" type="text">
+                     <input id="userBirth" name="userBirth" class="form-control" placeholder="userBirth" type="date">
                   </div>
                    <div class="form-group ">
                      <label for="sex" class="sr-only">sex</label>
-                     <input id="sex" class="form-control" placeholder="sex" type="text">
+                     <input id="sex" name="sex" class="form-control" placeholder="sex" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userMobile" class="sr-only">userMobile</label>
-                     <input id="userMobile" class="form-control" placeholder="userMobile" type="text">
+                     <input id="userMobile" name="userMobile" class="form-control" placeholder="userMobile" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userEmail" class="sr-only">userEmail</label>
-                     <input id="userEmail" class="form-control" placeholder="userEmail" type="text">
+                     <input id="userEmail" name="userEmail" class="form-control" placeholder="userEmail" type="text">
                   </div>             
                   <div class="form-group ">
                      <input class="btn btn-primary" value="Submit" type="submit">
@@ -79,32 +79,32 @@
       		    <div class="col-md-6 col-md-offset-3">
                   <h3>partner form</h3>
                   <div class="form-group">
-                     <label for="JserId" class="sr-only">UserId</label>
-                     <input id="JserId" class="form-control" placeholder="JserId" type="text">
+                     <label for="UserId" class="sr-only">UserId</label>
+                     <input id="UserId" name="userId" class="form-control" placeholder="UserId" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userPw" class="sr-only">userPw</label>
-                     <input id="userPw" class="form-control" placeholder="userPw" type="text">
+                     <input id="userPw" name="userPw" class="form-control" placeholder="userPw" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userName" class="sr-only">userName</label>
-                     <input id="userName" class="form-control" placeholder="userName" type="text">
+                     <input id="userName" name="userName" class="form-control" placeholder="userName" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userBirth" class="sr-only">userBirth</label>
-                     <input id="userBirth" class="form-control" placeholder="userBirth" type="text">
+                     <input id="userBirth" name="userBirth" class="form-control" placeholder="userBirth" type="date">
                   </div>
                    <div class="form-group ">
                      <label for="sex" class="sr-only">sex</label>
-                     <input id="sex" class="form-control" placeholder="sex" type="text">
+                     <input id="sex" name="sex" class="form-control" placeholder="sex" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userMobile" class="sr-only">userMobile</label>
-                     <input id="userMobile" class="form-control" placeholder="userMobile" type="text">
+                     <input id="userMobile" name="userMobile" class="form-control" placeholder="userMobile" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userEmail" class="sr-only">userEmail</label>
-                     <input id="userEmail" class="form-control" placeholder="userEmail" type="text">
+                     <input id="userEmail" name="userEmail" class="form-control" placeholder="userEmail" type="text">
                   </div>             
                   <div class="form-group ">
                      <input class="btn btn-primary" value="Submit" type="submit">

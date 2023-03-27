@@ -25,6 +25,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	</insert>
 
-
-
+	<select id="viewProfile" resultType="com.woori.domain.userVO">
+		select * from userjoin where userId=#{userId}
+	</select>
+	
+	<update id="editProfile" parameterType="com.woori.domain.userVO">
+		update  userjoin  set   
+		userPw=#{userPw},  
+		userName=#{userName},   
+		userBirth=#{userBirth},  
+		sex=#{sex},   
+		userMobile=#{userMobile},  
+		userEmail=#{userEmail}   
+		where userId=#{userId}   
+	</update>
+	
 </mapper>

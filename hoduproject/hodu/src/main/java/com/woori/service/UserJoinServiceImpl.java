@@ -17,6 +17,13 @@ public class UserJoinServiceImpl implements UserJoinService {
 	public void insertUser(userVO vo) {
 		userJoin.insertUser(vo);
 	}
-	
+	@Override
+	public userVO viewProfile(String userId) {
+		return userJoin.viewProfile(userId);
+	}
+	@Override
+	public void editProfile(userVO vo) {
+		userJoin.editProfile(vo);
+	}
 
 }

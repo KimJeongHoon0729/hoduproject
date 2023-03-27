@@ -21,4 +21,13 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 		sqlSession.insert("user.insertUser", vo); // 여기서 joinUser는 mapper의 네임스페이스
 	}
 	
+	@Override
+	public userVO viewProfile(String userId) {
+		return sqlSession.selectOne("user.viewProfile", userId);
+	}
+	
+	@Override
+	public void editProfile(userVO vo) {
+		sqlSession.update("user.editProfile", vo);
+	}
 }

@@ -30,7 +30,7 @@
 						<div class="fh5co-event to-animate-2">
 							<h3>Edit Profile</h3>
 							<p></p>
-							<p><a href="mypage/editProfile" class="btn btn-primary btn-outline">Edit</a></p>
+							<p><a href="${path }/viewProfile.do?userId=${userId}" class="btn btn-primary btn-outline">Edit</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">
