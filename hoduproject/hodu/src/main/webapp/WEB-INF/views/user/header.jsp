@@ -90,15 +90,15 @@
 					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
 						<div class="fh5co-menu-2">
 							<a href="/user/qna" >Q&A</a>
-							<a href="../signin" >signin</a>
-							<a href="../login" >login</a>
+							<a href="../../signin" >signin</a>
+							<a href="../../login" >login</a>
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="fh5co-menu-2">
 							<a href="/user/qna" >Q&A</a>
 							<a href="/user/mypage">Mypage</a>
-							<a href="../logout.do">logout</a>
+							<a href="../../logout.do">logout</a>
 							
 						</div>
 					</c:otherwise>
