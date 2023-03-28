@@ -26,7 +26,7 @@
 			</div>
 		
 	   </div>
-		<form id="user" method="post">
+		<form id="user" name="join_form" method="post">
  
           		<div class="container" style="text-align:center;padding-left: 4px">
           		
@@ -39,6 +39,10 @@
                    <div class="form-group ">
                      <label for="userPw" class="sr-only">userPw</label>
                      <input id="userPw" name="userPw" class="form-control" placeholder="userPw" type="password">
+                  </div>
+                  <div class="form-group ">
+                     <label for="userPwRe" class="sr-only">userPwRe</label>
+                     <input id="userPwRe" name="userPw" class="form-control" placeholder="userPwRe" type="password">
                   </div>
                    <div class="form-group ">
                      <label for="userName" class="sr-only">userName</label>
@@ -54,14 +58,14 @@
                   </div>
                    <div class="form-group ">
                      <label for="userMobile" class="sr-only">userMobile</label>
-                     <input id="userMobile" name="userMobile" class="form-control" placeholder="userMobile" type="text">
+                     <input id="userMobile" name="userMobile" class="form-control" placeholder="userMobile(form:010-1234-1234)" type="tel">
                   </div>
                    <div class="form-group ">
                      <label for="userEmail" class="sr-only">userEmail</label>
-                     <input id="userEmail" name="userEmail" class="form-control" placeholder="userEmail" type="text">
+                     <input id="userEmail" name="userEmail" class="form-control" placeholder="userEmail(form:abc@abc.com)" type="email">
                   </div>             
                   <div class="form-group ">
-                     <input class="btn btn-primary" value="Submit" type="submit">
+                     <button class="btn btn-primary" type="button" onclick="join_check();">signin</button>
                    </div>
             </div>
          </div>
@@ -85,6 +89,10 @@
                    <div class="form-group ">
                      <label for="userPw" class="sr-only">userPw</label>
                      <input id="userPw" name="userPw" class="form-control" placeholder="userPw" type="text">
+                  </div>
+                  <div class="form-group ">
+                     <label for="userPwRe" class="sr-only">userPwRe</label>
+                     <input id="userPwRe" name="userPwRe" class="form-control" placeholder="userPwRe" type="text">
                   </div>
                    <div class="form-group ">
                      <label for="userName" class="sr-only">userName</label>
@@ -133,11 +141,9 @@
 				$("#partner").show();
 			}
 			}
-			
-
 	</script>
 	<!-- Main JS -->
 	<script src="/resources/js/main.js"></script>
-
+	<script type="text/javascript" src="/resources/js/join_check.js"></script>
 	</body>
 </html>
