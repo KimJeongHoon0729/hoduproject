@@ -40,4 +40,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where userId=#{userId}   
 	</update>
 	
+	
+	<!-- 아이디 중복체크 -->
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(*) FROM userjoin WHERE userId=#{userId}
+	
+	</select>
+	
 </mapper>

@@ -1,8 +1,9 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <head>
-
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 	<body>
 	<%@ include file="header.jsp" %>
@@ -35,6 +36,7 @@
                   <div class="form-group">
                      <label for="userId" class="sr-only">UserId</label>
                      <input id="userId" name="userId" class="form-control" placeholder="userId" type="text">
+                  	 <button id="idCheck" name="idCheck" class="btn btn-primary" type="button" onclick="fn_idCheck();" value="N">duplicatoin check</button>
                   </div>
                    <div class="form-group ">
                      <label for="userPw" class="sr-only">userPw</label>
@@ -141,6 +143,25 @@
 				$("#partner").show();
 			}
 			}
+	</script>
+	<script type="text/javascript">
+		function fn_idCheck(){
+			$.ajax({
+				url : "/idCheck",
+				type : "post",
+				dataType : "json",
+				contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+				data : {"userId" : $("#userId").val()},
+				success : function(data){
+					if(data == 1){
+						alert("사용할 수 없는 아이디입니다.");
+					}else if(data == 0){
+						$("#idCheck").attr("value", "Y");
+						alert("possible id");
+					}
+				}
+			})
+		}
 	</script>
 	<!-- Main JS -->
 	<script src="/resources/js/main.js"></script>

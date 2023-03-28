@@ -30,4 +30,11 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	public void editProfile(userVO vo) {
 		sqlSession.update("user.editProfile", vo);
 	}
+	
+	// 아이디 중복체크
+	@Override
+	public int idCheck(userVO vo) {
+		int result = sqlSession.selectOne("user.idCheck", vo);
+		return result;
+	}
 }

@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.woori.domain.userVO;
 import com.woori.service.UserJoinServiceImpl;
@@ -28,14 +29,20 @@ public class UserJoinController {
 			return "/signin";  // user/list
 		}
 		
-		@RequestMapping(value="/signin", method=RequestMethod.POST)
-		public String userJoin2(@ModelAttribute userVO vo) {
-			
-			userJoinService.insertUser(vo);
-			
-			return "/signin";  // user/list
 		
-		}	
+		
+		// 회원가입 post
+		@RequestMapping(value="/signin", method = RequestMethod.POST)
+		public String userJoin2(userVO vo) {
+			int result = userJoinService.idCheck(vo);
+			if(result == 1) {
+				return "/signin";
+			} else if(result == 0) {
+				userJoinService.insertUser(vo);
+			}
+			
+			return "redirect:/";
+		}
 		
 		@RequestMapping("viewProfile.do")
 		public String viewProfile(String userId, Model model) {
@@ -51,4 +58,16 @@ public class UserJoinController {
 			return "user/mypage/mypage";
 		}
 		
+		// 아이디 중복 체크
+		@ResponseBody
+		@RequestMapping(value="/idCheck", method = RequestMethod.POST)
+		public int idCheck(userVO vo) {
+			int result = userJoinService.idCheck(vo);
+			return result;
+		}
 }
+
+
+
+
+

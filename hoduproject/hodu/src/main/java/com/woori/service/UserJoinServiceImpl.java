@@ -25,5 +25,12 @@ public class UserJoinServiceImpl implements UserJoinService {
 	public void editProfile(userVO vo) {
 		userJoin.editProfile(vo);
 	}
+	
+	// 아이디 중복체크
+	@Override
+	public int idCheck(userVO vo) {
+		int result = userJoin.idCheck(vo);
+		return result;
+	}
 
 }
