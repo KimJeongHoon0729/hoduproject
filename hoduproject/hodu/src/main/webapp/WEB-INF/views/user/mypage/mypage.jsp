@@ -37,14 +37,25 @@
 						<div class="fh5co-event to-animate-2">
 							<h3>Withdrawal</h3>
 							<p></p>
-							<p><a href="#" class="btn btn-primary btn-outline">Withdrawal</a></p>
+							<p><a href="#" class="btn btn-primary btn-outline" onclick="call_confirm();">Withdrawal</a></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
+		
+<script type="text/javascript">
+function call_confirm(){
+	
+	if(confirm("탈퇴하시겠습니까?")){
+		location.href="${path }/deleteProfile.do?userId=${userId}";
+		alert("정상적으로 처리되었습니다.");
+	}else{
+		alert("취소되었습니다.");
+	}
+	
+}
+</script>
 <%@ include file="../footer.jsp" %>
 </body>
 </html>

@@ -37,4 +37,9 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 		int result = sqlSession.selectOne("user.idCheck", vo);
 		return result;
 	}
+	
+	@Override
+	public void deleteProfile(String userId) {
+		sqlSession.delete("user.deleteProfile", userId);
+	}
 }

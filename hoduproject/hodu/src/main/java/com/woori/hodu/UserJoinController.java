@@ -1,6 +1,7 @@
 package com.woori.hodu;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,6 +65,13 @@ public class UserJoinController {
 		public int idCheck(userVO vo) {
 			int result = userJoinService.idCheck(vo);
 			return result;
+		}
+		
+		@RequestMapping("deleteProfile.do")
+		public String deleteProfile(String userId, HttpSession session) {
+			userJoinService.deleteProfile(userId, session);
+			
+			return "redirect:/";
 		}
 }
 

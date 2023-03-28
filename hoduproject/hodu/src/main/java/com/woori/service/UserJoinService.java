@@ -1,5 +1,7 @@
 package com.woori.service;
 
+import javax.servlet.http.HttpSession;
+
 import com.woori.domain.userVO;
 
 public interface UserJoinService {
@@ -10,5 +12,6 @@ public interface UserJoinService {
 	
 	// 아이디 중복체크
 	public int idCheck(userVO vo);
+	public void deleteProfile(String userId, HttpSession session);
 	
 }

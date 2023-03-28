@@ -44,7 +44,7 @@
                   </div>
                   <div class="form-group ">
                      <label for="userPwRe" class="sr-only">userPwRe</label>
-                     <input id="userPwRe" name="userPw" class="form-control" placeholder="userPwRe" type="password">
+                     <input id="userPwRe"  class="form-control" placeholder="userPwRe" type="password">
                   </div>
                    <div class="form-group ">
                      <label for="userName" class="sr-only">userName</label>

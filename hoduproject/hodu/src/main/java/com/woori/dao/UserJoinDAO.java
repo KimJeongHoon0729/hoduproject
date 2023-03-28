@@ -10,4 +10,6 @@ public interface UserJoinDAO {
 	
 	// 아이디 중복체크
 	public int idCheck(userVO vo);
+	
+	public void deleteProfile(String userId);
 }

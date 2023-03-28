@@ -1,6 +1,7 @@
 package com.woori.service;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,12 @@ public class UserJoinServiceImpl implements UserJoinService {
 	public int idCheck(userVO vo) {
 		int result = userJoin.idCheck(vo);
 		return result;
+	}
+	
+	@Override
+	public void deleteProfile(String userId, HttpSession session) {
+		userJoin.deleteProfile(userId);
+		session.invalidate();
 	}
 
 }
