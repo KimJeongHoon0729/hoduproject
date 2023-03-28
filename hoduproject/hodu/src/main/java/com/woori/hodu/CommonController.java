@@ -25,6 +25,13 @@ public class CommonController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/p", method = RequestMethod.GET)
+	public String phome(Locale locale, Model model) {
+
+		
+		return "pindex";
+	}
+	
 
 	
 	@RequestMapping("login")
@@ -39,6 +46,12 @@ public class CommonController {
 		session.invalidate();
 		
 		return "redirect:/";
+	}
+	@RequestMapping("signin")
+	public String signin() {
+
+		
+		return "signin";
 	}
 	
 }

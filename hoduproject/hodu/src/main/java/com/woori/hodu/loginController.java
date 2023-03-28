@@ -61,7 +61,7 @@ public class loginController {
 		boolean result = loginService.plogincheck(pvo, psession);
 		ModelAndView mav = new ModelAndView();
 		if(result == true) { //로그인 성공
-			mav.setViewName("index");
+			mav.setViewName("pindex");
 			mav.addObject("msg", "sucess");
 		
 		} else { //로그인 실패
@@ -75,7 +75,7 @@ public class loginController {
 	public ModelAndView plogout(HttpSession psession) {
 		loginService.logout(psession);
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("index");
+		mav.setViewName("pindex");
 		mav.addObject("msg", "logout");
 		return mav;
 	}

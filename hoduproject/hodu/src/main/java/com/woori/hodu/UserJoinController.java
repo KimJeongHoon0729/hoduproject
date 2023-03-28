@@ -23,7 +23,7 @@ public class UserJoinController {
 		@Inject
 		UserJoinServiceImpl userJoinService;
 		
-		@RequestMapping(value="/signin", method=RequestMethod.GET)  //get으로 접근
+		@RequestMapping(value="signin.do", method=RequestMethod.GET)  //get으로 접근
 		public String userJoin(userVO vo) {
 			
 			
@@ -33,7 +33,7 @@ public class UserJoinController {
 		
 		
 		// 회원가입 post
-		@RequestMapping(value="/signin", method = RequestMethod.POST)
+		@RequestMapping(value="signin.do", method = RequestMethod.POST)
 		public String userJoin2(userVO vo) {
 			int result = userJoinService.idCheck(vo);
 			if(result == 1) {

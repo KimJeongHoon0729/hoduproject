@@ -27,7 +27,7 @@
 			</div>
 		
 	   </div>
-		<form id="user" name="join_form" method="post">
+		<form id="user" action="signin.do" name="join_form" method="post">
  
           		<div class="container" style="text-align:center;padding-left: 4px">
           		
@@ -77,7 +77,7 @@
 	
 	
 	
-	<form id="partner">
+	<form id="partner" action="psignin.do" name="pjoin_form" method="post">
 
             
           		<div class="container" style="text-align:center">
@@ -85,39 +85,36 @@
       		    <div class="col-md-6 col-md-offset-3">
                   <h3>partner form</h3>
                   <div class="form-group">
-                     <label for="UserId" class="sr-only">UserId</label>
-                     <input id="UserId" name="userId" class="form-control" placeholder="UserId" type="text">
+                     <label for="partnerId" class="sr-only">partnerId</label>
+                     <input id="partnerId" name="partnerId" class="form-control" placeholder="partnerId" type="text">
+					 <button id="pidCheck" name="pidCheck" class="btn btn-primary" type="button" onclick="fn_pidCheck();" value="N">duplicatoin check</button>                  
                   </div>
                    <div class="form-group ">
-                     <label for="userPw" class="sr-only">userPw</label>
-                     <input id="userPw" name="userPw" class="form-control" placeholder="userPw" type="text">
+                     <label for="partnerPw" class="sr-only">partnerPw</label>
+                     <input id="partnerPw" name="partnerPw" class="form-control" placeholder="partnerPw" type="password">
                   </div>
                   <div class="form-group ">
-                     <label for="userPwRe" class="sr-only">userPwRe</label>
-                     <input id="userPwRe" name="userPwRe" class="form-control" placeholder="userPwRe" type="text">
+                     <label for="partnerPwRe" class="sr-only">partnerPwRe</label>
+                     <input id="partnerPwRe"  class="form-control" placeholder="partnerPwRe" type="password">
                   </div>
                    <div class="form-group ">
-                     <label for="userName" class="sr-only">userName</label>
-                     <input id="userName" name="userName" class="form-control" placeholder="userName" type="text">
+                     <label for="partnerName" class="sr-only">partnerName</label>
+                     <input id="partnerName" name="partnerName" class="form-control" placeholder="partnerName" type="text">
                   </div>
                    <div class="form-group ">
-                     <label for="userBirth" class="sr-only">userBirth</label>
-                     <input id="userBirth" name="userBirth" class="form-control" placeholder="userBirth" type="date">
+                     <label for="businessNum" class="sr-only">businessNum</label>
+                     <input id="businessNum" name="businessNum" class="form-control" placeholder="businessNum" type="text">
                   </div>
                    <div class="form-group ">
-                     <label for="sex" class="sr-only">sex</label>
-                     <input id="sex" name="sex" class="form-control" placeholder="sex" type="text">
+                     <label for="partnerMobile" class="sr-only">partnerMobile</label>
+                     <input id="partnerMobile" name="partnerMobile" class="form-control" placeholder="partnerMobile" type="tel">
                   </div>
                    <div class="form-group ">
-                     <label for="userMobile" class="sr-only">userMobile</label>
-                     <input id="userMobile" name="userMobile" class="form-control" placeholder="userMobile" type="text">
-                  </div>
-                   <div class="form-group ">
-                     <label for="userEmail" class="sr-only">userEmail</label>
-                     <input id="userEmail" name="userEmail" class="form-control" placeholder="userEmail" type="text">
+                     <label for="partnerEmail" class="sr-only">partnerEmail</label>
+                     <input id="partnerEmail" name="partnerEmail" class="form-control" placeholder="partnerEmail" type="text">
                   </div>             
                   <div class="form-group ">
-                     <input class="btn btn-primary" value="Submit" type="submit">
+                     <button class="btn btn-primary" type="button" onclick="pjoin_check();">signin</button>
                    </div>
             </div>
          </div>
@@ -157,7 +154,24 @@
 						alert("사용할 수 없는 아이디입니다.");
 					}else if(data == 0){
 						$("#idCheck").attr("value", "Y");
-						alert("possible id");
+						alert("사용 가능한 아이디입니다.");
+					}
+				}
+			})
+		}
+		function fn_pidCheck(){
+			$.ajax({
+				url : "/pidCheck",
+				type : "post",
+				dataType : "json",
+				contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+				data : {"partnerId" : $("#partnerId").val()},
+				success : function(data){
+					if(data == 1){
+						alert("사용할 수 없는 아이디입니다.");
+					}else if(data == 0){
+						$("#pidCheck").attr("value", "Y");
+						alert("사용 가능한 아이디입니다.");
 					}
 				}
 			})
