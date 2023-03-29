@@ -72,7 +72,7 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	<body style="font-family: 'Pretendard-Regular';">
 
 	<div id="fh5co-container">
 		<div id="fh5co-home" class="js-fullheight" data-section="home">

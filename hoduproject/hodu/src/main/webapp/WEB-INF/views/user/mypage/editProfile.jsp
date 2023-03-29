@@ -6,7 +6,7 @@
 	<head>
 
 	</head>
-	<body>
+	<body style="font-family: 'Pretendard-Regular';">
 	<%@ include file="../header.jsp" %>
 
       <div id="fh5co-contact" data-section="reservation">
@@ -54,7 +54,7 @@
                      <input id="userEmail" name="userEmail" class="form-control" value="${user.userEmail }" type="text">
                   </div>             
                   <div class="form-group ">
-                     <input class="btn btn-primary" value="Update" type="submit">
+                     <input class="btn btn-primary" value="수정" type="submit">
                    </div>
             </div>
          </div>

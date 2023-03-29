@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/resources/style.css">
         <%@ include file ="header.jsp" %>
     </head>
-    <body style="font-size: medium;">
+    <body style="font-family: 'Pretendard-Regular';">
     
         <div class="wrap">
         <div id="fh5co-contact" data-section="reservation">
@@ -22,15 +22,15 @@
             <div class="form-wrap">
                 <div class="button-wrap">
                     <div id="btn"></div>
-                    <button type="button" class="togglebtn" onclick="login()" style="margin-left: 3.4">User</button>
-                    <button type="button" class="togglebtn" onclick="register()" style="margin-left: 8">Partner</button>
+                    <button type="button" class="togglebtn" onclick="login()" style="margin-left: 8.4">회원</button>
+                    <button type="button" class="togglebtn" onclick="register()" style="margin-left: 18">파트너</button>
                 </div>
                 <form id="login" action="logincheck.do" class="input-group">
                     <input type="text" id="userId" name="userId" class="input-field" placeholder="User name or Email" required>
                     <input type="password" id="userPw" name="userPw" class="input-field" placeholder="Enter Password" required>
-                    <button class="submit" style="margin-top: 50;">Login</button>
+                    <button class="submit" style="margin-top: 50;">로그인</button>
                     <button class="nextLine"></button>
-                    <div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">signin</a></div>
+                    <div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">회원가입</a></div>
                     <c:if test="${msg == 'fail' }">
                        <script>
                         alert("로그인에 실패하였습니다.");
@@ -42,9 +42,9 @@
                     <input type="text" id="businessNum" name="businessNum" class="input-field" placeholder="Business Registration Number" required>
                     <input type="text" id="partnerId" name="partnerId" class="input-field" placeholder="Business name" required>
                     <input type="password" id="partnerPw" name="partnerPw" class="input-field" placeholder="Enter Password" required>
-                    <button class="submit" style="margin-top: 10">Login</button>
+                    <button class="submit" style="margin-top: 10">로그인</button>
                     <button class="nextLine"></button>
-           			<div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">signin</a></div>
+           			<div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">회원가입</a></div>
                     <c:if test="${msg == 'fail' }">
                        <script>
                         alert("로그인에 실패하였습니다.");

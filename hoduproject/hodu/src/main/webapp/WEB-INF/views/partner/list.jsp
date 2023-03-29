@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="font-family: 'Pretendard-Regular';">
 <%@ include file="pheader.jsp" %>
 파트너 펜션 목록 페이지
 <%@ include file="footer.jsp" %>

@@ -6,7 +6,7 @@
 	<head>
 
 	</head>
-	<body>
+	<body style="font-family: 'Pretendard-Regular';">
 	<%@ include file="../pheader.jsp" %>
 
       <div id="fh5co-contact" data-section="reservation">
@@ -49,7 +49,7 @@
                      <input id="partnerEmail" name="partnerEmail" class="form-control" value="${partner.partnerEmail }" type="text">
                   </div>             
                   <div class="form-group ">
-                     <input class="btn btn-primary" value="Update" type="submit">
+                     <input class="btn btn-primary" value="수정" type="submit">
                    </div>
             </div>
          </div>

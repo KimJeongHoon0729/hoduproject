@@ -62,7 +62,7 @@
 	<link rel="stylesheet" href="/resources/css/bootstrap.css">
 
 	<link rel="stylesheet" href="/resources/css/style.css">
-
+	<link rel="stylesheet" href="/resources/css/font.css">
 
 	<!-- Modernizr JS -->
 	<script src="/resources/js/modernizr-2.6.2.min.js"></script>
@@ -72,16 +72,16 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	<body style="font-family: 'Pretendard-Regular';">
 
 
 		<div class="js-sticky">
 			<div class="fh5co-main-nav">
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="/partner/list">List</a>
-						<a href="/partner/reservation">Reservation</a>
-						<a href="/partner/review">Review</a>
+						<a href="/partner/list">펜션 목록</a>
+						<a href="/partner/reservation">예약</a>
+						<a href="/partner/review">후기</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="/p">HODU</a>
@@ -90,17 +90,17 @@
 					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
 						<div class="fh5co-menu-2">
 							<a href="/partner/qna" >Q&A</a>
-							<a href="../../signin" >signin</a>
-							<a href="../../login" >login</a>
+							<a href="../../signin" >회원가입</a>
+							<a href="../../login" >로그인</a>
 
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="fh5co-menu-2">
 							<a href="/partner/qna" >Q&A</a>
-							<a href="/partner/myPpage">MyPpage</a>
+							<a href="/partner/myPpage">마이페이지</a>
 
-							<a href="../../logout.do">logout</a>
+							<a href="../../logout.do">로그아웃</a>
 
 							
 						</div>
