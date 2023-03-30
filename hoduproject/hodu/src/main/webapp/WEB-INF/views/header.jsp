@@ -80,7 +80,7 @@
 			<div class="fh5co-main-nav">
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="/user/list">펜션 목록</a>
+						<a href="/user/list_map">펜션 목록</a>
 						<a href="/user/reservation">예약</a>
 						<a href="/user/review">후기</a>
 					</div>

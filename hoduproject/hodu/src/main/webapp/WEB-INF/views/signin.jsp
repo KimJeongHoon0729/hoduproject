@@ -143,6 +143,7 @@
 			}
 	</script>
 	<script type="text/javascript">
+	
 		function fn_idCheck(){
 			$.ajax({
 				url : "/idCheck",

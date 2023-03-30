@@ -5,13 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UserController {
-	@RequestMapping("user/list")
-	public String list() {
 
-		
-		return "user/list";
-	}
-	
 	@RequestMapping("user/reservation")
 	public String reservation() {
 
@@ -50,5 +44,12 @@ public class UserController {
 	public String my_editProfile() {
 		
 		return "user/mypage/editProfile";
+	}
+	
+	@RequestMapping("user/list_map")
+	public String list_map() {
+
+		
+		return "user/list_map";
 	}
 }

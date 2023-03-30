@@ -79,7 +79,7 @@
 			<div class="fh5co-main-nav">
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="/partner/list">펜션 목록</a>
+						<a href="/partner/list">펜션 등록</a>
 						<a href="/partner/reservation">예약</a>
 						<a href="/partner/review">후기</a>
 					</div>

@@ -8,7 +8,7 @@
 </head>
 <body style="font-family: 'Pretendard-Regular';">
 <%@ include file="pheader.jsp" %>
-파트너 펜션 목록 페이지
+파트너 펜션 등록 페이지
 <%@ include file="footer.jsp" %>
 </body>
 </html>
