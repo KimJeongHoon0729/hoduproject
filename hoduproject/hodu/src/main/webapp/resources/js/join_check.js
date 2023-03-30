@@ -1,3 +1,4 @@
+
 function join_check(){
     var userId = document.getElementById("userId");
     var userPw = document.getElementById("userPw");
@@ -7,12 +8,13 @@ function join_check(){
     var userEmail = document.getElementById("userEmail");
 
     
-
+/*
     if(userId.value == ""){
         alert("아이디를 입력하세요.");
         userId.focus();
         return false;
     };
+
 
     var idReg = /^[a-zA-z0-9]{6,12}$/;
     if(!idReg.test(userId.value)){
@@ -60,7 +62,7 @@ function join_check(){
         userEmail.focus();
         return false;
     }
-
+*/
     document.join_form.submit();
 
 }
@@ -76,7 +78,7 @@ function pjoin_check(){
     var partnerEmail = document.getElementById("partnerEmail");
 
     
-
+/*
     if(partnerId.value == ""){
         alert("아이디를 입력하세요.");
         partnerId.focus();
@@ -115,7 +117,7 @@ function pjoin_check(){
         partnerName.focus();
         return false;
     };
-    
+ 
     var reg2 =  /^[0-9]{3}-[0-9]{2}-[0-9]{5}$/;
     if(!reg2.test(businessNum.value)){
         alert("사업자번호 형식에 맞게 입력하세요.");
@@ -136,7 +138,8 @@ function pjoin_check(){
         partnerEmail.focus();
         return false;
     }
-
+*/
     document.pjoin_form.submit();
 
 }
+
