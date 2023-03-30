@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +24,9 @@ public class UserJoinController {
 		@Inject
 		UserJoinServiceImpl userJoinService;
 		
+		@Inject
+		BCryptPasswordEncoder pwdEncoder;
+		
 		@RequestMapping(value="signin.do", method=RequestMethod.GET)  //get으로 접근
 		public String userJoin(userVO vo) {
 			
@@ -39,6 +43,9 @@ public class UserJoinController {
 			if(result == 1) {
 				return "/signin";
 			} else if(result == 0) {
+				String inputPass = vo.getUserPw();
+				String pwd = pwdEncoder.encode(inputPass);
+				vo.setUserPw(pwd);
 				userJoinService.insertUser(vo);
 			}
 			
@@ -54,6 +61,9 @@ public class UserJoinController {
 		
 		@RequestMapping("editProfile.do")
 		public String editProfile(@ModelAttribute userVO vo) {
+			String inputPass = vo.getUserPw();
+			String pwd = pwdEncoder.encode(inputPass);
+			vo.setUserPw(pwd);
 			userJoinService.editProfile(vo);
 			
 			return "user/mypage/mypage";

@@ -8,7 +8,6 @@ public class partnerVO {
 	 String businessNum;
 	 String partnerMobile;
 	 String partnerEmail;
-	 int idx;
 	public String getPartnerId() {
 		return partnerId;
 	}
@@ -45,18 +44,13 @@ public class partnerVO {
 	public void setPartnerEmail(String partnerEmail) {
 		this.partnerEmail = partnerEmail;
 	}
-	public int getIdx() {
-		return idx;
-	}
-	public void setIdx(int idx) {
-		this.idx = idx;
-	}
 	@Override
 	public String toString() {
 		return "partnerVO [partnerId=" + partnerId + ", partnerPw=" + partnerPw + ", partnerName=" + partnerName
 				+ ", businessNum=" + businessNum + ", partnerMobile=" + partnerMobile + ", partnerEmail=" + partnerEmail
-				+ ", idx=" + idx + "]";
+				+ "]";
 	}
-	 
+
+
 	 
 }

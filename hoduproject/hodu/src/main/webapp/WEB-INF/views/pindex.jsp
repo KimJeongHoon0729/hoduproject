@@ -174,6 +174,7 @@
 		$(function () {
 	       $('#date').datetimepicker();
 	   });
+		
 	</script>
 	<!-- Main JS -->
 	<script src="/resources/js/main.js"></script>

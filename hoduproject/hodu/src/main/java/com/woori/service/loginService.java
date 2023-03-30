@@ -7,11 +7,11 @@ import com.woori.domain.userVO;
 
 public interface loginService {
 
-	public boolean logincheck(userVO vo, HttpSession session);
-	public userVO viewUser(userVO vo);
+	public userVO logincheck(userVO vo, HttpSession session);
+	
 	public void logout(HttpSession session);
 	
-	public boolean plogincheck(partnerVO pvo, HttpSession psession);
-	public partnerVO viewPartner(partnerVO pvo);
+	public partnerVO plogincheck(partnerVO pvo, HttpSession psession);
+
 	public void plogout(HttpSession psession);
 }

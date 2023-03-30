@@ -16,31 +16,24 @@ public class loginDAOImpl implements loginDAO {
 	SqlSession sqlSession;
 	
 	@Override
-	public boolean logincheck(userVO vo) {
-		String name = sqlSession.selectOne("user.login", vo);
-		return(name == null)? false : true;
+	public userVO logincheck(userVO vo) {
+		return  sqlSession.selectOne("user.login", vo);
+		
 	};
 	
-	@Override
-	public userVO viewUser(userVO vo) {
-		return sqlSession.selectOne("user.viewUser", vo);
-	};
-	
+
 	@Override
 	public void logout(HttpSession session) {
 		
 	};
 	
 	@Override
-	public boolean plogincheck(partnerVO pvo) {
-		String name = sqlSession.selectOne("partner.plogin", pvo);
-		return(name == null)? false : true;
+	public partnerVO plogincheck(partnerVO pvo) {
+		
+		return sqlSession.selectOne("partner.plogin", pvo);
 	};
 	
-	@Override
-	public partnerVO viewPartner(partnerVO pvo) {
-		return sqlSession.selectOne("partner.viewPartner", pvo);
-	};
+	
 	
 	@Override
 	public void plogout(HttpSession psession) {

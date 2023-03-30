@@ -30,7 +30,7 @@
                   </div>
                    <div class="form-group ">
                      <label for="partnerPw" class="sr-only">partnerPw</label>
-                     <input id="partnerPw" name="partnerPw" class="form-control" value="${partner.partnerPw }" type="text">
+                     <input id="partnerPw" name="partnerPw" class="form-control" value="${partner.partnerPw }" type="password">
                   </div>
                    <div class="form-group ">
                      <label for="partnerName" class="sr-only">partnerName</label>

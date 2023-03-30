@@ -30,7 +30,7 @@
                   </div>
                    <div class="form-group ">
                      <label for="userPw" class="sr-only">userPw</label>
-                     <input id="userPw" name="userPw" class="form-control" value="${user.userPw }" type="text">
+                     <input id="userPw" name="userPw" class="form-control" value="${user.userPw }" type="password">
                   </div>
                    <div class="form-group ">
                      <label for="userName" class="sr-only">userName</label>

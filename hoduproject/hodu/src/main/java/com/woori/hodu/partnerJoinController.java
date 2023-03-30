@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +24,9 @@ public class partnerJoinController {
 		@Inject
 		PartnerJoinServiceImpl partnerJoinService;
 		
+		@Inject
+		BCryptPasswordEncoder pwdEncoder;
+		
 		@RequestMapping(value="psignin.do", method=RequestMethod.GET)  //get으로 접근
 		public String PartnerJoin(partnerVO pvo) {
 			
@@ -39,6 +43,9 @@ public class partnerJoinController {
 			if(result == 1) {
 				return "/signin";
 			} else if(result == 0) {
+				String inputPw = pvo.getPartnerPw();
+				String pwd = pwdEncoder.encode(inputPw);
+				pvo.setPartnerPw(pwd);
 				partnerJoinService.insertParnter(pvo);
 			}
 			
@@ -54,6 +61,9 @@ public class partnerJoinController {
 		
 		@RequestMapping("editPProfile.do")
 		public String editPProfile(@ModelAttribute partnerVO pvo) {
+			String inputPass = pvo.getPartnerPw();
+			String pwd = pwdEncoder.encode(inputPass);
+			pvo.setPartnerPw(pwd);
 			partnerJoinService.editPProfile(pvo);
 			
 			return "partner/myPpage/myPpage";

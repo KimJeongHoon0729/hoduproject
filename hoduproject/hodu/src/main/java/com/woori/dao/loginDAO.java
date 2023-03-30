@@ -7,12 +7,12 @@ import com.woori.domain.userVO;
 
 public interface loginDAO {
 	
-	public boolean logincheck(userVO vo);
-	public userVO viewUser(userVO vo);
+	public userVO logincheck(userVO vo);
+
 	public void logout(HttpSession session);
 	
-	public boolean plogincheck(partnerVO pvo);
-	public partnerVO viewPartner(partnerVO pvo);
+	public partnerVO plogincheck(partnerVO pvo);
+
 	public void plogout(HttpSession psession);
 	
 }

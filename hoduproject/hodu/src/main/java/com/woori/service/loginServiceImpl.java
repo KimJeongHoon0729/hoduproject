@@ -16,24 +16,14 @@ public class loginServiceImpl implements loginService {
 	loginDAO loginDao;
 	
 	@Override
-	public boolean logincheck(userVO vo, HttpSession session) {
+	public userVO logincheck(userVO vo, HttpSession session) {
 		// TODO Auto-generated method stub
-		boolean result = loginDao.logincheck(vo);
-		if(result) {
-			userVO vo2 = viewUser(vo);
-			session.setAttribute("userId", vo2.getUserId());
-			session.setAttribute("userName", vo2.getUserName());
-			
-			
-		}
-		return result;
+		userVO vo2 = loginDao.logincheck(vo);
+		session.setAttribute("userId", vo2.getUserId());
+		return loginDao.logincheck(vo);
 	}
 
-	@Override
-	public userVO viewUser(userVO vo) {
-		// TODO Auto-generated method stub
-		return loginDao.viewUser(vo);
-	}
+
 
 	@Override
 	public void logout(HttpSession session) {
@@ -43,23 +33,16 @@ public class loginServiceImpl implements loginService {
 	}
 	
 	@Override
-	public boolean plogincheck(partnerVO pvo, HttpSession psession) {
+	public partnerVO plogincheck(partnerVO pvo, HttpSession psession) {
 		// TODO Auto-generated method stub
-		boolean result = loginDao.plogincheck(pvo);
-		if(result) {
-			partnerVO pvo2 = viewPartner(pvo);
+		
+			partnerVO pvo2 = loginDao.plogincheck(pvo);
 			psession.setAttribute("partnerId", pvo2.getPartnerId());
-			psession.setAttribute("partnerName", pvo2.getPartnerName());
-			
-		}
-		return result;
+
+			return loginDao.plogincheck(pvo);
 	}
 
-	@Override
-	public partnerVO viewPartner(partnerVO pvo) {
-		// TODO Auto-generated method stub
-		return loginDao.viewPartner(pvo);
-	}
+
 
 	@Override
 	public void plogout(HttpSession psession) {

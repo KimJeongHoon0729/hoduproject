@@ -24,6 +24,7 @@ public class UserJoinServiceImpl implements UserJoinService {
 	}
 	@Override
 	public void editProfile(userVO vo) {
+		
 		userJoin.editProfile(vo);
 	}
 	
