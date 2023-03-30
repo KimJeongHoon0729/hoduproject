@@ -52,4 +52,10 @@ public class UserController {
 		
 		return "user/list_map";
 	}
+	@RequestMapping("user/list_pension")
+	public String list_pension() {
+
+		
+		return "user/list_pension";
+	}
 }

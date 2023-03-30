@@ -55,7 +55,7 @@
                                  alt="Free HTML5 Templates by FREEHTML5.co">
                            </figure>
                            <div>
-                              <h3 style="font-family: 'Pretendard-Regular';">${pension.pensionName }</h3>
+                              <h3 style="font-family: 'Pretendard-Regular';"><a href="user/list_pension">${pension.pensionName }</a></h3>
                               <p>${pension.score } 만족해요</p>
                               <p>${pension.region }</p>
                            </div>
