@@ -52,8 +52,18 @@
                      <input class="btn btn-primary" value="수정" type="submit">
                    </div>
             </div>
+            
          </div>
+         
          </form>
+         <div class="form-group ">
+           	<form method="post" action="uploadPProfile.do?partnerId=${partnerId }" enctype="multipart/form-data">
+
+		     사업자등록번호 : <input type="file" name="file" class="btn btn-primary"><br>
+		
+		       <input type="submit">
+		    </form>  
+         </div>
       </div>
 	
   

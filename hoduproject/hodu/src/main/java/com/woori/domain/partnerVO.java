@@ -10,6 +10,8 @@ public class partnerVO {
 	 String businessNum;
 	 String partnerMobile;
 	 String partnerEmail;
+	 String img;
+	 
 	public String getPartnerId() {
 		return partnerId;
 	}

@@ -62,13 +62,10 @@ public class CommonController {
 	
 	//파일 업로드
 	
-	@GetMapping("/uploadform")
-	public String upload() {
-		return "uploadform";
-	}
 	
-	@PostMapping("/upload")
-	public String fileUpload(@RequestParam("file") MultipartFile businessNum_img) {
+	
+	@PostMapping("uploadPProfile.do")
+	public String fileUpload(@RequestParam("file") MultipartFile businessNum_img ) {
 		String filename = "";
 		
 		if(!businessNum_img.isEmpty()) {
@@ -86,7 +83,7 @@ public class CommonController {
 			}
 			
 		}
-		return "uploadok";
+		return "partner/myPpage/editPProfile";
 	}
 	
 	
