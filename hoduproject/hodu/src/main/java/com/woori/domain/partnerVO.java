@@ -1,5 +1,7 @@
 package com.woori.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class partnerVO {
 
 	 String partnerId;
@@ -50,6 +52,7 @@ public class partnerVO {
 				+ ", businessNum=" + businessNum + ", partnerMobile=" + partnerMobile + ", partnerEmail=" + partnerEmail
 				+ "]";
 	}
+
 
 
 	 

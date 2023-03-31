@@ -13,4 +13,7 @@ public interface partnerJoinDAO {
 	public int pidCheck(partnerVO pvo);
 	
 	public void deletePProfile(String partnerId);
+	
+	// 파일 업로드
+
 }
