@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.woori.domain.partnerVO;
 import com.woori.service.PartnerJoinServiceImpl;
@@ -26,6 +27,37 @@ public class partnerJoinController {
 		
 		@Inject
 		BCryptPasswordEncoder pwdEncoder;
+		
+		//로그인
+		@RequestMapping("plogin.do")
+		public String plogin() {
+			return "login";
+		}
+		
+		@RequestMapping("plogincheck.do")
+		public ModelAndView plogincheck(@ModelAttribute partnerVO pvo, HttpSession psession) {
+			partnerVO presult = partnerJoinService.plogincheck(pvo, psession);
+			boolean PpwdMatch = pwdEncoder.matches(pvo.getPartnerPw(), presult.getPartnerPw());
+			ModelAndView mav = new ModelAndView();
+			if(presult != null && PpwdMatch == true ) { //로그인 성공
+				mav.setViewName("pindex");
+				mav.addObject("msg", "sucess");
+			
+			} else { //로그인 실패
+				mav.setViewName("login");
+				mav.addObject("msg", "fail");
+			}
+			return mav;
+		}
+		
+		@RequestMapping("plogout.do")
+		public ModelAndView plogout(HttpSession psession) {
+			partnerJoinService.plogout(psession);
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("pindex");
+			mav.addObject("msg", "logout");
+			return mav;
+		}
 		
 		@RequestMapping(value="psignin.do", method=RequestMethod.GET)  //get으로 접근
 		public String PartnerJoin(partnerVO pvo) {

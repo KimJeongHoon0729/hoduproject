@@ -14,6 +14,24 @@ public class UserJoinServiceImpl implements UserJoinService {
 	@Inject
 	UserJoinDAOImpl userJoin;
 	
+	//로그인
+	@Override
+	public userVO logincheck(userVO vo, HttpSession session) {
+		// TODO Auto-generated method stub
+		userVO vo2 = userJoin.logincheck(vo);
+		session.setAttribute("userId", vo2.getUserId());
+		return userJoin.logincheck(vo);
+	}
+
+
+
+	@Override
+	public void logout(HttpSession session) {
+		// TODO Auto-generated method stub
+		session.invalidate();
+
+	}
+	
 	@Override
 	public void insertUser(userVO vo) {
 		userJoin.insertUser(vo);

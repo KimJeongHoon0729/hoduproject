@@ -6,6 +6,10 @@ import com.woori.domain.partnerVO;
 
 public interface PartnerJoinService {
 	
+	//로그인
+	public partnerVO plogincheck(partnerVO pvo, HttpSession psession);
+	public void plogout(HttpSession psession);
+	
 	public void insertParnter(partnerVO pvo);
 	public partnerVO viewPProfile(String partnerId);
 	public void editPProfile(partnerVO pvo);

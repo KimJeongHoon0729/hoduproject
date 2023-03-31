@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,20 @@ public class partnerJoinDAOImpl implements partnerJoinDAO {
 	
 	@Inject
 	SqlSession psqlSession;
+	
+	//로그인
+	@Override
+	public partnerVO plogincheck(partnerVO pvo) {
+		
+		return psqlSession.selectOne("partner.plogin", pvo);
+	};
+
+	
+	@Override
+	public void plogout(HttpSession psession) {
+		
+	};
+
 	
 	@Override
 	public void insertPartner(partnerVO pvo) {
@@ -42,4 +57,5 @@ public class partnerJoinDAOImpl implements partnerJoinDAO {
 	public void deletePProfile(String partnerId) {
 		psqlSession.delete("partner.deletePProfile", partnerId);
 	}
+	
 }

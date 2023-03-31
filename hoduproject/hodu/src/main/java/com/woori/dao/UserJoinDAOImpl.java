@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,18 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	
 	@Inject
 	SqlSession sqlSession;
+	
+	//로그인
+	@Override
+	public userVO logincheck(userVO vo) {
+		return  sqlSession.selectOne("user.login", vo);	
+	};
+	
+
+	@Override
+	public void logout(HttpSession session) {
+		
+	};
 	
 	@Override
 	public void insertUser(userVO vo) {

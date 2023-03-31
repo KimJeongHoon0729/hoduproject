@@ -1,9 +1,14 @@
 package com.woori.dao;
 
+import javax.servlet.http.HttpSession;
+
 import com.woori.domain.partnerVO;
 
 public interface partnerJoinDAO {
 
+	//로그인
+	public partnerVO plogincheck(partnerVO pvo);
+	public void plogout(HttpSession psession);
 	
 	public void insertPartner(partnerVO pvo);
 	public partnerVO viewPProfile(String partnerId);

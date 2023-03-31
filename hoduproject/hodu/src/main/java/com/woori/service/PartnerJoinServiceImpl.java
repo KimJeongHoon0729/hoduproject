@@ -14,6 +14,26 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	@Inject
 	partnerJoinDAOImpl partnerJoin;
 	
+	//로그인
+	@Override
+	public partnerVO plogincheck(partnerVO pvo, HttpSession psession) {
+		// TODO Auto-generated method stub
+		
+			partnerVO pvo2 = partnerJoin.plogincheck(pvo);
+			psession.setAttribute("partnerId", pvo2.getPartnerId());
+
+			return partnerJoin.plogincheck(pvo);
+	}
+
+
+
+	@Override
+	public void plogout(HttpSession psession) {
+		// TODO Auto-generated method stub
+		psession.invalidate();
+
+	}
+	
 	@Override
 	public void insertParnter(partnerVO pvo) {
 		partnerJoin.insertPartner(pvo);
