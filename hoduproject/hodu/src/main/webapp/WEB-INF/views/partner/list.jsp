@@ -14,7 +14,7 @@
             <div class="row text-center fh5co-heading row-padded" >
             
                <div class="col-md-8 col-md-offset-2">
-                  <h2 class="heading to-animate">Pension Registration</h2>
+                  <h2 class="heading to-animate"  style="font-family: 'Pretendard-Regular';">Pension Registration</h2>
                </div>
             </div>
           
@@ -23,7 +23,7 @@
                 <div class="container" style="text-align:center;padding-left: 4px">
                 
                 <div class="col-md-6 col-md-offset-3">
-                  <h3>Hodu Pension Registration form</h3>
+                  <h3 style="font-family: 'Pretendard-Regular';">Hodu Pension Registration form</h3>
                   
                   <div class="form-group ">
                      <label for="partnerName" class="sr-only">partnerName</label>
@@ -52,11 +52,15 @@
                
                <div class="form-group">
                <p style="text-align : left; margin-bottom: 0px">수용 가능한 반려견 사이즈</p>
-               <p style="text-align : left; margin-bottom: 0px"> 
-                  <input type='checkbox' name='check' value='size1' />소형견 (10Kg 미만)
-                <input type='checkbox' name='check' value='size2' />중형견 (10kg~25Kg 미만)
-                  <input type='checkbox' name='check' value='size3' />대형견 (25Kg 이상)
-                   </p>
+               </div>
+               <div class="form-control" style="margin-bottom: 15px">
+               		
+               		<p style="font-size: 16px"> 
+		                <input type='checkbox' name='check' value='size1' />소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input type='checkbox' name='check' value='size2' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input type='checkbox' name='check' value='size3' /> 대형견 (25Kg 이상)
+		            </p>
+		        
                 </div>
                  
                
@@ -71,7 +75,7 @@
                   </div>
                      
                   <div class="form-group ">
-                     <input class="btn btn-primary" value="등록" type="submit">
+                     <input class="btn btn-primary" value="등록" type="submit"  style="font-family: 'Pretendard-Regular';">
                    </div>
             </div>
          </div>

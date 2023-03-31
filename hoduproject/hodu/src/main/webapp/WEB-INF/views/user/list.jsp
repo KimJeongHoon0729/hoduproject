@@ -20,7 +20,7 @@
       <div class="container">
          <div class="row text-center fh5co-heading row-padded">
             <div class="col-md-8 col-md-offset-2">
-               <h2 class="heading to-animate">List</h2>
+               <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">Pension List</h2>
                <p class="sub-heading to-animate"></p>
                </div>
                </div>

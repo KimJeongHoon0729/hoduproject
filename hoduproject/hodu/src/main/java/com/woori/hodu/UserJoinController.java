@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.woori.domain.partnerVO;
 import com.woori.domain.userVO;
 import com.woori.service.UserJoinServiceImpl;
 

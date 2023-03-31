@@ -34,8 +34,8 @@ $(document).ready(function(e) {
          		<img src="/resources/images/dog.png" height="64px" width="64px" style="margin-bottom: -50px">
          	</div>
             <div class="col-md-8 col-md-offset-2">
-               <h2 class="heading to-animate">List</h2>
-               <p class="sub-heading to-animate"></p>
+               <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">Pension List</h2>
+               <p class="sub-heading to-animate" style="font-family: 'Pretendard-Regular';">원하는 지역을 선택해주세요.</p>
             </div>
             <div>
             	<img src="/resources/list_images/지도.png" usemap="#image-map">

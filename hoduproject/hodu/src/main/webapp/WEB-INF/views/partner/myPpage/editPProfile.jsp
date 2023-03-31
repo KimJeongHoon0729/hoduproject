@@ -9,12 +9,12 @@
 	<body style="font-family: 'Pretendard-Regular';">
 	<%@ include file="../pheader.jsp" %>
 
-      <div id="fh5co-contact" data-section="reservation">
+      <div id="fh5co-contact" data-section="reservation" >
          <div class="container">
             <div class="row text-center fh5co-heading row-padded" >
             
                <div class="col-md-8 col-md-offset-2">
-                  <h2 class="heading to-animate">Update form</h2>
+                  <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">Update form</h2>
                </div>
             </div>
           
@@ -23,7 +23,7 @@
           		<div class="container" style="text-align:center;padding-left: 4px">
           		
       		    <div class="col-md-6 col-md-offset-3">
-                  <h3>Partner form</h3>
+                  <h3 style="font-family: 'Pretendard-Regular';">Partner form</h3>
                   <div class="form-group">
                      <label for="partnerId" class="sr-only">partnerId</label>
                      <input id="partnerId" name="partnerId" class="form-control" value="${partner.partnerId }"type="text" readonly>
@@ -49,21 +49,26 @@
                      <input id="partnerEmail" name="partnerEmail" class="form-control" value="${partner.partnerEmail }" type="text">
                   </div>             
                   <div class="form-group ">
-                     <input class="btn btn-primary" value="수정" type="submit">
+                     <input class="btn btn-primary" value="수정" type="submit" style="font-family: 'Pretendard-Regular';">
                    </div>
+                   
+                   
             </div>
             
          </div>
          
          </form>
-         <div class="form-group ">
-           	<form method="post" action="uploadPProfile.do?partnerId=${partnerId }" enctype="multipart/form-data">
-
-		     사업자등록번호 : <input type="file" name="file" class="btn btn-primary"><br>
-		
-		       <input type="submit">
-		    </form>  
-         </div>
+         <div class="container" style="text-align:center;padding-left: 4px;margin-bottom: 50px">
+         		<div class="col-md-6 col-md-offset-3">
+			        <div class="form-group ">
+			           	<form method="post" action="uploadPProfile.do?partnerId=${partnerId }" enctype="multipart/form-data">
+					     <p style="text-align: left; margin-bottom: 10px">사업자등록증</p>
+					     <input type="file" name="file" class="form-control" >
+					     <input type="submit" class="btn btn-primary" style="margin-top: 15px; font-family: 'Pretendard-Regular';">
+					    </form>  
+			         </div>
+			    </div>
+		</div>
       </div>
 	
   

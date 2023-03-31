@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.woori.domain.partnerVO;
 
 /**
  * Handles requests for the application home page.
@@ -62,10 +65,9 @@ public class CommonController {
 	
 	//파일 업로드
 	
-	
-	
+
 	@PostMapping("uploadPProfile.do")
-	public String fileUpload(@RequestParam("file") MultipartFile businessNum_img ) {
+	public String fileUpload(@RequestParam("file") MultipartFile businessNum_img, @RequestParam("partnerId") String partnerId, RedirectAttributes redirect ) {
 		String filename = "";
 		
 		if(!businessNum_img.isEmpty()) {
@@ -83,7 +85,8 @@ public class CommonController {
 			}
 			
 		}
-		return "partner/myPpage/editPProfile";
+		redirect.addAttribute("partnerId", partnerId);
+		return "redirect: viewPProfile.do";
 	}
 	
 	

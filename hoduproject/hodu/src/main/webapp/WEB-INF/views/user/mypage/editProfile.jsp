@@ -14,7 +14,7 @@
             <div class="row text-center fh5co-heading row-padded" >
             
                <div class="col-md-8 col-md-offset-2">
-                  <h2 class="heading to-animate">Update form</h2>
+                  <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">Update form</h2>
                </div>
             </div>
           
@@ -23,7 +23,7 @@
           		<div class="container" style="text-align:center;padding-left: 4px">
           		
       		    <div class="col-md-6 col-md-offset-3">
-                  <h3>user form</h3>
+                  <h3 style="font-family: 'Pretendard-Regular';">user form</h3>
                   <div class="form-group">
                      <label for="userId" class="sr-only">UserId</label>
                      <input id="userId" name="userId" class="form-control" value="${user.userId }"type="text" readonly>
@@ -54,7 +54,7 @@
                      <input id="userEmail" name="userEmail" class="form-control" value="${user.userEmail }" type="text">
                   </div>             
                   <div class="form-group ">
-                     <input class="btn btn-primary" value="수정" type="submit">
+                     <input class="btn btn-primary" style="font-family: 'Pretendard-Regular';" value="수정" type="submit">
                    </div>
             </div>
          </div>
