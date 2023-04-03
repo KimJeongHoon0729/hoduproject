@@ -63,7 +63,8 @@
 			        <div class="form-group ">
 			           	<form method="post" action="uploadPProfile.do?partnerId=${partnerId }" enctype="multipart/form-data">
 					     <p style="text-align: left; margin-bottom: 10px">사업자등록증</p>
-					     <input type="file" name="file" class="form-control" >
+					     <input type="file" name="file" class="form-control" onchange="readURL(this)" >
+					     <img id="preview">
 					     <input type="submit" class="btn btn-primary" style="margin-top: 15px; font-family: 'Pretendard-Regular';">
 					    </form>  
 			         </div>
@@ -75,5 +76,22 @@
 <%@ include file = "../footer.jsp" %>
 
 </div>
+
+	<script>
+	function readURL(input) {
+		  if (input.files && input.files[0]) {
+		    var reader = new FileReader();
+		    reader.onload = function(e) {
+		      document.getElementById('preview').src = e.target.result;
+		      document.getElementById('preview').style.height='300px';
+		      document.getElementById('preview').style.height='300px';
+		    };
+		    reader.readAsDataURL(input.files[0]);
+		  } else {
+		    document.getElementById('preview').src = "";
+		  }
+		}
+	</script>
+
 	</body>
 </html>
