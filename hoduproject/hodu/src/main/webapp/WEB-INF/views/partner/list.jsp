@@ -3,9 +3,21 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 
-   <head>
+  <head>
+
+    <style>
+      * {
+        font-size: 18px;
+        font-family: Pretendard-Regular;
+      }
+      textarea {
+        width: 100%;
+        height: 100px;
+      } 
+    </style>
 
    </head>
+   
    <body style="font-family: 'Pretendard-Regular';">
     <%@ include file ="pheader.jsp" %>
 
@@ -25,17 +37,7 @@
                 <div class="col-md-6 col-md-offset-3">
                   <h3 style="font-family: 'Pretendard-Regular';">Hodu Pension Registration form</h3>
                   
-                  <div class="form-group ">
-                     <label for="partnerName" class="sr-only">partnerName</label>
-                     <input id="partnerName" name="partnerName" class="form-control" placeholder="업체명" type="text">
-                  </div>
-                  
-                  <div class="form-group ">
-                     <label for="partnerMobile" class="sr-only">partnerMobile</label>
-                     <input id="partnerMobile" name="partnerMobile" class="form-control" placeholder="전화번호(ex:010-1234-1234)" type="tel">
-                  </div>
-                  
-                  <div class="form-group ">
+                 <div class="form-group ">
                      <label for="pensionName" class="sr-only">pensionName</label>
                      <input id="pensionName" name="pensionName" class="form-control" placeholder="펜션명" type="text">
                   </div>
@@ -45,20 +47,24 @@
                      <input id="address" name="address" class="form-control" placeholder="펜션 주소" type="text">
                   </div>
                   
+                  <div class="form-group ">
+                     <label for="partnerMobile" class="sr-only">partnerMobile</label>
+                     <input id="partnerMobile" name="partnerMobile" class="form-control" placeholder="전화번호(ex:010-1234-1234)" type="tel">
+                  </div>
+              
                <div class="form-group">
                <p style="text-align : left; margin-bottom: 0px">수용 가능한 반려견 사이즈</p>
                </div>
                <div class="form-control" style="margin-bottom: 15px">
                		
                		<p style="font-size: 16px"> 
-		                <input type='checkbox' name='check' value='size1' />소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input type='checkbox' name='check' value='size1' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
 		                <input type='checkbox' name='check' value='size2' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
 		                <input type='checkbox' name='check' value='size3' /> 대형견 (25Kg 이상)
 		            </p>
 		        
                 </div>
-                 
-               
+                             
                   <div class="form-group ">
                      <label for="dogNumber" class="sr-only">dogNumber</label>
                      <input id="dogNumber"  class="form-control" placeholder="수용 가능한 반려견 수" type="number">
@@ -68,17 +74,18 @@
                      <label for="userNumber" class="sr-only">userNumber</label>
                      <input id="userNumber" name="userNumber" class="form-control" placeholder="수용 가능한 인원 수" type="number">
                   </div>
-                     
-                  <div class="form-group ">
-                     <input class="btn btn-primary" value="등록" type="submit"  style="font-family: 'Pretendard-Regular';">
-                   </div>
+                  
+                 <div class="message">
+                     <textarea class="message_area form-control" rows="8" cols="50" placeholder="펜션 세부사항을 입력해주세요"></textarea>
+                </div>
+                  
             </div>
          </div>
          </form>
          <div class="col-md-6 col-md-offset-3">
 	         <div class="form-group ">
 	         <form method="post" action="${path }/multiFileUpload.do?partnerId=${partnerId }" enctype="multipart/form-data">
-				 <p style="text-align: left; margin-bottom: 10px">펜션 사진 업로드</p>
+				 <p style="text-align: left; margin-bottom: 10px"> 펜션 사진 업로드</p>
 			     <input type="file" name="multiFile" multiple class="form-control">
 	             <input class="btn btn-primary" value="제출" type="submit"  style="font-family: 'Pretendard-Regular'; margin-top: 15px; margin-left: 240px;margin-right: 240px">
 			 </form> 
