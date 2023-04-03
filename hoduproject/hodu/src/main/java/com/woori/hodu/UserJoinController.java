@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.woori.domain.partnerVO;
-import com.woori.domain.userVO;
+import com.woori.domain.PartnerVO;
+import com.woori.domain.UserVO;
 import com.woori.service.UserJoinServiceImpl;
 
 @Controller
@@ -36,8 +36,8 @@ public class UserJoinController {
 		}
 		
 		@RequestMapping("logincheck.do")
-		public ModelAndView logincheck(@ModelAttribute userVO vo, HttpSession session) {
-			userVO result = userJoinService.logincheck(vo, session);
+		public ModelAndView logincheck(@ModelAttribute UserVO vo, HttpSession session) {
+			UserVO result = userJoinService.logincheck(vo, session);
 			boolean pwdMatch = pwdEncoder.matches(vo.getUserPw(), result.getUserPw());
 			ModelAndView mav = new ModelAndView();
 			if(result != null && pwdMatch == true ) { //로그인 성공
@@ -62,7 +62,7 @@ public class UserJoinController {
 		
 		
 		@RequestMapping(value="signin.do", method=RequestMethod.GET)  //get으로 접근
-		public String userJoin(userVO vo) {
+		public String userJoin(UserVO vo) {
 			
 			
 			return "/signin";  // user/list
@@ -72,7 +72,7 @@ public class UserJoinController {
 		
 		// 회원가입 post
 		@RequestMapping(value="signin.do", method = RequestMethod.POST)
-		public String userJoin2(userVO vo) {
+		public String userJoin2(UserVO vo) {
 			int result = userJoinService.idCheck(vo);
 			if(result == 1) {
 				return "/signin";
@@ -94,7 +94,7 @@ public class UserJoinController {
 		}
 		
 		@RequestMapping("editProfile.do")
-		public String editProfile(@ModelAttribute userVO vo) {
+		public String editProfile(@ModelAttribute UserVO vo) {
 			String inputPass = vo.getUserPw();
 			String pwd = pwdEncoder.encode(inputPass);
 			vo.setUserPw(pwd);
@@ -106,7 +106,7 @@ public class UserJoinController {
 		// 아이디 중복 체크
 		@ResponseBody
 		@RequestMapping(value="/idCheck", method = RequestMethod.POST)
-		public int idCheck(userVO vo) {
+		public int idCheck(UserVO vo) {
 			int result = userJoinService.idCheck(vo);
 			return result;
 		}

@@ -2,16 +2,11 @@ package com.woori.domain;
 
 import java.util.Date;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class userVO {
+public class UserVO {
 
-	 @NotBlank
 	 String userId;
-	 @NotBlank
 	 String userPw;
 	 String userName;
 	 
@@ -19,7 +14,6 @@ public class userVO {
 	 Date userBirth;
 	 int sex;
 	 String userMobile;
-	 @Email
 	 String userEmail;
 	 int idx;
 	public String getUserId() {

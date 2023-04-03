@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.woori.domain.pensionVO;
+import com.woori.domain.PensionVO;
 
 @Repository
 public class PensionDAOImpl implements PensionDAO {
@@ -16,7 +16,7 @@ public class PensionDAOImpl implements PensionDAO {
 	private SqlSession sqlsession;
 	
 	@Override
-	public List<pensionVO> likeList(pensionVO vo) {
+	public List<PensionVO> likeList(PensionVO vo) {
 		// TODO Auto-generated method stub
 		return sqlsession.selectList("pension.likeList", vo);
 	}

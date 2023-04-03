@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="partner">
-	<select id="plogin" resultType="com.woori.domain.partnerVO">
+	<select id="plogin" resultType="com.woori.domain.PartnerVO">
 		select  
 			*  
 		from   
@@ -21,11 +21,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	</insert>
 
-	<select id="viewPProfile" resultType="com.woori.domain.partnerVO">
+	<select id="viewPProfile" resultType="com.woori.domain.PartnerVO">
 		select * from partnerjoin where partnerId=#{partnerId}
 	</select>
 	
-	<update id="editPProfile" parameterType="com.woori.domain.partnerVO">
+	<update id="editPProfile" parameterType="com.woori.domain.PartnerVO">
 		update  partnerjoin  set   
 		partnerPw=#{partnerPw},  
 		partnerName=#{partnerName},   

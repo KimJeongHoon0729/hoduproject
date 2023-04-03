@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="pension">
 	
-	<select id="likeList" resultType="com.woori.domain.pensionVO">
+	<select id="likeList" resultType="com.woori.domain.PensionVO">
 		select * from pension where region = #{region} order by score  
 	</select>
 </mapper>

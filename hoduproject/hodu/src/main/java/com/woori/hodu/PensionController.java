@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.woori.domain.pensionVO;
+import com.woori.domain.PensionVO;
 import com.woori.service.PensionService;
 
 @Controller
@@ -19,9 +19,9 @@ public class PensionController {
 	private PensionService pensionService;
 	
 	@RequestMapping("likeList.do")
-	public String likeList(pensionVO vo, Model model) {
+	public String likeList(PensionVO vo, Model model) {
 		
-		List<pensionVO> likeList = pensionService.likeList(vo);
+		List<PensionVO> likeList = pensionService.likeList(vo);
 		model.addAttribute("likeList",likeList);
 		
 		return "user/list";

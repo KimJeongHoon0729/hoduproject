@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.woori.domain.userVO;
+import com.woori.domain.UserVO;
 
 @Repository
 public class UserJoinDAOImpl implements UserJoinDAO {
@@ -19,7 +19,7 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	
 	//로그인
 	@Override
-	public userVO logincheck(userVO vo) {
+	public UserVO logincheck(UserVO vo) {
 		return  sqlSession.selectOne("user.login", vo);	
 	};
 	
@@ -30,23 +30,23 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	};
 	
 	@Override
-	public void insertUser(userVO vo) {
+	public void insertUser(UserVO vo) {
 		sqlSession.insert("user.insertUser", vo); // 여기서 joinUser는 mapper의 네임스페이스
 	}
 	
 	@Override
-	public userVO viewProfile(String userId) {
+	public UserVO viewProfile(String userId) {
 		return sqlSession.selectOne("user.viewProfile", userId);
 	}
 	
 	@Override
-	public void editProfile(userVO vo) {
+	public void editProfile(UserVO vo) {
 		sqlSession.update("user.editProfile", vo);
 	}
 	
 	// 아이디 중복체크
 	@Override
-	public int idCheck(userVO vo) {
+	public int idCheck(UserVO vo) {
 		int result = sqlSession.selectOne("user.idCheck", vo);
 		return result;
 	}

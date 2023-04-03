@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.woori.domain.partnerVO;
+import com.woori.domain.PartnerVO;
 import com.woori.service.PartnerJoinServiceImpl;
 
 @Controller
-public class partnerJoinController {
+public class PartnerJoinController {
 
-		private static final Logger logger = LoggerFactory.getLogger(partnerJoinController.class);
+		private static final Logger logger = LoggerFactory.getLogger(PartnerJoinController.class);
 		
 		@Inject
 		PartnerJoinServiceImpl partnerJoinService;
@@ -35,8 +35,8 @@ public class partnerJoinController {
 		}
 		
 		@RequestMapping("plogincheck.do")
-		public ModelAndView plogincheck(@ModelAttribute partnerVO pvo, HttpSession psession) {
-			partnerVO presult = partnerJoinService.plogincheck(pvo, psession);
+		public ModelAndView plogincheck(@ModelAttribute PartnerVO pvo, HttpSession psession) {
+			PartnerVO presult = partnerJoinService.plogincheck(pvo, psession);
 			boolean PpwdMatch = pwdEncoder.matches(pvo.getPartnerPw(), presult.getPartnerPw());
 			ModelAndView mav = new ModelAndView();
 			if(presult != null && PpwdMatch == true ) { //로그인 성공
@@ -60,7 +60,7 @@ public class partnerJoinController {
 		}
 		
 		@RequestMapping(value="psignin.do", method=RequestMethod.GET)  //get으로 접근
-		public String PartnerJoin(partnerVO pvo) {
+		public String PartnerJoin(PartnerVO pvo) {
 			
 			
 			return "redirect:/";  // user/list
@@ -70,7 +70,7 @@ public class partnerJoinController {
 		
 		// 회원가입 post
 		@RequestMapping(value="psignin.do", method = RequestMethod.POST)
-		public String partnerJoin2(partnerVO pvo) {
+		public String partnerJoin2(PartnerVO pvo) {
 			int result = partnerJoinService.pidCheck(pvo);
 			if(result == 1) {
 				return "/signin";
@@ -92,7 +92,7 @@ public class partnerJoinController {
 		}
 		
 		@RequestMapping("editPProfile.do")
-		public String editPProfile(@ModelAttribute partnerVO pvo) {
+		public String editPProfile(@ModelAttribute PartnerVO pvo) {
 			String inputPass = pvo.getPartnerPw();
 			String pwd = pwdEncoder.encode(inputPass);
 			pvo.setPartnerPw(pwd);
@@ -104,7 +104,7 @@ public class partnerJoinController {
 		// 아이디 중복 체크
 		@ResponseBody
 		@RequestMapping(value="/pidCheck", method = RequestMethod.POST)
-		public int pidCheck(partnerVO pvo) {
+		public int pidCheck(PartnerVO pvo) {
 			int result = partnerJoinService.pidCheck(pvo);
 			return result;
 		}

@@ -1,22 +1,22 @@
-package com.woori.service;
+package com.woori.dao;
 
 import javax.servlet.http.HttpSession;
 
 import com.woori.domain.PartnerVO;
 
-public interface PartnerJoinService {
-	
+public interface PartnerJoinDAO {
+
 	//로그인
-	public PartnerVO plogincheck(PartnerVO pvo, HttpSession psession);
+	public PartnerVO plogincheck(PartnerVO pvo);
 	public void plogout(HttpSession psession);
 	
-	public void insertParnter(PartnerVO pvo);
+	public void insertPartner(PartnerVO pvo);
 	public PartnerVO viewPProfile(String partnerId);
 	public void editPProfile(PartnerVO pvo);
 	
 	// 아이디 중복체크
 	public int pidCheck(PartnerVO pvo);
-	public void deletePProfile(String partnerId, HttpSession psession);
 	
+	public void deletePProfile(String partnerId);
 	
 }

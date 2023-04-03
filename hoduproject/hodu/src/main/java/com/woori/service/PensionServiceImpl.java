@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.woori.dao.PensionDAO;
-import com.woori.domain.pensionVO;
+import com.woori.domain.PensionVO;
 
 @Service
 public class PensionServiceImpl implements PensionService {
@@ -16,7 +16,7 @@ public class PensionServiceImpl implements PensionService {
 	PensionDAO pensionDao;
 	
 	@Override
-	public List<pensionVO> likeList(pensionVO vo) {
+	public List<PensionVO> likeList(PensionVO vo) {
 		// TODO Auto-generated method stub
 		return pensionDao.likeList(vo);
 	}

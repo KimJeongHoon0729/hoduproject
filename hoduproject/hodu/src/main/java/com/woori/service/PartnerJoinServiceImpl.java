@@ -5,21 +5,21 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
-import com.woori.dao.partnerJoinDAOImpl;
-import com.woori.domain.partnerVO;
+import com.woori.dao.PartnerJoinDAOImpl;
+import com.woori.domain.PartnerVO;
 
 @Service
 public class PartnerJoinServiceImpl implements PartnerJoinService {
 
 	@Inject
-	partnerJoinDAOImpl partnerJoin;
+	PartnerJoinDAOImpl partnerJoin;
 	
 	//로그인
 	@Override
-	public partnerVO plogincheck(partnerVO pvo, HttpSession psession) {
+	public PartnerVO plogincheck(PartnerVO pvo, HttpSession psession) {
 		// TODO Auto-generated method stub
 		
-			partnerVO pvo2 = partnerJoin.plogincheck(pvo);
+			PartnerVO pvo2 = partnerJoin.plogincheck(pvo);
 			psession.setAttribute("partnerId", pvo2.getPartnerId());
 
 			return partnerJoin.plogincheck(pvo);
@@ -35,22 +35,22 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	}
 	
 	@Override
-	public void insertParnter(partnerVO pvo) {
+	public void insertParnter(PartnerVO pvo) {
 		partnerJoin.insertPartner(pvo);
 		
 	}
 	@Override
-	public partnerVO viewPProfile(String partnerId) {
+	public PartnerVO viewPProfile(String partnerId) {
 		return partnerJoin.viewPProfile(partnerId);
 	}
 	@Override
-	public void editPProfile(partnerVO pvo) {
+	public void editPProfile(PartnerVO pvo) {
 		partnerJoin.editPProfile(pvo);
 	}
 	
 	// 아이디 중복체크
 	@Override
-	public int pidCheck(partnerVO pvo) {
+	public int pidCheck(PartnerVO pvo) {
 		int result = partnerJoin.pidCheck(pvo);
 		return result;
 	}

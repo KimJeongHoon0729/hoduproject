@@ -1,6 +1,6 @@
 package com.woori.domain;
 
-public class pensionVO {
+public class PensionVO {
 	
 	int idx;
 	String img;

@@ -1,8 +1,6 @@
 package com.woori.domain;
 
-import org.springframework.web.multipart.MultipartFile;
-
-public class partnerVO {
+public class PartnerVO {
 
 	 String partnerId;
 	 String partnerPw;
