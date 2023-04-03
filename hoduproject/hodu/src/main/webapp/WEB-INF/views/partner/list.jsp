@@ -46,11 +46,6 @@
                   </div>
                   
                <div class="form-group">
-                 <p style="text-align : left; margin-bottom: 0px">펜션 사진 첨부</p>
-                    <input class="form-control" id="maintenanceFile" th:field="*{file}" type="file">
-               </div>
-               
-               <div class="form-group">
                <p style="text-align : left; margin-bottom: 0px">수용 가능한 반려견 사이즈</p>
                </div>
                <div class="form-control" style="margin-bottom: 15px">
@@ -80,6 +75,15 @@
             </div>
          </div>
          </form>
+         <div class="col-md-6 col-md-offset-3">
+	         <div class="form-group ">
+	         <form method="post" action="${path }/multiFileUpload.do?partnerId=${partnerId }" enctype="multipart/form-data">
+				 <p style="text-align: left; margin-bottom: 10px">펜션 사진 업로드</p>
+			     <input type="file" name="multiFile" multiple class="form-control">
+	             <input class="btn btn-primary" value="제출" type="submit"  style="font-family: 'Pretendard-Regular'; margin-top: 15px; margin-left: 240px;margin-right: 240px">
+			 </form> 
+			 </div> 
+		 </div>
       </div>
    
   

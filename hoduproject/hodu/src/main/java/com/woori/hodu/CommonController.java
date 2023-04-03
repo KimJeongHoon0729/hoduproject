@@ -1,6 +1,7 @@
 package com.woori.hodu;
 
 import java.io.File;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -86,6 +87,37 @@ public class CommonController {
 		return "redirect: viewPProfile.do";
 	}
 	
+	//펜션 파일 업로드
+	
+	@PostMapping("multiFileUpload.do")
+	public String multiFileUpload(@RequestParam("multiFile") List<MultipartFile> multiFileList) {
+		String filename = "";
+		
+		if(!multiFileList.isEmpty()) {
+			for(int i=0;i<multiFileList.size();i++) {
+				
+			filename = multiFileList.get(i).getOriginalFilename();
+			System.out.println(multiFileList.get(i).getOriginalFilename());
+			
+			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
+					+ "\\tmp2\\wtpwebapps\\spring\\resources\\images\\";
+			
+			try {
+				new File(path).mkdirs(); 
+				multiFileList.get(i).transferTo(new File(path+filename));
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+
+			
+		
+	}
+	
+		return "redirect: /partner/list";
+	
+}
 	
 	
 }
