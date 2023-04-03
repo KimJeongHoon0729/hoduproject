@@ -81,23 +81,20 @@
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
 						<a href="/user/list_map">펜션 목록</a>
-						<a href="/user/reservation">예약</a>
-						<a href="/user/review">후기</a>
+						<a href="/user/qna" >Q&A</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="/">HODU</a>
 					</div>
 				<c:choose>
 					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
-						<div class="fh5co-menu-2">
-							<a href="/user/qna" >Q&A</a>
+						<div class="fh5co-menu-2">				
 							<a href="signin" >회원 가입</a>
 							<a href="login" >로그인</a>
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="fh5co-menu-2">
-							<a href="/user/qna" >Q&A</a>
 							<a href="/user/mypage">마이페이지</a>
 							<a href="logout.do">로그아웃</a>
 							
@@ -133,6 +130,7 @@
 		$(function () {
 	       $('#date').datetimepicker();
 	   });
+		
 	</script>
 	<!-- Main JS -->
 	<script src="/resources/js/main.js"></script>

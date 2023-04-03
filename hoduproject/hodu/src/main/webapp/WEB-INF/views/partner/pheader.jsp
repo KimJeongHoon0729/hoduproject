@@ -80,8 +80,7 @@
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
 						<a href="/partner/list">펜션 등록</a>
-						<a href="/partner/reservation">예약</a>
-						<a href="/partner/review">후기</a>
+						<a href="/partner/qna" >Q&A</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="/p">HODU</a>
@@ -89,7 +88,7 @@
 				<c:choose>
 					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
 						<div class="fh5co-menu-2">
-							<a href="/partner/qna" >Q&A</a>
+							
 							<a href="../../signin" >회원가입</a>
 							<a href="../../login" >로그인</a>
 
@@ -97,9 +96,7 @@
 					</c:when>
 					<c:otherwise>
 						<div class="fh5co-menu-2">
-							<a href="/partner/qna" >Q&A</a>
 							<a href="/partner/myPpage">마이페이지</a>
-
 							<a href="../../logout.do">로그아웃</a>
 
 							
