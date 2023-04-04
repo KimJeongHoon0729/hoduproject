@@ -14,6 +14,10 @@
         width: 100%;
         height: 100px;
       } 
+      .area select {
+   		width: 100%;
+   	    height: 55px;
+   	  }
     </style>
 
    </head>
@@ -41,10 +45,28 @@
                      <label for="pensionName" class="sr-only">pensionName</label>
                      <input id="pensionName" name="pensionName" class="form-control" placeholder="펜션명" type="text">
                   </div>
-                  
-                   <div class="form-group ">
+
+						<div class="area"> 
+							<select id="area" class="form-control">
+								<option selected disabled>지역을 선택하세요.</option>
+								<option>경기</option>
+								<option>충남</option>
+								<option>충북</option>
+								<option>전남</option>
+								<option>전북</option>
+								<option>경남</option>
+								<option>경북</option>
+								<option>강원</option>
+								<option>제주</option>
+							</select>
+							<div id="areaError" class="error"></div>
+						</div>
+
+						<p style="margin-bottom: 17px"></p>
+
+						<div class="form-group ">
                      <label for="address" class="sr-only">address</label>
-                     <input id="address" name="address" class="form-control" placeholder="펜션 주소" type="text">
+                     <input id="address" name="address" class="form-control" placeholder="펜션 상세주소를 입력해주세요" type="text">
                   </div>
                   
                   <div class="form-group ">
@@ -82,12 +104,15 @@
             </div>
          </div>
          </form>
+         <p style="margin-bottom: 14px"></p>
          <div class="col-md-6 col-md-offset-3">
-	         <div class="form-group ">
+	         <div class="form-group ">  
 	         <form method="post" action="${path }/multiFileUpload.do?partnerId=${partnerId }" enctype="multipart/form-data">
 				 <p style="text-align: left; margin-bottom: 10px"> 펜션 사진 업로드</p>
-			     <input type="file" name="multiFile" multiple class="form-control">
-	             <input class="btn btn-primary" value="제출" type="submit"  style="font-family: 'Pretendard-Regular'; margin-top: 15px; margin-left: 240px;margin-right: 240px">
+			     <p style="width: 102%">
+			     <input type="file" name="multiFile" multiple class="form-control"></p>
+	             <input class="btn btn-primary" value="제출" type="submit"  style="font-family: 'Pretendard-Regular'; 
+	             margin-top: 15px; margin-left: 240px;margin-right: 240px">
 			 </form> 
 			 </div> 
 		 </div>
