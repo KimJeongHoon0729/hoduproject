@@ -26,7 +26,7 @@
             <div class="row text-center fh5co-heading row-padded" >
             
                <div class="col-md-8 col-md-offset-2">
-                  <h2 class="heading to-animate"  style="font-family: 'Pretendard-Regular';">Pension Registration</h2>
+                  <h2 class="heading to-animate"  style="font-family: 'Pretendard-Regular';">펜션 등록</h2>
                </div>
             </div>
           
@@ -58,9 +58,9 @@
                <div class="form-control" style="margin-bottom: 15px">
                		
                		<p style="font-size: 16px"> 
-		                <input type='checkbox' name='check' value='size1' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
-		                <input type='checkbox' name='check' value='size2' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
-		                <input type='checkbox' name='check' value='size3' /> 대형견 (25Kg 이상)
+		                <input type='checkbox' name='check' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input type='checkbox' name='check' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input type='checkbox' name='check' value='대형견' /> 대형견 (25Kg 이상)
 		            </p>
 		        
                 </div>
@@ -71,8 +71,8 @@
                   </div>
                    
                    <div class="form-group ">
-                     <label for="userNumber" class="sr-only">userNumber</label>
-                     <input id="userNumber" name="userNumber" class="form-control" placeholder="수용 가능한 인원 수" type="number">
+                     <label for="peopleNumber" class="sr-only">peopleNumber</label>
+                     <input id="peopleNumber" name="peopleNumber" class="form-control" placeholder="수용 가능한 인원 수" type="number">
                   </div>
                   
                  <div class="message">

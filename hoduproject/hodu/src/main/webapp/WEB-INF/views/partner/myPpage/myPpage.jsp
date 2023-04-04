@@ -20,21 +20,28 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<div class="fh5co-event to-animate-2">
 							<h3 style="font-family: 'Pretendard-Regular';">예약 관리</h3>
 							<p></p>
 							<p><a href="myPpage/PreservationList" class="btn btn-primary btn-outline">Reservation</a></p>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
+						<div class="fh5co-event to-animate-2">
+							<h3 style="font-family: 'Pretendard-Regular';">펜션 등록</h3>
+							<p></p>
+							<p><a href="../partner/list" class="btn btn-primary btn-outline">Register</a></p>
+						</div>
+					</div>
+					<div class="col-md-3">
 						<div class="fh5co-event to-animate-2">
 							<h3 style="font-family: 'Pretendard-Regular';">파트너 정보 수정</h3>
 							<p></p>
 							<p><a href="${path }/viewPProfile.do?partnerId=${partnerId}" class="btn btn-primary btn-outline">Edit</a></p>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<div class="fh5co-event to-animate-2">
 							<h3 style="font-family: 'Pretendard-Regular';">회원 탈퇴</h3>
 							<p></p>

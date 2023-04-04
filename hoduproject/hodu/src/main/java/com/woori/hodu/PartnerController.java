@@ -51,4 +51,11 @@ public class PartnerController {
 		
 		return "partner/myPpage/editPProfile";
 	}
+	
+	@RequestMapping("partner/roomRegister")
+	public String room_regiter() {
+
+		
+		return "partner/roomRegister";
+	}
 }

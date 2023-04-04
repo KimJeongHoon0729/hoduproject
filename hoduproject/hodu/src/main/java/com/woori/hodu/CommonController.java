@@ -3,6 +3,7 @@ package com.woori.hodu;
 import java.io.File;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -67,9 +68,10 @@ public class CommonController {
 	@PostMapping("uploadPProfile.do")
 	public String fileUpload(@RequestParam("file") MultipartFile businessNum_img, @RequestParam("partnerId") String partnerId, RedirectAttributes redirect ) {
 		String filename = "";
+		String uuid= UUID.randomUUID().toString();
 		
 		if(!businessNum_img.isEmpty()) {
-			filename = businessNum_img.getOriginalFilename();
+			filename = uuid+"_"+businessNum_img.getOriginalFilename();
 			System.out.println(businessNum_img.getOriginalFilename());
 			
 			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
