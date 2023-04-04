@@ -79,7 +79,7 @@
 			<div class="fh5co-main-nav">
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="/partner/roomRegister">객실 등록</a>
+						<a href="/partner/list">펜션 등록</a>
 						<a href="/partner/qna" >Q&A</a>
 					</div>
 					<div class="fh5co-logo">

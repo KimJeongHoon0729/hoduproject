@@ -111,7 +111,7 @@
 				 <p style="text-align: left; margin-bottom: 10px"> 펜션 사진 업로드</p>
 			     <p style="width: 102%">
 			     <input type="file" name="multiFile" multiple class="form-control"></p>
-	             <input class="btn btn-primary" value="제출" type="submit"  style="font-family: 'Pretendard-Regular'; 
+	             <input class="btn btn-primary" value="다음" type="submit"  style="font-family: 'Pretendard-Regular'; 
 	             margin-top: 15px; margin-left: 240px;margin-right: 240px">
 			 </form> 
 			 </div> 

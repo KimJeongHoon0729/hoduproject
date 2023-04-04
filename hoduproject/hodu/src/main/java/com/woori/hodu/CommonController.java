@@ -117,7 +117,7 @@ public class CommonController {
 		
 	}
 	
-		return "redirect: /partner/list";
+		return "partner/roomRegister";
 	
 }
 	
