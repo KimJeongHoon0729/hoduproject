@@ -35,7 +35,7 @@
             </div>
           
 
-          <form action="editPProfile.do" method="post">
+          <form action="#" method="post">
                 <div class="container" style="text-align:center;padding-left: 4px">
                 
                 <div class="col-md-6 col-md-offset-3">

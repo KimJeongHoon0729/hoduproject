@@ -6,6 +6,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="pension">
 	
 	<select id="likeList" resultType="com.woori.domain.PensionVO">
-		select * from pension where region = #{region} order by score  
+		select * from pension where region = #{region} order by like_mean 
+	</select>
+	
+	<select id="moneyList" resultType="com.woori.domain.PensionVO">
+		select * from pension where region = #{region} order by price_mean  
 	</select>
 </mapper>

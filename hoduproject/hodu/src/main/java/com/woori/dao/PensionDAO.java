@@ -7,4 +7,5 @@ import com.woori.domain.PensionVO;
 public interface PensionDAO {
 
 	public List<PensionVO> likeList(PensionVO vo);
+	public List<PensionVO> moneyList(PensionVO vo);
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -66,7 +67,7 @@ public class CommonController {
 	
 
 	@PostMapping("uploadPProfile.do")
-	public String fileUpload(@RequestParam("file") MultipartFile businessNum_img, @RequestParam("partnerId") String partnerId, RedirectAttributes redirect ) {
+	public String fileUpload(@RequestParam("file") MultipartFile businessNum_img, @RequestParam("partnerId") String partnerId, RedirectAttributes redirect, HttpServletRequest req ) {
 		String filename = "";
 		String uuid= UUID.randomUUID().toString();
 		
@@ -74,12 +75,12 @@ public class CommonController {
 			filename = uuid+"_"+businessNum_img.getOriginalFilename();
 			System.out.println(businessNum_img.getOriginalFilename());
 			
-			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
-					+ "\\tmp2\\wtpwebapps\\spring\\resources\\images\\";
+			String path = req.getSession().getServletContext().getRealPath("/").concat("resources");
+			String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
 			
 			try {
-				new File(path).mkdirs(); 
-				businessNum_img.transferTo(new File(path+filename));
+				new File(imgUploadPath).mkdirs(); 
+				businessNum_img.transferTo(new File(imgUploadPath+filename));
 			} catch(Exception e) {
 				e.printStackTrace();
 			}

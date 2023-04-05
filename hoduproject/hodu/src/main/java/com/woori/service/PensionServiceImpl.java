@@ -21,4 +21,9 @@ public class PensionServiceImpl implements PensionService {
 		return pensionDao.likeList(vo);
 	}
 
+	@Override
+	public List<PensionVO> moneyList(PensionVO vo) {
+		// TODO Auto-generated method stub
+		return pensionDao.moneyList(vo);
+	}
 }

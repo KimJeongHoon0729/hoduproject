@@ -20,5 +20,11 @@ public class PensionDAOImpl implements PensionDAO {
 		// TODO Auto-generated method stub
 		return sqlsession.selectList("pension.likeList", vo);
 	}
+	
+	@Override
+	public List<PensionVO> moneyList(PensionVO vo) {
+		// TODO Auto-generated method stub
+		return sqlsession.selectList("pension.moneyList", vo);
+	}
 
 }

@@ -27,4 +27,12 @@ public class PensionController {
 		return "user/list";
 	}
 
+	@RequestMapping("moneyList.do")
+	public String moneyList(PensionVO vo, Model model) {
+		
+		List<PensionVO> moneyList = pensionService.moneyList(vo);
+		model.addAttribute("moneyList",moneyList);
+		
+		return "user/list";
+	}
 }

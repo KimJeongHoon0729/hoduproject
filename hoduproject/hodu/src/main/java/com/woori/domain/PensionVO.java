@@ -2,23 +2,25 @@ package com.woori.domain;
 
 public class PensionVO {
 	
-	int idx;
-	String img;
+	int P_idx;
+	String img_pension;
 	String region;
 	String pensionName;
-	int price;
-	int score;
-	public int getIdx() {
-		return idx;
+	String address;
+	String message;
+	int price_mean;
+	int like_mean;
+	public int getP_idx() {
+		return P_idx;
 	}
-	public void setIdx(int idx) {
-		this.idx = idx;
+	public void setP_idx(int p_idx) {
+		P_idx = p_idx;
 	}
-	public String getImg() {
-		return img;
+	public String getImg_pension() {
+		return img_pension;
 	}
-	public void setImg(String img) {
-		this.img = img;
+	public void setImg_pension(String img_pension) {
+		this.img_pension = img_pension;
 	}
 	public String getRegion() {
 		return region;
@@ -32,23 +34,38 @@ public class PensionVO {
 	public void setPensionName(String pensionName) {
 		this.pensionName = pensionName;
 	}
-	public int getPrice() {
-		return price;
+	public String getAddress() {
+		return address;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public int getScore() {
-		return score;
+	public String getMessage() {
+		return message;
 	}
-	public void setScore(int score) {
-		this.score = score;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public int getPrice_mean() {
+		return price_mean;
+	}
+	public void setPrice_mean(int price_mean) {
+		this.price_mean = price_mean;
+	}
+	public int getLike_mean() {
+		return like_mean;
+	}
+	public void setLike_mean(int like_mean) {
+		this.like_mean = like_mean;
 	}
 	@Override
 	public String toString() {
-		return "pensionVO [idx=" + idx + ", img=" + img + ", region=" + region + ", pensionName=" + pensionName
-				+ ", price=" + price + ", score=" + score + "]";
+		return "PensionVO [P_idx=" + P_idx + ", img_pension=" + img_pension + ", region=" + region + ", pensionName="
+				+ pensionName + ", address=" + address + ", message=" + message + ", price_mean=" + price_mean
+				+ ", like_mean=" + like_mean + "]";
 	}
+	
+	
 	
 	
 
