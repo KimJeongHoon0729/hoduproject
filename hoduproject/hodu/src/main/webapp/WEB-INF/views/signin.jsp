@@ -37,7 +37,7 @@
                   <div class="form-group">
                      <label for="userId" class="sr-only">UserId</label>
                      <input id="userId" name="userId" class="form-control" placeholder="회원 아이디" type="text">
-                  	 <button id="idCheck" name="idCheck" class="btn btn-primary" type="button" onclick="fn_idCheck();" value="N">duplicatoin check</button>
+                  	 <button id="idCheck" name="idCheck" class="btn btn-primary" type="button" onclick="fn_idCheck();" value="N" style="margin-top:20px;">duplicatoin check</button>
                   </div>
                    <div class="form-group ">
                      <label for="userPw" class="sr-only">userPw</label>
