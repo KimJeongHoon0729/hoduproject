@@ -15,15 +15,15 @@
             <div class="row text-center fh5co-heading row-padded">
             
                <div class="col-md-8 col-md-offset-2">
-                  <h2 class="heading to-animate">LogIn</h2>
+                  <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">LogIn</h2>
                </div>
             </div>
            </div>
             <div class="form-wrap">
                 <div class="button-wrap">
                     <div id="btn"></div>
-                    <button type="button" class="togglebtn" onclick="login()" style="margin-left: 8.4">회원</button>
-                    <button type="button" class="togglebtn" onclick="register()" style="margin-left: 18">파트너</button>
+                    <button type="button" class="togglebtn" onclick="login()" style="margin-left: 8.4 ;font-family: 'Pretendard-Regular';">회원</button>
+                    <button type="button" class="togglebtn" onclick="register()" style="margin-left: 18;font-family: 'Pretendard-Regular';">파트너</button>
                 </div>
                 <form id="login" action="logincheck.do" class="input-group">
                     <input type="text" id="userId" name="userId" class="input-field" placeholder="User name or Email" required>
