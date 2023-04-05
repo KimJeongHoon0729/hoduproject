@@ -12,10 +12,9 @@ public class UserVO {
 	 
 	 @DateTimeFormat(pattern = "yyyy-MM-dd")
 	 Date userBirth;
-	 int sex;
+	 String sex;
 	 String userMobile;
 	 String userEmail;
-	 int idx;
 	public String getUserId() {
 		return userId;
 	}
@@ -40,10 +39,10 @@ public class UserVO {
 	public void setUserBirth(Date userBirth) {
 		this.userBirth = userBirth;
 	}
-	public int getSex() {
+	public String getSex() {
 		return sex;
 	}
-	public void setSex(int sex) {
+	public void setSex(String sex) {
 		this.sex = sex;
 	}
 	public String getUserMobile() {
@@ -58,17 +57,12 @@ public class UserVO {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-	public int getIdx() {
-		return idx;
-	}
-	public void setIdx(int idx) {
-		this.idx = idx;
-	}
 	@Override
 	public String toString() {
-		return "userVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userBirth=" + userBirth
-				+ ", sex=" + sex + ", userMobile=" + userMobile + ", userEmail=" + userEmail + ", idx=" + idx + "]";
+		return "UserVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userBirth=" + userBirth
+				+ ", sex=" + sex + ", userMobile=" + userMobile + ", userEmail=" + userEmail + "]";
 	}
 	
+	 
 	
 }
