@@ -55,7 +55,7 @@
                         </div>
                      </div>
                      <div class="fh5co-h-row-2 to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/hodu4.jpg)"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/hodu8.jpg)"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-left">
                            <h2 style="font-family: 'Pretendard-Regular';">수용가능한 인원수</h2>
                            <span class="pricing">$8.50</span>
