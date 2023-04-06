@@ -63,15 +63,22 @@
 				<a href="/user/qna_form" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
 				<br></br>
 				
+				<form id="moveForm" method="get">
+				<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+        		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">   
+				</form>
+				
 				<div class="text-center">
 					<ul class="pagination">
-						<li><a href="#" style="color:#5e493a">이전</a></li>
-						<li><a href="#" style="color:#5e493a">1</a></li>
-						<li><a href="#" style="color:#5e493a">2</a></li>
-						<li><a href="#" style="color:#5e493a">3</a></li>
-						<li><a href="#" style="color:#5e493a">4</a></li>
-						<li><a href="#" style="color:#5e493a">5</a></li>
-						<li><a href="#" style="color:#5e493a">다음</a></li>
+						<c:if test="${pageMaker.prev }">
+						<li><a href="${path }/QList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+						</c:if>
+						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+						<li><a href="${path }/QList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+						</c:forEach>
+						<c:if test="${pageMaker.next }">
+						<li><a href="${path }/QList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+						</c:if>
 					</ul>
 				</div>
 			</div>

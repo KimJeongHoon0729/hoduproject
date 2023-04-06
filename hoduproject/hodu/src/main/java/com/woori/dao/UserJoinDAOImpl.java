@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.woori.domain.Criteria;
 import com.woori.domain.QuestionVO;
 import com.woori.domain.UserVO;
 
@@ -59,8 +60,15 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	}
 	
 	//Q 리스트 출력
-
-	public List<QuestionVO> QList(QuestionVO qvo){
-		return sqlSession.selectList("user.question", qvo);
+	@Override
+	public List<QuestionVO> QList(Criteria cri){
+		return sqlSession.selectList("user.question", cri);
+		
+	}
+	
+	//Q 게시판 개수
+	@Override
+	public int getTotal() {
+		return sqlSession.selectOne("user.getTotal");
 	}
 }

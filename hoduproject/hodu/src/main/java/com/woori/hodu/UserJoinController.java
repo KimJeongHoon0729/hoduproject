@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.woori.domain.Criteria;
+import com.woori.domain.PageMakerVO;
 import com.woori.domain.PartnerVO;
 import com.woori.domain.PensionVO;
 import com.woori.domain.QuestionVO;
@@ -125,13 +127,21 @@ public class UserJoinController {
 		//q리스트 출력
 		
 		@RequestMapping("QList.do")
-		public String QList(QuestionVO qvo, Model qmodel) {
+		public String QList(Criteria cri, Model qmodel) {
 			
-			List<QuestionVO> QList = userJoinService.QList(qvo);
+			List<QuestionVO> QList = userJoinService.QList(cri);
 			qmodel.addAttribute("QList",QList);
+			
+			int total = userJoinService.getTotal();
+			
+			PageMakerVO pageMaker = new PageMakerVO(cri, total);
+			
+			qmodel.addAttribute("pageMaker", pageMaker);
 			
 			return "user/qna_list";
 		}
+		
+		
 }
 
 

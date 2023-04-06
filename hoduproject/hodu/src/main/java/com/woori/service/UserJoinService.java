@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-
+import com.woori.domain.Criteria;
 import com.woori.domain.QuestionVO;
 import com.woori.domain.UserVO;
 
@@ -23,5 +23,6 @@ public interface UserJoinService {
 	public void deleteProfile(String userId, HttpSession session);
 	
 	//Q 리스트 출력
-	public List<QuestionVO> QList(QuestionVO qvo);
+	public List<QuestionVO> QList(Criteria cri);
+	public int getTotal();
 }
