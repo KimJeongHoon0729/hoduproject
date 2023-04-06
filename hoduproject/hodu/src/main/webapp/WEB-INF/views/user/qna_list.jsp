@@ -60,7 +60,7 @@
 					</tbody>
 				</table>
 				<hr/>
-				<a href="qna_form" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
+				<a href="/user/qna_form" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
 				<br></br>
 				
 				<div class="text-center">
