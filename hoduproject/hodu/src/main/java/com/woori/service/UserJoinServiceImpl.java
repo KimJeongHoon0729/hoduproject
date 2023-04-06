@@ -1,11 +1,15 @@
 package com.woori.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
 import com.woori.dao.UserJoinDAOImpl;
+import com.woori.domain.PensionVO;
+import com.woori.domain.QuestionVO;
 import com.woori.domain.UserVO;
 
 @Service
@@ -59,4 +63,9 @@ public class UserJoinServiceImpl implements UserJoinService {
 		session.invalidate();
 	}
 
+	//Q 리스트 출력
+	public List<QuestionVO> QList(QuestionVO qvo) {
+		// TODO Auto-generated method stub
+		return userJoin.QList(qvo);
+	}
 }

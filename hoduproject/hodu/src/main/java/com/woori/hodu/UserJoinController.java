@@ -1,5 +1,7 @@
 package com.woori.hodu;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.woori.domain.PartnerVO;
+import com.woori.domain.PensionVO;
+import com.woori.domain.QuestionVO;
 import com.woori.domain.UserVO;
 import com.woori.service.UserJoinServiceImpl;
 
@@ -116,6 +120,17 @@ public class UserJoinController {
 			userJoinService.deleteProfile(userId, session);
 			
 			return "redirect:/";
+		}
+		
+		//q리스트 출력
+		
+		@RequestMapping("QList.do")
+		public String QList(QuestionVO qvo, Model qmodel) {
+			
+			List<QuestionVO> QList = userJoinService.QList(qvo);
+			qmodel.addAttribute("QList",QList);
+			
+			return "user/qna_list";
 		}
 }
 

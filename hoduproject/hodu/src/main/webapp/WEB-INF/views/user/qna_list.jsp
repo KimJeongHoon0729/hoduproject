@@ -22,7 +22,7 @@
 					<p style="margin-bottom: 80px"></p>
 					   
 					   <!-- 검색 폼 영역 -->
-					<form name="searchForm" action="" method="get">
+					<form name="searchForm" action="#" method="get">
 						<p style= "font-size: 18px; margin-left: -45px"">
 							<select name="searchType" style="width: 100px; height: 40px;">
 								<option value="ALL">전체검색</option>
@@ -48,14 +48,13 @@
 							<th>날짜</th>
 							<th>답변완료</th>
 						</tr>
-					 <c:forEach var="question_list" items="${QList }">
+					 <c:forEach var="question" items="${QList }">
 						<tr>
-							<td data-th="Supplier Code">${question_list.Q_idx }</td>
-							<td data-th="Supplier Name">${question_list.Q_title }</td>
-							<td data-th="Invoice Number">${question_list.userId }</td>
-							<td data-th="Invoice Date"><fmt:formatDate value="${question_list.Q_date }" pattern="yyyy-MM-dd"/></td>
+							<td data-th="Supplier Code">${question.q_idx }</td>
+							<td data-th="Supplier Name">${question.q_title }</td>
+							<td data-th="Invoice Number">${question.userId }</td>
+							<td data-th="Invoice Date"><fmt:formatDate value="${question.q_date }" pattern="yyyy-MM-dd"/></td>
 							<td data-th="Due Date">완료</td>
-
 						</tr>
 					</c:forEach>
 					</tbody>

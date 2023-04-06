@@ -1,7 +1,11 @@
 package com.woori.dao;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
+import com.woori.domain.PensionVO;
+import com.woori.domain.QuestionVO;
 import com.woori.domain.UserVO;
 
 public interface UserJoinDAO {
@@ -16,6 +20,8 @@ public interface UserJoinDAO {
 	
 	// 아이디 중복체크
 	public int idCheck(UserVO vo);
-	
 	public void deleteProfile(String userId);
+	
+	//Q 리스트 출력
+	public List<QuestionVO> QList(QuestionVO qvo);
 }
