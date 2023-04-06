@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,58 +40,28 @@
 			<div class="container" style="width: 70%;">
 				<table class="table table-hover">
 					<tbody style="font-family: 'Pretendard-Regular';">
-
+					
 						<tr>
 							<th>번호</th>
 							<th>제목</th>
 							<th>작성자</th>
 							<th>날짜</th>
-							<th>조회수</th>
+							<th>답변완료</th>
 						</tr>
-
+					 <c:forEach var="question_list" items="${QList }">
 						<tr>
-							<td data-th="Supplier Code">1</td>
-							<td data-th="Supplier Name">UPS</td>
-							<td data-th="Invoice Number">ASDF19218</td>
-							<td data-th="Invoice Date">2023/04/05</td>
-							<td data-th="Due Date">10</td>
-
-						</tr>
-						<tr>
-							<td data-th="Supplier Code">2</td>
-							<td data-th="Supplier Name">UPS South Inc.</td>
-							<td data-th="Invoice Number">ASDF29301</td>
-							<td data-th="Invoice Date">2023/04/05</td>
-							<td data-th="Due Date">20</td>
+							<td data-th="Supplier Code">${question_list.Q_idx }</td>
+							<td data-th="Supplier Name">${question_list.Q_title }</td>
+							<td data-th="Invoice Number">${question_list.userId }</td>
+							<td data-th="Invoice Date"><fmt:formatDate value="${question_list.Q_date }" pattern="yyyy-MM-dd"/></td>
+							<td data-th="Due Date">완료</td>
 
 						</tr>
-						<tr>
-							<td data-th="Supplier Code">3</td>
-							<td data-th="Supplier Name">BOX Pro West</td>
-							<td data-th="Invoice Number">ASDF43000</td>
-							<td data-th="Invoice Date">2023/04/05</td>
-							<td data-th="Due Date">5</td>
-
-						</tr>
-						<tr>
-							<td data-th="Supplier Code">4</td>
-							<td data-th="Supplier Name">Pan Providers and Co.</td>
-							<td data-th="Invoice Number">ASDF33433</td>
-							<td data-th="Invoice Date">2023/04/05</td>
-							<td data-th="Due Date">4</td>
-						</tr>
-						<tr>
-							<td data-th="Supplier Code">5</td>
-							<td data-th="Supplier Name">Pan Providers and Co.</td>
-							<td data-th="Invoice Number">ASDF33433</td>
-							<td data-th="Invoice Date">2023/04/05</td>
-							<td data-th="Due Date">4</td>
-						</tr>
-						
+					</c:forEach>
 					</tbody>
 				</table>
 				<hr/>
-				<a class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
+				<a href="qna_form" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
 				<br></br>
 				
 				<div class="text-center">

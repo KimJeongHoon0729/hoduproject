@@ -20,12 +20,20 @@ public class UserController {
 		return "user/review";
 	}
 	
-	@RequestMapping("user/qna")
-	public String qna() {
+	@RequestMapping("user/qna_list")
+	public String qna_list() {
 
 		
-		return "user/qna";
+		return "user/qna_list";
 	}
+	
+	@RequestMapping("user/qna_form")
+	public String qna_form() {
+
+		
+		return "user/qna_form";
+	}
+	
 	
 	@RequestMapping("user/mypage")
 	public String mypage() {

@@ -81,7 +81,7 @@
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
 						<a href="/user/list_map">펜션 목록</a>
-						<a href="/user/qna" >Q&A</a>
+						<a href="/user/qna_list" >Q&A</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="/">HODU</a>
