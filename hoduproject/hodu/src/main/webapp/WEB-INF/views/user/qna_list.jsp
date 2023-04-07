@@ -157,7 +157,7 @@
 				<hr/>
 				<a href="/user/qna_form" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
 				<br></br>
-				
+
 				<form id="moveForm" method="get">
 				<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
         		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">   
@@ -190,6 +190,8 @@
     </div>
     <div class="m_body">
       <div class="modal_label">비밀번호</div>
+      <input type="hidden" name="pageNum" value="1"/>
+      <input type="hidden" name="amount" value="10"/>
       <input type="hidden" name="Q_idx" class="input_box" id="Q_idx"/>
       <input type="password" name="Q_pw" class="input_box" id="des_box"/>
     </div>
@@ -238,6 +240,16 @@
 	       
 
 	 });
+	 
+	 const urlParams = new URL(location.href).searchParams;
+	 const msg = urlParams.get('msg');
+	 if(msg=='fail'){
+		 alert("비밀번호가 틀렸습니다.");
+         history.back();
+	 }
+	 
+	
+
 
 </script>
 

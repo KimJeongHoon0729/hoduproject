@@ -37,13 +37,13 @@ public class PartnerJoinController {
 		@RequestMapping("plogincheck.do")
 		public ModelAndView plogincheck(@ModelAttribute PartnerVO pvo, HttpSession psession) {
 			PartnerVO presult = partnerJoinService.plogincheck(pvo, psession);
-			boolean PpwdMatch = pwdEncoder.matches(pvo.getPartnerPw(), presult.getPartnerPw());
 			ModelAndView mav = new ModelAndView();
-			if(presult != null && PpwdMatch == true ) { //로그인 성공
+			if(presult != null) {
+				boolean PpwdMatch = pwdEncoder.matches(pvo.getPartnerPw(), presult.getPartnerPw());
+				if(PpwdMatch == true){//로그인 성공
 				mav.setViewName("pindex");
 				mav.addObject("msg", "sucess");
-			
-			} else { //로그인 실패
+				}} else { //로그인 실패
 				mav.setViewName("login");
 				mav.addObject("msg", "fail");
 			}

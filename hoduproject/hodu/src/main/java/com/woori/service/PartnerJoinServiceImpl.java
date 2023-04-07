@@ -18,11 +18,9 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	@Override
 	public PartnerVO plogincheck(PartnerVO pvo, HttpSession psession) {
 		// TODO Auto-generated method stub
-		
-			PartnerVO pvo2 = partnerJoin.plogincheck(pvo);
-			psession.setAttribute("partnerId", pvo2.getPartnerId());
 
-			return partnerJoin.plogincheck(pvo);
+		psession.setAttribute("partnerId", pvo.getPartnerId());
+		return partnerJoin.plogincheck(pvo);
 	}
 
 

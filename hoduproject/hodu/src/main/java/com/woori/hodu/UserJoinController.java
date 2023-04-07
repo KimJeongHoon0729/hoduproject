@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -45,13 +46,15 @@ public class UserJoinController {
 		@RequestMapping("logincheck.do")
 		public ModelAndView logincheck(@ModelAttribute UserVO vo, HttpSession session) {
 			UserVO result = userJoinService.logincheck(vo, session);
-			boolean pwdMatch = pwdEncoder.matches(vo.getUserPw(), result.getUserPw());
+			
 			ModelAndView mav = new ModelAndView();
-			if(result != null && pwdMatch == true ) { //로그인 성공
+			if(result != null) {
+				boolean pwdMatch = pwdEncoder.matches(vo.getUserPw(), result.getUserPw());
+				if(pwdMatch == true ) { //로그인 성공
 				mav.setViewName("index");
 				mav.addObject("msg", "sucess");
 			
-			} else { //로그인 실패
+			}} else { //로그인 실패
 				mav.setViewName("login");
 				mav.addObject("msg", "fail");
 			}
@@ -144,7 +147,7 @@ public class UserJoinController {
 		
 		//Q 비밀번호
 		@RequestMapping("Q_pwCheck.do")
-		public ModelAndView Q_pwCheck(@ModelAttribute QuestionVO qvo, HttpSession qsession, RedirectAttributes redirect) {
+		public ModelAndView Q_pwCheck(@ModelAttribute QuestionVO qvo, @RequestParam("pageNum") int pageNum, @RequestParam("amount") int amount, HttpSession qsession, RedirectAttributes redirect) {
 			QuestionVO result = userJoinService.Q_pwCheck(qvo, qsession);
 			
 			ModelAndView mav = new ModelAndView();
@@ -154,13 +157,14 @@ public class UserJoinController {
 				mav.addObject("msg", "sucess");
 				
 			} else { //로그인 실패
-				redirect.addAttribute("pageNum", 1);
-				redirect.addAttribute("amount", 10);
+				redirect.addAttribute("pageNum", pageNum);
+				redirect.addAttribute("amount", amount);
 				mav.setViewName("redirect: QList.do");
 				mav.addObject("msg", "fail");
 			}
 			return mav;
 		}
+		
 		
 		
 }

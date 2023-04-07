@@ -23,8 +23,8 @@ public class UserJoinServiceImpl implements UserJoinService {
 	@Override
 	public UserVO logincheck(UserVO vo, HttpSession session) {
 		// TODO Auto-generated method stub
-		UserVO vo2 = userJoin.logincheck(vo);
-		session.setAttribute("userId", vo2.getUserId());
+
+		session.setAttribute("userId", vo.getUserId());
 		return userJoin.logincheck(vo);
 	}
 
@@ -77,9 +77,8 @@ public class UserJoinServiceImpl implements UserJoinService {
 	}
 	//Q 비밀번호
 		public QuestionVO Q_pwCheck(QuestionVO qvo, HttpSession qsession) {
-			QuestionVO qvo2 = userJoin.Q_pwCheck(qvo);
-			qsession.setAttribute("Q_pw", qvo2.getQ_pw());
-			qsession.setAttribute("Q_idx", qvo2.getQ_idx());
-			return userJoin.Q_pwCheck(qvo2);
+			
+			qsession.setAttribute("Q_idx", qvo.getQ_idx());
+			return userJoin.Q_pwCheck(qvo);
 		}
 }
