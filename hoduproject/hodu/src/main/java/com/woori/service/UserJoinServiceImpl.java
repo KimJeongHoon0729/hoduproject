@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 
 import com.woori.dao.UserJoinDAOImpl;
+import com.woori.domain.Criteria;
 import com.woori.domain.PensionVO;
 import com.woori.domain.QuestionVO;
 import com.woori.domain.UserVO;
@@ -64,8 +65,14 @@ public class UserJoinServiceImpl implements UserJoinService {
 	}
 
 	//Q 리스트 출력
-	public List<QuestionVO> QList(QuestionVO qvo) {
+	@Override
+	public List<QuestionVO> QList(Criteria cri) {
 		// TODO Auto-generated method stub
-		return userJoin.QList(qvo);
+		return userJoin.QList(cri);
+	}
+	
+	//Q 게시판 개수
+	public int getTotal() {
+		return userJoin.getTotal();
 	}
 }
