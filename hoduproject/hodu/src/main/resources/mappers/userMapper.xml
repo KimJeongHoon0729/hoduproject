@@ -62,4 +62,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getTotal" resultType="int">
 		select count(*) from question  
 	</select>
+	
+	<!-- 게시물 비밀번호 -->
+		<select id="Q_pwCheck" resultType="com.woori.domain.QuestionVO">
+		select  
+			*   
+		from   
+			question   
+		where Q_idx = #{Q_idx} and Q_pw = #{Q_pw}     
+	</select>
 </mapper>

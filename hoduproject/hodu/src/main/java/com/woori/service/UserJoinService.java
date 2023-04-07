@@ -25,4 +25,7 @@ public interface UserJoinService {
 	//Q 리스트 출력
 	public List<QuestionVO> QList(Criteria cri);
 	public int getTotal();
+	
+	//Q 비밀번호
+	public QuestionVO Q_pwCheck(QuestionVO qvo, HttpSession qsession); 
 }

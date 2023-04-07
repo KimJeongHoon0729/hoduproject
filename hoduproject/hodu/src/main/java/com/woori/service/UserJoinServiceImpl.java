@@ -75,4 +75,11 @@ public class UserJoinServiceImpl implements UserJoinService {
 	public int getTotal() {
 		return userJoin.getTotal();
 	}
+	//Q 비밀번호
+		public QuestionVO Q_pwCheck(QuestionVO qvo, HttpSession qsession) {
+			QuestionVO qvo2 = userJoin.Q_pwCheck(qvo);
+			qsession.setAttribute("Q_pw", qvo2.getQ_pw());
+			qsession.setAttribute("Q_idx", qvo2.getQ_idx());
+			return userJoin.Q_pwCheck(qvo2);
+		}
 }

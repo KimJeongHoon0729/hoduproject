@@ -71,4 +71,10 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	public int getTotal() {
 		return sqlSession.selectOne("user.getTotal");
 	}
+	
+	//Q 비밀번호
+	@Override
+	public QuestionVO Q_pwCheck(QuestionVO qvo) {
+		return sqlSession.selectOne("user.Q_pwCheck", qvo);
+	}
 }

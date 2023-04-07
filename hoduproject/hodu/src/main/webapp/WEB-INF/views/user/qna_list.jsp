@@ -10,7 +10,99 @@
 <title>Insert title here</title>
 </head>
 
+  <style>
+      .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
 
+        width: 100%;
+        height: 100%;
+
+        display: none;
+
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal.show {
+        display: block;
+      }
+
+      .modal_body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: 350px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .m_head{
+        height: 10%;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        background-color:#e7e5e5;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      .m_body{
+        height: 80%;
+        padding: 20px;
+      }
+      .m_footer{
+        height: 10%;
+        padding: 20px;
+        background-color:#e7e5e5;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        justify-content: end;
+      }
+      .modal_title{
+        font-size: 18px;
+        color: gray;
+        font-weight: 500;
+        align-self: center;
+      }
+      .close_btn{
+        font-size: 20px;
+        color: rgb(139, 139, 139);
+        font-weight: 900;
+        cursor: pointer;
+        align-self: center;
+      }
+      .modal_label{
+        padding-top: 10px;
+      }
+      .input_box{
+        width: 100%;
+        border: 1px solid rgb(189, 189, 189);
+        height: 30px;
+      }
+      .modal_btn{
+        width: 80px;
+        height: 35px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bolder;
+        padding-top: 5px;
+        margin-left: 5px;
+        font-family: 'Pretendard-Regular';
+        align-self: center;
+      }
+      .cancle{
+        background-color: white;
+        color: black;
+      }
+      .save{
+        background-color: #fb6e14;
+        color: white;
+      }
+    </style>
 
 <body style="font-family: 'Pretendard-Regular';">
 
@@ -26,7 +118,7 @@
 					   
 					   <!-- 검색 폼 영역 -->
 					<form name="searchForm" action="#" method="get">
-						<p style= "font-size: 18px; margin-left: -45px"">
+						<p style= "font-size: 18px; margin-left: -45px">
 							<select name="searchType" style="width: 100px; height: 40px;">
 								<option value="ALL">전체검색</option>
 								<option value="SUBJECT">제목</option>
@@ -41,7 +133,7 @@
 			</div>
 			<p style="margin-bottom: -30px"></p>
 			<div class="container" style="width: 70%;">
-				<table class="table table-hover">
+				<table class="table table-hover" id="modalTable">
 					<tbody style="font-family: 'Pretendard-Regular';">
 					
 						<tr>
@@ -51,10 +143,10 @@
 							<th>날짜</th>
 							<th>답변완료</th>
 						</tr>
-					 <c:forEach var="question" items="${QList }">
-						<tr>
+					 <c:forEach var="question" items="${QList }" >
+						<tr id="add-btn" data-value="${question.q_idx }">
 							<td data-th="Supplier Code">${question.q_idx }</td>
-							<td data-th="Supplier Name"><a href="/user/q_content?userId=${question.q_idx }">${question.q_title }</a></td>
+							<td data-th="Supplier Name">${question.q_title }</td>
 							<td data-th="Invoice Number">${question.userId }</td>
 							<td data-th="Invoice Date"><fmt:formatDate value="${question.q_date }" pattern="yyyy-MM-dd"/></td>
 							<td data-th="Due Date">완료</td>
@@ -87,8 +179,67 @@
 			</div>
 		</div>
 </div>
-<%@ include file="footer.jsp" %>
 
+<!-- 모달 -->
+<div class="modal" id="modal">
+<form action="Q_pwCheck.do" id="frm">
+  <div class="modal_body">
+    <div class="m_head">
+      <div class="modal_title">게시글 비밀번호를 작성해주세요.</div>
+      <div class="close_btn" id="close_btn">X</div>
+    </div>
+    <div class="m_body">
+      <div class="modal_label">비밀번호</div>
+      <input type="hidden" name="Q_idx" class="input_box" id="Q_idx"/>
+      <input type="password" name="Q_pw" class="input_box" id="des_box"/>
+    </div>
+    <div class="m_footer">
+      <div class="modal_btn cancle" id="close_btn">취소</div>
+      <div class="modal_btn save" id="save_btn">제출</div>
+    </div>
+  </div>
+  </form>
+</div>
+<!-- 모달 -->
+<%@ include file="footer.jsp" %>
+<script type="text/javascript">
+	//click on 라벨 추가 모달 열기
+	$(document).on('click', '#add-btn', function (e) {
+		 console.log(idx);
+	  $('#modal').addClass('show');
+	});
+	
+	// 모달 닫기
+	$(document).on('click', '#close_btn', function (e) {
+		$('#modal').removeClass('show');
+
+});
+	// 제출
+	$(document).on('click', '#save_btn', function (e) {
+		 document.getElementById("Q_idx").value = idx; 
+		 document.getElementById('frm').submit();
+
+});
+	 $("#modalTable tr").click(function(){     
+		 
+	        var str = ""
+	        var tdArr = new Array();    // 배열 선언
+	            
+	        // 현재 클릭된 Row(<tr>)
+	        var tr = $(this);
+	        var td = tr.children();
+	        
+	        // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
+	        console.log("클릭한 Row의 모든 데이터 : "+tr.text());
+	                
+	   
+	        // td.eq(index)를 통해 값을 가져올 수도 있다.
+	        idx = td.eq(0).text();
+	       
+
+	 });
+
+</script>
 
 </body>
 

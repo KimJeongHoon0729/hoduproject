@@ -27,4 +27,6 @@ public interface UserJoinDAO {
 	public List<QuestionVO> QList(Criteria cri);
 	//Q 게시판 개수
 	public int getTotal();
+	//Q 비밀번호
+	public QuestionVO Q_pwCheck(QuestionVO qvo); 
 }

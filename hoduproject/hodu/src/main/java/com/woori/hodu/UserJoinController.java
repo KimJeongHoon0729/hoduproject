@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.woori.domain.Criteria;
 import com.woori.domain.PageMakerVO;
@@ -139,6 +140,26 @@ public class UserJoinController {
 			qmodel.addAttribute("pageMaker", pageMaker);
 			
 			return "user/qna_list";
+		}
+		
+		//Q 비밀번호
+		@RequestMapping("Q_pwCheck.do")
+		public ModelAndView Q_pwCheck(@ModelAttribute QuestionVO qvo, HttpSession qsession, RedirectAttributes redirect) {
+			QuestionVO result = userJoinService.Q_pwCheck(qvo, qsession);
+			
+			ModelAndView mav = new ModelAndView();
+			if(result != null) { //로그인 성공
+				redirect.addAttribute("Q_idx", qvo.getQ_idx());
+				mav.setViewName("/user/q_content");
+				mav.addObject("msg", "sucess");
+				
+			} else { //로그인 실패
+				redirect.addAttribute("pageNum", 1);
+				redirect.addAttribute("amount", 10);
+				mav.setViewName("redirect: QList.do");
+				mav.addObject("msg", "fail");
+			}
+			return mav;
 		}
 		
 		
