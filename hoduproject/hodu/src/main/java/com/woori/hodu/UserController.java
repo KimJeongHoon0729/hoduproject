@@ -66,4 +66,11 @@ public class UserController {
 		
 		return "user/list_pension";
 	}
+	
+	@RequestMapping("user/q_content")
+	public String q_content() {
+
+		
+		return "user/q_content";
+	}
 }

@@ -9,6 +9,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+
+
 <body style="font-family: 'Pretendard-Regular';">
 
 <%@ include file="header.jsp" %>
@@ -51,7 +54,7 @@
 					 <c:forEach var="question" items="${QList }">
 						<tr>
 							<td data-th="Supplier Code">${question.q_idx }</td>
-							<td data-th="Supplier Name">${question.q_title }</td>
+							<td data-th="Supplier Name"><a href="/user/q_content?userId=${question.q_idx }">${question.q_title }</a></td>
 							<td data-th="Invoice Number">${question.userId }</td>
 							<td data-th="Invoice Date"><fmt:formatDate value="${question.q_date }" pattern="yyyy-MM-dd"/></td>
 							<td data-th="Due Date">완료</td>
@@ -85,6 +88,8 @@
 		</div>
 </div>
 <%@ include file="footer.jsp" %>
+
+
 </body>
 
 </html>
