@@ -57,8 +57,8 @@
                            </figure>
                            <div>
                               <h3 style="font-family: 'Pretendard-Regular';"><a href="user/list_pension">${pension_like.pensionName }</a></h3>
-                              <p>${pension_like.like_mean }</p>
-                              <p>${pension_like.region }</p>
+                              <p>${pension_like.like_mean } 좋아요</p>
+                              <p>${pension_like.address }</p>
                            </div>
                         </div>
                         <div class="fh5co-food-pricing"><fmt:formatNumber value="${pension_like.price_mean}" pattern="###,###"/> 원</div>
@@ -84,7 +84,7 @@
                            </figure>
                            <div>
                               <h3 style="font-family: 'Pretendard-Regular';"><a href="user/list_pension">${pension_money.pensionName }</a></h3>
-                              <p>${pension_money.like_mean } 만족해요</p>
+                              <p>${pension_money.like_mean } 좋아요</p>
                               <p>${pension_money.address }</p>
                            </div>
                         </div>
