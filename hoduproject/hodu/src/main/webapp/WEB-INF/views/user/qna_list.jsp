@@ -142,7 +142,7 @@
 				                <option value="TW" <c:out value="${pageMaker.cri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
 				                <option value="TCW" <c:out value="${pageMaker.cri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
 				            </select>    
-				            <input type="text" name="keyword" value="${pageMaker.cri.keyword }">
+				            <input type="text" name="keyword" >
 				            <button>Search</button>
 				        </div>
 				    </div>    
@@ -271,31 +271,31 @@
          history.back();
 	 }
 	 
-	 
+	    let moveForm = $("#moveForm");
 	 //버튼 클릭
-	 $(".search_area button").on("click", function(e){
-	 	 e.preventDefault();
-	    
-	 	let moveForm = document.getElementById("moveForm");
-	    let type = $(".search_area select").val();
-	    let keyword = $(".search_area input[name='keyword']").val();
-	    
-	    if(!type){
-	        alert("검색 종류를 선택하세요.");
-	        return false;
-	    }
-	    
-	    if(!keyword){
-	        alert("키워드를 입력하세요.");
-	        return false;
-	    }        
-	    
-	    moveForm.find("input[name='type']").val(type);
-	    moveForm.find("input[name='keyword']").val(keyword);
-	    moveForm.find("input[name='pageNum']").val(1);
-	    moveForm.submit();
-	 });
-
+		$(".search_area button").on("click", function(e){
+        e.preventDefault();
+       
+       let type = $(".search_area select").val();
+       let keyword = $(".search_area input[name='keyword']").val();
+       
+       if(!type){
+           alert("검색 종류를 선택하세요.");
+           return false;
+       }
+       
+       if(!keyword){
+           alert("키워드를 입력하세요.");
+           return false;
+       }        
+   
+       moveForm.find("input[name='type']").val(type);
+       moveForm.find("input[name='keyword']").val(keyword);
+       moveForm.find("input[name='pageNum']").val(1);
+       
+       document.getElementById('moveForm').submit();
+       
+    });
 </script>
 
 

@@ -55,20 +55,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	
-	<!-- 검색 조건문 -->
+<!-- 검색 조건문 -->
     <sql id="criteria">
-        <trim prefix="AND (" suffix=")" prefixOverrides="OR">
+        <trim prefix="where (" suffix=")" prefixOverrides="OR">
             <foreach collection="typeArr" item="type">
                 <trim prefix="OR">
                     <choose>
                         <when test="type == 'T'.toString()">
-                            title like '%'||#{keyword}||'%' 
+                            Q_title like concat('%',#{keyword},'%') 
                         </when>
                         <when test="type == 'C'.toString()">
-                            content like '%'||#{keyword}||'%' 
+                            Q_content like concat('%',#{keyword},'%') 
                         </when>
                         <when test="type == 'W'.toString()">
-                            writer like '%'||#{keyword}||'%' 
+                            userId like concat('%',#{keyword},'%' )
                         </when>
                     </choose>
                 </trim>
