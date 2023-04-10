@@ -72,8 +72,8 @@ public class UserJoinServiceImpl implements UserJoinService {
 	}
 	
 	//Q 게시판 개수
-	public int getTotal() {
-		return userJoin.getTotal();
+	public int getTotal(Criteria cri) {
+		return userJoin.getTotal(cri);
 	}
 	//Q 비밀번호
 		public QuestionVO Q_pwCheck(QuestionVO qvo, HttpSession qsession) {

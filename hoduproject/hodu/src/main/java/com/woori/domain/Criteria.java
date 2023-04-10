@@ -1,12 +1,15 @@
 package com.woori.domain;
 
-
+import java.util.Arrays;
 
 public class Criteria {
 
 	private int pageNum;
 	private int amount;
 	private int skip;
+	private String keyword;
+	private String type;
+	private String[] typeArr;
 	
 	public Criteria() {
 		// TODO Auto-generated constructor stub
@@ -47,9 +50,35 @@ public class Criteria {
 		this.skip = skip;
 	}
 
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		this.typeArr = type.split("");
+	}
+
+	public String[] getTypeArr() {
+		return typeArr;
+	}
+
+	public void setTypeArr(String[] typeArr) {
+		this.typeArr = typeArr;
+	}
+
 	@Override
 	public String toString() {
-		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", skip=" + skip + "]";
+		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", skip=" + skip + ", keyword=" + keyword
+				+ ", type=" + type + ", typeArr=" + Arrays.toString(typeArr) + "]";
 	}
 
 	

@@ -53,14 +53,46 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where userId=#{userId}  
 	</delete>
 	
+	
+	
+	<!-- 검색 조건문 -->
+    <sql id="criteria">
+        <trim prefix="AND (" suffix=")" prefixOverrides="OR">
+            <foreach collection="typeArr" item="type">
+                <trim prefix="OR">
+                    <choose>
+                        <when test="type == 'T'.toString()">
+                            title like '%'||#{keyword}||'%' 
+                        </when>
+                        <when test="type == 'C'.toString()">
+                            content like '%'||#{keyword}||'%' 
+                        </when>
+                        <when test="type == 'W'.toString()">
+                            writer like '%'||#{keyword}||'%' 
+                        </when>
+                    </choose>
+                </trim>
+            </foreach>
+        </trim>
+    
+    </sql>
+	
+	
 	<!-- question 리스트 출력 -->
 	<select id="question" resultType="com.woori.domain.QuestionVO" parameterType="com.woori.domain.Criteria">
-		select * from question   order by Q_idx    limit #{skip},#{amount} 
+		select * from question 
+			<if test="keyword != null">
+                 <include refid="criteria"></include>
+            </if>
+		order by Q_idx    limit #{skip},#{amount} 
 	</select>
 	
 	<!-- 게시물 개수 -->
 	<select id="getTotal" resultType="int">
 		select count(*) from question  
+		<if test="keyword != null">
+            <include refid="criteria"></include>
+        </if>   
 	</select>
 	
 	<!-- 게시물 비밀번호 -->

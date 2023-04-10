@@ -68,7 +68,7 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	
 	//Q 게시판 개수
 	@Override
-	public int getTotal() {
+	public int getTotal(Criteria cri) {
 		return sqlSession.selectOne("user.getTotal");
 	}
 	

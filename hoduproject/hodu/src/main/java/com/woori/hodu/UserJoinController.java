@@ -136,7 +136,7 @@ public class UserJoinController {
 			List<QuestionVO> QList = userJoinService.QList(cri);
 			qmodel.addAttribute("QList",QList);
 			
-			int total = userJoinService.getTotal();
+			int total = userJoinService.getTotal(cri);
 			
 			PageMakerVO pageMaker = new PageMakerVO(cri, total);
 			
