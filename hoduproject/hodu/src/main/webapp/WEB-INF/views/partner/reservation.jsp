@@ -8,7 +8,7 @@
 </head>
 <body style="font-family: 'Pretendard-Regular';">
 <%@ include file="pheader.jsp" %>
-파트너 예약 페이지
+파트너 예약 페이지 QnA 리스트
 <%@ include file="footer.jsp" %>
 </body>
 </html>
