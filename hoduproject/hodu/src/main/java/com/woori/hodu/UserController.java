@@ -12,7 +12,7 @@ public class UserController {
 		
 		return "user/reservation";
 	}
-	
+
 	@RequestMapping("user/review")
 	public String review() {
 

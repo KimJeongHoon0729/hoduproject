@@ -14,7 +14,7 @@
 
 <body style="font-family: 'Pretendard-Regular';">
 
-<%@ include file="pheader.jsp" %>
+<%@ include file="../pheader.jsp" %>
    <div id="fh5co-menus" data-section="menu">
       <div class="container">
 			<div class="row text-center fh5co-heading row-padded">
@@ -68,7 +68,7 @@
 			</div>
 		</div>
 </div>
-<%@ include file="footer.jsp" %>
+<%@ include file="../footer.jsp" %>
 
 
 </body>

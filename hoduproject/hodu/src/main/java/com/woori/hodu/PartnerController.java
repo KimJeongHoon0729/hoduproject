@@ -18,6 +18,11 @@ public class PartnerController {
 		
 		return "partner/reservation";
 	}
+	@RequestMapping("partner/myPpage/PreservationContent")
+	public String my_PreservationContent() {
+		
+		return "partner/myPpage/PreservationContent";
+	}
 	
 	@RequestMapping("partner/review")
 	public String preview() {
