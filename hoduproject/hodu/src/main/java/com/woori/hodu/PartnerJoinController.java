@@ -43,7 +43,11 @@ public class PartnerJoinController {
 				if(PpwdMatch == true){//로그인 성공
 				mav.setViewName("pindex");
 				mav.addObject("msg", "sucess");
-				}} else { //로그인 실패
+				} else {
+					mav.setViewName("login");
+					mav.addObject("msg", "fail");
+				}
+				} else { //로그인 실패
 				mav.setViewName("login");
 				mav.addObject("msg", "fail");
 			}

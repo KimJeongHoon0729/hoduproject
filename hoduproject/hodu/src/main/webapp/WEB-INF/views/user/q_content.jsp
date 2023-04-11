@@ -35,12 +35,12 @@
 				   </tr>
 				 
 				   <tr>
-					  <th text-align: center; style="text-align: center;">펜션 이름</th>
+					  <th style="text-align: center;">펜션 이름</th>
 				   	  <th></th>	
 				   </tr>   
 				   
 				   <tr>
-					    <th text-align: center; style="text-align: center;">제목</th>
+					    <th style="text-align: center;">제목</th>
 					   <td></td>
 				   </tr>   
 				   

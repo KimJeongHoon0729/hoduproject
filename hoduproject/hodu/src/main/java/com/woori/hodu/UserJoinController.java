@@ -54,7 +54,11 @@ public class UserJoinController {
 				mav.setViewName("index");
 				mav.addObject("msg", "sucess");
 			
-			}} else { //로그인 실패
+			} else {
+				mav.setViewName("login");
+				mav.addObject("msg", "fail");
+			}
+			} else { //로그인 실패
 				mav.setViewName("login");
 				mav.addObject("msg", "fail");
 			}
