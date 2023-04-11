@@ -45,7 +45,7 @@
                   </div>
                    <div class="form-group ">
                      <label for="userName" class="sr-only">userName</label>
-                     <input id="userName" name="userName" class="form-control" placeholder="내용" type="text" style="height:200px;">
+                     <textarea class="message_area form-control" rows="8" cols="50" placeholder="객실 세부사항을 입력해주세요"></textarea>
                   </div>       
                   <div class="form-group ">
                      <label for="userPw" class="sr-only">userPw</label>
