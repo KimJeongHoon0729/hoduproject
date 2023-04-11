@@ -57,7 +57,7 @@
 				</table>
 				<hr/>
 				<div class="col-sm-3" style="left:340px;">
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='../../QList.do?pageNum=1&amount=10'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
+				<button class="btn btn-primary btn-block" type="button" onclick="location.href='PreservationList'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
 				</div>
 				<br></br>
 				
@@ -68,7 +68,7 @@
 			</div>
 		</div>
 </div>
-<%@ include file="footer.jsp" %>
+<%@ include file="../footer.jsp" %>
 
 
 </body>

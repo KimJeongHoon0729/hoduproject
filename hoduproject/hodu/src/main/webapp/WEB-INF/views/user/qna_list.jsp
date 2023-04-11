@@ -177,10 +177,10 @@
 				<br></br>
 
 				<form id="moveForm" method="get">
-					<input type="text" name="pageNum" value="${pageMaker.cri.pageNum }">
-	        		<input type="text" name="amount" value="${pageMaker.cri.amount }">   
-	        		<input type="text" name="keyword" value="${pageMaker.cri.keyword }">
-	        		<input type="text" name="type" value="${pageMaker.cri.type }">
+					<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+	        		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">   
+	        		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
+	        		<input type="hidden" name="type" value="${pageMaker.cri.type }">
 				</form>
 				
 				<div class="text-center">

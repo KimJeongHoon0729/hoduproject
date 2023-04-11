@@ -25,7 +25,7 @@
     
    </head>
    
-   <body style="font-family: 'Pretendard-Regular';">
+   <body>
     <%@ include file ="pheader.jsp" %>
 
       <div id="fh5co-contact" data-section="reservation">
@@ -44,17 +44,17 @@
                 <div class="col-md-6 col-md-offset-3">
                   <h3 style="font-family: 'Pretendard-Regular';">Hodu Pension Room Register form</h3>
                  
-                  <div class="form-group ">
+                  <div class="form-group">
                      <label for="pensionName" class="sr-only">pensionName</label>
                      <input id="pensionName" name="pensionName" class="form-control" placeholder="객실명" type="text">
                   </div>
                  
-                  <div class="form-group ">
+                  <div class="form-group">
                      <label for="peopleNumber" class="sr-only">peopleNumber</label>
                      <input id="peopleNumber" name="peopleNumber" class="form-control" placeholder="객실 가격" type="number">
                   </div>
                              
-                  <div class="form-group ">
+                  <div class="form-group">
                      <label for="dogNumber" class="sr-only">dogNumber</label>
                      <input id="dogNumber"  class="form-control" placeholder="수용 가능한 반려견 수" type="number">
                   </div>

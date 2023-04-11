@@ -6,10 +6,7 @@
   <head>
 
     <style>
-      * {
-        font-size: 18px;
-        font-family: Pretendard-Regular;
-      }
+    
       textarea {
         width: 100%;
         height: 100px;
@@ -49,15 +46,15 @@
 						<div class="area"> 
 							<select id="area" class="form-control">
 								<option selected disabled>지역을 선택하세요.</option>
-								<option>경기</option>
-								<option>충남</option>
-								<option>충북</option>
-								<option>전남</option>
-								<option>전북</option>
-								<option>경남</option>
-								<option>경북</option>
-								<option>강원</option>
-								<option>제주</option>
+								<option value="경기">경기</option>
+								<option value="충남">충남</option>
+								<option value="충북">충북</option>
+								<option value="전남">전남</option>
+								<option value="전북">전북</option>
+								<option value="경남">경남</option>
+								<option value="경북">경북</option>
+								<option value="강원">강원</option>
+								<option value="제주">제주</option>
 							</select>
 							<div id="areaError" class="error"></div>
 						</div>
