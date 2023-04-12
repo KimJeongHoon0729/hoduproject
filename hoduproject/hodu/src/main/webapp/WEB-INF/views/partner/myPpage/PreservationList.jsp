@@ -7,7 +7,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Pension Reservation List</title>
 </head>
 
   <style>
@@ -109,98 +109,91 @@
 <%@ include file="../pheader.jsp" %>
    <div id="fh5co-menus" data-section="menu">
       <div class="container">
-			<div class="row text-center fh5co-heading row-padded">
-				<div class="col-md-8 col-md-offset-2">
-					<h2 class="heading to-animate"
-						style="font-family: 'Pretendard-Regular';">QnA List</h2>
-					<p class="sub-heading to-animate"></p>
-					<p style="margin-bottom: 80px"></p>
-					   
-					   <!-- 검색 폼 영역 -->
-					   <!--  
-					<form name="searchForm" action="#" method="get">
-						<p style= "font-size: 18px; margin-left: -45px">
-							<select name="searchType" style="width: 100px; height: 40px;">
-								<option value="ALL">전체검색</option>
-								<option value="SUBJECT">제목</option>
-								<option value="WRITER">작성자</option>
-								<option value="CONTENTS">내용</option>
-							</select> <input type="text" name="searchText" value="" style="width: 350px;" /> <input
-								type="submit" value="검색" style="width: 70px;" />
-						</p>
-					</form>
-					-->
-					
-					<div class="search_wrap">
-				        <div class="search_area">
-				        	<select name="type">
-				                <option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>--</option>
-				                <option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':'' }"/>>제목</option>
-				                <option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':'' }"/>>내용</option>
-				                <option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':'' }"/>>작성자</option>
-				                <option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':'' }"/>>제목 + 내용</option>
-				                <option value="TW" <c:out value="${pageMaker.cri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
-				                <option value="TCW" <c:out value="${pageMaker.cri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
-				            </select>    
-				            <input type="text" name="keyword" value="${pageMaker.cri.keyword }">
-				            <button>Search</button>
-				        </div>
-				    </div>    
-					<!-- //검색 폼 영역 -->
-				</div>
-			</div>
-			<p style="margin-bottom: -30px"></p>
-			<div class="container" style="width: 70%;">
-				<table class="table table-hover" id="modalTable">
-					<tbody style="font-family: 'Pretendard-Regular';">
-					
-						<tr>
-							<th>예약번호</th>
-							<th>예약자</th>
-							<th>전화번호</th>
-							<th>이메일</th>
-							<th>펜션이름</th>
-							<th>펜션가격</th>
-							<th>반려견 사이즈</th>
-							<th>반려견 수</th>
-							<th>인원수</th>
-							<th>예약일</th>
-						</tr>
-					
-						<tr id="add-btn"  onclick="location.href='PreservationContent'"> 
-							<td data-th="Supplier Code">민별씨</td>
-							<td data-th="Supplier Name">여기</td>
-							<td data-th="Invoice Number">해주면</td>
-							<td data-th="Invoice Date">돼용 </td>
-							<td data-th="Due Date">완료</td>
-							<td data-th="Supplier Code">민별씨</td>
-							<td data-th="Supplier Name">여기</td>
-							<td data-th="Invoice Number">해주면</td>
-							<td data-th="Invoice Date">돼용 </td>
+         <div class="row text-center fh5co-heading row-padded">
+            <div class="col-md-8 col-md-offset-2">
+               <h2 class="heading to-animate"
+                  style="font-family: 'Pretendard-Regular';">Reservation List</h2>
+               <p class="sub-heading to-animate"></p>
+               <p style="margin-bottom: 80px"></p>
+               
+               <!-- 검색 폼 영역 시작-->      
+               <div class="search_wrap">
+                    <div class="search_area">
+                       <select name="type" style="width: 100px; height: 41px;">
+                            <option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>--</option>
+                            <option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':'' }"/>>예약자</option>
+                            <option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':'' }"/>>예약번호</option>
+                            <option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':'' }"/>>펜션이름</option>
+                        </select>    
+                        <input type="text" name="keyword" value="${pageMaker.cri.keyword }" style="width: 350px; height: 41px;">
+                        <button>Search</button>
+                    </div>
+                </div>    
+               <!-- 검색 폼 영역 끝 -->
+            
+            </div>
+         </div>
+         <p style="margin-bottom: 0px"></p>
+         <div class="container" style="width: 70%;">
+            <table class="table table-hover" id="modalTable">
+               <tbody style="font-family: 'Pretendard-Regular';">
+               
+                  <tr>
+                     <th>예약번호</th>
+                     <th>예약자</th>
+                     <th>전화번호</th>
+                     <th>이메일</th>
+                     <th>펜션이름</th>
+                     <th>예약일</th>
+                  </tr>
+               
+                  <tr id="add-btn"  onclick="location.href='PreservationContent'"> 
+                     <td data-th="Reservation Number">예약번호</td>
+                     <td data-th="Reservation Name">예약자</td>
+                     <td data-th="Phone Number">전화번호</td>
+                     <td data-th="Email">이메일</td>
+                     <td data-th="Pension Name">펜션이름</td>
+                     <td data-th="Reservation Date">예약일</td>
+                  </tr>
+           
+            <c:forEach var="reservation" items="${RList }" >
+						<tr id="add-btn" data-value="${reservation.r_idx }">
+							<td data-th="Supplier Code">${reservation.r_idx }</td>
+							<td data-th="Supplier Name">${reservation.r_userId }</td>
+							<td data-th="Invoice Number">${reservation.r_userName }</td>
+							<td data-th="Invoice Number">${reservation.r_userMobile }</td>
+							<td data-th="Invoice Number">${reservation.r_userEmail }</td>
+							<td data-th="Invoice Number">${reservation.r_pensionName }</td>
+							<td data-th="Invoice Number">${reservation.r_price }</td>
+							<td data-th="Invoice Number">${reservation.r_dogSize }</td>
+							<td data-th="Invoice Number">${reservation.r_dogNumber }</td>
+							<td data-th="Invoice Number">${reservation.r_peopleNum }</td>
+							<td data-th="Invoice Number">${reservation.r_message_to_p }</td>
+							<td data-th="Invoice Date"><fmt:formatDate value="${reservation.r_reservation_date }" pattern="yyyy-MM-dd"/></td>
 							<td data-th="Due Date">완료</td>
 						</tr>
-				
-					</tbody>
-				</table>
-				<hr/>
-				<a href="/user/qna_form" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
-				<br></br>
-				
-				<div class="text-center">
-					<ul class="pagination">
-						<c:if test="${pageMaker.prev }">
-						<li><a href="${path }/QList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
-						</c:if>
-						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-						<li><a href="${path }/QList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
-						</c:forEach>
-						<c:if test="${pageMaker.next }">
-						<li><a href="${path }/QList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
-						</c:if>
-					</ul>
-				</div>
-			</div>
-		</div>
+					</c:forEach>
+					
+               </tbody>
+            </table>
+            <hr/>
+            <br></br>
+            
+            <div class="text-center">
+               <ul class="pagination">
+                  <c:if test="${pageMaker.prev }">
+                  <li><a href="${path }/QList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+                  </c:if>
+                  <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+                  <li><a href="${path }/QList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+                  </c:forEach>
+                  <c:if test="${pageMaker.next }">
+                  <li><a href="${path }/QList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+                  </c:if>
+               </ul>
+            </div>
+         </div>
+      </div>
 </div>
 
 
@@ -210,30 +203,30 @@
 
 <script type="text/javascript">
 
-	 
-	 //버튼 클릭
-	 $(".search_area button").on("click", function(e){
-	 	 e.preventDefault();
-	    
-	 	let moveForm = document.getElementById("moveForm");
-	    let type = $(".search_area select").val();
-	    let keyword = $(".search_area input[name='keyword']").val();
-	    
-	    if(!type){
-	        alert("검색 종류를 선택하세요.");
-	        return false;
-	    }
-	    
-	    if(!keyword){
-	        alert("키워드를 입력하세요.");
-	        return false;
-	    }        
-	    
-	    moveForm.find("input[name='type']").val(type);
-	    moveForm.find("input[name='keyword']").val(keyword);
-	    moveForm.find("input[name='pageNum']").val(1);
-	    moveForm.submit();
-	 });
+    
+    //버튼 클릭
+    $(".search_area button").on("click", function(e){
+        e.preventDefault();
+       
+       let moveForm = document.getElementById("moveForm");
+       let type = $(".search_area select").val();
+       let keyword = $(".search_area input[name='keyword']").val();
+       
+       if(!type){
+           alert("검색 종류를 선택하세요.");
+           return false;
+       }
+       
+       if(!keyword){
+           alert("키워드를 입력하세요.");
+           return false;
+       }        
+       
+       moveForm.find("input[name='type']").val(type);
+       moveForm.find("input[name='keyword']").val(keyword);
+       moveForm.find("input[name='pageNum']").val(1);
+       moveForm.submit();
+    });
 
 </script>
 

@@ -133,7 +133,7 @@
 					
 					<div class="search_wrap">
 				        <div class="search_area">
-				        	<select name="type">
+				        	<select name="type" style="width: 165px; height: 41px;">
 				                <option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>--</option>
 				                <option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':'' }"/>>제목</option>
 				                <option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':'' }"/>>내용</option>
@@ -142,14 +142,15 @@
 				                <option value="TW" <c:out value="${pageMaker.cri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
 				                <option value="TCW" <c:out value="${pageMaker.cri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
 				            </select>    
-				            <input type="text" name="keyword" >
+				            <input type="text" name="keyword" style="width: 440px; height: 41px;">
 				            <button>Search</button>
+				            
 				        </div>
 				    </div>    
 					<!-- //검색 폼 영역 -->
 				</div>
 			</div>
-			<p style="margin-bottom: -30px"></p>
+			<p style="margin-bottom: 0px"></p>
 			<div class="container" style="width: 70%;">
 				<table class="table table-hover" id="modalTable">
 					<tbody style="font-family: 'Pretendard-Regular';">
