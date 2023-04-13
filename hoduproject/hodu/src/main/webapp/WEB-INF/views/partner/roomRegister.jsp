@@ -6,10 +6,7 @@
   <head>
 
     <style>
-      * {
-        font-size: 18px;
-        font-family: Pretendard-Regular;
-      }
+   
       textarea {
         width: 100%;
         height: 100px;

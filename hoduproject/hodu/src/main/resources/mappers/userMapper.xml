@@ -103,4 +103,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			question   
 		where Q_idx = #{Q_idx} and Q_pw = #{Q_pw}     
 	</select>
+	
+	<!-- Q 게시판 삽입 -->
+	
+	<insert id="Q_insert">
+		INSERT INTO question(userId, pensionName, Q_title, Q_content, Q_date, Q_pw) 
+			VALUES(#{userId},#{pensionName},#{Q_title},#{Q_content}, current_timestamp ,#{Q_pw})
+	</insert>
+	
+	<!-- Q세부 정보 보기 -->
+	
+	<select id="QView" resultType="com.woori.domain.QuestionVO" parameterType="int">
+		select * from question where Q_idx = #{Q_idx}    
+	</select>
 </mapper>

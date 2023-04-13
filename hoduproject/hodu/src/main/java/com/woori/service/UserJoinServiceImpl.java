@@ -72,13 +72,27 @@ public class UserJoinServiceImpl implements UserJoinService {
 	}
 	
 	//Q 게시판 개수
+	@Override
 	public int getTotal(Criteria cri) {
 		return userJoin.getTotal(cri);
 	}
 	//Q 비밀번호
-		public QuestionVO Q_pwCheck(QuestionVO qvo, HttpSession qsession) {
+	@Override
+	public QuestionVO Q_pwCheck(QuestionVO qvo, HttpSession qsession) {
 			
 			qsession.setAttribute("Q_idx", qvo.getQ_idx());
 			return userJoin.Q_pwCheck(qvo);
-		}
+	}
+	//Q 글쓰기
+	@Override
+	public void Q_insert(QuestionVO qvo) {
+		userJoin.Q_insert(qvo);
+	}
+	
+	//Q 확인
+	@Override
+	public QuestionVO QView(int Q_idx, HttpSession qsession) {
+		qsession.setAttribute("Q_idx", Q_idx);
+		return userJoin.QView(Q_idx);
+	}
 }

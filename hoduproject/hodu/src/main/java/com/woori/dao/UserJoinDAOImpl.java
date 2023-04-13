@@ -77,4 +77,16 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	public QuestionVO Q_pwCheck(QuestionVO qvo) {
 		return sqlSession.selectOne("user.Q_pwCheck", qvo);
 	}
+	
+	//Q 글쓰기
+	@Override
+	public void Q_insert(QuestionVO qvo) {
+		sqlSession.insert("user.Q_insert", qvo);
+	}
+	//Q 확인
+	@Override
+	public QuestionVO QView(int Q_idx) {
+		return sqlSession.selectOne("user.QView", Q_idx);
+	}
+	
 }

@@ -28,4 +28,8 @@ public interface UserJoinService {
 	
 	//Q 비밀번호
 	public QuestionVO Q_pwCheck(QuestionVO qvo, HttpSession qsession); 
+	//Q 글쓰기
+	public void Q_insert(QuestionVO qvo);
+	//Q 확인
+	public QuestionVO QView(int Q_idx, HttpSession session);
 }

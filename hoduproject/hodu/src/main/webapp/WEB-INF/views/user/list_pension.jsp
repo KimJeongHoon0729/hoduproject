@@ -16,10 +16,12 @@
                   <p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                </div>
             </div>
-         <div class="form-group " style="margin-left: 930px">
+         
+         <div class="form-group" style="text-align: end;">
             <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='review'">리뷰확인</button>
             <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='reservation'">예약하기</button>
          </div>
+         
             <div class="row">
 
                <div class="fh5co-grid">

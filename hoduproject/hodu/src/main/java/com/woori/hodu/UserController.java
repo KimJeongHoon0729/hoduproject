@@ -27,7 +27,7 @@ public class UserController {
 		return "user/qna_list";
 	}
 	
-	@RequestMapping("user/qna_form")
+	@RequestMapping("qna_form")
 	public String qna_form() {
 
 		

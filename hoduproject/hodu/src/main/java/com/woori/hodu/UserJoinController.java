@@ -136,7 +136,7 @@ public class UserJoinController {
 		
 		@RequestMapping("QList.do")
 		public String QList(Criteria cri, Model qmodel) {
-			
+	
 			List<QuestionVO> QList = userJoinService.QList(cri);
 			qmodel.addAttribute("QList",QList);
 			
@@ -157,7 +157,7 @@ public class UserJoinController {
 			ModelAndView mav = new ModelAndView();
 			if(result != null) { //로그인 성공
 				redirect.addAttribute("Q_idx", qvo.getQ_idx());
-				mav.setViewName("/user/q_content");
+				mav.setViewName("redirect: QView.do");
 				mav.addObject("msg", "sucess");
 				
 			} else { //로그인 실패
@@ -169,6 +169,23 @@ public class UserJoinController {
 			return mav;
 		}
 		
+		//Q 글쓰기
+		@RequestMapping("Q_insert.do")
+		public String Q_insert(@ModelAttribute QuestionVO qvo, @RequestParam("pageNum") int pageNum, @RequestParam("amount") int amount, RedirectAttributes redirect) {
+			
+			userJoinService.Q_insert(qvo);
+			redirect.addAttribute("pageNum", pageNum);
+			redirect.addAttribute("amount", amount);
+			return "redirect: QList.do";
+		}
+		
+		//Q 확인
+		@RequestMapping("QView.do")
+		public String QView(int Q_idx,HttpSession qsession, Model qmodel) {
+			qmodel.addAttribute("QView", userJoinService.QView(Q_idx,qsession));
+			
+			return "user/q_content";
+		}
 		
 		
 }

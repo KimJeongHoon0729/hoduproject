@@ -9,7 +9,6 @@ public class QuestionVO {
 	
 	String userId;
 	String pensionName;
-	String partnerId;
 	String Q_title;
 	String Q_content;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -29,12 +28,7 @@ public class QuestionVO {
 	public void setPensionName(String pensionName) {
 		this.pensionName = pensionName;
 	}
-	public String getPartnerId() {
-		return partnerId;
-	}
-	public void setPartnerId(String partnerId) {
-		this.partnerId = partnerId;
-	}
+
 	public String getQ_title() {
 		return Q_title;
 	}
@@ -67,7 +61,7 @@ public class QuestionVO {
 	}
 	@Override
 	public String toString() {
-		return "QuestionVO [userId=" + userId + ", pensionName=" + pensionName + ", partnerId=" + partnerId
+		return "QuestionVO [userId=" + userId + ", pensionName=" + pensionName 
 				+ ", Q_title=" + Q_title + ", Q_content=" + Q_content + ", Q_date=" + Q_date + ", Q_pw=" + Q_pw
 				+ ", Q_idx=" + Q_idx + "]";
 	}

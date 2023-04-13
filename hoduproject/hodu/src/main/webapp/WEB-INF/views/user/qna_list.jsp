@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -173,8 +174,14 @@
 					</c:forEach>
 					</tbody>
 				</table>
-				<hr/>
-				<a href="/user/qna_form" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
+				<c:choose>
+				<c:when test="${empty userId}">
+					<a class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" onclick="alert('로그인이 필요합니다.');" >글쓰기</a>
+				</c:when>
+				<c:otherwise>
+					<a href="qna_form?pageNum=1&amount=10" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
+				</c:otherwise>
+				</c:choose>
 				<br></br>
 
 				<form id="moveForm" method="get">

@@ -27,44 +27,42 @@
 			</div>
 			<p style="margin-bottom: -30px"></p>
 			<div class="container" style="width: 70%;">
+				<form action="QView.do" method="post">
 				<table class="table table-bordered">
 				
 				   <tr>
 				      <th style="width: 200px; text-align: center;">아이디</th>
-				      <th></th>
+				      <td>${QView.userId }</td>
 				   </tr>
 				 
 				   <tr>
 					  <th style="text-align: center;">펜션 이름</th>
-				   	  <th></th>	
+				   	  <td>${QView.pensionName }</td>	
 				   </tr>   
 				   
 				   <tr>
 					    <th style="text-align: center;">제목</th>
-					   <td></td>
+					   <td>${QView.q_title }</td>
 				   </tr>   
 				   
 				   <tr>
 					   <th style="height:200px; text-align: center;">내용</th>
-					   <td></td>
+					   <td>${QView.q_content }</td>
 				   </tr>		   
 
 				   <tr>
 					   <th style="height:200px; text-align: center;">답변</th>
 					   <td></td>
 				   </tr>	
-				   
+				 
 				</table>
-				<hr/>
+				</form>
+				
 				<div class="col-sm-3" style="left:340px;">
 				<button class="btn btn-primary btn-block" type="button" onclick="location.href='../../QList.do?pageNum=1&amount=10'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
 				</div>
 				<br></br>
 				
-				<form id="moveForm" method="get">
-				<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-        		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">   
-				</form>
 			</div>
 		</div>
 </div>
