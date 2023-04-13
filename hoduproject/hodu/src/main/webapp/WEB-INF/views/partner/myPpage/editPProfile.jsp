@@ -26,7 +26,7 @@
                   <h3 style="font-family: 'Pretendard-Regular';">Partner form</h3>
                   <div class="form-group">
                      <label for="partnerId" class="sr-only">partnerId</label>
-                     <input id="partnerId" name="partnerId" class="form-control" value="${partner.partnerId }"type="text" readonly>
+                     <input id="partnerId" name="partnerId" class="form-control" value="${partner.partnerId }" type="text" readonly>
                   </div>
                    <div class="form-group ">
                      <label for="partnerPw" class="sr-only">partnerPw</label>

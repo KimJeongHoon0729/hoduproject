@@ -67,4 +67,22 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 	public ReservationVO RView(int reservation_idx) {
 		return psqlSession.selectOne("partner.RView", reservation_idx);
 	}
+	
+	
+	//예약 삭제
+	@Override
+	public void RDelete(int reservation_idx) {
+		psqlSession.delete("partner.RDelete", reservation_idx);
+	}
+	
+	//예약 수정
+	
+	@Override
+	public ReservationVO RView2(int reservation_idx) {
+		return psqlSession.selectOne("partner.RView", reservation_idx);
+	}
+	@Override
+	public void RUpdate(ReservationVO rvo) {
+		psqlSession.update("partner.RUpdate", rvo);
+	}
 }

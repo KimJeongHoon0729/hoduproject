@@ -56,8 +56,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from reservation where reservation_idx = #{reservation_idx}
 	</select>
 	
+	<delete id="RDelete">
+		delete from  
+		reservation   
+		where reservation_idx=#{reservation_idx}  
+	</delete>
 	
+	<update id="RUpdate" parameterType="com.woori.domain.ReservationVO">
+		update  reservation  set   
+		dogSize=#{dogSize},   
+		peopleNum=#{peopleNum},    
+		message_to_p=#{message_to_p},  
+		reservation_date=#{reservation_date}   
+		where reservation_idx=#{reservation_idx}   
+	</update>
 	
-	
+	<select id="RView2" resultType="com.woori.domain.ReservationVO">
+		select * from reservation where reservation_idx = #{reservation_idx}
+	</select>
 	
 </mapper>

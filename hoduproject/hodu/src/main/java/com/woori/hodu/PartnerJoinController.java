@@ -3,6 +3,7 @@ package com.woori.hodu;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -13,8 +14,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.woori.domain.PartnerVO;
 import com.woori.domain.PensionVO;
@@ -138,6 +141,27 @@ public class PartnerJoinController {
 			rmodel.addAttribute("RView", partnerJoinService.RView(reservation_idx));
 			
 			return "partner/myPpage/PreservationContent";
+		}
+		
+		//예약 삭제
+		@RequestMapping("RDelete.do")
+		public void RDelete(int reservation_idx) {
+			partnerJoinService.RDelete(reservation_idx);
+		}
+		
+		//예약 수정
+		@RequestMapping("RView2.do")
+		public String RView2(int reservation_idx, Model rmodel) {
+			rmodel.addAttribute("RView", partnerJoinService.RView(reservation_idx));
+			
+			return "partner/myPpage/PreservationContent_update";
+		}
+		
+		@RequestMapping("RUpdate.do")
+		public String RUpdate(@ModelAttribute ReservationVO rvo, @RequestParam("reservation_idx") int reservation_idx, RedirectAttributes redirect) {
+			partnerJoinService.RUpdate(rvo);
+			redirect.addAttribute("reservation_idx", reservation_idx);
+			return "redirect: RView.do";
 		}
 }
 

@@ -72,4 +72,21 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	public ReservationVO RView(int reservation_idx) {
 		return partnerJoin.RView(reservation_idx);
 	}
+	
+	//예약 삭제
+	@Override
+	public void RDelete(int reservation_idx) {
+		partnerJoin.RDelete(reservation_idx);
+	}
+	
+	//예약 수정
+	@Override
+	public ReservationVO RView2(int reservation_idx) {
+		return partnerJoin.RView(reservation_idx);
+	}
+	
+	@Override
+	public void RUpdate(ReservationVO rvo) {
+		partnerJoin.RUpdate(rvo);
+	}
 }

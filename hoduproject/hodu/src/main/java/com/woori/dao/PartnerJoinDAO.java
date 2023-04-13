@@ -26,4 +26,10 @@ public interface PartnerJoinDAO {
 	//예약 리스트 출력
 	public List<ReservationVO> RList(ReservationVO rvo);
 	public ReservationVO RView(int reservation_idx);
+	
+	//예약 삭제
+	public void RDelete(int reservation_idx);
+	//예약 수정
+	public ReservationVO RView2(int reservation_idx);
+	public void RUpdate(ReservationVO rvo);
 }

@@ -27,9 +27,9 @@
          </div>
          <p style="margin-bottom: -30px"></p>
          <div class="container" style="width: 70%;">
-         <form action="RView.do" method="post">
+         <form action="RUpdate.do?reservation_idx=${RView.reservation_idx  }" method="post">
+         
             <table class="table table-bordered">
-            
                <tr>
                   <th style="width: 200px; text-align: center;">예약번호</th>
                   <th>${RView.reservation_idx }</th>
@@ -37,7 +37,7 @@
               
               <tr>
                   <th style="width: 200px; text-align: center;">예약일</th>
-                  <th><fmt:formatDate value="${RView.reservation_date }" pattern="yyyy-MM-dd"/></th>
+                  <th><input id="reservation_date" name="reservation_date" type="date">&nbsp;&nbsp;기존 예약일 : <fmt:formatDate value="${RView.reservation_date }" pattern="yyyy-MM-dd"/></th>
                </tr>
              
                <tr>
@@ -52,7 +52,7 @@
 				
 				<tr>
 					<th style="text-align: center;">인원수</th>
-					<th>${RView.peopleNum }</th>
+					<th><input value="${RView.peopleNum }" id="peopleNum" name="peopleNum" type="number"></th>
 				</tr>
 					
 			   <tr>
@@ -77,28 +77,32 @@
 
                <tr>
                   <th style="width: 200px; text-align: center;">반려견 수</th>
-                  <th>${RView.dogNumber }</th>
+                  <th><input value="${RView.dogNumber }" id="dogNumber" name="dogNumber" type="number"></th>
                </tr>
 
                <tr>
                   <th style="text-align: center;">반려견 사이즈</th>
-                  <th>${RView.dogSize }</th>
+                  <th>
+               		<p style="font-size: 16px; text-align: center;"> 
+		                <input type='checkbox' name='dogSize' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input type='checkbox' name='dogSize' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input type='checkbox' name='dogSize' value='대형견' /> 대형견 (25Kg 이상)
+		            </p>
+       			</th>
                </tr>
 
 				<tr>
                   <th style="height:200px; text-align: center;">세부내용</th>
-                  <td>${RView.message_to_p }</td>
+                  <td><textarea class="message_area form-control" rows="8" cols="50" >${RView.message_to_p }</textarea></td>
                </tr>            
                
             </table>
-            </form>
+           
             
             <div class="find-btn" style="text-align: center;">
-            <input class="btn btn-primary" value="수정" onclick="location.href='${path }/RView2.do?reservation_idx=${RView.reservation_idx}'"  style="font-family: 'Pretendard-Regular';" >
-	        <input class="btn btn-primary" value="목록" onclick="location.href='${path }/RList.do?partnerId=${partnerId}'"  style="font-family: 'Pretendard-Regular';" >
-	        <input class="btn btn-primary" value="삭제" onclick="R_delete();"  style="font-family: 'Pretendard-Regular';" >     
-	        
+            <input class="btn btn-primary" value="수정" type="submit" style="font-family: 'Pretendard-Regular';" >
             </div>
+            </form>
             <br></br>
             
 
