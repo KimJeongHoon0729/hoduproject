@@ -1,8 +1,10 @@
 package com.woori.hodu;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -10,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -86,7 +89,7 @@ public class UserJoinController {
 		
 		// 회원가입 post
 		@RequestMapping(value="signin.do", method = RequestMethod.POST)
-		public String userJoin2(UserVO vo) {
+		public String userJoin2(UserVO vo, HttpServletResponse response) throws Exception {
 			int result = userJoinService.idCheck(vo);
 			if(result == 1) {
 				return "/signin";
@@ -95,6 +98,10 @@ public class UserJoinController {
 				String pwd = pwdEncoder.encode(inputPass);
 				vo.setUserPw(pwd);
 				userJoinService.insertUser(vo);
+				response.setContentType("text/html; charset=UTF-8");
+	            PrintWriter out = response.getWriter();
+	            out.println("<script>alert('회원가입이 완료되었습니다.'); location.href='/';</script>");
+	            out.flush(); 
 			}
 			
 			return "redirect:/";
