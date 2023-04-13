@@ -1,8 +1,11 @@
 package com.woori.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import com.woori.domain.PartnerVO;
+import com.woori.domain.ReservationVO;
 
 public interface PartnerJoinService {
 	
@@ -19,4 +22,7 @@ public interface PartnerJoinService {
 	public void deletePProfile(String partnerId, HttpSession psession);
 	
 	
+	//예약 리스트 출력
+	public List<ReservationVO> RList(ReservationVO rvo);
+	public ReservationVO RView(int reservation_idx);
 }

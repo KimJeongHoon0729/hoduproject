@@ -115,22 +115,7 @@
                   style="font-family: 'Pretendard-Regular';">Reservation List</h2>
                <p class="sub-heading to-animate"></p>
                <p style="margin-bottom: 80px"></p>
-               
-               <!-- 검색 폼 영역 시작-->      
-               <div class="search_wrap">
-                    <div class="search_area">
-                       <select name="type" style="width: 100px; height: 41px;">
-                            <option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>--</option>
-                            <option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':'' }"/>>예약자</option>
-                            <option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':'' }"/>>예약번호</option>
-                            <option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':'' }"/>>펜션이름</option>
-                        </select>    
-                        <input type="text" name="keyword" value="${pageMaker.cri.keyword }" style="width: 350px; height: 41px;">
-                        <button>Search</button>
-                    </div>
-                </div>    
-               <!-- 검색 폼 영역 끝 -->
-            
+      
             </div>
          </div>
          <p style="margin-bottom: 0px"></p>
@@ -147,51 +132,23 @@
                      <th>예약일</th>
                   </tr>
                
-                  <tr id="add-btn"  onclick="location.href='PreservationContent'"> 
-                     <td data-th="Reservation Number">예약번호</td>
-                     <td data-th="Reservation Name">예약자</td>
-                     <td data-th="Phone Number">전화번호</td>
-                     <td data-th="Email">이메일</td>
-                     <td data-th="Pension Name">펜션이름</td>
-                     <td data-th="Reservation Date">예약일</td>
-                  </tr>
-           
-            <c:forEach var="reservation" items="${RList }" >
-						<tr id="add-btn" data-value="${reservation.r_idx }">
-							<td data-th="Supplier Code">${reservation.r_idx }</td>
-							<td data-th="Supplier Name">${reservation.r_userId }</td>
-							<td data-th="Invoice Number">${reservation.r_userName }</td>
-							<td data-th="Invoice Number">${reservation.r_userMobile }</td>
-							<td data-th="Invoice Number">${reservation.r_userEmail }</td>
-							<td data-th="Invoice Number">${reservation.r_pensionName }</td>
-							<td data-th="Invoice Number">${reservation.r_price }</td>
-							<td data-th="Invoice Number">${reservation.r_dogSize }</td>
-							<td data-th="Invoice Number">${reservation.r_dogNumber }</td>
-							<td data-th="Invoice Number">${reservation.r_peopleNum }</td>
-							<td data-th="Invoice Number">${reservation.r_message_to_p }</td>
-							<td data-th="Invoice Date"><fmt:formatDate value="${reservation.r_reservation_date }" pattern="yyyy-MM-dd"/></td>
-							<td data-th="Due Date">완료</td>
+            <c:forEach var="RList" items="${RList }"  >
+						<tr id="add-btn" onclick="location.href='${path}/RView.do?reservation_idx=${RList.reservation_idx }'">
+							<td data-th="Supplier Code">${RList.reservation_idx }</td>
+							<td data-th="Invoice Number">${RList.userName }</td>
+							<td data-th="Invoice Number">${RList.userMobile }</td>
+							<td data-th="Invoice Number">${RList.userEmail }</td>
+							<td data-th="Invoice Number">${RList.pensionName }</td>
+							<td data-th="Invoice Date"><fmt:formatDate value="${RList.reservation_date }" pattern="yyyy-MM-dd"/></td>
 						</tr>
-					</c:forEach>
+			</c:forEach>
 					
                </tbody>
             </table>
             <hr/>
             <br></br>
             
-            <div class="text-center">
-               <ul class="pagination">
-                  <c:if test="${pageMaker.prev }">
-                  <li><a href="${path }/QList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
-                  </c:if>
-                  <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-                  <li><a href="${path }/QList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
-                  </c:forEach>
-                  <c:if test="${pageMaker.next }">
-                  <li><a href="${path }/QList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
-                  </c:if>
-               </ul>
-            </div>
+
          </div>
       </div>
 </div>
@@ -201,34 +158,7 @@
 
 
 
-<script type="text/javascript">
 
-    
-    //버튼 클릭
-    $(".search_area button").on("click", function(e){
-        e.preventDefault();
-       
-       let moveForm = document.getElementById("moveForm");
-       let type = $(".search_area select").val();
-       let keyword = $(".search_area input[name='keyword']").val();
-       
-       if(!type){
-           alert("검색 종류를 선택하세요.");
-           return false;
-       }
-       
-       if(!keyword){
-           alert("키워드를 입력하세요.");
-           return false;
-       }        
-       
-       moveForm.find("input[name='type']").val(type);
-       moveForm.find("input[name='keyword']").val(keyword);
-       moveForm.find("input[name='pageNum']").val(1);
-       moveForm.submit();
-    });
-
-</script>
 
 
 </body>

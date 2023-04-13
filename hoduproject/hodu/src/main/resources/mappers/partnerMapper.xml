@@ -48,8 +48,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where partnerId=#{partnerId}  
 	</delete>
 	
+	<select id="RList" resultType="com.woori.domain.ReservationVO">
+		select * from reservation where partnerId = #{partnerId} order by reservation_date  
+	</select>
 	
-
+	<select id="RView" resultType="com.woori.domain.ReservationVO">
+		select * from reservation where reservation_idx = #{reservation_idx}
+	</select>
 	
 	
 	

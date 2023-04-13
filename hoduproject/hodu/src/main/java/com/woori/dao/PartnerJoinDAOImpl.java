@@ -1,5 +1,7 @@
 package com.woori.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -7,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.woori.domain.PartnerVO;
+import com.woori.domain.ReservationVO;
 
 @Repository
 public class PartnerJoinDAOImpl implements PartnerJoinDAO {
@@ -55,4 +58,13 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 		psqlSession.delete("partner.deletePProfile", partnerId);
 	}
 	
+	//예약 리스트 출력
+	@Override
+	public List<ReservationVO> RList(ReservationVO rvo){
+		return psqlSession.selectList("partner.RList", rvo);
+	}
+	@Override
+	public ReservationVO RView(int reservation_idx) {
+		return psqlSession.selectOne("partner.RView", reservation_idx);
+	}
 }

@@ -1,5 +1,7 @@
 package com.woori.hodu;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.woori.domain.PartnerVO;
+import com.woori.domain.PensionVO;
+import com.woori.domain.ReservationVO;
 import com.woori.service.PartnerJoinServiceImpl;
 
 @Controller
@@ -118,6 +122,22 @@ public class PartnerJoinController {
 			partnerJoinService.deletePProfile(partnerId, psession);
 			
 			return "redirect:/";
+		}
+		
+		@RequestMapping("RList.do")
+		public String RList(ReservationVO rvo, Model rmodel) {
+			
+			List<ReservationVO> RList = partnerJoinService.RList(rvo);
+			rmodel.addAttribute("RList",RList);
+			
+			return "partner/myPpage/PreservationList";
+		}
+		
+		@RequestMapping("RView.do")
+		public String RView(int reservation_idx, Model rmodel) {
+			rmodel.addAttribute("RView", partnerJoinService.RView(reservation_idx));
+			
+			return "partner/myPpage/PreservationContent";
 		}
 }
 

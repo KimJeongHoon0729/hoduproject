@@ -24,7 +24,7 @@
 						<div class="fh5co-event to-animate-2">
 							<h3 style="font-family: 'Pretendard-Regular';">예약 관리</h3>
 							<p></p>
-							<p><a href="myPpage/PreservationList" class="btn btn-primary btn-outline">Reservation</a></p>
+							<p><a href="${path }/RList.do?partnerId=${partnerId}" class="btn btn-primary btn-outline">Reservation</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">

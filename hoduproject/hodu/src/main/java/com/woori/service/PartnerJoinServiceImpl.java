@@ -1,5 +1,7 @@
 package com.woori.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.woori.dao.PartnerJoinDAOImpl;
 import com.woori.domain.PartnerVO;
+import com.woori.domain.ReservationVO;
 
 @Service
 public class PartnerJoinServiceImpl implements PartnerJoinService {
@@ -59,5 +62,14 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 		psession.invalidate();
 	}
 	
-
+	
+	//예약 리스트 출력
+	@Override
+	public List<ReservationVO> RList(ReservationVO rvo){
+		return partnerJoin.RList(rvo);
+	}
+	@Override
+	public ReservationVO RView(int reservation_idx) {
+		return partnerJoin.RView(reservation_idx);
+	}
 }

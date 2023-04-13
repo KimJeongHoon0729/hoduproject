@@ -27,70 +27,72 @@
          </div>
          <p style="margin-bottom: -30px"></p>
          <div class="container" style="width: 70%;">
+         <form action="RView.do" method="post">
             <table class="table table-bordered">
             
                <tr>
                   <th style="width: 200px; text-align: center;">예약번호</th>
-                  <th></th>
+                  <th>${RView.reservation_idx }</th>
                </tr>
               
               <tr>
                   <th style="width: 200px; text-align: center;">예약일</th>
-                  <th></th>
+                  <th><fmt:formatDate value="${RView.reservation_date }" pattern="yyyy-MM-dd"/></th>
                </tr>
              
                <tr>
-                 <th text-align: center; style="text-align: center;">아이디</th>
-                    <th></th>   
+                 <th style="text-align: center;">아이디</th>
+                    <th>${RView.userId }</th>   
                </tr>
 
                <tr>
                   <th style="width: 200px; text-align: center;">예약자</th>
-                  <th></th>
+                  <th>${RView.userName }</th>
                </tr>
 				
 				<tr>
-					<th text-align: center; style="text-align: center;">인원수</th>
-					<th></th>
+					<th style="text-align: center;">인원수</th>
+					<th>${RView.peopleNum }</th>
 				</tr>
 					
 			   <tr>
                   <th style="width: 200px; text-align: center;">이메일</th>
-                  <th></th>
+                  <th>${RView.userEmail }</th>
                </tr>	
 					
                <tr>
-                  <th text-align: center; style="text-align: center;">전화번호</th>
-                  <th></th>
+                  <th style="text-align: center;">전화번호</th>
+                  <th>${RView.userMobile }</th>
                </tr>
 
                <tr>
-                   <th text-align: center; style="text-align: center;">펜션이름</th>
-                  <td></td>
+                  <th style="text-align: center;">펜션이름</th>
+                  <td>${RView.pensionName }</td>
                </tr>
                
                 <tr>
-                   <th text-align: center; style="text-align: center;">펜션가격</th>
-                  <td></td>
+                  <th style="text-align: center;">펜션가격</th>
+                  <td>${RView.price }</td>
                </tr>
 
                <tr>
                   <th style="width: 200px; text-align: center;">반려견 수</th>
-                  <th></th>
+                  <th>${RView.dogNumber }</th>
                </tr>
 
                <tr>
-                  <th text-align: center; style="text-align: center;">반려견 사이즈</th>
-                  <th></th>
+                  <th style="text-align: center;">반려견 사이즈</th>
+                  <th>${RView.dogSize }</th>
                </tr>
 
-					<tr>
+				<tr>
                   <th style="height:200px; text-align: center;">세부내용</th>
-                  <td></td>
+                  <td>${RView.message_to_p }</td>
                </tr>            
                
             </table>
-            <hr/>
+            </form>
+            
             <div class="find-btn" style="text-align: center;">
             <input class="btn btn-primary" value="수정" type="submit"  style="font-family: 'Pretendard-Regular';" >
 	        <input class="btn btn-primary" value="목록" type="submit"  style="font-family: 'Pretendard-Regular';" >
@@ -98,10 +100,7 @@
             </div>
             <br></br>
             
-            <form id="moveForm" method="get">
-            <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-              <input type="hidden" name="amount" value="${pageMaker.cri.amount }">   
-            </form>
+
          </div>
       </div>
 </div>

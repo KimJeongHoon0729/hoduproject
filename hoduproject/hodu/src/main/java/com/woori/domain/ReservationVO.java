@@ -1,6 +1,12 @@
 package com.woori.domain;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class ReservationVO {
+	
+	int reservation_idx;
 	String userId;
 	String userName;
 	String userMobile;
@@ -11,8 +17,15 @@ public class ReservationVO {
 	int dogNumber;
 	int peopleNum;
 	String message_to_p;
-	String reservation_date;
-	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	Date reservation_date;
+	String partnerId;
+	public int getReservation_idx() {
+		return reservation_idx;
+	}
+	public void setReservation_idx(int reservation_idx) {
+		this.reservation_idx = reservation_idx;
+	}
 	public String getUserId() {
 		return userId;
 	}
@@ -73,17 +86,29 @@ public class ReservationVO {
 	public void setMessage_to_p(String message_to_p) {
 		this.message_to_p = message_to_p;
 	}
-	public String getReservation_date() {
+	public Date getReservation_date() {
 		return reservation_date;
 	}
-	public void setReservation_date(String reservation_date) {
+	public void setReservation_date(Date reservation_date) {
 		this.reservation_date = reservation_date;
+	}
+	public String getPartnerId() {
+		return partnerId;
+	}
+	public void setPartnerId(String partnerId) {
+		this.partnerId = partnerId;
 	}
 	@Override
 	public String toString() {
-		return "ReservationVO [userId=" + userId + ", userName=" + userName + ", userMobile=" + userMobile
-				+ ", userEmail=" + userEmail + ", pensionName=" + pensionName + ", price=" + price + ", dogSize="
-				+ dogSize + ", dogNumber=" + dogNumber + ", peopleNum=" + peopleNum + ", message_to_p=" + message_to_p
-				+ ", reservation_date=" + reservation_date + "]";
+		return "ReservationVO [reservation_idx=" + reservation_idx + ", userId=" + userId + ", userName=" + userName
+				+ ", userMobile=" + userMobile + ", userEmail=" + userEmail + ", pensionName=" + pensionName
+				+ ", price=" + price + ", dogSize=" + dogSize + ", dogNumber=" + dogNumber + ", peopleNum=" + peopleNum
+				+ ", message_to_p=" + message_to_p + ", reservation_date=" + reservation_date + ", partnerId="
+				+ partnerId + "]";
 	}
+
+	
+
+	
+	
 }
