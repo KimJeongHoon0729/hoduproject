@@ -92,7 +92,7 @@ public class CommonController {
 	
 	//펜션 파일 업로드
 	
-	@PostMapping("multiFileUpload.do")
+	@PostMapping("roomRegister.do")
 	public String multiFileUpload(@RequestParam("multiFile") List<MultipartFile> multiFileList) {
 		String filename = "";
 		

@@ -104,7 +104,7 @@
          <p style="margin-bottom: 14px"></p>
          <div class="col-md-6 col-md-offset-3">
 	         <div class="form-group ">  
-	         <form method="post" action="${path }/multiFileUpload.do?partnerId=${partnerId }" enctype="multipart/form-data">
+	         <form method="post" action="${path }/roomRegister.do?partnerId=${partnerId }" enctype="multipart/form-data">
 				 <p style="text-align: left; margin-bottom: 10px"> 펜션 사진 업로드</p>
 			     <p style="width: 102%">
 			     <input type="file" name="multiFile" multiple class="form-control"></p>

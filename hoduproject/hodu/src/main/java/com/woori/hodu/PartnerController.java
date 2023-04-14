@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PartnerController {
-	@RequestMapping("partner/list")
-	public String plist() {
+	@RequestMapping("partner/register")
+	public String pRegister() {
 
 		
-		return "partner/list";
+		return "partner/register";
 	}
 	
 	@RequestMapping("partner/reservation")
@@ -58,7 +58,7 @@ public class PartnerController {
 	}
 	
 	@RequestMapping("partner/roomRegister")
-	public String room_regiter() {
+	public String room_register() {
 
 		
 		return "partner/roomRegister";

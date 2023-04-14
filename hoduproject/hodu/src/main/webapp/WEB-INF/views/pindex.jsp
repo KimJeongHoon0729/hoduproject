@@ -100,54 +100,70 @@
 		
 	<%@ include file="./partner/pheader.jsp" %>
 
-		<div id="fh5co-about" data-section="about">
-			<div class="fh5co-2col fh5co-bg to-animate-2" style="background-image: url(images/res_img_1.jpg)"></div>
-			<div class="fh5co-2col fh5co-text">
-				<h2 class="heading to-animate">About Us</h2>
-				<p class="to-animate"><span class="firstcharacter">F</span>ar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-				<p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline">Get in touch</a></p>
-			</div>
-		</div>
+		  <div id="fh5co-about" data-section="about">
+         <div class="fh5co-2col fh5co-bg to-animate-2">
+         <img src="/resources/images/3.jpg" style="width: 955px; height: 700px;">
+         </div>
+         <div class="fh5co-2col fh5co-text">
+            <h2 class="heading to-animate">About Us</h2>
+            <p class="to-animate" style="font-size:18px;"><span class="firstcharacter">
+            -></span>쉼 없는 일상속에서 휴식과 영감을 얻기 위해, 
+					놀고싶은 순간 망설임 없이, 
+					나의 영원한 단짝 반려견과 함께 편안한 하루를 선물하고 싶은 HODU STAY 입니다.
+					저희 호두스테이는 소중한 반려견과 함께 누구나 마음편히 놀 수 있도록 정보를 제공해주는 회사입니다.
+					호두스테이는 국내 최다 반려견 숙박업소를 보유하고 있습니다. 
+					위치정보를 활용하여 다양한 국내외 상품을 쉽고 빠르게 검색, 예약할 수 있으며
+					고객 편의 서비스를 통해 안심하고 즐기는 환경을 제공하고 있습니다.
+					호두스테이는 숙박, 문화, 주거, 상업의 공간까지 다양한 영역에서 
+					재충전(Refresh),오락(Entertain), 숙박(Stay), 여행(Travel)을 아우르는 R.E.S.T. 플레이스 구축에
+					앞장서고 있으며, 자체 개발한 클라우드 기반 자동화 솔루션을 여가산업에 적용해
+					글로벌 호스피탈리티 시장의 기술혁신을 선도하고 있습니다.
+					소중한 반려견과 함께 숙박의 패러다임을 전환하는 애견 글로벌 숙박 플랫폼 호두스테이로 떠나보세요.
+            	</p>
+            	<p style ="margin-bottom:70px;">
+            <p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline">Get in touch</a></p>
+         </div>
+      </div>
 
-		<div id="fh5co-sayings">
-			<div class="container">
-				<div class="row to-animate">
+      <div id="fh5co-sayings">
+         <div class="container">
+            <div class="row to-animate">
 
-					<div class="flexslider">
-						<ul class="slides">
-							
-							<li>
-								<blockquote>
-									<p>&ldquo;Cooking is an art, but all art requires knowing something about the techniques and materials&rdquo;</p>
-									<p class="quote-author">&mdash; Nathan Myhrvold</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Give a man food, and he can eat for a day. Give a man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
-									<p class="quote-author">&mdash; Lev L. Spiro</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Find something you’re passionate about and keep tremendously interested in it.&rdquo;</p>
-									<p class="quote-author">&mdash; Julia Child</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Never work before breakfast; if you have to work before breakfast, eat your breakfast first.&rdquo;</p>
-									<p class="quote-author">&mdash; Josh Billings</p>
-								</blockquote>
-							</li>
-							
-							
-						</ul>
-					</div>
+               <div class="flexslider">
+                  <ul class="slides">
+                     
+                     <li>
+                        <blockquote>
+                           <p>&ldquo;Cooking is an art, but all art requires knowing something about the techniques and materials&rdquo;</p>
+                           <p class="quote-author">&mdash; Nathan Myhrvold</p>
+                        </blockquote>
+                     </li>
+                     <li>
+                        <blockquote>
+                           <p>&ldquo;Give a man food, and he can eat for a day. Give a man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
+                           <p class="quote-author">&mdash; Lev L. Spiro</p>
+                        </blockquote>
+                     </li>
+                     <li>
+                        <blockquote>
+                           <p>&ldquo;Find something you’re passionate about and keep tremendously interested in it.&rdquo;</p>
+                           <p class="quote-author">&mdash; Julia Child</p>
+                        </blockquote>
+                     </li>
+                     <li>
+                        <blockquote>
+                           <p>&ldquo;Never work before breakfast; if you have to work before breakfast, eat your breakfast first.&rdquo;</p>
+                           <p class="quote-author">&mdash; Josh Billings</p>
+                        </blockquote>
+                     </li>
+                     
+                     
+                  </ul>
+               </div>
 
-				</div>
-			</div>
-		</div>
+            </div>
+         </div>
+      </div>
 
 <%@ include file="footer.jsp" %>
 	
