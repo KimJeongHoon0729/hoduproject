@@ -12,7 +12,7 @@
    <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>HODU SYAY &mdash; Welcome To Hodu Stay</title>
+   <title>HODU STAY &mdash; Welcome To Hodu Stay</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -109,7 +109,21 @@
          </div>
          <div class="fh5co-2col fh5co-text">
             <h2 class="heading to-animate">About Us</h2>
-            <p class="to-animate"><span class="firstcharacter">-></span>쉼 없는 일상속에서 휴식과 영감을 얻기 위해, 놀고싶은 순간 망설임 없이, 나의 영원한 단짝 반려견과 함께 편안한 하루를 선물하고 싶은 HODU STAY 입니다:) </p>
+            <p class="to-animate" style="font-size:18px;"><span class="firstcharacter">
+            -></span>쉼 없는 일상속에서 휴식과 영감을 얻기 위해, 
+					놀고싶은 순간 망설임 없이, 
+					나의 영원한 단짝 반려견과 함께 편안한 하루를 선물하고 싶은 HODU STAY 입니다.
+					저희 호두스테이는 소중한 반려견과 함께 누구나 마음편히 놀 수 있도록 정보를 제공해주는 회사입니다.
+					호두스테이는 국내 최다 반려견 숙박업소를 보유하고 있습니다. 
+					위치정보를 활용하여 다양한 국내외 상품을 쉽고 빠르게 검색, 예약할 수 있으며
+					고객 편의 서비스를 통해 안심하고 즐기는 환경을 제공하고 있습니다.
+					호두스테이는 숙박, 문화, 주거, 상업의 공간까지 다양한 영역에서 
+					재충전(Refresh),오락(Entertain), 숙박(Stay), 여행(Travel)을 아우르는 R.E.S.T. 플레이스 구축에
+					앞장서고 있으며, 자체 개발한 클라우드 기반 자동화 솔루션을 여가산업에 적용해
+					글로벌 호스피탈리티 시장의 기술혁신을 선도하고 있습니다.
+					소중한 반려견과 함께 숙박의 패러다임을 전환하는 애견 글로벌 숙박 플랫폼 호두스테이로 떠나보세요.
+            	</p>
+            	<p style ="margin-bottom:70px;">
             <p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline">Get in touch</a></p>
          </div>
       </div>
