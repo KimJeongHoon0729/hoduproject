@@ -8,7 +8,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>HODU LIST</title>
+<title>Pension List</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -28,7 +28,7 @@
 
          <!-- 드롭다운 추가 -->
          <div class="container" style="margin-bottom: 50px">
-            <div class="dropdown">
+            <div class="dropdown" style="float: right;">
                <button class="btn btn-default dropdown-toggle" type="button"
                   data-toggle="dropdown">
                   HODU LIST <span class="caret"></span>
