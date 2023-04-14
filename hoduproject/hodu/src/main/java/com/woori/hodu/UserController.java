@@ -20,6 +20,11 @@ public class UserController {
 		return "user/review";
 	}
 	
+	@RequestMapping("user/review_list")
+	public String reviewList() {
+		return "user/review_list";
+	}
+	
 	@RequestMapping("user/qna_list")
 	public String qna_list() {
 
@@ -73,4 +78,6 @@ public class UserController {
 		
 		return "user/q_content";
 	}
+	
+	
 }

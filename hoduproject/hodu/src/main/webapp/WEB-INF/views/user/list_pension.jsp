@@ -18,7 +18,7 @@
             </div>
          
          <div class="form-group" style="text-align: end;">
-            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='review'">리뷰확인</button>
+            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='review_list'">리뷰확인</button>
             <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='reservation'">예약하기</button>
          </div>
          
