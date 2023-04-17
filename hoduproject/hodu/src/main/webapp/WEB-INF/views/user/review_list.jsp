@@ -42,7 +42,7 @@
 
          <!-- 드롭다운 끝 -->
 
-<a class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;">후기작성</a>
+	<a  href="${path }/user/review"class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;">후기작성</a>
 
          <div class="row row-padded">
          
