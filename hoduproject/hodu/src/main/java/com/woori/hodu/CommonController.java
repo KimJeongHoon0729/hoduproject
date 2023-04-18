@@ -105,22 +105,24 @@ public class CommonController {
 			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
 					+ "\\tmp2\\wtpwebapps\\spring\\resources\\images\\";
 			
-			try {
-				new File(path).mkdirs(); 
-				multiFileList.get(i).transferTo(new File(path+filename));
-			} catch(Exception e) {
+				try {
+					new File(path).mkdirs(); 
+					multiFileList.get(i).transferTo(new File(path+filename));
+					} catch(Exception e) {
 				e.printStackTrace();
-			}
+				}
 			
-		}
+			}
 
 			
 		
-	}
+		}
 	
 		return "partner/roomRegister";
 	
-}
+	}
+	
+
 	
 	
 }

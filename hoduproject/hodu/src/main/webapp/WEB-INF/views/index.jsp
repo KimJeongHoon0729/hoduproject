@@ -85,8 +85,8 @@
                   <div class="row">
                                                                   
                      <h1 class="to-animate" style="font-size:200px;">HODU STAY</h1>
-                     <h2 class="to-animate" style="font-size: 75px;">private dog pension</h2>
-                     <h3 class="to-animate" style="font-size: 25px; font-family: 'Pretendard-Regular'; color:black">반려견과 함께하는 호두스테이</h3>
+                     <h2 class="to-animate" style="font-size: 40dpx;">private dog pension</h2>
+                     <h3 class="to-animate" style="font-size: 25px; font-family: 'Pretendard-Regular'; color:#fb6e14">반려견과 함께하는 호두스테이</h3>
                          
                   </div>
                </div>
@@ -137,7 +137,7 @@
                      
                      <li>
                         <blockquote>
-                           <img alt="오류" src="/resources/images/광고1.jpg">
+                           <img alt="오류" src="/resources/images/광고3.jpg">
                         </blockquote>
                      </li>
                      <li>
@@ -147,7 +147,7 @@
                      </li>
                      <li>
                         <blockquote>
-                           <img alt="오류" src="/resources/images/광고3.jpg">
+                           <img alt="오류" src="/resources/images/광고1.jpg">
                         </blockquote>
                      </li>
                      <li>

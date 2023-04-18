@@ -48,21 +48,10 @@
     background-color: #f0f0f0;
 }
 .rating .rate_radio:checked + label {
-    background-color: #ff8;
+    background-color: #fb6e14;
 }
 
-.warning_msg {
-    display: none;
-    position: relative;
-    text-align: center;
-    background: #ffffff;
-    line-height: 26px;
-    width: 100%;
-    color: red;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #e0e0e0;
-}
+
 </style>
  
 </head>
@@ -70,10 +59,10 @@
 <%@ include file="header.jsp" %>
 
 <div class="wrap">
-    <h1>후기</h1>
+    <h1 style="font-family: 'Pretendard-Regular';">후기</h1>
     <form name="reviewform" class="reviewform" method="post" action="/save">
         <input type="hidden" name="rate" id="rate" value="0"/>
-        <p class="title_star" >별점과 리뷰를 남겨주세요.</p>
+        <h3 class="title_star" style="font-family: 'Pretendard-Regular';">별점과 리뷰를 남겨주세요.</h3>
  
         <div class="review_rating">
             <div class="warning_msg">별점을 선택해 주세요.</div>
@@ -92,7 +81,7 @@
             </div>
         </div>
         <div class="review_contents">
-            <div class="warning_msg">5자 이상으로 작성해 주세요.</div>
+            <div class="warning_msg">소중한 리뷰를 작성해 주세요.</div>
             <textarea rows="10" class="review_textarea"></textarea>
         </div>   
         <div class="cmd">
@@ -103,4 +92,34 @@
 
 <%@ include file="footer.jsp" %>
 </body>
+
+	<script>
+
+	//별점 마킹 모듈 프로토타입으로 생성
+	function Rating(){};
+	Rating.prototype.rate = 0;
+	Rating.prototype.setRate = function(newrate){
+	    //별점 마킹 - 클릭한 별 이하 모든 별 체크 처리
+	    this.rate = newrate;
+	    let items = document.querySelectorAll('.rate_radio');
+	    items.forEach(function(item, idx){
+	        if(idx < newrate){
+	            item.checked = true;
+	        }else{
+	            item.checked = false;
+	        }
+	    });
+	}
+	let rating = new Rating();//별점 인스턴스 생성
+	
+	document.addEventListener('DOMContentLoaded', function(){
+	    //별점선택 이벤트 리스너
+	    document.querySelector('.rating').addEventListener('click',function(e){
+	        let elem = e.target;
+	        if(elem.classList.contains('rate_radio')){
+	            rating.setRate(parseInt(elem.value));
+	        }
+	    })
+	});
+	</script>
 </html>

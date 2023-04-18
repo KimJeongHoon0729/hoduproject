@@ -80,7 +80,7 @@
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
 						<a href="/partner/register">펜션 등록</a>
-						<a href="/partner/qna" >Q&A</a>
+						<a href="../AList.do?pageNum=1&amount=10&pensionName=${pensionName }" >Q&A</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="/p">HODU</a>

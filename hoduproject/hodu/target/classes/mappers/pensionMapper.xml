@@ -12,4 +12,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="moneyList" resultType="com.woori.domain.PensionVO">
 		select * from pension where region = #{region} order by price_mean  
 	</select>
+	<!-- 객실 등록 -->
+	<insert id="roomRegister">
+		INSERT INTO room(room_idx, partnerId, pensionName, roomNum, price, dogSize,
+			 dogNumber, peopleNum, img_room, img_room2, img_room3, img_room4,img_room5, img_room6, messsage_room) 
+			VALUES(#{room_idx},#{partnerId},#{pensionName},#{roomNum},#{price},#{dogSize}, #{dogNumber}, 
+			#{peopleNum}, #{img_room}, #{img_room2}, #{img_room3}, #{img_room4}, #{img_room5}, #{img_room6}, #{messsage_room})
+	</insert>
+	
 </mapper>
