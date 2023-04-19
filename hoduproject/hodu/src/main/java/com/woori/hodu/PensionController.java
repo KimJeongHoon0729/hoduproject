@@ -39,8 +39,18 @@ public class PensionController {
 		return "user/list";
 	}
 	
-	@RequestMapping("partner/roomRegister.do")
-	public String roomRegister(RoomVO vo, List<MultipartFile> room_img, RedirectAttributes rttr) throws Exception {
+	@RequestMapping("roomInfo.do")
+	public String roomInfo(RoomVO vo, List<MultipartFile> room_img, RedirectAttributes rttr) throws Exception {
+		
+		pensionService.roomRegister(vo);
+		
+		rttr.addFlashAttribute("room_register", vo.getRoomName());
+		
+		return "redirect:/roomRegister";
+	}
+	
+	@RequestMapping("roomImg.do")
+	public String roomImg(RoomVO vo, List<MultipartFile> room_img, RedirectAttributes rttr) throws Exception {
 		String filename = "";
 		
 		if(!room_img.isEmpty()) {
@@ -49,8 +59,10 @@ public class PensionController {
 			filename = room_img.get(i).getOriginalFilename();
 
 			
-			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
-					+ "\\tmp2\\wtpwebapps\\spring\\resources\\images\\";
+//			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
+//					+ "\\tmp2\\wtpwebapps\\spring\\resources\\images\\";
+			
+			String path = "C:\\tmp\\";
 			
 				try {
 					new File(path).mkdirs(); 
@@ -62,10 +74,10 @@ public class PensionController {
 			
 			}
 		}
-		pensionService.roomRegister(vo);
+		
 		
 		rttr.addFlashAttribute("room_register", vo.getRoomName());
 		
-		return "redirect:/p";
+		return "redirect:/roomRegister";
 	}
 }

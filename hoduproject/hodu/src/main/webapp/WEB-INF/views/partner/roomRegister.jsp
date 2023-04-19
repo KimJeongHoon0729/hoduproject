@@ -35,25 +35,25 @@
             </div>
           
 
-          <form action="#" method="post">
+          <form id="roomInfo" method="post" action="${path }/roomInfo.do?partnerId=${partnerId }">
                 <div class="container" style="text-align:center;padding-left: 4px">
                 
                 <div class="col-md-6 col-md-offset-3">
                   <h3 style="font-family: 'Pretendard-Regular';">Hodu Pension Room Register form</h3>
                  
                   <div class="form-group">
-                     <label for="pensionName" class="sr-only">pensionName</label>
-                     <input id="pensionName" name="pensionName" class="form-control" placeholder="객실명" type="text">
+                     <label for="roomName" class="sr-only">pensionName</label>
+                     <input id="roomName" name="roomName" class="form-control" placeholder="객실명" type="text">
                   </div>
                  
                   <div class="form-group">
-                     <label for="peopleNumber" class="sr-only">peopleNumber</label>
-                     <input id="peopleNumber" name="peopleNumber" class="form-control" placeholder="객실 가격" type="number">
+                     <label for="peopleNum" class="sr-only">peopleNumber</label>
+                     <input id="peopleNum" name="peopleNum" class="form-control" placeholder="객실 가격" type="number">
                   </div>
                              
                   <div class="form-group">
-                     <label for="dogNumber" class="sr-only">dogNumber</label>
-                     <input id="dogNumber"  class="form-control" placeholder="수용 가능한 반려견 수" type="number">
+                     <label for="dogNum" class="sr-only">dogNumber</label>
+                     <input id="dogNum" name="dogNum" class="form-control" placeholder="수용 가능한 반려견 수" type="number">
                   </div>
                    
                  <div class="form-group">
@@ -70,8 +70,8 @@
                 </div>
                    
                    <div class="form-group ">
-                     <label for="peopleNumber" class="sr-only">peopleNumber</label>
-                     <input id="peopleNumber" name="peopleNumber" class="form-control" placeholder="수용 가능한 인원 수" type="number">
+                     <label for="peopleNum" class="sr-only">peopleNumber</label>
+                     <input id="peopleNum" name="peopleNum" class="form-control" placeholder="수용 가능한 인원 수" type="number">
                   </div>
                   
                  <div class="message">
@@ -84,14 +84,14 @@
          <p style="margin-bottom: 14px"></p>
          <div class="col-md-6 col-md-offset-3">
 	         <div class="form-group ">  
-	         <form method="post" action="${path }/multiFileUpload.do?partnerId=${partnerId }" enctype="multipart/form-data">
+	         <form id="roomImg" method="post" enctype="multipart/form-data" action="${path }/roomImg.do?partnerId=${partnerId }">
 				 <p style="text-align: left; margin-bottom: 10px"> 객실 사진 업로드</p>
 			     <p style="width: 102%">
 			     <input type="file" name="multiFile" multiple class="form-control"></p>
 	             
 	             <div class="find-btn" >
-	             <input class="btn btn-primary" value="다음" type="submit"  style="font-family: 'Pretendard-Regular';" >
-	             <input class="btn btn-primary" value="제출" type="submit"  style="font-family: 'Pretendard-Regular';" >
+	             <input id="nextButton" class="btn btn-primary" onclick="next();" value="다음" type="button" style="font-family: 'Pretendard-Regular';"/>
+	             <input class="btn btn-primary" value="제출" onclick="" type="button" style="font-family: 'Pretendard-Regular';"/>
 			 </div>
 			 </form> 
 			 </div> 
@@ -102,5 +102,22 @@
 <%@ include file = "../footer.jsp" %>
 
 </div>
+	<script>
+	// 1) 폼 두개 아이디로 제출 제출 후 다시 이 페이지 뜨게
+	
+		function next() {
+		document.getElementById('roomImg').submit();
+		document.getElementById('roomInfo').submit();
+
+	}
+		
+	
+	
+	// 2) 폼 두개 아이디로 제출 제출 후 빠져나가게
+	
+	
+	
+	
+	</script>
    </body>
 </html>
