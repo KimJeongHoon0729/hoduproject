@@ -102,7 +102,7 @@
 
 		  <div id="fh5co-about" data-section="about">
          <div class="fh5co-2col fh5co-bg to-animate-2">
-         <img src="/resources/images/3.jpg" style="width: 955px; height: 700px;">
+         <img src="/resources/images/3.jpg" style="width: 100%; height: 100%;">
          </div>
          <div class="fh5co-2col fh5co-text">
             <h2 class="heading to-animate">About Us</h2>
