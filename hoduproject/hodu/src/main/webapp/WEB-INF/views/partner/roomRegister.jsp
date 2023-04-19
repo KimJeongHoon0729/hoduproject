@@ -77,7 +77,7 @@
                  <div class="message">
                      <textarea id="message_room" name="message_room" class="message_area form-control" rows="8" cols="50" placeholder="객실 세부사항을 입력해주세요"></textarea>
                 </div>
-                  
+                  <input id="idx" name="idx" value="" type="hidden">
             </div>
          </div>
          </form>
@@ -90,8 +90,8 @@
 			     <input type="file" name="multiFile" multiple class="form-control"></p>
 	             
 	             <div class="find-btn" >
-	             <input class="btn btn-primary" onclick="next();" value="다음" type="button" onclick="location.href='/partner/roomRegister'" style="font-family: 'Pretendard-Regular';"/>
-	             <input class="btn btn-primary" onclick="_submit();" value="제출" type="button" style="font-family: 'Pretendard-Regular';"/>
+	             <input class="btn btn-primary" onclick="next();" value="다음" type="button" style="font-family: 'Pretendard-Regular';"/>
+	             <input class="btn btn-primary" onclick="_submit();" value="제출" type="button"  style="font-family: 'Pretendard-Regular';"/>
 			 </div>
 			 </form> 
 			 </div> 
@@ -106,22 +106,24 @@
 	// 1) 폼 두개 아이디로 제출 제출 후 다시 이 페이지 뜨게
 	
 		function next() {
+			$('input[name=idx]').attr('value',"0");
 			document.getElementById('roomImg').submit();
 			document.getElementById('roomInfo').submit();
-						
 			
+			console.log($('input[name=idx]').val());
 		}
 	
 	// 2) 폼 두개 아이디로 제출 제출 후 빠져나가게
 	
 		function _submit() {
+			$('input[name=idx]').attr('value',"1");
 			document.getElementById('roomImg').submit();
 			document.getElementById('roomInfo').submit();
-			
-			
+
+			console.log($('input[name=idx]').val());
 			
 		}
-	
+
 	
 	</script>
    </body>

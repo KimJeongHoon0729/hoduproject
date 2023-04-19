@@ -1,13 +1,18 @@
 package com.woori.hodu;
 
 import java.io.File;
+import java.lang.System.Logger;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -17,6 +22,8 @@ import com.woori.service.PensionService;
 
 @Controller
 public class PensionController {
+
+	
 	
 	@Inject
 	private PensionService pensionService;
@@ -40,12 +47,20 @@ public class PensionController {
 	}
 	
 	@RequestMapping("roomInfo.do")
-	public void roomInfo(RoomVO vo) throws Exception {
+	public String roomInfo(RoomVO vo, @RequestParam("idx") int idx){
 		pensionService.roomRegister(vo);
+		if(idx == 0) {
+
+			return "partner/roomRegister";
+		} else {
+			
+			return "/pindex";
+		}
+		
 	}
 	
 	@RequestMapping("roomImg.do")
-	public void roomImg(RoomVO vo, List<MultipartFile> room_img) throws Exception {
+	public String roomImg(RoomVO vo, List<MultipartFile> room_img) throws Exception {
 		String filename = "";
 		
 		if(!room_img.isEmpty()) {
@@ -68,6 +83,6 @@ public class PensionController {
 			
 			}
 		}
-		
+		return "partner/roomRegister";
 	}
 }
