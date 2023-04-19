@@ -107,7 +107,7 @@
 
 <body style="font-family: 'Pretendard-Regular';">
 
-<%@ include file="../header.jsp" %>
+<%@ include file="pheader.jsp" %>
    <div id="fh5co-menus" data-section="menu">
       <div class="container">
 			<div class="row text-center fh5co-heading row-padded">
@@ -187,7 +187,7 @@
 		</div>
 </div>
 
-<%@ include file="../footer.jsp" %>
+<%@ include file="footer.jsp" %>
 
 
 

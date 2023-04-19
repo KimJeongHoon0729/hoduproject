@@ -55,11 +55,10 @@ public class PartnerJoinController {
 				if(PpwdMatch == true){//로그인 성공
 				mav.setViewName("pindex");
 				mav.addObject("msg", "sucess");
-					if(mav.addObject("pensionName", partnerJoinService.sessionPensionName("partnerId", psession)) != null) {
-						mav.addObject("pensionName", partnerJoinService.sessionPensionName("partnerId", psession));
-						logger.info("가져오기 성공");
+					if(partnerJoinService.sessionPensionName(pvo.getPartnerId()) != null) {
+						mav.addObject("pensionName", partnerJoinService.sessionPensionName(pvo.getPartnerId()));
+						psession.setAttribute("pensionName", partnerJoinService.sessionPensionName(pvo.getPartnerId()));
 					} else {
-						logger.info("가져오기 실패");
 					}
 					
 				} else {
