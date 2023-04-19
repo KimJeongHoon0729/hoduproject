@@ -190,6 +190,15 @@ public class PartnerJoinController {
 			
 			return "partner/qna";
 		}
+		
+		//Q 확인
+		@RequestMapping("AView.do")
+		public String AView(int Q_idx,HttpSession qsession, Model qmodel) {
+			qmodel.addAttribute("QView", partnerJoinService.AView(Q_idx,qsession));
+					
+			return "user/q_content";
+		}
+				
 }
 
 

@@ -111,4 +111,10 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	public int AgetTotal(PCriteria Pcri) {
 		return partnerJoin.getTotal(Pcri);
 	}
+	//A 확인
+	@Override
+	public QuestionVO AView(int Q_idx, HttpSession qsession) {
+		qsession.setAttribute("Q_idx", Q_idx);
+		return partnerJoin.AView(Q_idx);
+	}
 }

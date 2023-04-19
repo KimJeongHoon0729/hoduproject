@@ -42,4 +42,6 @@ public interface PartnerJoinDAO {
 	public List<QuestionVO> AList(PCriteria Pcri);
 	//A 게시판 개수
 	public int getTotal(PCriteria Pcri);
+	//A 확인
+	public QuestionVO AView(int Q_idx);
 }

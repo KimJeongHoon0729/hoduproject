@@ -41,4 +41,7 @@ public interface PartnerJoinService {
 	//A 리스트 출력
 	public List<QuestionVO> AList(PCriteria Pcri);
 	public int AgetTotal(PCriteria Pcri);
+	
+	//A 확인
+	public QuestionVO AView(int Q_idx, HttpSession psession);
 }

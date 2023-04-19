@@ -37,6 +37,12 @@ public class PartnerController {
 		
 		return "partner/qna";
 	}
+	@RequestMapping("partner/p_q_content")
+	public String p_q_content() {
+
+		
+		return "partner/p_q_content";
+	}
 	
 	@RequestMapping("partner/myPpage")
 	public String myPpage() {

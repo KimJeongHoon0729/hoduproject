@@ -32,4 +32,5 @@ public interface UserJoinService {
 	public void Q_insert(QuestionVO qvo);
 	//Q 확인
 	public QuestionVO QView(int Q_idx, HttpSession session);
+	
 }

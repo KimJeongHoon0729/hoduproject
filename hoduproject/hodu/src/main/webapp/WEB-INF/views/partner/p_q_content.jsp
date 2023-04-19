@@ -27,27 +27,27 @@
 			</div>
 			<p style="margin-bottom: -30px"></p>
 			<div class="container" style="width: 70%;">
-				<form action="QView.do" method="post">
+				<form action="AView.do" method="post">
 				<table class="table table-bordered">
 				
 				   <tr>
 				      <th style="width: 200px; text-align: center;">아이디</th>
-				      <td>${QView.userId }</td>
+				      <td>${AView.userId }</td>
 				   </tr>
 				 
 				   <tr>
 					  <th style="text-align: center;">펜션 이름</th>
-				   	  <td>${QView.pensionName }</td>	
+				   	  <td>${AView.pensionName }</td>	
 				   </tr>   
 				   
 				   <tr>
 					    <th style="text-align: center;">제목</th>
-					   <td>${QView.q_title }</td>
+					   <td>${AView.q_title }</td>
 				   </tr>   
 				   
 				   <tr>
 					   <th style="height:200px; text-align: center;">내용</th>
-					   <td>${QView.q_content }</td>
+					   <td>${AView.q_content }</td>
 				   </tr>		   
 
 				   <tr>
@@ -59,7 +59,7 @@
 				</form>
 				
 				<div class="col-sm-3" style="left:340px;">
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='../../QList.do?pageNum=1&amount=10'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
+				<button class="btn btn-primary btn-block" type="button" onclick="location.href='#'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
 				</div>
 				<br></br>
 				

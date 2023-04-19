@@ -106,4 +106,10 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 		return psqlSession.selectOne("partner.AgetTotal");
 	}
 	
+	//A 확인
+	@Override
+	public QuestionVO AView(int Q_idx) {
+		return psqlSession.selectOne("partner.AView", Q_idx);
+	}
+	
 }

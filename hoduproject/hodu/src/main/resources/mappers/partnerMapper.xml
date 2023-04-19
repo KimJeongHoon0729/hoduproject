@@ -125,4 +125,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </if>   
 	</select>
 	
+	<!-- A 세부 정보 보기 -->
+	
+	<select id="AView" resultType="com.woori.domain.QuestionVO" parameterType="int">
+		select   *   from   question   where   Q_idx   =   #{Q_idx}     
+	</select> 
+	
 </mapper>
