@@ -47,8 +47,8 @@
                   </div>
                  
                   <div class="form-group">
-                     <label for="peopleNum" class="sr-only">peopleNumber</label>
-                     <input id="peopleNum" name="peopleNum" class="form-control" placeholder="객실 가격" type="number">
+                     <label for="price" class="sr-only">peopleNumber</label>
+                     <input id="price" name="price" class="form-control" placeholder="객실 가격" type="number">
                   </div>
                              
                   <div class="form-group">
@@ -62,9 +62,9 @@
                <div class="form-control" style="margin-bottom: 15px">
                		
                		<p style="font-size: 16px"> 
-		                <input type='checkbox' name='check' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
-		                <input type='checkbox' name='check' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
-		                <input type='checkbox' name='check' value='대형견' /> 대형견 (25Kg 이상)
+		                <input id="dogSize" name="dogSize" type='checkbox' name='check' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input id="dogSize" name="dogSize" type='checkbox' name='check' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input id="dogSize" name="dogSize" type='checkbox' name='check' value='대형견' /> 대형견 (25Kg 이상)
 		            </p>
 		        
                 </div>
@@ -75,7 +75,7 @@
                   </div>
                   
                  <div class="message">
-                     <textarea class="message_area form-control" rows="8" cols="50" placeholder="객실 세부사항을 입력해주세요"></textarea>
+                     <textarea id="message_room" name="message_room" class="message_area form-control" rows="8" cols="50" placeholder="객실 세부사항을 입력해주세요"></textarea>
                 </div>
                   
             </div>
@@ -90,8 +90,8 @@
 			     <input type="file" name="multiFile" multiple class="form-control"></p>
 	             
 	             <div class="find-btn" >
-	             <input id="nextButton" class="btn btn-primary" onclick="next();" value="다음" type="button" style="font-family: 'Pretendard-Regular';"/>
-	             <input class="btn btn-primary" value="제출" onclick="" type="button" style="font-family: 'Pretendard-Regular';"/>
+	             <input class="btn btn-primary" onclick="next();" value="다음" type="button" onclick="location.href='/partner/roomRegister'" style="font-family: 'Pretendard-Regular';"/>
+	             <input class="btn btn-primary" onclick="_submit();" value="제출" type="button" style="font-family: 'Pretendard-Regular';"/>
 			 </div>
 			 </form> 
 			 </div> 
@@ -106,16 +106,21 @@
 	// 1) 폼 두개 아이디로 제출 제출 후 다시 이 페이지 뜨게
 	
 		function next() {
-		document.getElementById('roomImg').submit();
-		document.getElementById('roomInfo').submit();
-
-	}
-		
-	
+			document.getElementById('roomImg').submit();
+			document.getElementById('roomInfo').submit();
+						
+			
+		}
 	
 	// 2) 폼 두개 아이디로 제출 제출 후 빠져나가게
 	
-	
+		function _submit() {
+			document.getElementById('roomImg').submit();
+			document.getElementById('roomInfo').submit();
+			
+			
+			
+		}
 	
 	
 	</script>

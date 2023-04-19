@@ -113,12 +113,10 @@ public class CommonController {
 			}
 			
 		}
-
-			
 		
 	}
 	
-		return "partner/roomRegister";
+		return "partner/Register";
 	
 }
 	
