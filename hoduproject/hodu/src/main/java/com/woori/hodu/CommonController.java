@@ -63,7 +63,7 @@ public class CommonController {
 	}
 	
 	
-	//파일 업로드
+	//�뙆�씪 �뾽濡쒕뱶
 	
 
 	@PostMapping("uploadPProfile.do")
@@ -90,9 +90,9 @@ public class CommonController {
 		return "redirect: viewPProfile.do";
 	}
 	
-	//펜션 파일 업로드
+	//�렂�뀡 �뙆�씪 �뾽濡쒕뱶
 	
-	@PostMapping("roomRegister.do")
+	@PostMapping("#")
 	public String multiFileUpload(@RequestParam("multiFile") List<MultipartFile> multiFileList) {
 		String filename = "";
 		

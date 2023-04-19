@@ -15,9 +15,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 객실 등록 -->
 	<insert id="roomRegister">
-		INSERT INTO room(room_idx, partnerId, pensionName, roomNum, price, dogSize,
-			 dogNumber, peopleNum, img_room, img_room2, img_room3, img_room4,img_room5, img_room6, messsage_room) 
-			VALUES(#{room_idx},#{partnerId},#{pensionName},#{roomNum},#{price},#{dogSize}, #{dogNumber}, 
-			#{peopleNum}, #{img_room}, #{img_room2}, #{img_room3}, #{img_room4}, #{img_room5}, #{img_room6}, #{messsage_room})
+		INSERT INTO room(room_idx, partnerId, roomName, roomNum, price, dogSize,
+			 dogNum, peopleNum, img_room, message_room) 
+			VALUES(#{room_idx},#{partnerId},#{roomName},#{roomNum},#{price},#{dogSize}, #{dogNum}, 
+			#{peopleNum}, #{img_room}, #{message_room})
 	</insert>
 </mapper>

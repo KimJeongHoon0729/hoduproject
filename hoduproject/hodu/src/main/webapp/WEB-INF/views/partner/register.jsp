@@ -104,11 +104,11 @@
          <p style="margin-bottom: 14px"></p>
          <div class="col-md-6 col-md-offset-3">
 	         <div class="form-group ">  
-	         <form method="post" action="${path }/roomRegister.do?partnerId=${partnerId }" enctype="multipart/form-data">
+	         <form method="post"  enctype="multipart/form-data">
 				 <p style="text-align: left; margin-bottom: 10px"> 펜션 사진 업로드</p>
 			     <p style="width: 102%">
 			     <input type="file" name="multiFile" multiple class="form-control"></p>
-	             <input class="btn btn-primary" value="다음" type="submit"  style="font-family: 'Pretendard-Regular'; 
+	             <input class="btn btn-primary" value="다음" type="button" onclick="location.href='/partner/roomRegister';" style="font-family: 'Pretendard-Regular'; 
 	             margin-top: 15px; margin-left: 240px;margin-right: 240px">
 			 </form> 
 			 </div> 
