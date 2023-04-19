@@ -55,7 +55,7 @@
                   <div class="form-group ">
                      <button class="btn btn-primary" type="submit" style="font-family: 'Pretendard-Regular';">제출</button>
                    </div>
-                   </div> 
+               </div> 
                   </div>
 				</form>
             </div>

@@ -52,7 +52,6 @@
 
 				   <tr>
 					   <th style="height:200px; text-align: center;">답변</th>
-					   <td></td>
 				   </tr>	
 				 
 				</table>
