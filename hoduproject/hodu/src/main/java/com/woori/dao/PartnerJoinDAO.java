@@ -15,6 +15,8 @@ public interface PartnerJoinDAO {
 
 	//로그인
 	public PartnerVO plogincheck(PartnerVO pvo);
+	//펜션 네임 가져오기
+	public String sessionPensionName(String partnerId);
 	public void plogout(HttpSession psession);
 	
 	public void insertPartner(PartnerVO pvo);

@@ -14,7 +14,10 @@ public interface PartnerJoinService {
 	
 	//로그인
 	public PartnerVO plogincheck(PartnerVO pvo, HttpSession psession);
+	//펜션 네임 가져오기
+	public String sessionPensionName(String partnerId, HttpSession psession);
 	public void plogout(HttpSession psession);
+	
 	
 	public void insertParnter(PartnerVO pvo);
 	public PartnerVO viewPProfile(String partnerId);

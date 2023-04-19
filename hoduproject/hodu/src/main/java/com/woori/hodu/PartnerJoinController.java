@@ -47,7 +47,7 @@ public class PartnerJoinController {
 		}
 		
 		@RequestMapping("plogincheck.do")
-		public ModelAndView plogincheck(@ModelAttribute PartnerVO pvo,@ModelAttribute PensionVO pevo, HttpSession psession, RedirectAttributes redirect) {
+		public ModelAndView plogincheck(@ModelAttribute PartnerVO pvo, HttpSession psession, RedirectAttributes redirect) {
 			PartnerVO presult = partnerJoinService.plogincheck(pvo, psession);
 			ModelAndView mav = new ModelAndView();
 			if(presult != null) {
@@ -55,7 +55,13 @@ public class PartnerJoinController {
 				if(PpwdMatch == true){//로그인 성공
 				mav.setViewName("pindex");
 				mav.addObject("msg", "sucess");
-				redirect.addAttribute("pensionName",pevo.getPensionName() );
+					if(mav.addObject("pensionName", partnerJoinService.sessionPensionName("partnerId", psession)) != null) {
+						mav.addObject("pensionName", partnerJoinService.sessionPensionName("partnerId", psession));
+						logger.info("가져오기 성공");
+					} else {
+						logger.info("가져오기 실패");
+					}
+					
 				} else {
 					mav.setViewName("login");
 					mav.addObject("msg", "fail");

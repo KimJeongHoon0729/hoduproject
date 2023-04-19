@@ -89,9 +89,9 @@
 					</div>
 				</div>
 			  	<ul class="slides">
-			   	<li style="background-image: url(images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
-			   	<li style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
-			   	<li style="background-image: url(images/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
+			   	<li data-stellar-background-ratio="0.5"></li>
+			   	<li data-stellar-background-ratio="0.5"></li>
+			   	<li data-stellar-background-ratio="0.5"></li>
 			  	</ul>
 
 			</div>
@@ -132,28 +132,24 @@
                <div class="flexslider">
                   <ul class="slides">
                      
-                     <li>
+                      <li>
                         <blockquote>
-                           <p>&ldquo;Cooking is an art, but all art requires knowing something about the techniques and materials&rdquo;</p>
-                           <p class="quote-author">&mdash; Nathan Myhrvold</p>
+                           <img alt="오류" src="/resources/images/광고3.jpg">
                         </blockquote>
                      </li>
                      <li>
                         <blockquote>
-                           <p>&ldquo;Give a man food, and he can eat for a day. Give a man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
-                           <p class="quote-author">&mdash; Lev L. Spiro</p>
+                          <img alt="오류" src="/resources/images/광고2.jpg">
                         </blockquote>
                      </li>
                      <li>
                         <blockquote>
-                           <p>&ldquo;Find something you’re passionate about and keep tremendously interested in it.&rdquo;</p>
-                           <p class="quote-author">&mdash; Julia Child</p>
+                           <img alt="오류" src="/resources/images/광고1.jpg">
                         </blockquote>
                      </li>
                      <li>
                         <blockquote>
-                           <p>&ldquo;Never work before breakfast; if you have to work before breakfast, eat your breakfast first.&rdquo;</p>
-                           <p class="quote-author">&mdash; Josh Billings</p>
+                           <img alt="오류" src="/resources/images/광고4.jpg">
                         </blockquote>
                      </li>
                      

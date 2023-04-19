@@ -26,6 +26,10 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 		
 		return psqlSession.selectOne("partner.plogin", pvo);
 	};
+	//펜션 네임 가져오기
+	public String sessionPensionName(String partnerId) {
+		return psqlSession.selectOne("partner.sessionPensionName", partnerId);
+	}
 
 	
 	@Override

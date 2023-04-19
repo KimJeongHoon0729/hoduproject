@@ -9,9 +9,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			*  
 		from   
 			partnerjoin    
-		where partnerjoin.partnerId = #{partnerId}   
-			and partnerjoin.businessNum = #{businessNum}   
+		where partnerId = #{partnerId}   
+			and businessNum = #{businessNum}   
 		
+	</select>
+	
+	<select id="sessionPensionName" resultType="String" parameterType="String">
+		select pensionName   
+		from  pension   
+		where  partnerId = #{partnerId}   
 	</select>
 	
 
