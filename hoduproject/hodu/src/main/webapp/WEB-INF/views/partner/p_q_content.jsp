@@ -27,40 +27,42 @@
 			</div>
 			<p style="margin-bottom: -30px"></p>
 			<div class="container" style="width: 70%;">
-				<form action="AView.do" method="post">
-				<table class="table table-bordered">
-				
-				   <tr>
-				      <th style="width: 200px; text-align: center;">아이디</th>
-				      <td>${AView.userId }</td>
-				   </tr>
-				 
-				   <tr>
-					  <th style="text-align: center;">펜션 이름</th>
-				   	  <td>${AView.pensionName }</td>	
-				   </tr>   
-				   
-				   <tr>
-					    <th style="text-align: center;">제목</th>
-					   <td>${AView.q_title }</td>
-				   </tr>   
-				   
-				   <tr>
-					   <th style="height:200px; text-align: center;">내용</th>
-					   <td>${AView.q_content }</td>
-				   </tr>		   
-
-				   <tr>
-					   <th style="height:200px; text-align: center;">답변</th>
-					   <td><textarea name="A_content"></textarea></td>
-				   </tr>	
-				 
-				</table>
+				<form action="AView.do?Q_idx=${Q_idx }" method="post">
+					<table class="table table-bordered">
+					
+					   <tr>
+					      <th style="width: 200px; text-align: center;">아이디</th>
+					      <td>${AView.userId }</td>
+					   </tr>
+					 
+					   <tr>
+						  <th style="text-align: center;">펜션 이름</th>
+					   	  <td>${AView.pensionName }</td>	
+					   </tr>   
+					   
+					   <tr>
+						    <th style="text-align: center;">제목</th>
+						   <td>${AView.q_title }</td>
+					   </tr>   
+					   
+					   <tr>
+						   <th style="height:200px; text-align: center;">내용</th>
+						   <td>${AView.q_content }</td>
+					   </tr>		   
+	
+					   <tr>
+						   <th style="height:200px; text-align: center;">답변</th>
+						   <td><textarea name="A_content" style='width:100%'></textarea></td>
+					   </tr>	
+					 
+					</table>
+					<div class="col-sm-3" style="left:340px;">
+						<button class="btn btn-primary btn-block" type="button" onclick="location.href='${path }/AList.do?pageNum=1&amount=10&pensionName=${pensionName}'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
+						<button class="btn btn-primary btn-block" type="submit" style="width: 70px; font-family: 'Pretendard-Regular';">제출</button>
+					</div>
 				</form>
 				
-				<div class="col-sm-3" style="left:340px;">
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='#'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
-				</div>
+				
 				<br></br>
 				
 			</div>
