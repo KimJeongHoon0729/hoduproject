@@ -30,8 +30,8 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 		return partnerJoin.plogincheck(pvo);
 	}
 	//펜션 네임 가져오기
-	public String sessionPensionName(String partnerId, HttpSession psession) {
-		psession.setAttribute("partnerId", partnerId);
+	public String sessionPensionName(String partnerId) {
+	
 		return partnerJoin.sessionPensionName(partnerId);
 	}
 
