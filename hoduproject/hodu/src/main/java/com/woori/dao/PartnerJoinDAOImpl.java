@@ -8,7 +8,10 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.woori.domain.PCriteria;
+import com.woori.domain.Criteria;
 import com.woori.domain.PartnerVO;
+import com.woori.domain.QuestionVO;
 import com.woori.domain.ReservationVO;
 
 @Repository
@@ -85,4 +88,18 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 	public void RUpdate(ReservationVO rvo) {
 		psqlSession.update("partner.RUpdate", rvo);
 	}
+	
+	//A 리스트 출력
+	@Override
+	public List<QuestionVO> AList(PCriteria Pcri){
+		return psqlSession.selectList("partner.AList", Pcri);
+		
+	}
+	
+	//A 게시판 개수
+	@Override
+	public int getTotal(PCriteria Pcri) {
+		return psqlSession.selectOne("partner.AgetTotal");
+	}
+	
 }

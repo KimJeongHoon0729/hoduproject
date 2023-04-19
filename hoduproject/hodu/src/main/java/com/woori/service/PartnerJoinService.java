@@ -4,7 +4,10 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.woori.domain.PCriteria;
+import com.woori.domain.Criteria;
 import com.woori.domain.PartnerVO;
+import com.woori.domain.QuestionVO;
 import com.woori.domain.ReservationVO;
 
 public interface PartnerJoinService {
@@ -31,4 +34,8 @@ public interface PartnerJoinService {
 	//예약 수정
 	public ReservationVO RView2(int reservation_idx);
 	public void RUpdate(ReservationVO rvo);
+	
+	//A 리스트 출력
+	public List<QuestionVO> AList(PCriteria Pcri);
+	public int AgetTotal(PCriteria Pcri);
 }

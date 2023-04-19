@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.woori.dao.PensionDAO;
 import com.woori.domain.PensionVO;
-import com.woori.domain.RoomVO;
 
 @Service
 public class PensionServiceImpl implements PensionService {
@@ -26,11 +25,5 @@ public class PensionServiceImpl implements PensionService {
 	public List<PensionVO> moneyList(PensionVO vo) {
 		// TODO Auto-generated method stub
 		return pensionDao.moneyList(vo);
-	}
-	
-	@Override
-	public void roomRegister(RoomVO vo) {
-		pensionDao.roomRegister(vo);
-		
 	}
 }

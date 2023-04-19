@@ -8,9 +8,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select  
 			*  
 		from   
-			partnerjoin   
-		where partnerId = #{partnerId}   
-			and businessNum = #{businessNum}
+			partnerjoin    
+		where partnerjoin.partnerId = #{partnerId}   
+			and partnerjoin.businessNum = #{businessNum}   
 		
 	</select>
 	
@@ -73,6 +73,50 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="RView2" resultType="com.woori.domain.ReservationVO">
 		select * from reservation where reservation_idx = #{reservation_idx}
+	</select>
+	
+	
+	<!-- 검색 조건문 -->
+    <sql id="pcriteria">
+        <trim prefix="where (" suffix=")" prefixOverrides="OR">
+            <foreach collection="typeArr" item="type">
+                <trim prefix="OR">
+                    <choose>
+                        <when test="type == 'T'.toString()">
+                            Q_title like concat('%',#{keyword},'%') 
+                        </when>
+                        <when test="type == 'C'.toString()">
+                            Q_content like concat('%',#{keyword},'%') 
+                        </when>
+                        <when test="type == 'W'.toString()">
+                            userId like concat('%',#{keyword},'%' )
+                        </when>
+                    </choose>
+                </trim>
+            </foreach>
+        </trim>
+    
+    </sql>
+	
+	<!-- A리스트 출력 -->
+	
+	<select id="AList" resultType="com.woori.domain.QuestionVO" parameterType="com.woori.domain.PCriteria">
+		select * from question 
+			<if test="keyword != null">
+                 <include refid="pcriteria"></include>
+            </if>
+        where pensionName = #{pensionName}  
+		order by Q_idx    
+		limit #{skip},#{amount}   
+		
+	</select>
+	
+	<!-- 게시물 개수 -->
+	<select id="AgetTotal" resultType="int">
+		select count(*) from question  where pensionName=#{pensionName}
+		<if test="keyword != null">
+            <include refid="pcriteria"></include>
+        </if>   
 	</select>
 	
 </mapper>

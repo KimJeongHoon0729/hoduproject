@@ -8,7 +8,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 
 import com.woori.dao.PartnerJoinDAOImpl;
+import com.woori.domain.PCriteria;
+import com.woori.domain.Criteria;
+import com.woori.domain.PCriteria;
 import com.woori.domain.PartnerVO;
+import com.woori.domain.QuestionVO;
 import com.woori.domain.ReservationVO;
 
 @Service
@@ -88,5 +92,18 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	@Override
 	public void RUpdate(ReservationVO rvo) {
 		partnerJoin.RUpdate(rvo);
+	}
+	
+	//A 리스트 출력
+	@Override
+	public List<QuestionVO> AList(PCriteria Pcri) {
+		// TODO Auto-generated method stub
+		return partnerJoin.AList(Pcri);
+	}
+	
+	//A 게시판 개수
+	@Override
+	public int AgetTotal(PCriteria Pcri) {
+		return partnerJoin.getTotal(Pcri);
 	}
 }

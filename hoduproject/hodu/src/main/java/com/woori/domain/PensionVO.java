@@ -10,6 +10,14 @@ public class PensionVO {
 	String message;
 	int price_mean;
 	int like_mean;
+	private String partnerId;
+	
+	public String getPartnerId() {
+		return partnerId;
+	}
+	public void setPartnerId(String partnerId) {
+		this.partnerId = partnerId;
+	}
 	public int getP_idx() {
 		return P_idx;
 	}
@@ -62,8 +70,9 @@ public class PensionVO {
 	public String toString() {
 		return "PensionVO [P_idx=" + P_idx + ", img_pension=" + img_pension + ", region=" + region + ", pensionName="
 				+ pensionName + ", address=" + address + ", message=" + message + ", price_mean=" + price_mean
-				+ ", like_mean=" + like_mean + "]";
+				+ ", like_mean=" + like_mean + ", partnerId=" + partnerId + "]";
 	}
+
 	
 	
 	

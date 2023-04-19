@@ -19,8 +19,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.woori.domain.Criteria;
+import com.woori.domain.PCriteria;
+import com.woori.domain.PPageMakerVO;
+import com.woori.domain.PageMakerVO;
 import com.woori.domain.PartnerVO;
 import com.woori.domain.PensionVO;
+import com.woori.domain.QuestionVO;
 import com.woori.domain.ReservationVO;
 import com.woori.service.PartnerJoinServiceImpl;
 
@@ -42,7 +47,7 @@ public class PartnerJoinController {
 		}
 		
 		@RequestMapping("plogincheck.do")
-		public ModelAndView plogincheck(@ModelAttribute PartnerVO pvo, HttpSession psession) {
+		public ModelAndView plogincheck(@ModelAttribute PartnerVO pvo,@ModelAttribute PensionVO pevo, HttpSession psession, RedirectAttributes redirect) {
 			PartnerVO presult = partnerJoinService.plogincheck(pvo, psession);
 			ModelAndView mav = new ModelAndView();
 			if(presult != null) {
@@ -50,6 +55,7 @@ public class PartnerJoinController {
 				if(PpwdMatch == true){//로그인 성공
 				mav.setViewName("pindex");
 				mav.addObject("msg", "sucess");
+				redirect.addAttribute("pensionName",pevo.getPensionName() );
 				} else {
 					mav.setViewName("login");
 					mav.addObject("msg", "fail");
@@ -162,6 +168,22 @@ public class PartnerJoinController {
 			partnerJoinService.RUpdate(rvo);
 			redirect.addAttribute("reservation_idx", reservation_idx);
 			return "redirect: RView.do";
+		}
+		
+		
+		@RequestMapping("AList.do")
+		public String QList(PCriteria Pcri, Model qmodel) {
+	
+			List<QuestionVO> AList = partnerJoinService.AList(Pcri);
+			qmodel.addAttribute("AList",AList);
+			
+			int total = partnerJoinService.AgetTotal(Pcri);
+			
+			PPageMakerVO pageMaker = new PPageMakerVO(Pcri, total);
+			
+			qmodel.addAttribute("pageMaker", pageMaker);
+			
+			return "partner/qna";
 		}
 }
 
