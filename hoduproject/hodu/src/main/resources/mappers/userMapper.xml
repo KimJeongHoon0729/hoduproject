@@ -116,4 +116,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="QView" resultType="com.woori.domain.QuestionVO" parameterType="int">
 		select * from question where Q_idx = #{Q_idx}    
 	</select>
+	
+	<!-- 리뷰 삽입 -->
+	<insert id="ReviewInsert">
+		INSERT INTO review(userId, R_idx, rating, R_content, pensionName) 
+			VALUES(#{userId},#{R_idx},#{rating},#{R_content},#{pensionName})
+	</insert>
 </mapper>

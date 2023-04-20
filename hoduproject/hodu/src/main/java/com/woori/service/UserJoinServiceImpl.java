@@ -11,6 +11,7 @@ import com.woori.dao.UserJoinDAOImpl;
 import com.woori.domain.Criteria;
 import com.woori.domain.PensionVO;
 import com.woori.domain.QuestionVO;
+import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
 
 @Service
@@ -94,5 +95,11 @@ public class UserJoinServiceImpl implements UserJoinService {
 	public QuestionVO QView(int Q_idx, HttpSession qsession) {
 		qsession.setAttribute("Q_idx", Q_idx);
 		return userJoin.QView(Q_idx);
+	}
+	
+	//리뷰 작성
+	@Override
+	public void ReviewInswer(ReviewVO rvo) {
+		userJoin.ReviewInswer(rvo);
 	}
 }

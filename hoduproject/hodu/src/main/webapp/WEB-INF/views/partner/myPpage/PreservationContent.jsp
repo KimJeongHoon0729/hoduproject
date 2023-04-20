@@ -94,9 +94,9 @@
             </form>
             
             <div class="find-btn" style="text-align: center;">
-            <input class="btn btn-primary" value="수정" onclick="location.href='${path }/RView2.do?reservation_idx=${RView.reservation_idx}'"  style="font-family: 'Pretendard-Regular';" >
-	        <input class="btn btn-primary" value="목록" onclick="location.href='${path }/RList.do?partnerId=${partnerId}'"  style="font-family: 'Pretendard-Regular';" >
-	        <input class="btn btn-primary" value="삭제" onclick="R_delete();"  style="font-family: 'Pretendard-Regular';" >     
+            <input class="btn btn-primary" value="수정" onclick="location.href='${path }/RView2.do?reservation_idx=${RView.reservation_idx}'"  style="font-family: 'Pretendard-Regular';width: 70px;" >
+	        <input class="btn btn-primary" value="목록" onclick="location.href='${path }/RList.do?partnerId=${partnerId}'"  style="font-family: 'Pretendard-Regular';width: 70px;" >
+	        <input class="btn btn-primary" value="삭제" onclick="call_confirm();"  style="font-family: 'Pretendard-Regular';width: 70px;" >     
 	        
             </div>
             <br></br>
@@ -106,7 +106,18 @@
       </div>
 </div>
 <%@ include file="../footer.jsp" %>
-
+<script type="text/javascript">
+function call_confirm(){
+	
+	if(confirm("삭제하시겠습니까?")){
+		location.href="${path }/RDelete.do?reservation_idx=${RView.reservation_idx}";
+		alert("정상적으로 처리되었습니다.");
+	}else{
+		alert("취소되었습니다.");
+	}
+	
+}
+</script>
 </body>
 
 </html>

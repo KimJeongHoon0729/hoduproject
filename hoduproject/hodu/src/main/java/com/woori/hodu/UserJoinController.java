@@ -26,6 +26,7 @@ import com.woori.domain.PageMakerVO;
 import com.woori.domain.PartnerVO;
 import com.woori.domain.PensionVO;
 import com.woori.domain.QuestionVO;
+import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
 import com.woori.service.UserJoinServiceImpl;
 
@@ -192,6 +193,12 @@ public class UserJoinController {
 			qmodel.addAttribute("QView", userJoinService.QView(Q_idx,qsession));
 			
 			return "user/q_content";
+		}
+		//리뷰 작성
+		@RequestMapping("ReviewInsert.do")
+		public String ReviewInswer(ReviewVO rvo) {
+			userJoinService.ReviewInswer(rvo);
+			return "redirect: user/review_list";
 		}
 		
 		

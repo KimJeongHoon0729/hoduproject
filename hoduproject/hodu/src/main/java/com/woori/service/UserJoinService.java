@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.woori.domain.Criteria;
 import com.woori.domain.QuestionVO;
+import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
 
 public interface UserJoinService {
@@ -33,4 +34,6 @@ public interface UserJoinService {
 	//Q 확인
 	public QuestionVO QView(int Q_idx, HttpSession session);
 	
+	//리뷰 작성
+	public void ReviewInswer(ReviewVO rvo);
 }

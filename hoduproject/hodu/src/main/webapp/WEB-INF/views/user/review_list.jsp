@@ -41,9 +41,9 @@
          </div>
 
          <!-- 드롭다운 끝 -->
-
+	<c:if test="${sessionScope.userId != null }">
 	<a  href="${path }/user/review"class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;">후기작성</a>
-
+	</c:if>
          <div class="row row-padded">
          
             <div class="col-md" id="like">

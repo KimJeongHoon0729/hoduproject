@@ -60,7 +60,7 @@
 
 <div class="wrap">
     <h1 style="font-family: 'Pretendard-Regular';">후기</h1>
-    <form name="reviewform" class="reviewform" method="post" action="/save">
+    <form name="reviewform" class="reviewform" method="post" action="${path }/ReviewInsert.do?userId=${sessionScope.userId }">
         <input type="hidden" name="rate" id="rate" value="0"/>
         <h3 class="title_star" style="font-family: 'Pretendard-Regular';">별점과 리뷰를 남겨주세요.</h3>
  
@@ -81,11 +81,13 @@
             </div>
         </div>
         <div class="review_contents">
+         	<div class="warning_msg">펜션 이름을 작성해주세요.</div>
+            <input type="text" name="pensionName" style="width: 440px">
             <div class="warning_msg">소중한 리뷰를 작성해 주세요.</div>
-            <textarea rows="10" class="review_textarea"></textarea>
+            <textarea rows="10" name="R_content" class="review_textarea"></textarea>
         </div>   
-        <div class="cmd">
-            <input type="button" name="save" id="save" value="등록">
+        <div class="cmd" style="text-align: center">
+            <input class="btn btn-primary" type="submit"  value="등록" style="font-family: 'Pretendard-Regular';">
         </div>     
     </form>
 </div>
@@ -118,6 +120,8 @@
 	        let elem = e.target;
 	        if(elem.classList.contains('rate_radio')){
 	            rating.setRate(parseInt(elem.value));
+	            $('input[name=rating]').attr('value', elem.value);
+	            console.log(elem.value);
 	        }
 	    })
 	});

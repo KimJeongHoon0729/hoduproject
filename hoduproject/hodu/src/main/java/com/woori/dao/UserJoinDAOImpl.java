@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.woori.domain.Criteria;
 import com.woori.domain.QuestionVO;
+import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
 
 @Repository
@@ -87,6 +88,12 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	@Override
 	public QuestionVO QView(int Q_idx) {
 		return sqlSession.selectOne("user.QView", Q_idx);
+	}
+	
+	//리뷰 작성
+	@Override
+	public void ReviewInswer(ReviewVO rvo) {
+		sqlSession.insert("user.ReviewInsert", rvo);
 	}
 	
 }

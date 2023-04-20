@@ -156,8 +156,10 @@ public class PartnerJoinController {
 		
 		//예약 삭제
 		@RequestMapping("RDelete.do")
-		public void RDelete(int reservation_idx) {
+		public String RDelete(int reservation_idx, HttpSession rsession, RedirectAttributes redirect) {
 			partnerJoinService.RDelete(reservation_idx);
+			redirect.addAttribute("partnerId", rsession.getAttribute("partnerId"));
+			return "redirect: RList.do";
 		}
 		
 		//예약 수정

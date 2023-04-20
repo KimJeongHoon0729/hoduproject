@@ -110,7 +110,7 @@
          <div class="fh5co-2col fh5co-text">
             <h2 class="heading to-animate">About Us</h2>
             <p class="to-animate" style="font-size:18px;"><span class="firstcharacter">
-            -></span>쉼 없는 일상속에서 휴식과 영감을 얻기 위해, 
+            </span>쉼 없는 일상속에서 휴식과 영감을 얻기 위해, 
 					놀고싶은 순간 망설임 없이, 
 					나의 영원한 단짝 반려견과 함께 편안한 하루를 선물하고 싶은 HODU STAY 입니다.
 					저희 호두스테이는 소중한 반려견과 함께 누구나 마음편히 놀 수 있도록 정보를 제공해주는 회사입니다.

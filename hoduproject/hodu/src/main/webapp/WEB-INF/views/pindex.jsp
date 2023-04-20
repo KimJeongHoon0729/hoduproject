@@ -83,9 +83,10 @@
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
-							<h1 class="to-animate">pHODU</h1>
-							<h2 class="to-animate">Lovely Designed <span>by</span> <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-						</div>
+							<h1 class="to-animate" style="font-size:200px;">HODU STAY</h1>
+                     		<h2 class="to-animate" style="font-size: 40dpx;">private dog pension</h2>
+                   			<h3 class="to-animate" style="font-size: 25px; font-family: 'Pretendard-Regular'; color:#fb6e14">반려견과 함께하는 호두스테이</h3>
+                         </div>
 					</div>
 				</div>
 			  	<ul class="slides">
@@ -107,7 +108,7 @@
          <div class="fh5co-2col fh5co-text">
             <h2 class="heading to-animate">About Us</h2>
             <p class="to-animate" style="font-size:18px;"><span class="firstcharacter">
-            -></span>쉼 없는 일상속에서 휴식과 영감을 얻기 위해, 
+            </span>쉼 없는 일상속에서 휴식과 영감을 얻기 위해, 
 					놀고싶은 순간 망설임 없이, 
 					나의 영원한 단짝 반려견과 함께 편안한 하루를 선물하고 싶은 HODU STAY 입니다.
 					저희 호두스테이는 소중한 반려견과 함께 누구나 마음편히 놀 수 있도록 정보를 제공해주는 회사입니다.
