@@ -52,6 +52,12 @@ public class UserController {
 		
 		return "user/mypage/reservationList";
 	}
+	@RequestMapping("user/mypage/reservationContent_update")
+	public String my_reservationListContent_update() {
+		
+		return "user/mypage/reservationContent_update";
+	}
+	
 	
 	@RequestMapping("user/mypage/editProfile")
 	public String my_editProfile() {
@@ -78,6 +84,7 @@ public class UserController {
 		
 		return "user/q_content";
 	}
+	
 	
 	
 }

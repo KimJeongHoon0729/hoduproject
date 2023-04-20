@@ -23,14 +23,14 @@
 						<div class="fh5co-event to-animate-2">
 							<h3 style="font-family: 'Pretendard-Regular';">예약 관리</h3>
 							<p></p>
-							<p><a href="mypage/reservationList" class="btn btn-primary btn-outline">Reservation</a></p>
+							<p><a href="${path }/ReservationList.do?userId=${sessionScope.userId}" class="btn btn-primary btn-outline">Reservation</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="fh5co-event to-animate-2">
 							<h3 style="font-family: 'Pretendard-Regular';">회원 정보 수정</h3>
 							<p></p>
-							<p><a href="${path }/viewProfile.do?userId=${userId}" class="btn btn-primary btn-outline">Edit</a></p>
+							<p><a href="${path }/viewProfile.do?userId=${sessionScope.userId}" class="btn btn-primary btn-outline">Edit</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">

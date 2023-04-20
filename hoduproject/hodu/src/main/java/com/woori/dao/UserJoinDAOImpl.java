@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.woori.domain.Criteria;
 import com.woori.domain.QuestionVO;
+import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
 
@@ -102,4 +103,22 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 		return sqlSession.selectList("user.ReviewList", rvo);
 	}
 	
+	//나의 예약 목록 출력
+	@Override
+	public List<ReservationVO> ReservationList(ReservationVO rvo){
+		return sqlSession.selectList("user.ReservationList", rvo);
+	}
+	@Override
+	public ReservationVO UserRView(int reservation_idx) {
+		return sqlSession.selectOne("user.UserRView", reservation_idx);
+	}
+	@Override
+	public void UserRUpdate(ReservationVO rvo) {
+		sqlSession.update("user.UserRUpdate", rvo);
+	}
+	
+	@Override
+	public void deleteReservation(int reservation_idx) {
+		sqlSession.delete("user.deleteReservation", reservation_idx);
+	}
 }

@@ -26,6 +26,7 @@ import com.woori.domain.PageMakerVO;
 import com.woori.domain.PartnerVO;
 import com.woori.domain.PensionVO;
 import com.woori.domain.QuestionVO;
+import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
 import com.woori.service.UserJoinServiceImpl;
@@ -209,6 +210,32 @@ public class UserJoinController {
 			return "user/review_list";
 		}
 		
+		//나의 예약 목록 출력
+		@RequestMapping("ReservationList.do")
+		public String ReservationList(ReservationVO rvo, Model model){
+			List<ReservationVO> reservationList = userJoinService.ReservationList(rvo);
+			model.addAttribute("ReservationList", reservationList);
+			return "user/mypage/reservationList";
+		}
+		
+		@RequestMapping("UserRView.do")
+		public String UserRView(int reservation_idx, Model model) {
+			model.addAttribute("UserRView", userJoinService.UserRView(reservation_idx));
+			return "user/mypage/reservationContent_update";
+		}
+		@RequestMapping("UserRUpdate.do")
+		public String UserRUpdate(ReservationVO rvo,HttpSession session, RedirectAttributes redirect) {
+			userJoinService.UserRUpdate(rvo);
+			redirect.addAttribute("userId", session.getAttribute("userId"));
+			return "redirect: ReservationList.do";
+		}
+		
+		@RequestMapping("deleteReservation.do")
+		public String deleteReservation(int reservation_idx, HttpSession session, RedirectAttributes redirect) {
+			userJoinService.DeleteReservation(reservation_idx);
+			redirect.addAttribute("userId", session.getAttribute("userId"));
+			return "redirect: ReservationList.do";
+		}
 }
 
 

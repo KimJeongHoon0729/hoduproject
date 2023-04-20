@@ -127,4 +127,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="ReviewList" resultType="com.woori.domain.ReviewVO" parameterType="String">
 		select  *  from  review  where   pensionName=#{pensionName}   
 	</select>
+	
+	<!-- 나의 예약 목록 출력 -->
+	<select id="ReservationList" resultType="com.woori.domain.ReservationVO">
+		select * from reservation where userId = #{userId}
+	</select>
+	
+	<!-- 나의 예약 정보 출력 -->
+	<select id="UserRView" resultType="com.woori.domain.ReservationVO">
+		select * from reservation where reservation_idx = #{reservation_idx}  
+	</select>
+	
+	<!-- 나의 예약 수정 -->
+	<update id="UserRUpdate" parameterType="com.woori.domain.ReservationVO">
+		update  reservation  set   
+		dogSize=#{dogSize},   
+		peopleNum=#{peopleNum},    
+		message_to_p=#{message_to_p},  
+		reservation_date=#{reservation_date}   
+		where reservation_idx=#{reservation_idx}   
+	</update>
+	<!-- 예약 삭제 -->
+	<delete id="deleteReservation">
+		delete from  
+		reservation 
+		where reservation_idx=#{reservation_idx}  
+	</delete>
 </mapper>

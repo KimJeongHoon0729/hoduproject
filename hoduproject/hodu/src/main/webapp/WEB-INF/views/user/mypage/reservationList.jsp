@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,25 +20,25 @@
             <div class="row row-padded">
                <div class="col-md">
                   <div class="fh5co-food-menu to-animate-2">
-                     <h2 class="fh5co-drinks" style="font-family: 'Pretendard-Regular';">Drinks</h2>
+                     <h2 class="fh5co-drinks" style="font-family: 'Pretendard-Regular';">Reservation</h2>
                      <ul>
                         <li>
-                           <div class="fh5co-food-desc">
-                              <figure>
-                                 <img src="/resources/images/hodu.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                              </figure>                           
-							<div>
-                                 <h3 style="font-family: 'Pretendard-Regular';">Pineapple Juice</h3>
-                                 <p style="font-family: 'Pretendard-Regular';">Far far away, behind the word mountains.</p>
-                              </div>
-                           </div>    
-                           <div class="fh5co-food-pricing" style="font-family: 'Pretendard-Regular';">
-                              $17.50
-                           </div>       
-              				<div class="fh5co-food-pricing" style="margin-top: 160px">
-			  					<button class="btn btn-primary me-md-2" type="button" style="font-family: 'Pretendard-Regular';">수정</button>
-			 					<button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';">취소</button>
-			 				</div>                                     
+                       		<c:forEach var="Reservation" items="${ReservationList }">  
+                           		<div class="fh5co-food-desc">     
+                           			<input type="hidden" name="reservation_idx" id="reservation_idx" value="${Reservation.reservation_idx }"> 
+									<div>
+		                                 <h3 style="font-family: 'Pretendard-Regular';">${Reservation.pensionName }</h3>
+		                                 <p style="font-family: 'Pretendard-Regular';"><fmt:formatDate value="${Reservation.reservation_date }" pattern="yyyy-MM-dd"/></p>
+		                             </div>
+                          		 </div>    
+		                           <div class="fh5co-food-pricing" style="font-family: 'Pretendard-Regular';">
+		                              <fmt:formatNumber value="${Reservation.price}" pattern="###,###"/> 원
+		                           </div>       
+		              				<div class="fh5co-food-pricing" >
+					  					<button class="btn btn-primary me-md-2" type="button" onclick="location.href='UserRView.do?reservation_idx=${Reservation.reservation_idx}'" style="font-family: 'Pretendard-Regular';">수정</button>
+					 					<button class="btn btn-primary" type="button" onclick="call_confirm();" style="font-family: 'Pretendard-Regular';">취소</button>
+					 				</div>  
+			 				</c:forEach>                                      
 					  </li>
 					 </ul>
 				</div>
@@ -46,6 +47,17 @@
 		
 	</div>
 </div>
-			
+<script type="text/javascript">
+	function call_confirm(){
+	
+	if(confirm("예약을 취소하시겠습니까?")){
+		var idx = $('input[name=reservation_idx]').val();
+		location.href="${path }/deleteReservation.do?reservation_idx="+idx;
+		alert("정상적으로 처리되었습니다.");
+	}else{
+		alert("취소되었습니다.");
+	}	
+}
+	</script>
 </body>
 </html>

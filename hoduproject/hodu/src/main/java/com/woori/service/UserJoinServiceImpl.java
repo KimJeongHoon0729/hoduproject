@@ -11,6 +11,7 @@ import com.woori.dao.UserJoinDAOImpl;
 import com.woori.domain.Criteria;
 import com.woori.domain.PensionVO;
 import com.woori.domain.QuestionVO;
+import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
 
@@ -106,5 +107,23 @@ public class UserJoinServiceImpl implements UserJoinService {
 	@Override
 	public List<ReviewVO> ReviewList(ReviewVO rvo){
 		return userJoin.ReviewList(rvo);
+	}
+	
+	//나의 예약 목록 출력
+	@Override
+	public List<ReservationVO> ReservationList(ReservationVO rvo){
+		return userJoin.ReservationList(rvo);
+	}
+	@Override
+	public ReservationVO UserRView(int reservation_idx) {
+		return userJoin.UserRView(reservation_idx);
+	}
+	@Override
+	public void UserRUpdate(ReservationVO rvo) {
+		userJoin.UserRUpdate(rvo);
+	}
+	@Override
+	public void DeleteReservation(int reservation_idx) {
+		userJoin.deleteReservation(reservation_idx);
 	}
 }

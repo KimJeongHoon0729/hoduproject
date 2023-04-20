@@ -26,7 +26,7 @@ import com.woori.service.PensionService;
 @Controller
 public class PensionController {
 
-	
+	private static final org.slf4j.Logger logger = LoggerFactory.getLogger(PensionController.class);
 	
 	@Inject
 	private PensionService pensionService;
@@ -50,8 +50,9 @@ public class PensionController {
 	}
 	
 	@RequestMapping("roomInfo.do")
-	public String roomInfo(RoomVO vo, @RequestParam("idx") int idx){
+	public String roomInfo(RoomVO vo, @RequestParam("idx") int idx, @RequestParam("pensionName") String pensionName,HttpSession session, RedirectAttributes redirect){
 		pensionService.roomRegister(vo);
+		
 		if(idx == 0) {
 
 			return "partner/roomRegister";
@@ -99,9 +100,14 @@ public class PensionController {
 	}
 	
 	@RequestMapping("pensionRegister.do")
-	public String pensionRegister(PensionVO vo) {
+	public String pensionRegister(PensionVO vo, @RequestParam("pensionName") String pensionName,HttpSession session, RedirectAttributes redirect) {
 		pensionService.pensionRegister(vo);
-		
+	
+		if(session.getAttribute("pensionName") == null) {
+			redirect.addAttribute("pensionName", vo.getPensionName());
+			session.setAttribute("pensionName", vo.getPensionName());
+			
+		}
 		return "partner/roomRegister";
 	}
 	

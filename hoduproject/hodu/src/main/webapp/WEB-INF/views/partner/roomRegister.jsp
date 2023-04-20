@@ -42,12 +42,15 @@
                   <h3 style="font-family: 'Pretendard-Regular';">Hodu Pension Room Register form</h3>
                  
                   <div class="form-group">
-                     <label for="roomName" class="sr-only">pensionName</label>
+                     <label for="roomName" class="sr-only">roomName</label>
                      <input id="roomName" name="roomName" class="form-control" placeholder="객실명" type="text">
+                
+                     <input id="pensionName" name="pensionName" value="${sessionScope.pensionName }" type="hidden">
+                 
                   </div>
                  
                   <div class="form-group">
-                     <label for="price" class="sr-only">peopleNumber</label>
+                     <label for="price" class="sr-only">Price</label>
                      <input id="price" name="price" class="form-control" placeholder="객실 가격" type="number">
                   </div>
                              

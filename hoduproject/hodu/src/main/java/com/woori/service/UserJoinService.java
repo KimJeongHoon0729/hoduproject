@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.woori.domain.Criteria;
 import com.woori.domain.QuestionVO;
+import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
 
@@ -38,4 +39,10 @@ public interface UserJoinService {
 	public void ReviewInswer(ReviewVO rvo);
 	//R 리스트 출력
 	public List<ReviewVO> ReviewList(ReviewVO rvo);
+	
+	//나의 예약 목록 출력
+	public List<ReservationVO> ReservationList(ReservationVO rvo);
+	public ReservationVO UserRView(int reservation_idx);
+	public void UserRUpdate(ReservationVO rvo);
+	public void DeleteReservation(int reservation_idx);
 }
