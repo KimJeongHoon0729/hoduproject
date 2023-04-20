@@ -122,4 +122,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO review(userId, R_idx, rating, R_content, pensionName) 
 			VALUES(#{userId},#{R_idx},#{rating},#{R_content},#{pensionName})
 	</insert>
+	
+	<!-- 리뷰 출력 -->
+	<select id="ReviewList" resultType="com.woori.domain.ReviewVO" parameterType="String">
+		select  *  from  review  where   pensionName=#{pensionName}   
+	</select>
 </mapper>

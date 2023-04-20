@@ -33,4 +33,15 @@ public class PensionServiceImpl implements PensionService {
 		pensionDao.roomRegister(vo);
 		
 	}
+	
+	//room 목록 보기
+	@Override
+	public List<RoomVO> RoomList(RoomVO vo){
+		return pensionDao.RoomList(vo);
+	}
+	
+	//펜션 등록하기
+	public void pensionRegister(PensionVO vo) {
+		pensionDao.pensionRegister(vo);
+	}
 }

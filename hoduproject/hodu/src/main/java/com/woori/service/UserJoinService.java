@@ -36,4 +36,6 @@ public interface UserJoinService {
 	
 	//리뷰 작성
 	public void ReviewInswer(ReviewVO rvo);
+	//R 리스트 출력
+	public List<ReviewVO> ReviewList(ReviewVO rvo);
 }

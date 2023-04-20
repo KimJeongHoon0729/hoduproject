@@ -33,5 +33,16 @@ public class PensionDAOImpl implements PensionDAO {
 		sqlsession.insert("pension.roomRegister", vo);
 	}
 
+	//room 목록 보기
+	@Override
+	public List<RoomVO> RoomList(RoomVO vo){
+		return sqlsession.selectList("pension.RoomList", vo);
+	}
+	
+	//펜션 등록하기
+	@Override
+	public void pensionRegister(PensionVO vo) {
+		sqlsession.insert("pension.pensionRegister", vo);
+	}
 
 }

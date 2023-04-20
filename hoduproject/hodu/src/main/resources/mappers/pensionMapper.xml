@@ -20,4 +20,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			VALUES(#{room_idx},#{partnerId},#{roomName},#{price},#{dogSize}, #{dogNum}, 
 			#{peopleNum}, #{img_room}, #{message_room})
 	</insert>
+	<!-- 펜션 세부 사항 출력 -->
+	<select id="RoomList" resultType="com.woori.domain.RoomVO" parameterType="String">
+		select   *   from  
+		room   
+		where   
+		pensionName = #{pensionName} 
+	</select>
+	
+	<!-- 펜션 등록 -->
+	<insert id="pensionRegister">
+		insert into pension (partnerId, region, pensionName, address, message)  
+		values (#{partnerId}, #{region}, #{pensionName}, #{address}, #{message})
+	</insert>
 </mapper>

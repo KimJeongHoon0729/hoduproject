@@ -201,6 +201,13 @@ public class UserJoinController {
 			return "redirect: user/review_list";
 		}
 		
+		//R 리스트 출력
+		@RequestMapping("ReviewList.do")
+		public String ReviewList(ReviewVO rvo, Model model){
+			List<ReviewVO> ReviewList = userJoinService.ReviewList(rvo);
+			model.addAttribute("ReviewList",ReviewList);
+			return "user/review_list";
+		}
 		
 }
 

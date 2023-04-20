@@ -11,6 +11,7 @@ public class RoomVO {
 	int peopleNum;
 	String img_room;
 	String message_room;
+	String pensionName;
 	public int getRoom_idx() {
 		return room_idx;
 	}
@@ -71,12 +72,19 @@ public class RoomVO {
 	public void setMessage_room(String message_room) {
 		this.message_room = message_room;
 	}
+	public String getPensionName() {
+		return pensionName;
+	}
+	public void setPensionName(String pensionName) {
+		this.pensionName = pensionName;
+	}
 	@Override
 	public String toString() {
 		return "RoomVO [room_idx=" + room_idx + ", partnerId=" + partnerId + ", roomName=" + roomName + ", roomNum="
 				+ roomNum + ", price=" + price + ", dogSize=" + dogSize + ", dogNum=" + dogNum + ", peopleNum="
-				+ peopleNum + ", img_room=" + img_room + ", message_room=" + message_room + "]";
+				+ peopleNum + ", img_room=" + img_room + ", message_room=" + message_room + ", pensionName="
+				+ pensionName + "]";
 	}
-	
+
 	
 }

@@ -32,7 +32,7 @@
             </div>
           
 
-          <form action="#" method="post">
+          <form action="${path }/pensionRegister.do" method="post" id="pensionRegister">
                 <div class="container" style="text-align:center;padding-left: 4px">
                 
                 <div class="col-md-6 col-md-offset-3">
@@ -44,7 +44,7 @@
                   </div>
 
 						<div class="area"> 
-							<select id="area" class="form-control">
+							<select id="area" class="form-control" name="region">
 								<option selected disabled>지역을 선택하세요.</option>
 								<option value="경기">경기</option>
 								<option value="충남">충남</option>
@@ -77,25 +77,25 @@
                <div class="form-control" style="margin-bottom: 15px">
                		
                		<p style="font-size: 16px"> 
-		                <input type='checkbox' name='check' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
-		                <input type='checkbox' name='check' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
-		                <input type='checkbox' name='check' value='대형견' /> 대형견 (25Kg 이상)
+		                <input type='checkbox' name='dogSize' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input type='checkbox' name='dogSize' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
+		                <input type='checkbox' name='dogSize' value='대형견' /> 대형견 (25Kg 이상)
 		            </p>
 		        
                 </div>
                              
                   <div class="form-group ">
-                     <label for="dogNumber" class="sr-only">dogNumber</label>
-                     <input id="dogNumber"  class="form-control" placeholder="수용 가능한 반려견 수" type="number">
+                     <label for="dogNum" class="sr-only">dogNumber</label>
+                     <input id="dogNum"  class="form-control" placeholder="수용 가능한 반려견 수" type="number">
                   </div>
                    
                    <div class="form-group ">
-                     <label for="peopleNumber" class="sr-only">peopleNumber</label>
-                     <input id="peopleNumber" name="peopleNumber" class="form-control" placeholder="수용 가능한 인원 수" type="number">
+                     <label for="peopleNum" class="sr-only">peopleNumber</label>
+                     <input id="peopleNum" name="peopleNum" class="form-control" placeholder="수용 가능한 인원 수" type="number">
                   </div>
                   
                  <div class="message">
-                     <textarea class="message_area form-control" rows="8" cols="50" placeholder="펜션 세부사항을 입력해주세요"></textarea>
+                     <textarea class="message_area form-control" rows="8" cols="50" placeholder="펜션 세부사항을 입력해주세요" name="message"></textarea>
                 </div>
                   
             </div>
@@ -104,11 +104,11 @@
          <p style="margin-bottom: 14px"></p>
          <div class="col-md-6 col-md-offset-3">
 	         <div class="form-group ">  
-	         <form method="post"  enctype="multipart/form-data">
+	         <form method="post"  enctype="multipart/form-data" id="ImgRegister" action="${path }/ImgRegister.do">
 				 <p style="text-align: left; margin-bottom: 10px"> 펜션 사진 업로드</p>
 			     <p style="width: 102%">
 			     <input type="file" name="multiFile" multiple class="form-control"></p>
-	             <input class="btn btn-primary" value="다음" type="button" onclick="location.href='/partner/roomRegister';" style="font-family: 'Pretendard-Regular'; 
+	             <input class="btn btn-primary" value="다음" type="button" onclick="next();" style="font-family: 'Pretendard-Regular'; 
 	             margin-top: 15px; margin-left: 240px;margin-right: 240px">
 			 </form> 
 			 </div> 
@@ -119,5 +119,15 @@
 <%@ include file = "../footer.jsp" %>
 
 </div>
+<script type="text/javascript">
+
+function next() {
+
+	document.getElementById('ImgRegister').submit();
+	document.getElementById('pensionRegister').submit();
+	
+	console.log($('input[name=partnerId]').val());
+}
+</script>
    </body>
 </html>

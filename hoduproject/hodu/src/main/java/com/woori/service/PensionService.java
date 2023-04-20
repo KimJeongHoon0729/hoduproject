@@ -11,4 +11,10 @@ public interface PensionService {
 	public List<PensionVO> moneyList(PensionVO vo);
 	
 	public void roomRegister(RoomVO vo);
+	
+	//room 목록 보기
+	public List<RoomVO> RoomList(RoomVO vo);
+	
+	//펜션 등록하기
+	public void pensionRegister(PensionVO vo);
 }

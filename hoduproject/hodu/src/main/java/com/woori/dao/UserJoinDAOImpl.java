@@ -96,4 +96,10 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 		sqlSession.insert("user.ReviewInsert", rvo);
 	}
 	
+	//R 리스트 출력
+	@Override
+	public List<ReviewVO> ReviewList(ReviewVO rvo){
+		return sqlSession.selectList("user.ReviewList", rvo);
+	}
+	
 }

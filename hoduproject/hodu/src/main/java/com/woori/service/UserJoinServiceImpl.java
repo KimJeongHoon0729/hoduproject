@@ -102,4 +102,9 @@ public class UserJoinServiceImpl implements UserJoinService {
 	public void ReviewInswer(ReviewVO rvo) {
 		userJoin.ReviewInswer(rvo);
 	}
+	//R 리스트 출력
+	@Override
+	public List<ReviewVO> ReviewList(ReviewVO rvo){
+		return userJoin.ReviewList(rvo);
+	}
 }

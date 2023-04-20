@@ -56,7 +56,7 @@
                                  alt="Free HTML5 Templates by FREEHTML5.co">
                            </figure>
                            <div>
-                              <h3 style="font-family: 'Pretendard-Regular';"><a href="user/list_pension">${pension_like.pensionName }</a></h3>
+                              <h3 style="font-family: 'Pretendard-Regular';"><a href="${path }/RoomList.do?pensionName=${pension_like.pensionName }">${pension_like.pensionName }</a></h3>
                               <p>${pension_like.like_mean } 좋아요</p>
                               <p>${pension_like.address }</p>
                            </div>
