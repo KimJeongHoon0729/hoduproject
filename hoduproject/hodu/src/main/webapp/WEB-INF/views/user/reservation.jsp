@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>User Reservation Page</title>
 </head>
 <body style="font-family: 'Pretendard-Regular';">
 <%@ include file="header.jsp" %>
