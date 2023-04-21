@@ -79,8 +79,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<!-- question 리스트 출력 -->
-	<select id="question" resultType="com.woori.domain.QuestionVO" parameterType="com.woori.domain.Criteria">
-		select * from question 
+	<select id="question" resultType="com.woori.domain.QnaVO" parameterType="com.woori.domain.Criteria">
+		select * from qna 
 			<if test="keyword != null">
                  <include refid="criteria"></include>
             </if>
@@ -89,32 +89,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 게시물 개수 -->
 	<select id="getTotal" resultType="int">
-		select count(*) from question  
+		select count(*) from qna  
 		<if test="keyword != null">
             <include refid="criteria"></include>
         </if>   
 	</select>
 	
 	<!-- 게시물 비밀번호 -->
-		<select id="Q_pwCheck" resultType="com.woori.domain.QuestionVO">
+		<select id="Q_pwCheck" resultType="com.woori.domain.QnaVO">
 		select  
 			*   
 		from   
-			question   
+			qna   
 		where Q_idx = #{Q_idx} and Q_pw = #{Q_pw}     
 	</select>
 	
 	<!-- Q 게시판 삽입 -->
 	
 	<insert id="Q_insert">
-		INSERT INTO question(userId, pensionName, Q_title, Q_content, Q_date, Q_pw) 
+		INSERT INTO qna(userId, pensionName, Q_title, Q_content, Q_date, Q_pw) 
 			VALUES(#{userId},#{pensionName},#{Q_title},#{Q_content}, current_timestamp ,#{Q_pw})
 	</insert>
 	
 	<!-- Q세부 정보 보기 -->
 	
-	<select id="QView" resultType="com.woori.domain.QuestionVO" parameterType="int">
-		select * from question where Q_idx = #{Q_idx}    
+	<select id="QView" resultType="com.woori.domain.QnaVO" parameterType="int">
+		select * from qna where Q_idx = #{Q_idx}    
 	</select>
 	
 	<!-- 리뷰 삽입 -->

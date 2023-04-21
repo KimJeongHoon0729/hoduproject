@@ -5,10 +5,8 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import com.woori.domain.PCriteria;
-import com.woori.domain.Criteria;
 import com.woori.domain.PartnerVO;
-import com.woori.domain.PensionVO;
-import com.woori.domain.QuestionVO;
+import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 
 public interface PartnerJoinDAO {
@@ -39,9 +37,11 @@ public interface PartnerJoinDAO {
 	public void RUpdate(ReservationVO rvo);
 	
 	//A 리스트 출력
-	public List<QuestionVO> AList(PCriteria Pcri);
+	public List<QnaVO> AList(PCriteria Pcri);
 	//A 게시판 개수
 	public int getTotal(PCriteria Pcri);
 	//A 확인
-	public QuestionVO AView(int Q_idx);
+	public QnaVO AView(int Q_idx);
+	//A 답변 등록
+		public void ARegister(QnaVO vo);
 }

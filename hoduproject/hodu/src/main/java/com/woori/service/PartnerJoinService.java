@@ -5,9 +5,8 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import com.woori.domain.PCriteria;
-import com.woori.domain.Criteria;
 import com.woori.domain.PartnerVO;
-import com.woori.domain.QuestionVO;
+import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 
 public interface PartnerJoinService {
@@ -39,9 +38,12 @@ public interface PartnerJoinService {
 	public void RUpdate(ReservationVO rvo);
 	
 	//A 리스트 출력
-	public List<QuestionVO> AList(PCriteria Pcri);
+	public List<QnaVO> AList(PCriteria Pcri);
 	public int AgetTotal(PCriteria Pcri);
 	
 	//A 확인
-	public QuestionVO AView(int Q_idx, HttpSession psession);
+	public QnaVO AView(int Q_idx, HttpSession psession);
+	
+	//A 등록
+		public void ARegister(QnaVO vo);
 }

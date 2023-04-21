@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.woori.dao.UserJoinDAOImpl;
 import com.woori.domain.Criteria;
-import com.woori.domain.PensionVO;
-import com.woori.domain.QuestionVO;
+import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
@@ -68,7 +67,7 @@ public class UserJoinServiceImpl implements UserJoinService {
 
 	//Q 리스트 출력
 	@Override
-	public List<QuestionVO> QList(Criteria cri) {
+	public List<QnaVO> QList(Criteria cri) {
 		// TODO Auto-generated method stub
 		return userJoin.QList(cri);
 	}
@@ -80,20 +79,20 @@ public class UserJoinServiceImpl implements UserJoinService {
 	}
 	//Q 비밀번호
 	@Override
-	public QuestionVO Q_pwCheck(QuestionVO qvo, HttpSession qsession) {
+	public QnaVO Q_pwCheck(QnaVO qvo, HttpSession qsession) {
 			
 			qsession.setAttribute("Q_idx", qvo.getQ_idx());
 			return userJoin.Q_pwCheck(qvo);
 	}
 	//Q 글쓰기
 	@Override
-	public void Q_insert(QuestionVO qvo) {
+	public void Q_insert(QnaVO qvo) {
 		userJoin.Q_insert(qvo);
 	}
 	
 	//Q 확인
 	@Override
-	public QuestionVO QView(int Q_idx, HttpSession qsession) {
+	public QnaVO QView(int Q_idx, HttpSession qsession) {
 		qsession.setAttribute("Q_idx", Q_idx);
 		return userJoin.QView(Q_idx);
 	}

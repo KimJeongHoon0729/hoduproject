@@ -27,7 +27,7 @@
 			</div>
 			<p style="margin-bottom: -30px"></p>
 			<div class="container" style="width: 70%;">
-				<form action="AView.do?Q_idx=${Q_idx }" method="post">
+				<form action="${path}/Acomplete.do?Q_idx=${AView.q_idx }" method="post">
 					<table class="table table-bordered">
 					
 					   <tr>
@@ -52,7 +52,7 @@
 	
 					   <tr>
 						   <th style="height:200px; text-align: center;">답변</th>
-						   <td><textarea name="A_content" style='width:100%'></textarea></td>
+						   <td><textarea id="A_content" name="A_content" style='width:100%'>${AView.a_content }</textarea></td>
 					   </tr>	
 					 
 					</table>

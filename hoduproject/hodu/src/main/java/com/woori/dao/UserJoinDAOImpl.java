@@ -1,8 +1,6 @@
 package com.woori.dao;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -11,7 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.woori.domain.Criteria;
-import com.woori.domain.QuestionVO;
+import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
@@ -63,7 +61,7 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	
 	//Q 리스트 출력
 	@Override
-	public List<QuestionVO> QList(Criteria cri){
+	public List<QnaVO> QList(Criteria cri){
 		return sqlSession.selectList("user.question", cri);
 		
 	}
@@ -76,18 +74,18 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	
 	//Q 비밀번호
 	@Override
-	public QuestionVO Q_pwCheck(QuestionVO qvo) {
+	public QnaVO Q_pwCheck(QnaVO qvo) {
 		return sqlSession.selectOne("user.Q_pwCheck", qvo);
 	}
 	
 	//Q 글쓰기
 	@Override
-	public void Q_insert(QuestionVO qvo) {
+	public void Q_insert(QnaVO qvo) {
 		sqlSession.insert("user.Q_insert", qvo);
 	}
 	//Q 확인
 	@Override
-	public QuestionVO QView(int Q_idx) {
+	public QnaVO QView(int Q_idx) {
 		return sqlSession.selectOne("user.QView", Q_idx);
 	}
 	

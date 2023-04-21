@@ -9,9 +9,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.woori.domain.PCriteria;
-import com.woori.domain.Criteria;
 import com.woori.domain.PartnerVO;
-import com.woori.domain.QuestionVO;
+import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 
 @Repository
@@ -95,9 +94,9 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 	
 	//A 리스트 출력
 	@Override
-	public List<QuestionVO> AList(PCriteria Pcri){
+	public List<QnaVO> AList(PCriteria Pcri){
 		return psqlSession.selectList("partner.AList", Pcri);
-		
+			
 	}
 	
 	//A 게시판 개수
@@ -108,8 +107,13 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 	
 	//A 확인
 	@Override
-	public QuestionVO AView(int Q_idx) {
+	public QnaVO AView(int Q_idx) {
 		return psqlSession.selectOne("partner.AView", Q_idx);
 	}
+	//A 등록
+		@Override
+		public void ARegister(QnaVO vo) {
+			psqlSession.update("partner.updateAnswer", vo);
+		}
 	
 }

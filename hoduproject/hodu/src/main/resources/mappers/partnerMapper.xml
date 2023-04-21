@@ -106,8 +106,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- A리스트 출력 -->
 	
-	<select id="AList" resultType="com.woori.domain.QuestionVO" parameterType="com.woori.domain.PCriteria">
-		select * from question 
+	<select id="AList" resultType="com.woori.domain.QnaVO" parameterType="com.woori.domain.PCriteria">
+		select * from qna 
 			<if test="keyword != null">
                  <include refid="pcriteria"></include>
             </if>
@@ -119,7 +119,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 게시물 개수 -->
 	<select id="AgetTotal" resultType="int">
-		select count(*) from question  where pensionName=#{pensionName}
+		select count(*) from qna  where pensionName=#{pensionName}
 		<if test="keyword != null">
             <include refid="pcriteria"></include>
         </if>   
@@ -127,8 +127,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- A 세부 정보 보기 -->
 	
-	<select id="AView" resultType="com.woori.domain.QuestionVO" parameterType="int">
-		select   *   from   question   where   Q_idx   =   #{Q_idx}     
+	<select id="AView" resultType="com.woori.domain.QnaVO" parameterType="int">
+		select   *   from   qna   where   Q_idx   =   #{Q_idx}     
 	</select> 
+	
+	<!-- A 답변 등록 -->
+	
+	<update id="updateAnswer">
+		UPDATE qna SET A_content=#{A_content} where Q_idx = #{Q_idx}
+	
+	</update>
 	
 </mapper>

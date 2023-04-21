@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,9 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.woori.domain.Criteria;
 import com.woori.domain.PageMakerVO;
-import com.woori.domain.PartnerVO;
-import com.woori.domain.PensionVO;
-import com.woori.domain.QuestionVO;
+import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
@@ -146,7 +143,7 @@ public class UserJoinController {
 		@RequestMapping("QList.do")
 		public String QList(Criteria cri, Model qmodel) {
 	
-			List<QuestionVO> QList = userJoinService.QList(cri);
+			List<QnaVO> QList = userJoinService.QList(cri);
 			qmodel.addAttribute("QList",QList);
 			
 			int total = userJoinService.getTotal(cri);
@@ -160,8 +157,8 @@ public class UserJoinController {
 		
 		//Q 비밀번호
 		@RequestMapping("Q_pwCheck.do")
-		public ModelAndView Q_pwCheck(@ModelAttribute QuestionVO qvo, @RequestParam("pageNum") int pageNum, @RequestParam("amount") int amount, HttpSession qsession, RedirectAttributes redirect) {
-			QuestionVO result = userJoinService.Q_pwCheck(qvo, qsession);
+		public ModelAndView Q_pwCheck(@ModelAttribute QnaVO qvo, @RequestParam("pageNum") int pageNum, @RequestParam("amount") int amount, HttpSession qsession, RedirectAttributes redirect) {
+			QnaVO result = userJoinService.Q_pwCheck(qvo, qsession);
 			
 			ModelAndView mav = new ModelAndView();
 			if(result != null) { //로그인 성공
@@ -180,7 +177,7 @@ public class UserJoinController {
 		
 		//Q 글쓰기
 		@RequestMapping("Q_insert.do")
-		public String Q_insert(@ModelAttribute QuestionVO qvo, @RequestParam("pageNum") int pageNum, @RequestParam("amount") int amount, RedirectAttributes redirect) {
+		public String Q_insert(@ModelAttribute QnaVO qvo, @RequestParam("pageNum") int pageNum, @RequestParam("amount") int amount, RedirectAttributes redirect) {
 			
 			userJoinService.Q_insert(qvo);
 			redirect.addAttribute("pageNum", pageNum);

@@ -9,10 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.woori.dao.PartnerJoinDAOImpl;
 import com.woori.domain.PCriteria;
-import com.woori.domain.Criteria;
-import com.woori.domain.PCriteria;
 import com.woori.domain.PartnerVO;
-import com.woori.domain.QuestionVO;
+import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 
 @Service
@@ -101,7 +99,7 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	
 	//A 리스트 출력
 	@Override
-	public List<QuestionVO> AList(PCriteria Pcri) {
+	public List<QnaVO> AList(PCriteria Pcri) {
 		// TODO Auto-generated method stub
 		return partnerJoin.AList(Pcri);
 	}
@@ -113,8 +111,13 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	}
 	//A 확인
 	@Override
-	public QuestionVO AView(int Q_idx, HttpSession qsession) {
+	public QnaVO AView(int Q_idx, HttpSession qsession) {
 		qsession.setAttribute("Q_idx", Q_idx);
 		return partnerJoin.AView(Q_idx);
 	}
+	//A 등록
+		@Override
+		public void ARegister(QnaVO vo) {
+			partnerJoin.ARegister(vo);
+		}
 }

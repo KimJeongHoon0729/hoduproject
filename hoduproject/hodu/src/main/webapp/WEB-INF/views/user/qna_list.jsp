@@ -169,7 +169,14 @@
 							<td data-th="Supplier Name">${question.q_title }</td>
 							<td data-th="Invoice Number">${question.userId }</td>
 							<td data-th="Invoice Date"><fmt:formatDate value="${question.q_date }" pattern="yyyy-MM-dd"/></td>
-							<td data-th="Due Date">완료</td>
+							<c:choose>
+								<c:when test="${question.a_content != null }">
+								<td data-th="Due Date">완료</td>
+							</c:when>
+							<c:otherwise>
+								<td data-th="Due Date">작성중</td>
+							</c:otherwise>
+							</c:choose>
 						</tr>
 					</c:forEach>
 					</tbody>

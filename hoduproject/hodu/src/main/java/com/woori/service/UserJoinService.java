@@ -5,7 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import com.woori.domain.Criteria;
-import com.woori.domain.QuestionVO;
+import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
@@ -25,15 +25,15 @@ public interface UserJoinService {
 	public void deleteProfile(String userId, HttpSession session);
 	
 	//Q 리스트 출력
-	public List<QuestionVO> QList(Criteria cri);
+	public List<QnaVO> QList(Criteria cri);
 	public int getTotal(Criteria cri);
 	
 	//Q 비밀번호
-	public QuestionVO Q_pwCheck(QuestionVO qvo, HttpSession qsession); 
+	public QnaVO Q_pwCheck(QnaVO qvo, HttpSession qsession); 
 	//Q 글쓰기
-	public void Q_insert(QuestionVO qvo);
+	public void Q_insert(QnaVO qvo);
 	//Q 확인
-	public QuestionVO QView(int Q_idx, HttpSession session);
+	public QnaVO QView(int Q_idx, HttpSession session);
 	
 	//리뷰 작성
 	public void ReviewInswer(ReviewVO rvo);

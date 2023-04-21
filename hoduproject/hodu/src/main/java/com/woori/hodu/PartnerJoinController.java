@@ -3,7 +3,6 @@ package com.woori.hodu;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -19,13 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.woori.domain.Criteria;
 import com.woori.domain.PCriteria;
 import com.woori.domain.PPageMakerVO;
-import com.woori.domain.PageMakerVO;
 import com.woori.domain.PartnerVO;
-import com.woori.domain.PensionVO;
-import com.woori.domain.QuestionVO;
+import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 import com.woori.service.PartnerJoinServiceImpl;
 
@@ -181,7 +177,7 @@ public class PartnerJoinController {
 		@RequestMapping("AList.do")
 		public String QList(PCriteria Pcri, Model qmodel) {
 	
-			List<QuestionVO> AList = partnerJoinService.AList(Pcri);
+			List<QnaVO> AList = partnerJoinService.AList(Pcri);
 			qmodel.addAttribute("AList",AList);
 			
 			int total = partnerJoinService.AgetTotal(Pcri);
@@ -200,7 +196,15 @@ public class PartnerJoinController {
 					
 			return "partner/p_q_content";
 		}
-				
+		
+		//A 등록
+		@RequestMapping("Acomplete.do")
+		public String Aregister(@ModelAttribute QnaVO vo,@RequestParam("Q_idx") int Q_idx, RedirectAttributes redirect) {
+			partnerJoinService.ARegister(vo);
+			redirect.addAttribute("Q_idx", Q_idx);
+			return "redirect: AView.do";
+		}
+		
 }
 
 

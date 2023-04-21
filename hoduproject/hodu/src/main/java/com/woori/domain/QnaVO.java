@@ -1,11 +1,10 @@
 package com.woori.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class QuestionVO {
-
+public class QnaVO {
 	
 	String userId;
 	String pensionName;
@@ -14,8 +13,8 @@ public class QuestionVO {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date Q_date;
 	String Q_pw;
+	String A_content;
 	int Q_idx;
-	
 	public String getUserId() {
 		return userId;
 	}
@@ -28,7 +27,6 @@ public class QuestionVO {
 	public void setPensionName(String pensionName) {
 		this.pensionName = pensionName;
 	}
-
 	public String getQ_title() {
 		return Q_title;
 	}
@@ -53,6 +51,12 @@ public class QuestionVO {
 	public void setQ_pw(String q_pw) {
 		Q_pw = q_pw;
 	}
+	public String getA_content() {
+		return A_content;
+	}
+	public void setA_content(String a_content) {
+		A_content = a_content;
+	}
 	public int getQ_idx() {
 		return Q_idx;
 	}
@@ -61,11 +65,10 @@ public class QuestionVO {
 	}
 	@Override
 	public String toString() {
-		return "QuestionVO [userId=" + userId + ", pensionName=" + pensionName 
-				+ ", Q_title=" + Q_title + ", Q_content=" + Q_content + ", Q_date=" + Q_date + ", Q_pw=" + Q_pw
-				+ ", Q_idx=" + Q_idx + "]";
+		return "QnaVO [userId=" + userId + ", pensionName=" + pensionName + ", Q_title=" + Q_title + ", Q_content="
+				+ Q_content + ", Q_date=" + Q_date + ", Q_pw=" + Q_pw + ", A_content=" + A_content + ", Q_idx=" + Q_idx
+				+ "]";
 	}
-	
-	
-	
+
+
 }
