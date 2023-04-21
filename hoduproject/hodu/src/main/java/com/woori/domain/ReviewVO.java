@@ -37,12 +37,13 @@ public class ReviewVO {
 		public void setPensionName(String pensionName) {
 			this.pensionName = pensionName;
 		}
+
 		@Override
 		public String toString() {
 			return "ReviewVO [userId=" + userId + ", R_idx=" + R_idx + ", rating=" + rating + ", R_content=" + R_content
 					+ ", pensionName=" + pensionName + "]";
 		}
 		
-		
+
 		
 }

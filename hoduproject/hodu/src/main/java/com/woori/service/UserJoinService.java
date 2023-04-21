@@ -39,6 +39,7 @@ public interface UserJoinService {
 	public void ReviewInsert(ReviewVO rvo);
 	//R 리스트 출력
 	public List<ReviewVO> ReviewList(ReviewVO rvo);
+
 	
 	//나의 예약 목록 출력
 	public List<ReservationVO> ReservationList(ReservationVO rvo);

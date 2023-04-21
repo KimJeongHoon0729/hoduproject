@@ -6,12 +6,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="pension">
 	
 	<select id="likeList" resultType="com.woori.domain.PensionVO">
-		select * from pension where region = #{region} order by like_mean desc
+		select * from pension where region = #{region} 
 	</select>
 	
 	<select id="moneyList" resultType="com.woori.domain.PensionVO">
 		select * from pension where region = #{region} order by price_mean  
 	</select>
+	
+	<!-- 리뷰 평점 평균 -->
+	<select id="AvgRating" resultType="String">
+		select round(avg(rating),2) from review where pensionName = #{pensionName} 
+	</select>
+	
 	
 	<!-- 객실 등록 -->
 	<insert id="roomRegister">

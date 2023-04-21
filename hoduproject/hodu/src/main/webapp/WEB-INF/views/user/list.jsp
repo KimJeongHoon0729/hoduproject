@@ -48,7 +48,7 @@
                <div class="fh5co-food-menu to-animate-2">
                   <h2 class="fh5co-drinks" style="font-family: 'Pretendard-Regular';">추천순</h2>
                   <ul>
-                  <c:forEach var="pension_like" items="${likeList }" >
+                  <c:forEach var="pension_like" items="${likeList }" varStatus="status" >
                      <li>
                         <div class="fh5co-food-desc">
                            <figure>
@@ -57,8 +57,16 @@
                            </figure>
                            <div>
                               <h3 style="font-family: 'Pretendard-Regular';"><a href="${path }/RoomList.do?pensionName=${pension_like.pensionName }">${pension_like.pensionName }</a></h3>
-                              <p>${pension_like.like_mean } 좋아요</p>
+                              <c:choose>
+                              <c:when test="${rating[status.index]=='첫 후기를 작성해주세요.' }">
+                              <p>첫 후기를 작성해주세요.</p>
+                              </c:when>
+                              <c:otherwise>
+                              <p>${rating[status.index] } 좋아요</p>
+                              </c:otherwise>
+                              </c:choose>
                               <p>${pension_like.address }</p>
+                             
                            </div>
                         </div>
                         <div class="fh5co-food-pricing"><fmt:formatNumber value="${pension_like.price_mean}" pattern="###,###"/> 원</div>
@@ -84,7 +92,7 @@
                            </figure>
                            <div>
                               <h3 style="font-family: 'Pretendard-Regular';"><a href="user/list_pension">${pension_money.pensionName }</a></h3>
-                              <p>${pension_money.like_mean } 좋아요</p>
+                              <p>${rating } 좋아요</p>
                               <p>${pension_money.address }</p>
                            </div>
                         </div>

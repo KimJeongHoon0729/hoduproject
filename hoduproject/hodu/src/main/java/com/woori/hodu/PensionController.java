@@ -2,6 +2,11 @@ package com.woori.hodu;
 
 import java.io.File;
 import java.lang.System.Logger;
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.woori.domain.PensionVO;
+import com.woori.domain.ReviewVO;
 import com.woori.domain.RoomVO;
 import com.woori.service.PensionService;
 
@@ -35,7 +41,20 @@ public class PensionController {
 	public String likeList(PensionVO vo, Model model) {
 		
 		List<PensionVO> likeList = pensionService.likeList(vo);
+		List<String> rating = new ArrayList<String>(Arrays.asList());
+		
+		for(int i =0; i<likeList.size();i++) {
+			if(pensionService.rating(likeList.get(i).getPensionName()) != null) {
+			rating.add(i, pensionService.rating(likeList.get(i).getPensionName()));
+			} else {
+			rating.add(i, "첫 후기를 작성해주세요.");
+			}
+				
+		}
+
+		model.addAttribute("rating", rating);
 		model.addAttribute("likeList",likeList);
+		
 		
 		return "user/list";
 	}

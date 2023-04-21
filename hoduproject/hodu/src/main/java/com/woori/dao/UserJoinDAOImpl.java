@@ -100,6 +100,7 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	public List<ReviewVO> ReviewList(ReviewVO rvo){
 		return sqlSession.selectList("user.ReviewList", rvo);
 	}
+
 	
 	//나의 예약 목록 출력
 	@Override

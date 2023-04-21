@@ -108,6 +108,7 @@ public class UserJoinServiceImpl implements UserJoinService {
 		return userJoin.ReviewList(rvo);
 	}
 	
+	
 	//나의 예약 목록 출력
 	@Override
 	public List<ReservationVO> ReservationList(ReservationVO rvo){
