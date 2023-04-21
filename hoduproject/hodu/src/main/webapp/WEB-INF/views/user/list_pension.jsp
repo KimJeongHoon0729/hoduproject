@@ -24,15 +24,15 @@
             
             <c:if test="${sessionScope.userId != null }">
             <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/user/reservation?pensionName=${param.pensionName }'">예약하기</button>
-         	</c:if>
-         	
+            </c:if>
+            
          </div>
          
             <div class="row">
-			<c:forEach var="RoomList" items="${RoomList }" >
+         <c:forEach var="RoomList" items="${RoomList }" >
                <div class="fh5co-grid">
                   <div class="fh5co-v-half to-animate-2">
-                     <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/hodu.jpg)"></div>
+                     <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/room1.jpg)"></div>
                      <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                         <h2 style="font-family: 'Pretendard-Regular';">객실 이름</h2>
                         <span class="pricing">${RoomList.roomName }</span>
@@ -40,14 +40,14 @@
                   </div>
                   <div class="fh5co-v-half">
                      <div class="fh5co-h-row-2 to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/hodu1.jpg)"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/9.png)"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-left">
-                           <h2 style="font-family: 'Pretendard-Regular';">수용가능한 반려견</h2>
+                           <h2 style="font-family: 'Pretendard-Regular';">수용가능한 반려견 크기</h2>
                            <span class="pricing">${RoomList.dogSize } </span>
                           </div>
                      </div>
                      <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/hodu2.jpg)"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/122.png)"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-right">
                            <h2 style="font-family: 'Pretendard-Regular';">가격</h2>
                            <span class="pricing">${RoomList.price } 원</span>
@@ -57,14 +57,14 @@
 
                   <div class="fh5co-v-half">
                      <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/hodu3.jpg)"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/dog1.jpg)"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-right">
                            <h2 style="font-family: 'Pretendard-Regular';">수용가능한 반려견 수</h2>
                            <span class="pricing">${RoomList.dogNum } 마리</span>
                           </div>
                      </div>
                      <div class="fh5co-h-row-2 to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/hodu8.jpg)"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/p1.png)"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-left">
                            <h2 style="font-family: 'Pretendard-Regular';">수용가능한 인원수</h2>
                            <span class="pricing">${RoomList.peopleNum } 명</span>
@@ -72,7 +72,7 @@
                      </div>
                   </div>
                   <div class="fh5co-v-half to-animate-2">
-                     <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/hodu7.jpg)"></div>
+                     <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/6.jpg)"></div>
                      <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                         <h2 style="font-family: 'Pretendard-Regular';">세부사항</h2>
                         <span class="pricing">${RoomList.message_room }</span>
