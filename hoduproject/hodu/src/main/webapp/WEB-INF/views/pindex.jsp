@@ -77,7 +77,7 @@
 	<div id="fh5co-container">
 		<div id="fh5co-home" class="js-fullheight" data-section="home">
 
-			<div class="flexslider">
+			<div class="flexslider" style="background-color: black;">
 				
 				<div class="fh5co-overlay"></div>
 				<div class="fh5co-text">
