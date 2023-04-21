@@ -99,8 +99,8 @@ public class UserJoinServiceImpl implements UserJoinService {
 	
 	//리뷰 작성
 	@Override
-	public void ReviewInswer(ReviewVO rvo) {
-		userJoin.ReviewInswer(rvo);
+	public void ReviewInsert(ReviewVO rvo) {
+		userJoin.ReviewInsert(rvo);
 	}
 	//R 리스트 출력
 	@Override
@@ -124,5 +124,11 @@ public class UserJoinServiceImpl implements UserJoinService {
 	@Override
 	public void DeleteReservation(int reservation_idx) {
 		userJoin.deleteReservation(reservation_idx);
+	}
+	
+	//예약하기
+	@Override
+	public void RInsert(ReservationVO rvo) {
+		userJoin.RInsert(rvo);
 	}
 }

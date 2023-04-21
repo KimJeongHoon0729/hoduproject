@@ -71,13 +71,18 @@
                </tr>
                
                 <tr>
+                  <th style="text-align: center;">객실이름</th>
+                  <td>${UserRView.roomName }</td>
+               </tr>
+               
+                <tr>
                   <th style="text-align: center;">펜션가격</th>
                   <td>${UserRView.price }</td>
                </tr>
 
                <tr>
                   <th style="width: 200px; text-align: center;">반려견 수</th>
-                  <th><input value="${UserRView.dogNumber }" id="dogNumber" name="dogNumber" type="number"></th>
+                  <th><input value="${UserRView.dogNum }" id="dogNum" name="dogNum" type="number"></th>
                </tr>
 
                <tr>

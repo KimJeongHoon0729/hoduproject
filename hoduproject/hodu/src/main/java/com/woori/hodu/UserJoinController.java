@@ -194,8 +194,8 @@ public class UserJoinController {
 		}
 		//리뷰 작성
 		@RequestMapping("ReviewInsert.do")
-		public String ReviewInswer(ReviewVO rvo) {
-			userJoinService.ReviewInswer(rvo);
+		public String ReviewInsert(ReviewVO rvo) {
+			userJoinService.ReviewInsert(rvo);
 			return "redirect: user/review_list";
 		}
 		
@@ -230,6 +230,14 @@ public class UserJoinController {
 		@RequestMapping("deleteReservation.do")
 		public String deleteReservation(int reservation_idx, HttpSession session, RedirectAttributes redirect) {
 			userJoinService.DeleteReservation(reservation_idx);
+			redirect.addAttribute("userId", session.getAttribute("userId"));
+			return "redirect: ReservationList.do";
+		}
+		
+		//예약하기
+		@RequestMapping("RInsert.do")
+		public String RInsert(ReservationVO rvo,RedirectAttributes redirect, HttpSession session) {
+			userJoinService.RInsert(rvo);
 			redirect.addAttribute("userId", session.getAttribute("userId"));
 			return "redirect: ReservationList.do";
 		}

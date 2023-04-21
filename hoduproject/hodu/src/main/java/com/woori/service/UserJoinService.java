@@ -36,7 +36,7 @@ public interface UserJoinService {
 	public QnaVO QView(int Q_idx, HttpSession session);
 	
 	//리뷰 작성
-	public void ReviewInswer(ReviewVO rvo);
+	public void ReviewInsert(ReviewVO rvo);
 	//R 리스트 출력
 	public List<ReviewVO> ReviewList(ReviewVO rvo);
 	
@@ -45,4 +45,7 @@ public interface UserJoinService {
 	public ReservationVO UserRView(int reservation_idx);
 	public void UserRUpdate(ReservationVO rvo);
 	public void DeleteReservation(int reservation_idx);
+	
+	//예약하기
+	public void RInsert(ReservationVO rvo);
 }

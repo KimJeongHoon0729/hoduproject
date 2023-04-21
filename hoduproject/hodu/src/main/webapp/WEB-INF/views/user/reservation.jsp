@@ -17,32 +17,40 @@
                </div>
             </div>
                 <div class="container" style="text-align:center;padding-left: 4px">
-                
+                <form action="${path }/RInsert.do?pensionName=${param.pensionName }">
                 <div class="col-md-6 col-md-offset-3">
                   <h3 style="font-family: 'Pretendard-Regular';">Reservation</h3>
                   <div class="form-group ">
-                     <label for="userPwRe" class="sr-only">resevation_date</label>
-                     <input id="userPwRe"  class="form-control" placeholder="예약 날짜" type="date">
+                     <label for="reservation_date" class="sr-only">reservation_date</label>
+                     <input id="reservation_date" name="reservation_date" class="form-control" placeholder="예약 날짜" type="date">
                   </div>   
                   <div class="form-group ">
-                     <label for="userPwRe" class="sr-only">userID</label>
-                     <input id="userPwRe"  class="form-control" placeholder="아이디" type="text">
+                     <label for="userId" class="sr-only">userID</label>
+                     <input id="userId" name="userId" class="form-control" value="${sessionScope.userId }" placeholder="아이디" type="hidden">
                   </div>
                   <div class="form-group ">
-                     <label for="userPwRe" class="sr-only">userName</label>
-                     <input id="userPwRe"  class="form-control" placeholder="이름" type="text">
+                     <label for="roomName" class="sr-only">roomName</label>
+                     <input id="roomName" name="roomName"  class="form-control" placeholder="객실 이름" type="text">
                   </div>
                   <div class="form-group ">
-                     <label for="userPwRe" class="sr-only">userMobile</label>
-                     <input id="userPwRe"  class="form-control" placeholder="핻드폰 번호" type="text">
+                     <label for="userName" class="sr-only">userName</label>
+                     <input id="userName" name="userName"  class="form-control" placeholder="이름" type="text">
                   </div>
                   <div class="form-group ">
-                     <label for="userPwRe" class="sr-only">userEmail</label>
-                     <input id="userPwRe"  class="form-control" placeholder="이메일" type="text">
+                     <label for="userMobile" class="sr-only">userMobile</label>
+                     <input id="userMobile" name="userMobile"  class="form-control" placeholder="핸드폰 번호" type="text">
                   </div>
                   <div class="form-group ">
-                     <label for="userPwRe" class="sr-only">pensionName</label>
-                     <input id="userPwRe"  class="form-control" placeholder="펜션이름" type="text">
+                     <label for="userEmail" class="sr-only">userEmail</label>
+                     <input id="userEmail" name="userEmail" class="form-control" placeholder="이메일" type="text">
+                  </div>
+                  <div class="form-group ">
+                     <label for="price" class="sr-only">userEmail</label>
+                     <input id="price" name="price" class="form-control" placeholder="가격" type="number">
+                  </div>
+                  <div class="form-group ">
+                     <input id="pensionName" name="pensionName" value="${param.pensionName }"  class="form-control" placeholder="펜션이름" type="hidden">
+          
                   </div>
                    
                     <div class="form-group">
@@ -50,26 +58,27 @@
                    </div>
                   <div class="form-control" style="margin-bottom: 15px">   
                      <p style="font-size: 16px"> 
-                      <input type='checkbox' name='check' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
-                      <input type='checkbox' name='check' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
-                      <input type='checkbox' name='check' value='대형견' /> 대형견 (25Kg 이상)
+                      <input type='checkbox' name='dogSize' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
+                      <input type='checkbox' name='dogSize' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
+                      <input type='checkbox' name='dogSize' value='대형견' /> 대형견 (25Kg 이상)
                   </p>
                 </div>       
                   <div class="form-group ">
-                     <label for="userPwRe" class="sr-only">dogNumber</label>
-                     <input id="userPwRe"  class="form-control" placeholder="강아지 수" type="number">
+                     <label for="dogNum" class="sr-only">dogNum</label>
+                     <input id="dogNum" name="dogNum" class="form-control" placeholder="강아지 수" type="number">
                   </div>
                   <div class="form-group ">
-                     <label for="userPwRe" class="sr-only">peopleNum</label>
-                     <input id="userPwRe"  class="form-control" placeholder="인원" type="text">
+                     <label for="peopleNum" class="sr-only">peopleNum</label>
+                     <input id="peopleNum" name="peopleNum" class="form-control" placeholder="인원" type="text">
                   </div>
-               <div class="message">
-                     <textarea class="message_area form-control" rows="8" cols="50" placeholder="펜션에 미리 전달한 사항을 작성해 주세요"></textarea>
+            	   <div class="message">
+                     <textarea class="message_area form-control" name="message_to_p" rows="8" cols="50" placeholder="펜션에 미리 전달한 사항을 작성해 주세요"></textarea>
                    </div>               
                    <div class="form-group ">
-                     <button class="btn btn-primary" type="button" onclick="join_check();" style="font-family: 'Pretendard-Regular';">제출</button>
-                   </div>
+                     <button class="btn btn-primary" type="submit" style="font-family: 'Pretendard-Regular';">제출</button>
+                   </div>   
             </div>
+            </form>
          </div>
       </div>
    </div>

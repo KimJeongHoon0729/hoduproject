@@ -91,7 +91,7 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	
 	//리뷰 작성
 	@Override
-	public void ReviewInswer(ReviewVO rvo) {
+	public void ReviewInsert(ReviewVO rvo) {
 		sqlSession.insert("user.ReviewInsert", rvo);
 	}
 	
@@ -118,5 +118,10 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	@Override
 	public void deleteReservation(int reservation_idx) {
 		sqlSession.delete("user.deleteReservation", reservation_idx);
+	}
+	//예약하기
+	@Override
+	public void RInsert(ReservationVO rvo) {
+		sqlSession.insert("user.RInsert", rvo);
 	}
 }

@@ -36,7 +36,7 @@ public interface UserJoinDAO {
 	public QnaVO QView(int Q_idx);
 	
 	//리뷰 작성
-	public void ReviewInswer(ReviewVO rvo);
+	public void ReviewInsert(ReviewVO rvo);
 	
 	//R 리스트 출력
 	public List<ReviewVO> ReviewList(ReviewVO rvo);
@@ -47,4 +47,7 @@ public interface UserJoinDAO {
 	
 	public void UserRUpdate(ReservationVO rvo);
 	public void deleteReservation(int reservation_idx);
+	
+	//예약하기
+	public void RInsert(ReservationVO rvo);
 }

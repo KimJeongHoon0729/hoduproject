@@ -20,8 +20,12 @@
             </div>
          
          <div class="form-group" style="text-align: end;">
-            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/ReviewList.do?pensionName=${penionName }'">리뷰확인</button>
-            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/user/reservation'">예약하기</button>
+            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/ReviewList.do?pensionName=${param.penionName }'">리뷰확인</button>
+            
+            <c:if test="${sessionScope.userId != null }">
+            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/user/reservation?pensionName=${param.pensionName }'">예약하기</button>
+         	</c:if>
+         	
          </div>
          
             <div class="row">
@@ -85,5 +89,6 @@
          </div>
       </div>
 <%@ include file="footer.jsp" %>
+
 </body>
 </html>

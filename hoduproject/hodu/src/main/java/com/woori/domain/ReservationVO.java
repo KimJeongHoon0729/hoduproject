@@ -14,12 +14,13 @@ public class ReservationVO {
 	String pensionName;
 	int price;
 	String dogSize;
-	int dogNumber;
+	int dogNum;
 	int peopleNum;
 	String message_to_p;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date reservation_date;
 	String partnerId;
+	String roomName;
 	public int getReservation_idx() {
 		return reservation_idx;
 	}
@@ -68,11 +69,11 @@ public class ReservationVO {
 	public void setDogSize(String dogSize) {
 		this.dogSize = dogSize;
 	}
-	public int getDogNumber() {
-		return dogNumber;
+	public int getDogNum() {
+		return dogNum;
 	}
-	public void setDogNumber(int dogNumber) {
-		this.dogNumber = dogNumber;
+	public void setDogNum(int dogNum) {
+		this.dogNum = dogNum;
 	}
 	public int getPeopleNum() {
 		return peopleNum;
@@ -98,14 +99,21 @@ public class ReservationVO {
 	public void setPartnerId(String partnerId) {
 		this.partnerId = partnerId;
 	}
+	public String getRoomName() {
+		return roomName;
+	}
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
+	}
 	@Override
 	public String toString() {
 		return "ReservationVO [reservation_idx=" + reservation_idx + ", userId=" + userId + ", userName=" + userName
 				+ ", userMobile=" + userMobile + ", userEmail=" + userEmail + ", pensionName=" + pensionName
-				+ ", price=" + price + ", dogSize=" + dogSize + ", dogNumber=" + dogNumber + ", peopleNum=" + peopleNum
+				+ ", price=" + price + ", dogSize=" + dogSize + ", dogNum=" + dogNum + ", peopleNum=" + peopleNum
 				+ ", message_to_p=" + message_to_p + ", reservation_date=" + reservation_date + ", partnerId="
-				+ partnerId + "]";
+				+ partnerId + ", roomName=" + roomName + "]";
 	}
+	
 
 	
 
