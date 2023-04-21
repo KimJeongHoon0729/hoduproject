@@ -6,11 +6,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="pension">
 	
 	<select id="likeList" resultType="com.woori.domain.PensionVO">
-		select * from pension where region = #{region} 
+		SELECT p.pensionName, p.img_pension, p.region, p.address, p.message, AVG(r.rating) AS avg_rating
+		FROM pension p
+		LEFT JOIN review r ON p.pensionName = r.pensionName 
+		WHERE p.region = #{region}
+		GROUP BY p.pensionName
+		ORDER BY avg_rating DESC;
 	</select>
 	
 	<select id="moneyList" resultType="com.woori.domain.PensionVO">
-		select * from pension where region = #{region} order by price_mean  
+		SELECT p.pensionName, p.img_pension, p.region, p.address, p.message, Min(r.price) AS min_price 
+		FROM pension p
+		LEFT JOIN room r ON p.pensionName = r.pensionName 
+		WHERE p.region = '경기'
+		GROUP BY p.pensionName
+		ORDER BY min_price DESC;
 	</select>
 	
 	<!-- 리뷰 평점 평균 -->
@@ -18,6 +28,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select round(avg(rating),2) from review where pensionName = #{pensionName} 
 	</select>
 	
+	<!-- 가격 최소 -->
+	<select id="MinPrice" resultType="String">
+		select min(price) from room where pensionName = #{pensionName} 
+	</select>
 	
 	<!-- 객실 등록 -->
 	<insert id="roomRegister">

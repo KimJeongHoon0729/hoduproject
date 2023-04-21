@@ -11,6 +11,7 @@ public interface PensionDAO {
 	public List<PensionVO> likeList(PensionVO vo);
 	public List<PensionVO> moneyList(PensionVO vo);
 	public String rating(String pensionName);
+	public String price(String pensionName);
 	public void roomRegister(RoomVO vo);
 	
 	//room 목록 보기

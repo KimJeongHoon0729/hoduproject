@@ -11,7 +11,7 @@ public interface PensionService {
 	public List<PensionVO> moneyList(PensionVO vo);
 	public String rating(String pensionName);
 	public void roomRegister(RoomVO vo);
-	
+	public String price(String pensionName);
 	//room 목록 보기
 	public List<RoomVO> RoomList(RoomVO vo);
 	

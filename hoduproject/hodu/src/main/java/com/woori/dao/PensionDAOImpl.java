@@ -32,6 +32,10 @@ public class PensionDAOImpl implements PensionDAO {
 	public String rating(String pensionName){
 		return sqlsession.selectOne("pension.AvgRating", pensionName);
 	}
+	@Override
+	public String price(String pensionName) {
+		return sqlsession.selectOne("pension.MinPrice", pensionName);
+	}
 
 	@Override
 	public void roomRegister(RoomVO vo) {

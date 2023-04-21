@@ -42,17 +42,23 @@ public class PensionController {
 		
 		List<PensionVO> likeList = pensionService.likeList(vo);
 		List<String> rating = new ArrayList<String>(Arrays.asList());
-		
+		List<String> price = new ArrayList<String>(Arrays.asList());
 		for(int i =0; i<likeList.size();i++) {
 			if(pensionService.rating(likeList.get(i).getPensionName()) != null) {
 			rating.add(i, pensionService.rating(likeList.get(i).getPensionName()));
 			} else {
-			rating.add(i, "첫 후기를 작성해주세요.");
+				rating.add(i, "첫 후기를 작성해주세요.");
+			}
+			if(pensionService.price(likeList.get(i).getPensionName()) != null) {
+				price.add(i, pensionService.price(likeList.get(i).getPensionName()));
+			} else {
+				price.add(i, "정보가 없습니다.");
 			}
 				
 		}
 
 		model.addAttribute("rating", rating);
+		model.addAttribute("price",price);
 		model.addAttribute("likeList",likeList);
 		
 		
@@ -63,6 +69,25 @@ public class PensionController {
 	public String moneyList(PensionVO vo, Model model) {
 		
 		List<PensionVO> moneyList = pensionService.moneyList(vo);
+		List<String> rating = new ArrayList<String>(Arrays.asList());
+		List<String> price = new ArrayList<String>(Arrays.asList());
+		for(int i =0; i<moneyList.size();i++) {
+			if(pensionService.rating(moneyList.get(i).getPensionName()) != null) {
+			rating.add(i, pensionService.rating(moneyList.get(i).getPensionName()));
+			} else {
+				rating.add(i, "첫 후기를 작성해주세요.");
+			}
+			if(pensionService.price(moneyList.get(i).getPensionName()) != null) {
+				price.add(i, pensionService.price(moneyList.get(i).getPensionName()));
+			} else {
+				price.add(i, "정보가 없습니다.");
+			}
+
+				
+		}
+
+		model.addAttribute("rating", rating);
+		model.addAttribute("price",price);
 		model.addAttribute("moneyList",moneyList);
 		
 		return "user/list";

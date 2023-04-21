@@ -32,6 +32,10 @@ public class PensionServiceImpl implements PensionService {
 	public String rating(String pensionName){
 		return pensionDao.rating(pensionName);
 	}
+	@Override
+	public String price(String pensionName) {
+		return pensionDao.price(pensionName);
+	}
 	
 	@Override
 	public void roomRegister(RoomVO vo) {

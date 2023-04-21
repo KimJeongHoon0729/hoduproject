@@ -69,7 +69,14 @@
                              
                            </div>
                         </div>
-                        <div class="fh5co-food-pricing"><fmt:formatNumber value="${pension_like.price_mean}" pattern="###,###"/> 원</div>
+                        <c:choose>
+                        <c:when test="${price[status.index]=='정보가 없습니다.' }">
+                        <div class="fh5co-food-pricing">정보가 없습니다.</div>
+                        </c:when>
+                        <c:otherwise>
+                        <div class="fh5co-food-pricing"><fmt:formatNumber value="${price[status.index]}" pattern="###,###"/> 원</div>
+                     	</c:otherwise>
+                     	</c:choose>
                      </li>
                   </c:forEach>
                   </ul>
@@ -83,7 +90,7 @@
                <div class="fh5co-food-menu to-animate-2">
                   <h2 class="fh5co-dishes" style="font-family: 'Pretendard-Regular';">가격순</h2>
                   <ul>
-                    <c:forEach var="pension_money" items="${moneyList }" >
+                    <c:forEach var="pension_money" items="${moneyList }" varStatus="status" >
                      <li>
                         <div class="fh5co-food-desc">
                            <figure>
@@ -91,12 +98,26 @@
                                  alt="Free HTML5 Templates by FREEHTML5.co">
                            </figure>
                            <div>
-                              <h3 style="font-family: 'Pretendard-Regular';"><a href="user/list_pension">${pension_money.pensionName }</a></h3>
-                              <p>${rating } 좋아요</p>
+                              <h3 style="font-family: 'Pretendard-Regular';"><a href="${path }/RoomList.do?pensionName=${pension_money.pensionName }">${pension_money.pensionName }</a></h3>
+                              <c:choose>
+                              <c:when test="${rating[status.index]=='첫 후기를 작성해주세요.' }">
+                              <p>첫 후기를 작성해주세요.</p>
+                              </c:when>
+                              <c:otherwise>
+                              <p>${rating[status.index] } 좋아요</p>
+                              </c:otherwise>
+                              </c:choose>
                               <p>${pension_money.address }</p>
                            </div>
                         </div>
-                        <div class="fh5co-food-pricing"><fmt:formatNumber value="${pension_money.price_mean}" pattern="###,###"/> 원</div>
+                        <c:choose>
+                        <c:when test="${price[status.index]=='정보가 없습니다.' }">
+                        <div class="fh5co-food-pricing">정보가 없습니다.</div>
+                        </c:when>
+                        <c:otherwise>
+                        <div class="fh5co-food-pricing"><fmt:formatNumber value="${price[status.index]}" pattern="###,###"/> 원</div>
+                     	</c:otherwise>
+                     	</c:choose>
                      </li>
                   </c:forEach>
                   </ul>
