@@ -40,6 +40,14 @@ public class CommonController {
 		return "pindex";
 	}
 	
+	@RequestMapping("community")
+	public String community() {
+
+		
+		return "community";
+	}
+	
+	
 
 	
 	@RequestMapping("login")

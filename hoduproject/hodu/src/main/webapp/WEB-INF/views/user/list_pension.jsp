@@ -14,14 +14,14 @@
          <div class="container">
             <div class="row text-center fh5co-heading row-padded">
                <div class="col-md-8 col-md-offset-2">
-                  <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">펜션이름</h2>
+                  <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">${param.pensionName }</h2>
                   <p class="sub-heading to-animate">예약 시 펜션 이름을 정확히 작성해 주세요.</p>
                </div>
             </div>
          
          <div class="form-group" style="text-align: end;">
             <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/ReviewList.do?pensionName=${penionName }'">리뷰확인</button>
-            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='reservation'">예약하기</button>
+            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/user/reservation'">예약하기</button>
          </div>
          
             <div class="row">

@@ -124,7 +124,7 @@
 					소중한 반려견과 함께 숙박의 패러다임을 전환하는 애견 글로벌 숙박 플랫폼 호두스테이로 떠나보세요.
             	</p>
             	<p style ="margin-bottom:70px;">
-            <p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline">Get in touch</a></p>
+            <p class="text-center to-animate"><a href="community" class="btn btn-primary btn-outline">Get in touch</a></p>
          </div>
       </div>
 
