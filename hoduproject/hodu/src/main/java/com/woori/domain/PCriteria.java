@@ -26,7 +26,7 @@ public class PCriteria {
 		this.skip = 0;
 	}
 	
-	public PCriteria(int pageNum, int amouot) {
+	public PCriteria(int pageNum, int amount) {
 		this.pageNum = pageNum;
 		this.amount = amount;
 		this.skip = (pageNum-1)*amount;

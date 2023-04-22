@@ -122,13 +122,13 @@
 					<div class="search_wrap">
 				        <div class="search_area">
 				        	<select name="type" style="width: 165px; height: 41px;">
-				                <option value="" <c:out value="${pPageMaker.pCri.type == null?'selected':'' }"/>>--</option>
-				                <option value="T" <c:out value="${pPageMaker.pCri.type eq 'T'?'selected':'' }"/>>제목</option>
-				                <option value="C" <c:out value="${pPageMaker.pCri.type eq 'C'?'selected':'' }"/>>내용</option>
-				                <option value="W" <c:out value="${pPageMaker.pCri.type eq 'W'?'selected':'' }"/>>작성자</option>
-				                <option value="TC" <c:out value="${pPageMaker.pCri.type eq 'TC'?'selected':'' }"/>>제목 + 내용</option>
-				                <option value="TW" <c:out value="${pPageMaker.pCri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
-				                <option value="TCW" <c:out value="${pPageMaker.pCri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
+				                <option value="" <c:out value="${pPageMaker.PCri.type == null?'selected':'' }"/>>--</option>
+				                <option value="T" <c:out value="${pPageMaker.PCri.type eq 'T'?'selected':'' }"/>>제목</option>
+				                <option value="C" <c:out value="${pPageMaker.PCri.type eq 'C'?'selected':'' }"/>>내용</option>
+				                <option value="W" <c:out value="${pPageMaker.PCri.type eq 'W'?'selected':'' }"/>>작성자</option>
+				                <option value="TC" <c:out value="${pPageMaker.PCri.type eq 'TC'?'selected':'' }"/>>제목 + 내용</option>
+				                <option value="TW" <c:out value="${pPageMaker.PCri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
+				                <option value="TCW" <c:out value="${pPageMaker.PCri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
 				            </select>    
 				            <input type="text" name="keyword" style="width: 440px; height: 41px;">
 				            <button>Search</button>
@@ -165,10 +165,11 @@
 				<br></br>
 
 				<form id="moveForm" method="get">
-					<input type="hidden" name="pageNum" value="${pPageMaker.pCri.pageNum }">
-	        		<input type="hidden" name="amount" value="${pPageMaker.pCri.amount }">   
-	        		<input type="hidden" name="keyword" value="${pPageMaker.pCri.keyword }">
-	        		<input type="hidden" name="type" value="${pPageMaker.pCri.type }">
+					<input type="hidden" name="pageNum" value="${pPageMaker.PCri.pageNum }">
+	        		<input type="hidden" name="amount" value="${pPageMaker.PCri.amount }">   
+	        		<input type="hidden" name="keyword" value="${pPageMaker.PCri.keyword }">
+	        		<input type="hidden" name="type" value="${pPageMaker.PCri.type }">
+	        		<input type="hidden" name="pensionName" value="${sessionScope.pensionName }">
 				</form>
 				
 				<div class="text-center">
@@ -200,7 +201,7 @@
 	 //버튼 클릭
 		$(".search_area button").on("click", function(e){
         e.preventDefault();
-       
+
        let type = $(".search_area select").val();
        let keyword = $(".search_area input[name='keyword']").val();
        

@@ -182,9 +182,9 @@ public class PartnerJoinController {
 			
 			int total = partnerJoinService.AgetTotal(Pcri);
 			
-			PPageMakerVO pageMaker = new PPageMakerVO(Pcri, total);
-			
-			qmodel.addAttribute("pageMaker", pageMaker);
+			PPageMakerVO pPageMaker = new PPageMakerVO(Pcri, total);
+
+			qmodel.addAttribute("pPageMaker", pPageMaker);
 			
 			return "partner/qna";
 		}

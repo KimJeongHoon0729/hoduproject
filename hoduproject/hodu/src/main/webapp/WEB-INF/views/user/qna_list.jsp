@@ -117,21 +117,7 @@
 					<p class="sub-heading to-animate"></p>
 					<p style="margin-bottom: 80px"></p>
 					   
-					   <!-- 검색 폼 영역 -->
-					   <!--  
-					<form name="searchForm" action="#" method="get">
-						<p style= "font-size: 18px; margin-left: -45px">
-							<select name="searchType" style="width: 100px; height: 40px;">
-								<option value="ALL">전체검색</option>
-								<option value="SUBJECT">제목</option>
-								<option value="WRITER">작성자</option>
-								<option value="CONTENTS">내용</option>
-							</select> <input type="text" name="searchText" value="" style="width: 350px;" /> <input
-								type="submit" value="검색" style="width: 70px;" />
-						</p>
-					</form>
-					-->
-					
+
 					<div class="search_wrap">
 				        <div class="search_area">
 				        	<select name="type" style="width: 165px; height: 41px;">

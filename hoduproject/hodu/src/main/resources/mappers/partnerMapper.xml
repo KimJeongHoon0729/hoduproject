@@ -110,8 +110,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from qna 
 			<if test="keyword != null">
                  <include refid="pcriteria"></include>
+                 and pensionName = #{pensionName}  
             </if>
-        where pensionName = #{pensionName}  
+            <if test="keyword == null">
+	       		 where pensionName = #{pensionName}   
+	        </if>
 		order by Q_idx    
 		limit #{skip},#{amount}   
 		
@@ -119,10 +122,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 게시물 개수 -->
 	<select id="AgetTotal" resultType="int">
-		select count(*) from qna  where pensionName=#{pensionName}
+		select count(*) from qna  
 		<if test="keyword != null">
             <include refid="pcriteria"></include>
+            and pensionName = #{pensionName}   
         </if>   
+        <if test="keyword == null">
+	       	where pensionName = #{pensionName}   
+	    </if>
 	</select>
 	
 	<!-- A 세부 정보 보기 -->

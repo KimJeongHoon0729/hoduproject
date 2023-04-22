@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.woori.dao.PartnerJoinDAOImpl;
 import com.woori.domain.PCriteria;
+
 import com.woori.domain.PartnerVO;
 import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
@@ -107,7 +108,7 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	//A 게시판 개수
 	@Override
 	public int AgetTotal(PCriteria Pcri) {
-		return partnerJoin.getTotal(Pcri);
+		return partnerJoin.AgetTotal(Pcri);
 	}
 	//A 확인
 	@Override

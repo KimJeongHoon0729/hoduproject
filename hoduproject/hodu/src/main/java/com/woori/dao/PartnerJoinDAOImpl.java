@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+
 import com.woori.domain.PCriteria;
 import com.woori.domain.PartnerVO;
 import com.woori.domain.QnaVO;
@@ -101,8 +102,8 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 	
 	//A 게시판 개수
 	@Override
-	public int getTotal(PCriteria Pcri) {
-		return psqlSession.selectOne("partner.AgetTotal");
+	public int AgetTotal(PCriteria Pcri) {
+		return psqlSession.selectOne("partner.AgetTotal", Pcri);
 	}
 	
 	//A 확인

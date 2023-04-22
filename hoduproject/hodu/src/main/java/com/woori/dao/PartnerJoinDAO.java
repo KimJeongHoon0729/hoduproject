@@ -39,7 +39,7 @@ public interface PartnerJoinDAO {
 	//A 리스트 출력
 	public List<QnaVO> AList(PCriteria Pcri);
 	//A 게시판 개수
-	public int getTotal(PCriteria Pcri);
+	public int AgetTotal(PCriteria Pcri);
 	//A 확인
 	public QnaVO AView(int Q_idx);
 	//A 답변 등록
