@@ -53,4 +53,40 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into pension (partnerId, region, pensionName, address, message)  
 		values (#{partnerId}, #{region}, #{pensionName}, #{address}, #{message})
 	</insert>
+	
+	<!-- 커뮤니티 리스트 출력 -->
+	<select id="CList" resultType="com.woori.domain.CommunityVO">
+		select * from community 
+	</select>
+	<!-- 게시글 출력 -->
+	<select id="CView" resultType="com.woori.domain.CommunityVO" parameterType="int">
+		select * from community  where  community.index=#{index}
+	</select>
+	<!-- 게시글 입력 -->
+	<insert id="CInsert" >
+	 	insert into community(title, content, writer, write_date)  
+	 	values (#{title}, #{content}, #{writer}, current_timestamp)
+	</insert>
+	<!-- 댓글 입력 -->
+	<insert id="ReplyInsert">
+		insert into reply(reply_content, secret, writer, reply_date, reply.index)  
+		values (#{reply_content}, #{secret}, #{writer},current_timestamp, #{index})  
+	</insert>
+	<!-- 댓글 출력 -->
+	<select id="ReplyList" resultType="com.woori.domain.ReplyVO">
+		select * from reply  where reply.index=#{index}  
+	</select>
+	<!-- 댓글 수정 -->
+	<update id="ReplyUpdate">
+		update reply set  
+		reply_content = #{reply_content},  
+		reply_date = current_timestamp   
+		where reply_index = #{reply_index}  
+		and reply.index = #{index}
+	</update>	
+	<!-- 댓글 삭제 -->
+	<delete id="ReplyDelete">
+		delete from reply   
+		where reply_index = #{reply_index}   
+	</delete>
 </mapper>

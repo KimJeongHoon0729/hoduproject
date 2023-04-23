@@ -10,7 +10,7 @@
 </head>
 	<body>
 	<%@ include file="header.jsp" %>
-	<link rel="stylesheet" href="/resources/style2.css">
+
 
       <div id="fh5co-contact" data-section="reservation">
          <div class="container">
@@ -21,12 +21,7 @@
                </div>
             </div>
          </div>   
-        <div id="container">
-			<div class="toggle-switch">
-				<input type="checkbox" id="chbox" onchange="setDisplay()" checked>			
-			</div>
-		
-	   </div>
+
 		  <form id="QnA" action="Q_insert.do?pageNum=1&amount=10" name="QnA_form" method="post">
  
                 <div class="container" style="text-align:center;padding-left: 4px">

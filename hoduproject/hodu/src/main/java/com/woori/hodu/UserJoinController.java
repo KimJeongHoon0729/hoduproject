@@ -55,6 +55,7 @@ public class UserJoinController {
 				if(pwdMatch == true ) { //로그인 성공
 				mav.setViewName("index");
 				mav.addObject("msg", "sucess");
+				session.setAttribute("userId", vo.getUserId());
 			
 			} else {
 				mav.setViewName("login");

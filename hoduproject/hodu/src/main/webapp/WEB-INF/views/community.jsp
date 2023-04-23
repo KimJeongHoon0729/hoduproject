@@ -69,23 +69,23 @@
 							<th>날짜</th>
 							<th>댓글 수</th>
 						</tr>
-					 <c:forEach var="community" items="${QList }" >
-						<tr id="add-btn" data-value="${community.q_idx }">
-							<td data-th="Supplier Code">${community.q_idx }</td>
-							<td data-th="Supplier Name">${community.q_title }</td>
-							<td data-th="Invoice Number">${community.userId }</td>
-							<td data-th="Invoice Date"><fmt:formatDate value="${community.q_date }" pattern="yyyy-MM-dd"/></td>
+					 <c:forEach var="community" items="${CList }" >
+						<tr id="add-btn" onclick="location.href='CView.do?index=${community.index}'">
+							<td data-th="Supplier Code">${community.index }</td>
+							<td data-th="Supplier Name">${community.title }</td>
+							<td data-th="Invoice Number">${community.writer }</td>
+							<td data-th="Invoice Date"><fmt:formatDate value="${community.write_date }" pattern="yyyy-MM-dd"/></td>
 							<td data-th="Due Date"></td>
 						</tr>
 					</c:forEach>
 					</tbody>
 				</table>
 				<c:choose>
-				<c:when test="${empty userId}">
+				<c:when test="${empty userId && empty partnerId}">
 					<a class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" onclick="alert('로그인이 필요합니다.');" >글쓰기</a>
 				</c:when>
 				<c:otherwise>
-					<a href="qna_form?pageNum=1&amount=10" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
+					<a href="community_form" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
 				</c:otherwise>
 				</c:choose>
 				<br></br>
@@ -100,13 +100,13 @@
 				<div class="text-center">
 					<ul class="pagination">
 						<c:if test="${pageMaker.prev }">
-						<li><a href="${path }/QList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+						<li><a href="${path }/CList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
 						</c:if>
 						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-						<li><a href="${path }/QList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+						<li><a href="${path }/CList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
 						</c:forEach>
 						<c:if test="${pageMaker.next }">
-						<li><a href="${path }/QList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+						<li><a href="${path }/CList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
 						</c:if>
 					</ul>
 				</div>
@@ -114,60 +114,16 @@
 		</div>
 </div>
 
-<!-- 모달 -->
-<div class="modal" id="modal">
-<form action="Q_pwCheck.do" id="frm">
-  <div class="modal_body">
-    <div class="m_head">
-      <div class="modal_title">게시글 비밀번호를 작성해주세요.</div>
-      <div class="close_btn" id="close_btn">X</div>
-    </div>
-    <div class="m_body">
-      <div class="modal_label">비밀번호</div>
-      <input type="hidden" name="pageNum" value="1"/>
-      <input type="hidden" name="amount" value="10"/>
-      <input type="hidden" name="Q_idx" class="input_box" id="Q_idx"/>
-      <input type="password" name="Q_pw" class="input_box" id="des_box"/>
-    </div>
-    <div class="m_footer">
-      <div class="modal_btn cancle" id="close_btn">취소</div>
-      <div class="modal_btn save" id="save_btn">제출</div>
-    </div>
-  </div>
-  </form>
-</div>
-<!-- 모달 -->
+
 <%@ include file="footer.jsp" %>
 
 
 
 <script type="text/javascript">
 
-	 $("#modalTable tr").click(function(){     
-		 
-	        var str = ""
-	        var tdArr = new Array();    // 배열 선언
-	            
-	        // 현재 클릭된 Row(<tr>)
-	        var tr = $(this);
-	        var td = tr.children();
-	        
-	        // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
-	        console.log("클릭한 Row의 모든 데이터 : "+tr.text());
-	                
-	   
-	        // td.eq(index)를 통해 값을 가져올 수도 있다.
-	        idx = td.eq(0).text();
-	       
 
-	 });
 	 
-	 const urlParams = new URL(location.href).searchParams;
-	 const msg = urlParams.get('msg');
-	 if(msg=='fail'){
-		 alert("비밀번호가 틀렸습니다.");
-         history.back();
-	 }
+
 	 
 	    let moveForm = $("#moveForm");
 	 //버튼 클릭

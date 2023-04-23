@@ -24,7 +24,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.woori.domain.CommunityVO;
+import com.woori.domain.Criteria;
+import com.woori.domain.PageMakerVO;
 import com.woori.domain.PensionVO;
+import com.woori.domain.ReplyVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.RoomVO;
 import com.woori.service.PensionService;
@@ -178,5 +182,53 @@ public class PensionController {
 	
 		return "partner/roomRegister";
 	}
+	
+	//커뮤니티 리스트 출력
+	@RequestMapping("CList.do")
+	public String CList(CommunityVO vo, Model model){
+		
+		List<CommunityVO> CList = pensionService.CList(vo);
+		model.addAttribute("CList",CList);
+		
+		return "community";
+	}
+	@RequestMapping("CView.do")
+	public String CView(int index, Model model, ReplyVO vo, RedirectAttributes redirect) {
+		List<ReplyVO> ReplyList = pensionService.ReplyList(vo);
+		model.addAttribute("ReplyList",ReplyList);
+		redirect.addAttribute("index", index);
+		model.addAttribute("CView", pensionService.CView(index));
+
+		return "community_content";
+	}
+	//커뮤니티 입력
+	@RequestMapping("CInsert.do")
+	public String CInsert(CommunityVO vo, Model model) {
+		pensionService.CInsert(vo);
+		return "redirect: CList.do";
+	}
+	//댓글 입력 및 출력
+	@RequestMapping("ReplyInsert.do")
+	public String ReplyInsert(ReplyVO vo, RedirectAttributes redirect, @RequestParam("index") int index) {
+		pensionService.ReplyInsert(vo);
+		redirect.addAttribute("index", index);
+		return "redirect: CView.do";
+	}
+	//댓글 수정
+	@RequestMapping("ReplyUpdate.do")
+	public String ReplyUpdate (ReplyVO vo, RedirectAttributes redirect, Model model) {
+		pensionService.ReplyUpdate(vo);
+		redirect.addAttribute("index", vo.getIndex());
+		return "redirect: CView.do";
+	}
+	//댓글 삭제
+	@RequestMapping("ReplyDelete.do")
+	public String ReplyDelete (int reply_index,RedirectAttributes redirect,@RequestParam("index") int index) {
+		pensionService.ReplyDelete(reply_index);
+		redirect.addAttribute("index", index);
+		return "redirect: CView.do";
+	}
+	
+
 }
 

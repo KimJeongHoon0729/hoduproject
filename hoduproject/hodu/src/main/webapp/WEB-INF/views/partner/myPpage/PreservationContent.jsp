@@ -77,7 +77,7 @@
 
                <tr>
                   <th style="width: 200px; text-align: center;">반려견 수</th>
-                  <th>${RView.dogNumber }</th>
+                  <th>${RView.dogNum }</th>
                </tr>
 
                <tr>

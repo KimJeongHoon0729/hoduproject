@@ -47,6 +47,18 @@ public class CommonController {
 		return "community";
 	}
 	
+	@RequestMapping("community_content")
+	public String community_content() {
+
+		
+		return "community_content";
+	}
+	@RequestMapping("community_form")
+	public String community_form() {
+
+		
+		return "community_form";
+	}
 	
 
 	

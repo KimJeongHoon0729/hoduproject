@@ -53,6 +53,7 @@ public class PartnerJoinController {
 				mav.addObject("msg", "sucess");
 					if(partnerJoinService.sessionPensionName(pvo.getPartnerId()) != null) {
 						mav.addObject("pensionName", partnerJoinService.sessionPensionName(pvo.getPartnerId()));
+						psession.setAttribute("partnerId", pvo.getPartnerId());
 						psession.setAttribute("pensionName", partnerJoinService.sessionPensionName(pvo.getPartnerId()));
 					} else {
 					}
