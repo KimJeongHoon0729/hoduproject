@@ -67,33 +67,9 @@
                   </div>
                   
                   <div class="form-group ">
-                     <label for="partnerMobile" class="sr-only">partnerMobile</label>
-                     <input id="partnerMobile" name="partnerMobile" class="form-control" placeholder="전화번호(ex:010-1234-1234)" type="tel">
+                     <label for="mobile" class="sr-only">partnerMobile</label>
+                     <input id="mobile" name="mobile" class="form-control" placeholder="전화번호(ex:010-1234-1234)" type="tel">
                   </div>
-              
-               <div class="form-group">
-               <p style="text-align : left; margin-bottom: 0px">수용 가능한 반려견 사이즈</p>
-               </div>
-               <div class="form-control" style="margin-bottom: 15px">
-               		
-               		<p style="font-size: 16px"> 
-		                <input type='checkbox' name='dogSize' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
-		                <input type='checkbox' name='dogSize' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
-		                <input type='checkbox' name='dogSize' value='대형견' /> 대형견 (25Kg 이상)
-		            </p>
-		        
-                </div>
-                             
-                  <div class="form-group ">
-                     <label for="dogNum" class="sr-only">dogNumber</label>
-                     <input id="dogNum"  class="form-control" placeholder="수용 가능한 반려견 수" type="number">
-                  </div>
-                   
-                   <div class="form-group ">
-                     <label for="peopleNum" class="sr-only">peopleNumber</label>
-                     <input id="peopleNum" name="peopleNum" class="form-control" placeholder="수용 가능한 인원 수" type="number">
-                  </div>
-                  
                  <div class="message">
                      <textarea class="message_area form-control" rows="8" cols="50" placeholder="펜션 세부사항을 입력해주세요" name="message"></textarea>
                 </div>
@@ -104,11 +80,11 @@
          <p style="margin-bottom: 14px"></p>
          <div class="col-md-6 col-md-offset-3">
 	         <div class="form-group ">  
-	         <form method="post"  enctype="multipart/form-data" id="ImgRegister" action="${path }/ImgRegister.do">
+	         <form method="post"  enctype="multipart/form-data" id="ImgRegister">
 				 <p style="text-align: left; margin-bottom: 10px"> 펜션 사진 업로드</p>
 			     <p style="width: 102%">
-			     <input type="file" name="multiFile" multiple class="form-control"></p>
-	             <input class="btn btn-primary" value="다음" type="button" onclick="next();" style="font-family: 'Pretendard-Regular'; 
+				     <input id="img_pension" type="file" name="multiFile" multiple class="form-control"></p>
+		             <input id="pensionSubmit" class="btn btn-primary" value="다음" type="button" style="font-family: 'Pretendard-Regular'; 
 	             margin-top: 15px; margin-left: 240px;margin-right: 240px">
 			 </form> 
 			 </div> 
@@ -119,15 +95,41 @@
 <%@ include file = "../footer.jsp" %>
 
 </div>
-<script type="text/javascript">
+	<script>
+	$(document).ready(function(){
+		$("#pensionSubmit").click(function(){
+			var pensionName = $("#pensionName").val();
+			var region = document.getElementById("area");
+			var region_option = region.options[region.selectedIndex].text;
+			var address = $("#address").val();
+			var mobile = $("#mobile").val();
+			var img_pension = $("#img_pension").val();
+			
+			if(pensionName == ""){
+				alert("펜션명을 입력하세요.");
+				pensionName.focus();
+		 	} else if(region_option == "지역을 선택하세요."){
+				alert("지역을 입력하세요.");
+				region_option.focus();
+			} else if(address == ""){
+				alert("상세 주소를 입력하세요.");
+				address.focus();
+			} else if(mobile == ""){
+				alert("전화번호를 입력하세요.");
+				mobile.focus();
+			} else if(img_pension == ""){
+				alert("펜션 이미지를 등록하세요.");
+				img_pension.focus();
+			}
+			
+			document.getElementById('ImgRegister').submit();
+			document.getElementById('pensionRegister').submit();
 
-function next() {
-
-	document.getElementById('ImgRegister').submit();
-	document.getElementById('pensionRegister').submit();
+		});
+		
+	});
 	
-	console.log($('input[name=partnerId]').val());
-}
-</script>
+	</script>
+
    </body>
 </html>
