@@ -50,7 +50,7 @@ public class PartnerJoinController {
 				boolean PpwdMatch = pwdEncoder.matches(pvo.getPartnerPw(), presult.getPartnerPw());
 				if(PpwdMatch == true){//로그인 성공
 				mav.setViewName("pindex");
-				mav.addObject("pmsg", "sucess");
+				mav.addObject("msg", "sucess");
 					if(partnerJoinService.sessionPensionName(pvo.getPartnerId()) != null) {
 						mav.addObject("pensionName", partnerJoinService.sessionPensionName(pvo.getPartnerId()));
 						psession.setAttribute("partnerId", pvo.getPartnerId());
@@ -60,11 +60,11 @@ public class PartnerJoinController {
 					
 				} else {
 					mav.setViewName("login");
-					mav.addObject("pmsg", "fail");
+					mav.addObject("msg", "fail");
 				}
 				} else { //로그인 실패
 				mav.setViewName("login");
-				mav.addObject("pmsg", "fail");
+				mav.addObject("msg", "fail");
 			}
 			return mav;
 		}

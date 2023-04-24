@@ -18,6 +18,7 @@ import org.apache.ibatis.annotations.Param;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -218,8 +219,10 @@ public class PensionController {
 	}
 	//커뮤니티 수정
 	@RequestMapping("CUpdate.do")
-	public String CUpdate (CommunityVO vo, RedirectAttributes redirect, Model model) {
+	public String CUpdate (int index, CommunityVO vo, Model model, RedirectAttributes redirect) {
 		pensionService.CUpdate(vo);
+		model.addAttribute("CUpdate", pensionService.CView(index));
+		redirect.addAttribute("index", vo.getIndex());
 		return "community_update";
 	}
 	//댓글 입력 및 출력

@@ -161,7 +161,7 @@
 						      <p class="card-text"><input type="text" id="reply_content" name="reply_content" class="form-control" style="margin-bottom: -20px"></p>
 						      <c:choose>
 							      <c:when test="${!empty sessionScope.userId && empty sessionScope.partnerId }">
-								  community_form.jsp    <input type="hidden" name="writer" value="${sessionScope.userId }">
+								  	  <input type="hidden" name="writer" value="${sessionScope.userId }">
 								      <a onclick="reply();" class="card-link">작성</a>
 							      </c:when>
 							      <c:when test="${empty sessionScope.userId && !empty sessionScope.partnerId }">

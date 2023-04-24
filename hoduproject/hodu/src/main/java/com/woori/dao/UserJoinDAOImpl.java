@@ -34,7 +34,7 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	
 	@Override
 	public void insertUser(UserVO vo) {
-		sqlSession.insert("user.insertUser", vo); // 여기서 joinUser는 mapper의 네임스페이스
+		sqlSession.insert("user.insertUser", vo); // 여기서 user는 mapper의 네임스페이스
 	}
 	
 	@Override

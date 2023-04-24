@@ -120,27 +120,27 @@
 			</div>
 			<p style="margin-bottom: -30px"></p>
 			<div class="container" style="width: 70%;">
-			<form action="CUpdate.do" method="post">
+			<form action="CView.do?index=${CUpdate.index }" method="post">
 				<table class="table table-bordered">
 				
 				   <tr>
 				      <th style="width: 200px; text-align: center;">작성자</th>
-				      <td>${CView.writer }</td>
+				      <td>${CUpdate.writer }</td>
 				   </tr>
 				 
 				   <tr>
 					  <th style="text-align: center;">게시글 날짜</th>
-				   	  <td><fmt:formatDate value="${CView.write_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>	
+				   	  <td><fmt:formatDate value="${CUpdate.write_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>	
 				   </tr>   
 				   
 				   <tr>
 					    <th style="text-align: center;">제목</th>
-					   <td><input value=" ${CView.title }" id="title" name="title" type="text"/></td>
+					   <td><input value=" ${CUpdate.title }" id="title" name="title" type="text"/></td>
 				   </tr>   
 				   
 				   <tr>
 					   <th style="height:200px; text-align: center;">내용</th>
-					   <td><input value=" ${CView.content }" id="content" name="content" type="text"/></td>
+					   <td><input value=" ${CUpdate.content }" id="content" name="content" type="text"/></td>
 				   </tr>		  
 				 
 				</table>
@@ -149,6 +149,14 @@
 				<button class="btn btn-primary btn-block" type="submit" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">제출</button>			
 				</div>
 			</form>	
+
+	<script>
+	
+	function CUpdate(){
+		document.getElementById('CUpdate').submit();
+	}
+	
+	</script>
 
 </body>
 

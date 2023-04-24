@@ -55,7 +55,7 @@
                   </div>
                              
                   <div class="form-group">
-                     <label for="dogNum" class="sr-only">dogNumber</label>
+                     <label for="dogNum" class="sr-only">dogNum</label>
                      <input id="dogNum" name="dogNum" class="form-control" placeholder="수용 가능한 반려견 수" type="number">
                   </div>
                    
