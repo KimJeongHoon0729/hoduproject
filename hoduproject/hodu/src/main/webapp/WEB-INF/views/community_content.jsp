@@ -125,22 +125,22 @@
 				
 				   <tr>
 				      <th style="width: 200px; text-align: center;">작성자</th>
-				      <td>${CUpdate.writer }</td>
+				      <td>${CView.writer }</td>
 				   </tr>
 				 
 				   <tr>
 					  <th style="text-align: center;">게시글 날짜</th>
-				   	  <td><fmt:formatDate value="${CUpdate.write_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>	
+				   	  <td><fmt:formatDate value="${CView.write_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>	
 				   </tr>   
 				   
 				   <tr>
 					    <th style="text-align: center;">제목</th>
-					   <td>${CUpdate.title }</td>
+					   <td>${CView.title }</td>
 				   </tr>   
 				   
 				   <tr>
 					   <th style="height:200px; text-align: center;">내용</th>
-					   <td>${CUpdate.content }</td>
+					   <td>${CView.content }</td>
 				   </tr>		  
 				 
 				</table>
@@ -148,7 +148,7 @@
 				
 				<div class="col-sm-12" style="text-align: -webkit-center;">
 				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CList.do?pageNum=1&amount=10'" style="width: 70px; display: inline-block; font-family: 'Pretendard-Regular';">목록</button>
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CUpdate.do'";  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">수정</button>			
+				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CUpdate.do?index=${CView.index}'";  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">수정</button>			
 				</div>
 				<br></br>
 				<div class="container" style="width: 640px;">

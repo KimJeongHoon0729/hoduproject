@@ -120,7 +120,7 @@
 			</div>
 			<p style="margin-bottom: -30px"></p>
 			<div class="container" style="width: 70%;">
-			
+			<form action="CUpdate.do" method="post">
 				<table class="table table-bordered">
 				
 				   <tr>
@@ -146,8 +146,9 @@
 				</table>
 				
 				<div class="col-sm-12" style="text-align: -webkit-center;">
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CUpdate.do?index=${CView.index}'";  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">제출</button>			
+				<button class="btn btn-primary btn-block" type="submit" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">제출</button>			
 				</div>
+			</form>	
 
 </body>
 

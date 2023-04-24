@@ -81,6 +81,7 @@
 					<div class="fh5co-menu-1">
 						<a href="/user/list_map">펜션 목록</a>
 						<a href="../../QList.do?pageNum=1&amount=10" >Q&A</a>
+						<a href="CList.do" >커뮤니티</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="/">HODU</a>
@@ -91,7 +92,7 @@
 						
 							<a href="../../signin" >회원가입</a>
 							<a href="../../login" >로그인</a>
-
+							
 						</div>
 					</c:when>
 					<c:otherwise>

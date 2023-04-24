@@ -218,10 +218,8 @@ public class PensionController {
 	}
 	//커뮤니티 수정
 	@RequestMapping("CUpdate.do")
-	public String CUpdate (int index, CommunityVO vo, RedirectAttributes redirect, Model model) {
+	public String CUpdate (CommunityVO vo, RedirectAttributes redirect, Model model) {
 		pensionService.CUpdate(vo);
-		redirect.addAttribute("index", vo.getIndex());
-		model.addAttribute("CUpdate", pensionService.CView(index));
 		return "community_update";
 	}
 	//댓글 입력 및 출력
@@ -233,7 +231,7 @@ public class PensionController {
 	}
 	//댓글 수정
 	@RequestMapping("ReplyUpdate.do")
-	public String ReplyUpdate (ReplyVO vo, RedirectAttributes redirect, Model model) {
+	public String ReplyUpdate (ReplyVO vo, RedirectAttributes redirect) {
 		pensionService.ReplyUpdate(vo);
 		redirect.addAttribute("index", vo.getIndex());
 		return "redirect: CView.do";
