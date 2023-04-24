@@ -216,6 +216,14 @@ public class PensionController {
 		pensionService.CInsert(vo);
 		return "redirect: CList.do";
 	}
+	//커뮤니티 수정
+	@RequestMapping("CUpdate.do")
+	public String CUpdate (int index, CommunityVO vo, RedirectAttributes redirect, Model model) {
+		pensionService.CUpdate(vo);
+		redirect.addAttribute("index", vo.getIndex());
+		model.addAttribute("CUpdate", pensionService.CView(index));
+		return "community_update";
+	}
 	//댓글 입력 및 출력
 	@RequestMapping("ReplyInsert.do")
 	public String ReplyInsert(ReplyVO vo, RedirectAttributes redirect, @RequestParam("index") int index) {

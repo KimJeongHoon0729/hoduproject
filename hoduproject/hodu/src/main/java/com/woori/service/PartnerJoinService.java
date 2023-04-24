@@ -45,5 +45,5 @@ public interface PartnerJoinService {
 	public QnaVO AView(int Q_idx, HttpSession psession);
 	
 	//A 등록
-		public void ARegister(QnaVO vo);
+	public void ARegister(QnaVO vo);
 }

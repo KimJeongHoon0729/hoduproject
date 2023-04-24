@@ -77,7 +77,7 @@
 
                <tr>
                   <th style="width: 200px; text-align: center;">반려견 수</th>
-                  <th><input value="${RView.dogNumber }" id="dogNumber" name="dogNumber" type="number"></th>
+                  <th><input value="${RView.dogNum }" id="dogNum" name="dogNum" type="number"></th>
                </tr>
 
                <tr>

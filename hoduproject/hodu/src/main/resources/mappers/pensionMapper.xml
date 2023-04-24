@@ -101,6 +101,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	insert into community(title, content, writer, write_date)  
 	 	values (#{title}, #{content}, #{writer}, current_timestamp)
 	</insert>
+	
+	<!--게시글 수정 -->
+	<update id="CUpdate">
+		update community set   
+		title=#{title},  
+		content=#{content}
+		where writer=#{writer}   
+	</update>
+	
 	<!-- 댓글 입력 -->
 	<insert id="ReplyInsert">
 		insert into reply(reply_content, secret, writer, reply_date, reply.index)  

@@ -36,7 +36,7 @@
                      <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                         <h2 style="font-family: 'Pretendard-Regular';">객실 이름</h2>
                         <span class="pricing">${RoomList.roomName }</span>
-                       </div>
+                     </div>
                   </div>
                   <div class="fh5co-v-half">
                      <div class="fh5co-h-row-2 to-animate-2">

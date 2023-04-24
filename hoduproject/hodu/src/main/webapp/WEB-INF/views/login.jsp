@@ -45,7 +45,7 @@
                     <button class="submit" style="margin-top: 10">로그인</button>
                     <button class="nextLine"></button>
            			<div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">회원가입</a></div>
-                    <c:if test="${msg == 'fail' }">
+                    <c:if test="${pmsg == 'fail' }">
                        <script>
                         alert("로그인에 실패하였습니다.");
                         history.back();

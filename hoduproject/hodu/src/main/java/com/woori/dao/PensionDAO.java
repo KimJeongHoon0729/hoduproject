@@ -31,6 +31,8 @@ public interface PensionDAO {
 	
 	//커뮤니티 입력
 	public void CInsert(CommunityVO vo);
+	// 커뮤니티 수정
+	public void CUpdate(CommunityVO vo);
 	//댓글 입력 및 출력
 	public void ReplyInsert(ReplyVO vo);
 	public List<ReplyVO> ReplyList(ReplyVO vo);

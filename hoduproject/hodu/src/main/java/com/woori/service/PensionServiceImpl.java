@@ -77,6 +77,11 @@ public class PensionServiceImpl implements PensionService {
 	public void CInsert(CommunityVO vo) {
 		pensionDao.CInsert(vo);
 	}
+	// 커뮤니티 수정
+	public void CUpdate(CommunityVO vo) {
+		pensionDao.CUpdate(vo);
+	}
+	
 	//댓글 입력 및 출력
 	@Override
 	public void ReplyInsert(ReplyVO vo) {

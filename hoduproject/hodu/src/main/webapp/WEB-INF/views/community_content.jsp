@@ -125,22 +125,22 @@
 				
 				   <tr>
 				      <th style="width: 200px; text-align: center;">작성자</th>
-				      <td>${CView.writer }</td>
+				      <td>${CUpdate.writer }</td>
 				   </tr>
 				 
 				   <tr>
 					  <th style="text-align: center;">게시글 날짜</th>
-				   	  <td><fmt:formatDate value="${CView.write_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>	
+				   	  <td><fmt:formatDate value="${CUpdate.write_date }" pattern="yyyy-MM-dd HH:mm:ss"/></td>	
 				   </tr>   
 				   
 				   <tr>
 					    <th style="text-align: center;">제목</th>
-					   <td>${CView.title }</td>
+					   <td>${CUpdate.title }</td>
 				   </tr>   
 				   
 				   <tr>
 					   <th style="height:200px; text-align: center;">내용</th>
-					   <td>${CView.content }</td>
+					   <td>${CUpdate.content }</td>
 				   </tr>		  
 				 
 				</table>
@@ -148,7 +148,7 @@
 				
 				<div class="col-sm-12" style="text-align: -webkit-center;">
 				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CList.do?pageNum=1&amount=10'" style="width: 70px; display: inline-block; font-family: 'Pretendard-Regular';">목록</button>
-				<button class="btn btn-primary btn-block" type="button"  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">수정</button>			
+				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CUpdate.do'";  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">수정</button>			
 				</div>
 				<br></br>
 				<div class="container" style="width: 640px;">
@@ -161,7 +161,7 @@
 						      <p class="card-text"><input type="text" id="reply_content" name="reply_content" class="form-control" style="margin-bottom: -20px"></p>
 						      <c:choose>
 							      <c:when test="${!empty sessionScope.userId && empty sessionScope.partnerId }">
-								      <input type="hidden" name="writer" value="${sessionScope.userId }">
+								  community_form.jsp    <input type="hidden" name="writer" value="${sessionScope.userId }">
 								      <a onclick="reply();" class="card-link">작성</a>
 							      </c:when>
 							      <c:when test="${empty sessionScope.userId && !empty sessionScope.partnerId }">
@@ -196,7 +196,7 @@
 						</div>
 					</c:when>
 					<c:when test="${Reply_list.secret == 'secret' && sessionScope.partnerId==Reply_list.writer}">
-					<div class="container" style="width: 640px;">
+					    <div class="container" style="width: 640px;">
 						  <div class="card">
 						    <div class="card-body" style="margin-top: 50px">
 						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">${Reply_list.writer } 
@@ -248,7 +248,34 @@
 			</div>
 		</div>
 </div>
-<!-- 모달 -->
+<!-- 커뮤니티 수정 모달 S -->
+<div class="modal" id="modal">
+<form action="CUpdate.do" id="frmCommunty">
+  <div class="modal_body">
+    <div class="m_head">
+      <div class="modal_title">게시글을 수정해주세요.</div>
+      <div class="close_btn" id="close_btn">X</div>
+    </div>
+    <div class="m_body">
+      <div class="modal_label">게시글 제목</div>
+      <input type="hidden" name="index" class="input_box" id="index" value="${CView.index }"/>
+      <input type="text" name="title" class="input_box" id="des_box"/>
+      
+      <div class="modal_label">게시글 내용</div>
+      <input type="hidden" name="index" class="input_box" id="index" value="${CView.index }"/>
+      <input type="hidden" name="reply_index" class="input_box" id="reply_index"/>
+      <input type="text" name="content" class="input_box" id="des_box"/>
+    </div>
+    <div class="m_footer">
+      <div class="modal_btn cancle" id="close_btn">취소</div>
+      <div class="modal_btn save" id="save_btn">제출</div>
+    </div>
+  </div>
+</form>
+</div>
+<!-- 커뮤니티 수정 모달 E -->
+
+<!-- 댓글 수정 모달 S -->
 <div class="modal" id="modal">
 <form action="ReplyUpdate.do" id="frm1">
   <div class="modal_body">
@@ -267,9 +294,9 @@
       <div class="modal_btn save" id="save_btn">제출</div>
     </div>
   </div>
-  </form>
+</form>
 </div>
-<!-- 모달 -->
+<!--댓글 수정 모달 E -->
 
 <%@ include file="footer.jsp" %>
 
