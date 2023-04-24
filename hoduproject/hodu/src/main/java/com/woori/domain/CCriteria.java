@@ -2,7 +2,7 @@ package com.woori.domain;
 
 import java.util.Arrays;
 
-public class Criteria {
+public class CCriteria {
 
 	private int pageNum;
 	private int amount;
@@ -10,14 +10,23 @@ public class Criteria {
 	private String keyword;
 	private String type;
 	private String[] typeArr;
+	int index;
 	
-	public Criteria() {
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	public CCriteria() {
 		// TODO Auto-generated constructor stub
 		this(1,10);
 		this.skip = 0;
 	}
 	
-	public Criteria(int pageNum, int amount) {
+	public CCriteria(int pageNum, int amount) {
 		this.pageNum = pageNum;
 		this.amount = amount;
 		this.skip = (pageNum-1)*amount;
@@ -77,9 +86,11 @@ public class Criteria {
 
 	@Override
 	public String toString() {
-		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", skip=" + skip + ", keyword=" + keyword
-				+ ", type=" + type + ", typeArr=" + Arrays.toString(typeArr) + "]";
+		return "CCriteria [pageNum=" + pageNum + ", amount=" + amount + ", skip=" + skip + ", keyword=" + keyword
+				+ ", type=" + type + ", typeArr=" + Arrays.toString(typeArr) + ", index=" + index + "]";
 	}
+
+	
 
 	
 }

@@ -7,7 +7,9 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.woori.dao.PensionDAO;
+import com.woori.domain.CCriteria;
 import com.woori.domain.CommunityVO;
+import com.woori.domain.PCriteria;
 import com.woori.domain.PensionVO;
 import com.woori.domain.ReplyVO;
 import com.woori.domain.ReviewVO;
@@ -59,8 +61,12 @@ public class PensionServiceImpl implements PensionService {
 	
 	//커뮤니티 리스트 출력
 	@Override
-	public List<CommunityVO> CList(CommunityVO vo){
-		return pensionDao.CList(vo);
+	public List<CommunityVO> CList(CCriteria cri){
+		return pensionDao.CList(cri);
+	}
+	@Override
+	public int AgetCTotal(CCriteria cri) {
+		return pensionDao.AgetCTotal(cri);
 	}
 	@Override
 	public CommunityVO CView(int index) {

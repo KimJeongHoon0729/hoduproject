@@ -24,8 +24,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.woori.domain.CCriteria;
+import com.woori.domain.CPageMakerVO;
 import com.woori.domain.CommunityVO;
 import com.woori.domain.Criteria;
+import com.woori.domain.PPageMakerVO;
 import com.woori.domain.PageMakerVO;
 import com.woori.domain.PensionVO;
 import com.woori.domain.ReplyVO;
@@ -185,10 +188,16 @@ public class PensionController {
 	
 	//커뮤니티 리스트 출력
 	@RequestMapping("CList.do")
-	public String CList(CommunityVO vo, Model model){
+	public String CList(CCriteria cri, Model model){
 		
-		List<CommunityVO> CList = pensionService.CList(vo);
+		List<CommunityVO> CList = pensionService.CList(cri);
 		model.addAttribute("CList",CList);
+		
+		int total = pensionService.AgetCTotal(cri);
+		
+		CPageMakerVO cPageMaker = new CPageMakerVO(cri, total);
+
+		model.addAttribute("cPageMaker", cPageMaker);
 		
 		return "community";
 	}

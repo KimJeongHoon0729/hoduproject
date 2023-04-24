@@ -7,7 +7,9 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.woori.domain.CCriteria;
 import com.woori.domain.CommunityVO;
+import com.woori.domain.PCriteria;
 import com.woori.domain.PensionVO;
 import com.woori.domain.ReplyVO;
 import com.woori.domain.ReviewVO;
@@ -59,9 +61,14 @@ public class PensionDAOImpl implements PensionDAO {
 	
 	//커뮤니티 리스트 출력
 	@Override
-	public List<CommunityVO> CList(CommunityVO vo){
-		return sqlsession.selectList("pension.CList", vo);
+	public List<CommunityVO> CList(CCriteria cri){
+		return sqlsession.selectList("pension.CList", cri);
 	}
+	@Override
+	public int AgetCTotal(CCriteria cri) {
+		return sqlsession.selectOne("pension.AgetCTotal", cri);
+	}
+	
 	@Override
 	public CommunityVO CView(int index) {
 		return sqlsession.selectOne("pension.CView", index);

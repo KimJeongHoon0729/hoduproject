@@ -147,7 +147,8 @@
 
 				
 				<div class="col-sm-12" style="text-align: -webkit-center;">
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CList.do'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
+				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CList.do?pageNum=1&amount=10'" style="width: 70px; display: inline-block; font-family: 'Pretendard-Regular';">목록</button>
+				<button class="btn btn-primary btn-block" type="button"  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">수정</button>			
 				</div>
 				<br></br>
 				<div class="container" style="width: 640px;">
@@ -269,6 +270,7 @@
   </form>
 </div>
 <!-- 모달 -->
+
 <%@ include file="footer.jsp" %>
 
 <script type="text/javascript">
@@ -298,6 +300,7 @@
 		document.getElementById('frm1').submit();
 	
 	});
+	
 
 
 </script>

@@ -2,6 +2,7 @@ package com.woori.service;
 
 import java.util.List;
 
+import com.woori.domain.CCriteria;
 import com.woori.domain.CommunityVO;
 import com.woori.domain.PensionVO;
 import com.woori.domain.ReplyVO;
@@ -21,8 +22,9 @@ public interface PensionService {
 	public void pensionRegister(PensionVO vo);
 	
 	//커뮤니티 리스트 출력
-	public List<CommunityVO> CList(CommunityVO vo);
+	public List<CommunityVO> CList(CCriteria cri);
 	public CommunityVO CView(int index);
+	public int AgetCTotal(CCriteria cri);
 	//커뮤니티 입력
 	public void CInsert(CommunityVO vo);
 	
