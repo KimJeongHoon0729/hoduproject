@@ -6,8 +6,10 @@ import javax.servlet.http.HttpSession;
 
 import com.woori.domain.PCriteria;
 import com.woori.domain.PartnerVO;
+import com.woori.domain.PensionVO;
 import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
+import com.woori.domain.RoomVO;
 
 public interface PartnerJoinDAO {
 
@@ -43,5 +45,20 @@ public interface PartnerJoinDAO {
 	//A 확인
 	public QnaVO AView(int Q_idx);
 	//A 답변 등록
-		public void ARegister(QnaVO vo);
+	public void ARegister(QnaVO vo);
+	
+	//MyPension 출력
+	public PensionVO MyPension(PensionVO vo);
+	//MyRoom 출력
+	public List<RoomVO> ViewMyRoom(RoomVO vo);
+	//MyRoom 상세보기
+	public RoomVO ViewMyRoom2(RoomVO vo);
+	//MyRoom 수정 상세보기
+	public RoomVO ViewRoomInfo(RoomVO vo);
+	//MyRoom 수정
+	public void roomUpdate(RoomVO vo);
+	//MyPension 수정 상세보기
+	public PensionVO ViewPension(PensionVO vo);
+	//MyPension 수정
+	public void pensionUpdate(PensionVO vo);
 }

@@ -85,6 +85,10 @@ public class PensionDAOImpl implements PensionDAO {
 		sqlsession.update("pension.CUpdate", vo);
 		
 	}
+	@Override
+	public CommunityVO CView2(int index) {
+		return sqlsession.selectOne("pension.CView", index);
+	}
 	
 	//댓글 입력 및 출력
 	@Override

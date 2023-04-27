@@ -9,8 +9,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 	<body>
-	<%@ include file="header.jsp" %>
-	<link rel="stylesheet" href="/resources/style2.css">
+<c:choose>
+<c:when test="${sessionScope.partnerId != null }">
+<%@ include file="partner/pheader.jsp" %>
+</c:when>
+<c:otherwise>
+<%@ include file="header.jsp" %>
+</c:otherwise>
+</c:choose>
 
       <div id="fh5co-contact" data-section="reservation">
          <div class="container">

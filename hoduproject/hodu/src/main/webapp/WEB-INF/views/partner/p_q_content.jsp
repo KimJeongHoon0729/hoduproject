@@ -56,9 +56,9 @@
 					   </tr>	
 					 
 					</table>
-					<div class="col-sm-3" style="left:340px;">
-						<button class="btn btn-primary btn-block" type="button" onclick="location.href='${path }/AList.do?pageNum=1&amount=10&pensionName=${pensionName}'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
-						<button class="btn btn-primary btn-block" type="submit" style="width: 70px; font-family: 'Pretendard-Regular';">제출</button>
+					<div class="col" style="text-align: center" >
+						<button class="btn btn-primary" type="button" onclick="location.href='${path }/AList.do?pageNum=1&amount=10&pensionName=${pensionName}'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
+						<button class="btn btn-primary" type="submit" style="width: 70px; font-family: 'Pretendard-Regular';">제출</button>
 					</div>
 				</form>
 				

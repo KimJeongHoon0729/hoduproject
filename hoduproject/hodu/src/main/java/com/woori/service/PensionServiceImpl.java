@@ -81,6 +81,10 @@ public class PensionServiceImpl implements PensionService {
 	public void CUpdate(CommunityVO vo) {
 		pensionDao.CUpdate(vo);
 	}
+	@Override
+	public CommunityVO CView2(int index) {
+		return pensionDao.CView(index);
+	}
 	
 	//댓글 입력 및 출력
 	@Override

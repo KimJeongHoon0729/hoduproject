@@ -221,8 +221,17 @@ public class PensionController {
 	@RequestMapping("CUpdate.do")
 	public String CUpdate (int index, CommunityVO vo, Model model, RedirectAttributes redirect) {
 		pensionService.CUpdate(vo);
-		model.addAttribute("CUpdate", pensionService.CView(index));
+		
 		redirect.addAttribute("index", vo.getIndex());
+		return "redirect: CView.do";
+	}
+	@RequestMapping("CView2.do")
+	public String CView2(int index, Model model, ReplyVO vo, RedirectAttributes redirect) {
+		List<ReplyVO> ReplyList = pensionService.ReplyList(vo);
+		model.addAttribute("ReplyList",ReplyList);
+		redirect.addAttribute("index", index);
+		model.addAttribute("CView2", pensionService.CView(index));
+
 		return "community_update";
 	}
 	//댓글 입력 및 출력

@@ -56,14 +56,15 @@ public class UserJoinController {
 				mav.setViewName("index");
 				mav.addObject("msg", "sucess");
 				session.setAttribute("userId", vo.getUserId());
-			
-			} else {
-				mav.setViewName("login");
-				mav.addObject("msg", "fail");
-			}
+				} else {
+					mav.setViewName("login");
+					mav.addObject("msg", "fail");
+					session.invalidate();
+				}
 			} else { //로그인 실패
 				mav.setViewName("login");
 				mav.addObject("msg", "fail");
+				session.invalidate();
 			}
 			return mav;
 		}

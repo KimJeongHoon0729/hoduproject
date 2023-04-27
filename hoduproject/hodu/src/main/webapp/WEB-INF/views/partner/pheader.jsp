@@ -79,15 +79,9 @@
 			<div class="fh5co-main-nav">
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-					<c:choose>
-					<c:when test="${sessionScope.pensionName == null }">
-						<a href="/partner/register">펜션 등록</a>
-					</c:when>
-					<c:otherwise>
-						<a href="/partner/roomRegister">객실 등록</a>
-					</c:otherwise>
-					</c:choose>
+						<a href="../MyPension.do?partnerId=${sessionScope.partnerId }">내 펜션 관리</a>
 						<a href="../AList.do?pageNum=1&amount=10&pensionName=${sessionScope.pensionName }">Q&A</a>
+						<a href="../CList.do?pageNum=1&amount=10" >커뮤니티</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="/p">HODU</a>

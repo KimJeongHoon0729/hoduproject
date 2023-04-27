@@ -106,8 +106,14 @@
 
 
 <body style="font-family: 'Pretendard-Regular';">
-
+<c:choose>
+<c:when test="${sessionScope.partnerId != null }">
+<%@ include file="partner/pheader.jsp" %>
+</c:when>
+<c:otherwise>
 <%@ include file="header.jsp" %>
+</c:otherwise>
+</c:choose>
    <div id="fh5co-menus" data-section="menu">
       <div class="container">
 			<div class="row text-center fh5co-heading row-padded">
@@ -148,7 +154,7 @@
 				
 				<div class="col-sm-12" style="text-align: -webkit-center;">
 				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CList.do?pageNum=1&amount=10'" style="width: 70px; display: inline-block; font-family: 'Pretendard-Regular';">목록</button>
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CUpdate.do?index=${CView.index}'";  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">수정</button>			
+				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CView2.do?index=${CView.index}'"  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">수정</button>			
 				</div>
 				<br></br>
 				<div class="container" style="width: 640px;">

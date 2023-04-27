@@ -11,6 +11,31 @@ public class PartnerController {
 		
 		return "partner/register";
 	}
+	@RequestMapping("partner/list_pension_info")
+	public String list_pension_info() {
+
+		
+		return "partner/list_pension_info";
+	}
+	@RequestMapping("partner/view_my_room")
+	public String view_my_room() {
+
+		
+		return "partner/view_my_room";
+	}
+	@RequestMapping("partner/roomUpdate")
+	public String roomUpdate() {
+
+		
+		return "partner/roomUpdate";
+	}
+	@RequestMapping("partner/pensionUpdate")
+	public String pensionUpdate() {
+
+		
+		return "partner/pensionUpdate";
+	}
+	
 	
 	@RequestMapping("partner/reservation")
 	public String preservation() {

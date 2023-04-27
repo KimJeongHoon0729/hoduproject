@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,8 +22,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.woori.domain.PCriteria;
 import com.woori.domain.PPageMakerVO;
 import com.woori.domain.PartnerVO;
+import com.woori.domain.PensionVO;
 import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
+import com.woori.domain.RoomVO;
 import com.woori.service.PartnerJoinServiceImpl;
 
 @Controller
@@ -49,23 +52,27 @@ public class PartnerJoinController {
 			if(presult != null) {
 				boolean PpwdMatch = pwdEncoder.matches(pvo.getPartnerPw(), presult.getPartnerPw());
 				if(PpwdMatch == true){//로그인 성공
-				mav.setViewName("pindex");
-				mav.addObject("msg", "sucess");
 					if(partnerJoinService.sessionPensionName(pvo.getPartnerId()) != null) {
 						mav.addObject("pensionName", partnerJoinService.sessionPensionName(pvo.getPartnerId()));
 						psession.setAttribute("partnerId", pvo.getPartnerId());
 						psession.setAttribute("pensionName", partnerJoinService.sessionPensionName(pvo.getPartnerId()));
-					} else {
+						mav.setViewName("pindex");	
+						mav.addObject("pmsg", "sucess");
+					} else {	
+						psession.setAttribute("partnerId", pvo.getPartnerId());
+						mav.setViewName("pindex");	
+						mav.addObject("pmsg", "sucess");
 					}
-					
-				} else {
-					mav.setViewName("login");
-					mav.addObject("msg", "fail");
-				}
 				} else { //로그인 실패
 				mav.setViewName("login");
-				mav.addObject("msg", "fail");
-			}
+				mav.addObject("pmsg", "fail");	
+				psession.invalidate();
+				}
+				}else { //로그인 실패
+				mav.setViewName("login");
+				mav.addObject("pmsg", "fail");	
+				psession.invalidate();
+				}
 			return mav;
 		}
 		
@@ -205,7 +212,54 @@ public class PartnerJoinController {
 			redirect.addAttribute("Q_idx", Q_idx);
 			return "redirect: AView.do";
 		}
+		//MyPension 출력
+		@RequestMapping("MyPension.do")
+		public String MyPension(PensionVO vo, Model model, HttpSession session) {
+			model.addAttribute("myPension",partnerJoinService.MyPension(vo, session));
+			return "partner/list_pension_info";
+		}
+		//MyRoom 출력
+		@RequestMapping("ViewMyRoom.do")
+		public String ViewMyRoom(RoomVO vo, Model model, HttpSession session) {
+			
+			List<RoomVO> ViewMyRoom = partnerJoinService.ViewMyRoom(vo, session);
+			model.addAttribute("ViewMyRoom",ViewMyRoom);
+			
+			return "partner/view_my_room";
+		}
 		
+		//MyRoom 상세보기
+		@RequestMapping("ContentMyRoom.do")
+		public String ViewMyRoom2(RoomVO vo, Model model) {
+			model.addAttribute("ContentMyRoom", partnerJoinService.ViewMyRoom2(vo));
+			return "partner/Content_My_Room";
+		}
+		//MyRoom 상세보기
+		@RequestMapping("ViewRoomInfo.do")
+		public String ViewRoomInfo(RoomVO vo, Model model) {
+			model.addAttribute("ViewRoomInfo", partnerJoinService.ViewRoomInfo(vo));
+			return "partner/roomUpdate";
+		}
+		//MyRoom 수정
+		@RequestMapping("roomUpdate.do")
+		public String roomUpdate(RoomVO vo, @RequestParam("room_idx") int room_idx, RedirectAttributes redirect) {
+			partnerJoinService.roomUpdate(vo);
+			redirect.addAttribute("room_idx", vo.getRoom_idx());
+			return "redirect: ContentMyRoom.do";
+		}
+		//MyPension 출력
+		@RequestMapping("ViewPension.do")
+		public String ViewPension(PensionVO vo, HttpSession session, Model model) {
+			model.addAttribute("pensionView", partnerJoinService.ViewPension(vo, session));
+			return "partner/pensionUpdate";
+		}
+		//MyPension 수정
+		@RequestMapping("pensionUpdate.do")
+		public String pensionUpdate(PensionVO vo, HttpSession session, RedirectAttributes redirect) {
+			partnerJoinService.pensionUpdate(vo);
+			redirect.addAttribute("partnerId", session.getAttribute("partnerId"));
+			return "redirect: MyPension.do";
+		}
 }
 
 

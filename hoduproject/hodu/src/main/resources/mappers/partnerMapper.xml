@@ -145,4 +145,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	</update>
 	
+	<!-- My pension 정보 -->
+	<select id="MyPension" resultType="com.woori.domain.PensionVO" parameterType="String">
+		select * from pension where partnerId = #{partnerId}   
+	</select>
+	<!-- My room 출력 -->
+	<select id="ViewMyRoom" resultType="com.woori.domain.RoomVO" parameterType="String">
+		select * from room where partnerId = #{partnerId}   
+	</select>
+	<!-- My room 상세보기 -->
+	<select id="ViewMyRoom2" resultType="com.woori.domain.RoomVO" parameterType="int">
+		select * from room where room_idx = #{room_idx}   
+	</select>
+	<!-- My room 수정 -->
+	<update id="roomUpdate" parameterType="com.woori.domain.RoomVO">
+		update  room  set  
+		roomName=#{roomName},  
+		price=#{price}, 
+		dogSize=#{dogSize},  
+		dogNum=#{dogNum},   
+		peopleNum=#{peopleNum},    
+		message_room=#{message_room}   
+		where room_idx=#{room_idx}  
+	</update>
+	<!-- My pension 수정 -->
+	<update id="pensionUpdate" parameterType="com.woori.domain.PensionVO">
+		update  pension  set  
+		pensionName=#{pensionName},  
+		region=#{region}, 
+		address=#{address},  
+		message=#{message}   
+		where partnerId=#{partnerId}  
+
+	</update>
 </mapper>

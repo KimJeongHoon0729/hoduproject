@@ -11,8 +11,10 @@ import org.springframework.stereotype.Repository;
 
 import com.woori.domain.PCriteria;
 import com.woori.domain.PartnerVO;
+import com.woori.domain.PensionVO;
 import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
+import com.woori.domain.RoomVO;
 
 @Repository
 public class PartnerJoinDAOImpl implements PartnerJoinDAO {
@@ -112,9 +114,44 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 		return psqlSession.selectOne("partner.AView", Q_idx);
 	}
 	//A 등록
-		@Override
-		public void ARegister(QnaVO vo) {
-			psqlSession.update("partner.updateAnswer", vo);
-		}
+	@Override
+	public void ARegister(QnaVO vo) {
+		psqlSession.update("partner.updateAnswer", vo);
+	}
 	
+	//MyPension 출력
+	@Override
+	public PensionVO MyPension(PensionVO vo) {
+		return psqlSession.selectOne("partner.MyPension", vo);
+	}
+	//MyRoom 출력
+	@Override
+	public List<RoomVO> ViewMyRoom(RoomVO vo){
+		return psqlSession.selectList("partner.ViewMyRoom", vo);
+	}
+	//MyRoom 상세보기
+	@Override
+	public RoomVO ViewMyRoom2(RoomVO vo) {
+		return psqlSession.selectOne("partner.ViewMyRoom2", vo);
+	}
+	//MyRoom 수정 상세보기
+	@Override
+	public RoomVO ViewRoomInfo(RoomVO vo) {
+		return psqlSession.selectOne("partner.ViewMyRoom2", vo);
+	}
+	//MyRoom 수정
+	@Override
+	public void roomUpdate(RoomVO vo) {
+		psqlSession.update("partner.roomUpdate", vo);
+	}
+	//MyPension 수정 상세보기
+	@Override
+	public PensionVO ViewPension(PensionVO vo) {
+		return psqlSession.selectOne("partner.MyPension", vo);
+	}
+	//MyPension 수정
+	@Override
+	public void pensionUpdate(PensionVO vo) {
+		psqlSession.update("partner.pensionUpdate", vo);
+	}
 }

@@ -12,8 +12,14 @@
 </head>
 
 <body style="font-family: 'Pretendard-Regular';">
-
+<c:choose>
+<c:when test="${sessionScope.partnerId != null }">
+<%@ include file="partner/pheader.jsp" %>
+</c:when>
+<c:otherwise>
 <%@ include file="header.jsp" %>
+</c:otherwise>
+</c:choose>
    <div id="fh5co-menus" data-section="menu">
       <div class="container">
 			<div class="row text-center fh5co-heading row-padded">
