@@ -70,7 +70,9 @@
                      <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/6.jpg)"></div>
                      <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                         <h2 style="font-family: 'Pretendard-Regular';">세부사항</h2>
-                        <span>${ContentMyRoom.message_room }</span>
+                       <span class="pricing"></span> 
+                        <p style="margin-bottom: 20px"></p>
+                        <span style="font-size:14pt">${RoomList.message_room }</span>
                      </div>
                   </div>
 
