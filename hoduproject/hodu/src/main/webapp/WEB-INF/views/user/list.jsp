@@ -62,7 +62,7 @@
 	                              	<p>첫 후기를 작성해주세요.</p>
                               	  </c:when>
 	                              <c:otherwise>
-	                             	 <p>${rating[status.index] } 좋아요</p>
+	                             	 <p>${rating[status.index] } 별점 평균</p>
 	                              </c:otherwise>
                               </c:choose>
                               <p>${pension_like.address }</p>  
