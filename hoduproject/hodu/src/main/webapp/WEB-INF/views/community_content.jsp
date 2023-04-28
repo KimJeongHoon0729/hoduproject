@@ -162,20 +162,20 @@
 						    <div class="card-body">
 						    <form action="ReplyInsert.do" id="frm">
 						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">댓글 입력</h4>
-						      <input type="checkbox" id="secret" value="secret" name="secret"> 비밀댓글
+						      <input type="checkbox" id="secret" value="secret" name="secret" style="cursor:pointer;"> 비밀댓글
 						      <input type="hidden" id="index" name="index" value="${CView.index }">
 						      <p class="card-text"><input type="text" id="reply_content" name="reply_content" class="form-control" style="margin-bottom: -20px"></p>
 						      <c:choose>
 							      <c:when test="${!empty sessionScope.userId && empty sessionScope.partnerId }">
 								  	  <input type="hidden" name="writer" value="${sessionScope.userId }">
-								      <a onclick="reply();" class="card-link">작성</a>
+								      <a onclick="reply();" class="card-link" style="cursor:pointer;">작성</a>
 							      </c:when>
 							      <c:when test="${empty sessionScope.userId && !empty sessionScope.partnerId }">
 								      <input type="hidden" name="writer" value="${sessionScope.partnerId }">
-								      <a onclick="reply();" class="card-link">작성</a>
+								      <a onclick="reply();" class="card-link" style="cursor:pointer;">작성</a>
 							      </c:when>
 							      <c:otherwise>
-							          <a onclick="alert('로그인이 필요합니다.')" class="card-link">작성</a>
+							          <a onclick="alert('로그인이 필요합니다.')" class="card-link" style="cursor:pointer;">작성</a>
 							      </c:otherwise>
 						      </c:choose>
 						      </form>
@@ -194,7 +194,7 @@
 						      <fmt:formatDate value="${Reply_list.reply_date }" pattern="yyyy-MM-dd HH:mm:ss"/></h4>
 						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">${Reply_list.reply_content }</p>
 						      <c:if test="${sessionScope.userId == Reply_list.writer || sessionScope.partnerId == Reply_list.writer}">
-						      <a id="add-btn" data-value="${Reply_list.reply_index }" class="card-link">수정</a>
+						      <a id="add-btn" data-value="${Reply_list.reply_index }" class="card-link" style="cursor:pointer;">수정</a>
 						      <a href="${path }/ReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
 						      </c:if>
 						    </div>
