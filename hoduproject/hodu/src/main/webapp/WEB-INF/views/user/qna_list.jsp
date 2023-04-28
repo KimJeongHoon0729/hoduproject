@@ -139,15 +139,15 @@
 			</div>
 			<p style="margin-bottom: 0px"></p>
 			<div class="container" style="width: 70%;">
-				<table class="table table-hover" id="modalTable">
+				<table class="table table-hover" id="modalTable" style="text-align: center">
 					<tbody style="font-family: 'Pretendard-Regular';">
 					
 						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>날짜</th>
-							<th>답변완료</th>
+							<th style="text-align: center">번호</th>
+							<th style="text-align: center">제목</th>
+							<th style="text-align: center">작성자</th>
+							<th style="text-align: center">날짜</th>
+							<th style="text-align: center">답변완료</th>
 						</tr>
 					 <c:forEach var="question" items="${QList }" >
 						<tr id="add-btn" data-value="${question.q_idx }">
