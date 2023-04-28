@@ -91,7 +91,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <include refid="ccriteria"></include>
         </if>   
 	</select>
-	
+	<!-- 댓글 개수 -->
+	<select id="ReplyTotal" resultType="String">
+		select count(*) from  reply  where  reply.index  = #{index}    
+	</select>
 	<!-- 게시글 출력 -->
 	<select id="CView" resultType="com.woori.domain.CommunityVO" parameterType="int">
 		select * from community  where  community.index=#{index} 

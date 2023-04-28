@@ -28,7 +28,8 @@ public interface PensionDAO {
 	public CommunityVO CView(int index);
 
 	public int AgetCTotal(CCriteria cri);
-	
+	//댓글 개수
+	public String ReplyTotal(int index);
 	//커뮤니티 입력
 	public void CInsert(CommunityVO vo);
 	//커뮤니티 수정

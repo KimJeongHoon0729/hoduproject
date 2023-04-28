@@ -25,6 +25,8 @@ public interface PensionService {
 	public List<CommunityVO> CList(CCriteria cri);
 	public CommunityVO CView(int index);
 	public int AgetCTotal(CCriteria cri);
+	//댓글 개수
+	public int ReplyTotal(ReplyVO vo);
 	//커뮤니티 입력
 	public void CInsert(CommunityVO vo);
 	//커뮤니티 수정
@@ -38,4 +40,5 @@ public interface PensionService {
 	public void ReplyUpdate (ReplyVO vo);
 	//댓글 삭제
 	public void ReplyDelete (int reply_index);
+	public String ReplyTotal(int index);
 }

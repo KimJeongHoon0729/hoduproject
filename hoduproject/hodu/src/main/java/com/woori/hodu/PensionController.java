@@ -192,7 +192,12 @@ public class PensionController {
 	public String CList(CCriteria cri, Model model){
 		
 		List<CommunityVO> CList = pensionService.CList(cri);
+		List<String> reply = new ArrayList<String>(Arrays.asList());
+		for(int i =0; i<CList.size();i++) {
+			reply.add(i, pensionService.ReplyTotal(CList.get(i).getIndex()));
+		}
 		model.addAttribute("CList",CList);
+		model.addAttribute("Reply", reply);
 		
 		int total = pensionService.AgetCTotal(cri);
 		

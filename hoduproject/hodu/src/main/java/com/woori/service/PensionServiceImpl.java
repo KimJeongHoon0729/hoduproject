@@ -68,6 +68,11 @@ public class PensionServiceImpl implements PensionService {
 	public int AgetCTotal(CCriteria cri) {
 		return pensionDao.AgetCTotal(cri);
 	}
+	//댓글 개수
+	@Override
+	public String ReplyTotal(int index) {
+		return pensionDao.ReplyTotal(index);
+	}
 	@Override
 	public CommunityVO CView(int index) {
 		return pensionDao.CView(index);
