@@ -151,7 +151,7 @@
 							<th>답변완료</th>
 						</tr>
 					 <c:forEach var="Answer" items="${AList }" >
-						<tr id="add-btn" data-value="${Answer.q_idx }" onclick="location.href='${path}/AView.do?Q_idx=${Answer.q_idx }'">
+						<tr id="add-btn" data-value="${Answer.q_idx }" onclick="location.href='${path}/AView.do?Q_idx=${Answer.q_idx }'" style="cursor:pointer;">
 							<td data-th="Supplier Code">${Answer.q_idx }</td>
 							<td data-th="Supplier Name">${Answer.q_title }</td>
 							<td data-th="Invoice Number">${Answer.userId }</td>

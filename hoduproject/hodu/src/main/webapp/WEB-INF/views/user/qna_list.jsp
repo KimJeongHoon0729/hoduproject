@@ -150,7 +150,7 @@
 							<th style="text-align: center">답변완료</th>
 						</tr>
 					 <c:forEach var="question" items="${QList }" >
-						<tr id="add-btn" data-value="${question.q_idx }">
+						<tr id="add-btn" data-value="${question.q_idx }" style="cursor:pointer;">
 							<td data-th="Supplier Code">${question.q_idx }</td>
 							<td data-th="Supplier Name">${question.q_title }</td>
 							<td data-th="Invoice Number">${question.userId }</td>

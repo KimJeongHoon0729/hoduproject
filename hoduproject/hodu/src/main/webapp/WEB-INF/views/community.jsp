@@ -76,7 +76,7 @@
 							<th style="text-align: center">댓글 수</th>
 						</tr>
 					 <c:forEach var="community" items="${CList }" varStatus="status" >
-						<tr id="add-btn" onclick="location.href='CView.do?index=${community.index}'">
+						<tr id="add-btn" onclick="location.href='CView.do?index=${community.index}'" style="cursor:pointer;">
 							<td data-th="Supplier Code">${community.index }</td>
 							<td data-th="Supplier Name">${community.title }</td>
 							<td data-th="Invoice Number">${community.writer }</td>
