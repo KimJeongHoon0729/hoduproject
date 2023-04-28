@@ -261,6 +261,14 @@ public class PensionController {
 		return "redirect: CView.do";
 	}
 	
-
+	//펜션 이름 출력
+	@RequestMapping("pensionName.do")
+	public String NameSelect(PensionVO vo, Model model,@RequestParam("amount") int amount, @RequestParam("pageNum") int pageNum, RedirectAttributes redirect){
+		List<PensionVO> NameSelect = pensionService.NameSelect(vo);
+		model.addAttribute("NameSelect", NameSelect);
+		redirect.addAttribute("amount", amount);
+		redirect.addAttribute("pageNum", pageNum);
+		return "user/qna_form";
+	}
 }
 

@@ -172,7 +172,7 @@
 					<a class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" onclick="alert('로그인이 필요합니다.');location.href='login';" >글쓰기</a>
 				</c:when>
 				<c:otherwise>
-					<a href="qna_form?pageNum=1&amount=10" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
+					<a href="pensionName.do?pageNum=1&amount=10" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
 				</c:otherwise>
 				</c:choose>
 				<br></br>

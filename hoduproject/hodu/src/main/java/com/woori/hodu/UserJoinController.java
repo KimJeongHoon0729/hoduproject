@@ -196,9 +196,10 @@ public class UserJoinController {
 		}
 		//리뷰 작성
 		@RequestMapping("ReviewInsert.do")
-		public String ReviewInsert(ReviewVO rvo) {
+		public String ReviewInsert(ReviewVO rvo, @RequestParam("pensionName") String pensionName, RedirectAttributes redirect) {
 			userJoinService.ReviewInsert(rvo);
-			return "redirect: user/review_list";
+			redirect.addAttribute("pensionName", pensionName);
+			return "redirect: ReviewList.do";
 		}
 		
 		//R 리스트 출력

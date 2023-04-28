@@ -106,7 +106,13 @@ public class PensionServiceImpl implements PensionService {
 		pensionDao.ReplyUpdate(vo);
 	}
 	//댓글 삭제
+	@Override
 	public void ReplyDelete (int reply_index) {
 		pensionDao.ReplyDelete(reply_index);
+	}
+	//펜션 이름 출력
+	@Override
+	public List<PensionVO> NameSelect(PensionVO vo){
+		return pensionDao.NameSelect(vo);
 	}
 }

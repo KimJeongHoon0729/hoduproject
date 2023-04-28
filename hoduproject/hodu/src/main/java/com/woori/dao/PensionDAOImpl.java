@@ -115,4 +115,9 @@ public class PensionDAOImpl implements PensionDAO {
 	public void ReplyDelete (int reply_index) {
 		sqlsession.delete("pension.ReplyDelete", reply_index);
 	}
+	//펜션 이름 출력
+	@Override
+	public List<PensionVO> NameSelect(PensionVO vo){
+		return sqlsession.selectList("pension.NameSelect", vo);
+	}
 }

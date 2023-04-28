@@ -40,5 +40,7 @@ public interface PensionService {
 	public void ReplyUpdate (ReplyVO vo);
 	//댓글 삭제
 	public void ReplyDelete (int reply_index);
+	//펜션 이름 출력
+	public List<PensionVO> NameSelect(PensionVO vo);
 
 }

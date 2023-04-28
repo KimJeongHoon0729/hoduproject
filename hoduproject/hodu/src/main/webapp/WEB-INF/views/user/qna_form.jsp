@@ -7,6 +7,17 @@
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <style>
+    
+      textarea {
+        width: 100%;
+        height: 100px;
+      } 
+      .area select {
+   		width: 100%;
+   	    height: 55px;
+   	  }
+    </style>
 </head>
 	<body>
 	<%@ include file="header.jsp" %>
@@ -31,10 +42,16 @@
                      <label for="userId" class="sr-only">UserId</label>
                      <input id="userId" name="userId" class="form-control" value="${userId }" type="hidden">
                   </div>
-                   <div class="form-group ">
-                     <label for="pensionName" class="sr-only">pensionName</label>
-                     <input id="pensionName" name="pensionName" class="form-control" placeholder="펜션 이름" type="text">
-                  </div>
+                	<div class="area"> 
+							<select id="area" class="form-control" name="pensionName">
+								<option selected disabled>펜션을 선택하세요.</option>
+								<c:forEach var="NameSelect" items="${NameSelect }">
+								<option value="${NameSelect }">${NameSelect }</option>
+								</c:forEach>
+							</select>
+							<div id="areaError" class="error"></div>
+						</div>
+						<br>
                   <div class="form-group ">
                      <label for="Q_title" class="sr-only">Q_title</label>
                      <input id="Q_title" name="Q_title"  class="form-control" placeholder="제목" type="text" >
