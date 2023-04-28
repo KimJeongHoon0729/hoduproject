@@ -95,6 +95,15 @@
 						<button type="button" onclick="location.href='community_form';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</button>
 					</c:otherwise>
 					</c:choose>
+					
+					<c:choose>
+					<c:when test="${empty userId && empty partnerId}">
+						<button type="button" onclick="alert('로그인이 필요합니다.');location.href='login';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
+					</c:when>
+					<c:otherwise>
+						<button type="button" onclick="location.href='community_mypost';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
+					</c:otherwise>
+					</c:choose>
 				
 				<br></br>
 

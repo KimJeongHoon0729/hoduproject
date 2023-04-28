@@ -151,11 +151,20 @@
 				 
 				</table>
 
-				
-				<div class="col-sm-12" style="text-align: -webkit-center;">
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CList.do?pageNum=1&amount=10'" style="width: 70px; display: inline-block; font-family: 'Pretendard-Regular';">목록</button>
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='CView2.do?index=${CView.index}'"  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">수정</button>			
-				</div>
+				<c:choose>
+					<c:when test="${sessionScope.userId != CView.writer  }">
+						<div class="col-sm-12" style="text-align: -webkit-center;">
+							<button class="btn btn-primary btn-block" type="button" onclick="location.href='CList.do?pageNum=1&amount=10'" style="width: 70px; display: inline-block; font-family: 'Pretendard-Regular';">목록</button>
+						</div>
+					</c:when>
+					<c:when test="${sessionScope.userId == CView.writer}">
+						<div class="col-sm-12" style="text-align: -webkit-center;">
+							<button class="btn btn-primary btn-block" type="button" onclick="location.href='CList.do?pageNum=1&amount=10'" style="width: 70px; display: inline-block; font-family: 'Pretendard-Regular';">목록</button>
+							<button class="btn btn-primary btn-block" type="button" onclick="location.href='CView2.do?index=${CView.index}'"  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">수정</button>
+							<button class="btn btn-primary btn-block" type="button" onclick="location.href='CView2.do?index=${CView.index}'"  style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">삭제</button>			
+						</div>
+					</c:when>
+				</c:choose>
 				<br></br>
 				<div class="container" style="width: 640px;">
 						  <div class="card">
