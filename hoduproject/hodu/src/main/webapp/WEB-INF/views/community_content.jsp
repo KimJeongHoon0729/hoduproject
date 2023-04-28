@@ -247,6 +247,22 @@
 						  </div>
 						</div>
 					</c:when>
+					<c:when test="${Reply_list.secret != 'secret' }">
+					<div class="container" style="width: 640px;">
+						  <div class="card">
+						    <div class="card-body" style="margin-top: 50px">
+						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">${Reply_list.writer } 
+						      <fmt:formatDate value="${Reply_list.reply_date }" pattern="yyyy-MM-dd HH:mm:ss"/></h4>
+						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">${Reply_list.reply_content }</p>
+						      <c:if test="${sessionScope.userId == Reply_list.writer || sessionScope.partnerId == Reply_list.writer}">
+						      <a id="add-btn" data-value="${Reply_list.reply_index }" class="card-link">수정</a>
+						      <a href="${path }/ReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
+							</c:if>
+						    </div>
+						  </div>
+						</div>
+					
+					</c:when>
 					<c:otherwise>
 					</c:otherwise>
 				</c:choose>	
