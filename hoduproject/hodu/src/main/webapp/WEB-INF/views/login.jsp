@@ -26,8 +26,8 @@
                     <button type="button" class="togglebtn" onclick="register()" style="margin-left: 18;font-family: 'Pretendard-Regular';">파트너</button>
                 </div>
                 <form id="login" action="logincheck.do" class="input-group" method="post">
-                    <input type="text" id="userId" name="userId" class="input-field" placeholder="User name or Email" required>
-                    <input type="password" id="userPw" name="userPw" class="input-field" placeholder="Enter Password" required>
+                    <input type="text" id="userId" name="userId" class="input-field" placeholder="회원 아이디"  style="text-align: center;" required>
+                    <input type="password" id="userPw" name="userPw" class="input-field" placeholder="비밀 번호" style="text-align: center;" required>
                     <button class="submit" style="margin-top: 50;">로그인</button>
                     <button class="nextLine"></button>
                     <div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">회원가입</a></div>
@@ -39,9 +39,9 @@
                     </c:if>
                 </form>
                 <form id="register" action="plogincheck.do" class="input-group" method="post">
-                    <input type="text" id="businessNum" name="businessNum" class="input-field" placeholder="Business Registration Number" required>
-                    <input type="text" id="partnerId" name="partnerId" class="input-field" placeholder="Business name" required>
-                    <input type="password" id="partnerPw" name="partnerPw" class="input-field" placeholder="Enter Password" required>
+                    <input type="text" id="businessNum" name="businessNum" class="input-field" placeholder="사업자등록번호" style="text-align: center;" required>
+                    <input type="text" id="partnerId" name="partnerId" class="input-field" placeholder="파트너 아이디" style="text-align: center;" required>
+                    <input type="password" id="partnerPw" name="partnerPw" class="input-field" placeholder="비밀 번호" style="text-align: center;" required>
                     <button class="submit" style="margin-top: 10">로그인</button>
                     <button class="nextLine"></button>
            			<div class="signin" style="text-align: center"><a href="signin" style="color: #5e493a">회원가입</a></div>

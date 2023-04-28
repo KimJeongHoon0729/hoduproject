@@ -86,16 +86,16 @@
 					</c:forEach>
 					</tbody>
 				</table>
-				<form id="Cwrite" action="CwriteLogin.do">
+				
 					<c:choose>
 					<c:when test="${empty userId && empty partnerId}">
-						<button type="submit" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</button>
+						<button type="button" onclick="alert('로그인이 필요합니다.');location.href='login';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</button>
 					</c:when>
 					<c:otherwise>
-						<a href="community_form" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
+						<button type="button" onclick="location.href='community_form';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</button>
 					</c:otherwise>
 					</c:choose>
-				</form>
+				
 				<br></br>
 
 				<form id="moveForm" method="get">

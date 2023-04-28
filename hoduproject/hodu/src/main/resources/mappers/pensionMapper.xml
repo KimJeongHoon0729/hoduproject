@@ -60,7 +60,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="keyword != null">
                  <include refid="ccriteria"></include>
             </if>
-		order by community.index    limit #{skip},#{amount} 
+		order by community.index DESC   limit #{skip},#{amount} 
 	</select>
 	<!-- 검색 조건문 -->
     <sql id="ccriteria">
@@ -94,7 +94,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 게시글 출력 -->
 	<select id="CView" resultType="com.woori.domain.CommunityVO" parameterType="int">
-		select * from community  where  community.index=#{index}
+		select * from community  where  community.index=#{index} 
 	</select>
 	<!-- 게시글 입력 -->
 	<insert id="CInsert" >

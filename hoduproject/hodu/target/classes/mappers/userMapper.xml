@@ -84,7 +84,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="keyword != null">
                  <include refid="criteria"></include>
             </if>
-		order by Q_idx    limit #{skip},#{amount} 
+		order by Q_idx DESC    limit #{skip},#{amount} 
 	</select>
 	
 	<!-- 게시물 개수 -->

@@ -82,7 +82,7 @@
         </div>
         <div class="review_contents">
          	<div class="warning_msg">펜션 이름을 작성해주세요.</div>
-            <input type="text" name="pensionName" style="width: 440px">
+            <input type="text" name="pensionName" value="${param.pensionName }" readonly style="width: 440px">
             <div class="warning_msg">소중한 리뷰를 작성해 주세요.</div>
             <textarea rows="10" name="R_content" class="review_textarea"></textarea>
         </div>   
