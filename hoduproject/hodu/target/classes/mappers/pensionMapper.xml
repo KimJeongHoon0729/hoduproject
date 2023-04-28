@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT p.pensionName, p.img_pension, p.region, p.address, p.message, Min(r.price) AS min_price 
 		FROM pension p
 		LEFT JOIN room r ON p.pensionName = r.pensionName 
-		WHERE p.region = '경기'
+		WHERE p.region = #{region}
 		GROUP BY p.pensionName
 		ORDER BY min_price DESC;
 	</select>
