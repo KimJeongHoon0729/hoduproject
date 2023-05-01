@@ -50,8 +50,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 펜션 등록 -->
 	<insert id="pensionRegister">
-		insert into pension (partnerId, region, pensionName, address, message)  
-		values (#{partnerId}, #{region}, #{pensionName}, #{address}, #{message})
+		insert into pension (partnerId, region, pensionName, address, message, img_pension)  
+		values (#{partnerId}, #{region}, #{pensionName}, #{address}, #{message}, #{img_pension})
 	</insert>
 	
 	<!-- 커뮤니티 리스트 출력 -->

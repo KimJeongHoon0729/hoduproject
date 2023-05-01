@@ -52,6 +52,7 @@
 
 				   <tr>
 					   <th style="height:200px; text-align: center;">답변</th>
+					   <td>${QView.a_content }</td>
 				   </tr>	
 				 
 				</table>

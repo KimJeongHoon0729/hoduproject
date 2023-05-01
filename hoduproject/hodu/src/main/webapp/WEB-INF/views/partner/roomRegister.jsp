@@ -109,6 +109,32 @@
 	// 1) 폼 두개 아이디로 제출 제출 후 다시 이 페이지 뜨게
 	
 		function next() {
+		
+			var roomName = $("#roomName").val();
+			var price = $("#price").val();
+			var dogNum = $("#dogNum").val();
+			var dogSize = $("#dogSize").val();
+			var peopleNum = $("#peopleNum").val();
+			var img_room = $("#img_room").val();
+			
+			if(roomName == ""){
+				alert("객실명을 입력하세요.");
+				roomName.focus();
+		 	} else if(price == ""){
+				alert("객실 가격을 입력하세요.");
+				price.focus();
+			} else if(dogNum == ""){
+				alert("수용 가능한 반려견 사이즈를 입력하세요.");
+				dogNum.focus();
+			} else if(peopleNum == ""){
+				alert("수용 가능한 방문자 수를 입력하세요.");
+				peopleNum.focus();
+			} else if(img_room == ""){
+				alert("객실 이미지를 등록하세요.");
+				img_room.focus();
+			}
+			
+			
 			$('input[name=idx]').attr('value',"0");
 			document.getElementById('roomImg').submit();
 			document.getElementById('roomInfo').submit();
@@ -119,6 +145,30 @@
 	// 2) 폼 두개 아이디로 제출 제출 후 빠져나가게
 	
 		function _submit() {
+		
+			var roomName = $("#roomName").val();
+			var price = $("#price").val();
+			var dogNum = $("#dogNum").val();
+			var dogSize = $("#dogSize").val();
+			var peopleNum = $("#peopleNum").val();
+			var img_room = $("#img_room").val();
+			
+			if(roomName == ""){
+				alert("객실명을 입력하세요.");
+				roomName.focus();
+		 	} else if(price == ""){
+				alert("객실 가격을 입력하세요.");
+				price.focus();
+			} else if(dogNum == ""){
+				alert("수용 가능한 반려견 사이즈를 입력하세요.");
+				dogNum.focus();
+			} else if(peopleNum == ""){
+				alert("수용 가능한 방문자 수를 입력하세요.");
+				peopleNum.focus();
+			} else if(img_room == ""){
+				alert("객실 이미지를 등록하세요.");
+				img_room.focus();
+			}
 			$('input[name=idx]').attr('value',"1");
 			document.getElementById('roomImg').submit();
 			document.getElementById('roomInfo').submit();
@@ -126,6 +176,9 @@
 			console.log($('input[name=idx]').val());
 			
 		}
+	
+	
+
 
 	
 	</script>
