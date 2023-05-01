@@ -112,8 +112,8 @@ public class CommonController {
 	
 	//�렂�뀡 �뙆�씪 �뾽濡쒕뱶
 	
-	@PostMapping("#")
-	public String multiFileUpload(@RequestParam("multiFile") List<MultipartFile> multiFileList) {
+	@PostMapping("pensionUpload.do")
+	public String pensionUpload(@RequestParam("multiFile") List<MultipartFile> multiFileList) {
 		String filename = "";
 		
 		if(!multiFileList.isEmpty()) {
@@ -122,8 +122,10 @@ public class CommonController {
 			filename = multiFileList.get(i).getOriginalFilename();
 			System.out.println(multiFileList.get(i).getOriginalFilename());
 			
-			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
-					+ "\\tmp2\\wtpwebapps\\spring\\resources\\images\\";
+//			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
+//					+ "\\tmp2\\wtpwebapps\\spring\\resources\\images\\";
+			
+			String path = "C:\\tmp\\";
 			
 			try {
 				new File(path).mkdirs(); 
@@ -132,9 +134,9 @@ public class CommonController {
 				e.printStackTrace();
 			}
 			
-		}
+			}
 		
-	}
+		}
 	
 		return "partner/Register";
 	

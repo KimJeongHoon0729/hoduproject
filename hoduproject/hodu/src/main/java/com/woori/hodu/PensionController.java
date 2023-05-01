@@ -151,7 +151,7 @@ public class PensionController {
 		return "user/list_pension";
 	}
 	
-	@RequestMapping("pensionRegister.do")
+	@RequestMapping("roomRegister.do")
 	public String pensionRegister(PensionVO vo, @RequestParam("pensionName") String pensionName,HttpSession session, RedirectAttributes redirect) {
 		pensionService.pensionRegister(vo);
 	

@@ -90,7 +90,7 @@
 	         <form id="roomImg" method="post" enctype="multipart/form-data" action="${path }/roomImg.do?partnerId=${partnerId }">
 				 <p style="text-align: left; margin-bottom: 10px"> 객실 사진 업로드</p>
 			     <p style="width: 102%">
-			     <input type="file" name="multiFile" multiple class="form-control"></p>
+			     <input id="img_room" type="file" name="multiFile" multiple class="form-control"></p>
 	             
 	             <div class="find-btn" >
 	             <input class="btn btn-primary" onclick="next();" value="다음" type="button" style="font-family: 'Pretendard-Regular';"/>
@@ -113,7 +113,7 @@
 			var roomName = $("#roomName").val();
 			var price = $("#price").val();
 			var dogNum = $("#dogNum").val();
-			var dogSize = $("#dogSize").val();
+			var dogSize = $("#dogSize").text();
 			var peopleNum = $("#peopleNum").val();
 			var img_room = $("#img_room").val();
 			

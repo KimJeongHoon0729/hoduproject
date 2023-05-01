@@ -32,7 +32,7 @@
             </div>
           
 
-          <form action="${path }/pensionRegister.do" method="post" id="pensionRegister">
+          <form action="${path }/roomRegister.do" method="post" id="pensionRegister">
                 <div class="container" style="text-align:center;padding-left: 4px">
                 
                 <div class="col-md-6 col-md-offset-3">
@@ -80,7 +80,7 @@
          <p style="margin-bottom: 14px"></p>
          <div class="col-md-6 col-md-offset-3">
 	         <div class="form-group ">  
-	         <form method="post"  enctype="multipart/form-data" id="ImgRegister">
+	         <form id="ImgRegister" action="pensionUpload.do" method="post" enctype="multipart/form-data" >
 				 <p style="text-align: left; margin-bottom: 10px"> 펜션 사진 업로드</p>
 			     <p style="width: 102%">
 				     <input id="img_pension" type="file" name="multiFile" multiple class="form-control"></p>
