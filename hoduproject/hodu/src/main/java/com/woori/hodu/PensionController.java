@@ -239,6 +239,15 @@ public class PensionController {
 
 		return "community_update";
 	}
+	
+	//커뮤니티 삭제
+	@RequestMapping("CDelete.do")
+	public String CDelete(@RequestParam("index") int index, RedirectAttributes redirect) {
+		pensionService.CDelete(index);
+		redirect.addFlashAttribute("result", "delete success");
+		return "redirect: CList.do";
+	}
+	
 	//댓글 입력 및 출력
 	@RequestMapping("ReplyInsert.do")
 	public String ReplyInsert(ReplyVO vo, RedirectAttributes redirect, @RequestParam("index") int index) {

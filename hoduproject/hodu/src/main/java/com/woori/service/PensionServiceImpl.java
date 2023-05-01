@@ -82,7 +82,7 @@ public class PensionServiceImpl implements PensionService {
 	public void CInsert(CommunityVO vo) {
 		pensionDao.CInsert(vo);
 	}
-	// 커뮤니티 수정
+	//커뮤니티 수정
 	public void CUpdate(CommunityVO vo) {
 		pensionDao.CUpdate(vo);
 	}
@@ -90,6 +90,13 @@ public class PensionServiceImpl implements PensionService {
 	public CommunityVO CView2(int index) {
 		return pensionDao.CView(index);
 	}
+	
+	//커뮤니티 삭제
+	@Override
+	public void CDelete(int index) {
+		pensionDao.CDelete(index);
+	}
+	
 	
 	//댓글 입력 및 출력
 	@Override

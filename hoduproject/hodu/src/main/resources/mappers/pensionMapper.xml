@@ -114,7 +114,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		write_date=current_timestamp  
 		where community.index=#{index}     
 	</update>
-
+	
+	<!-- 게시글 삭제 -->
+	<delete id="CDelete">
+		delete from community where community.index = #{index}   
+	</delete>
 	
 	<!-- 댓글 입력 -->
 	<insert id="ReplyInsert">
