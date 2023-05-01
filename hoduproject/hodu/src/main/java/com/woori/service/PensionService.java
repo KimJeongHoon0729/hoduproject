@@ -25,6 +25,8 @@ public interface PensionService {
 	public List<CommunityVO> CList(CCriteria cri);
 	public CommunityVO CView(int index);
 	public int AgetCTotal(CCriteria cri);
+	
+	public List<CommunityVO> CMyList(CCriteria cri);
 	//댓글 개수
 	public String ReplyTotal(int index);
 	//커뮤니티 입력

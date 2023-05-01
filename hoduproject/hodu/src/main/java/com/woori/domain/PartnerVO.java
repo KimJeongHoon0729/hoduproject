@@ -8,7 +8,7 @@ public class PartnerVO {
 	 String businessNum;
 	 String partnerMobile;
 	 String partnerEmail;
-	 String img;
+	 String img_business;
 	 
 	public String getPartnerId() {
 		return partnerId;
@@ -46,11 +46,17 @@ public class PartnerVO {
 	public void setPartnerEmail(String partnerEmail) {
 		this.partnerEmail = partnerEmail;
 	}
+	public String getImg_business() {
+		return img_business;
+	}
+	public void setImg_business(String img_business) {
+		this.img_business = img_business;
+	}
 	@Override
 	public String toString() {
-		return "partnerVO [partnerId=" + partnerId + ", partnerPw=" + partnerPw + ", partnerName=" + partnerName
+		return "PartnerVO [partnerId=" + partnerId + ", partnerPw=" + partnerPw + ", partnerName=" + partnerName
 				+ ", businessNum=" + businessNum + ", partnerMobile=" + partnerMobile + ", partnerEmail=" + partnerEmail
-				+ "]";
+				+ ", img_business=" + img_business + "]";
 	}
 
 

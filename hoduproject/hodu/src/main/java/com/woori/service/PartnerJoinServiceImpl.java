@@ -58,6 +58,10 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 	public void editPProfile(PartnerVO pvo) {
 		partnerJoin.editPProfile(pvo);
 	}
+	@Override
+	public void uploadImg(PartnerVO pvo) {
+		partnerJoin.uploadImg(pvo);	
+	}
 	
 	// 아이디 중복체크
 	@Override
@@ -71,6 +75,8 @@ public class PartnerJoinServiceImpl implements PartnerJoinService {
 		partnerJoin.deletePProfile(partnerId);
 		psession.invalidate();
 	}
+	
+	
 	
 	
 	//예약 리스트 출력

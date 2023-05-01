@@ -1,8 +1,11 @@
 package com.woori.hodu;
 
+import java.io.File;
 import java.util.List;
+import java.util.UUID;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -12,10 +15,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -125,6 +130,32 @@ public class PartnerJoinController {
 			partnerJoinService.editPProfile(pvo);
 			
 			return "partner/myPpage/myPpage";
+		}
+		
+		
+		@PostMapping("uploadPProfile.do")
+		public String fileUpload(@RequestParam("file") MultipartFile businessNum_img, @RequestParam("partnerId") String partnerId, RedirectAttributes redirect, HttpServletRequest req, @ModelAttribute PartnerVO pvo) {
+			String filename = "";
+			String uuid= UUID.randomUUID().toString();
+			
+			if(!businessNum_img.isEmpty()) {
+				filename = uuid+"_"+businessNum_img.getOriginalFilename();
+
+//				String path = req.getSession().getServletContext().getRealPath("/").concat("resources");
+				String path = "C:\\tmp\\";
+				String imgUploadPath = path+File.separator;
+				
+				try {
+					new File(imgUploadPath).mkdirs(); 
+					businessNum_img.transferTo(new File(imgUploadPath+filename));
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				
+			}
+			partnerJoinService.uploadImg(pvo);
+			redirect.addAttribute("partnerId", partnerId);
+			return "redirect: viewPProfile.do";
 		}
 		
 		// 아이디 중복 체크

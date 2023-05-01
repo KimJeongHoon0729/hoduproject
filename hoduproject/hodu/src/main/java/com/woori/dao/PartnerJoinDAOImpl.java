@@ -55,6 +55,11 @@ public class PartnerJoinDAOImpl implements PartnerJoinDAO {
 		psqlSession.update("partner.editPProfile", pvo);
 	}
 	
+	@Override
+	public void uploadImg(PartnerVO pvo) {
+		psqlSession.update("partner.uploadImg_business", pvo);
+	}
+	
 	// 아이디 중복체크
 	@Override
 	public int pidCheck(PartnerVO pvo) {

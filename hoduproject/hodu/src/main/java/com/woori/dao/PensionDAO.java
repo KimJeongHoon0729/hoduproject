@@ -26,6 +26,9 @@ public interface PensionDAO {
 	//커뮤니티 리스트 출력
 	public List<CommunityVO> CList(CCriteria cri);
 	public CommunityVO CView(int index);
+	
+	//커뮤니티 마이포스트 출력
+	public List<CommunityVO> CMyList(CCriteria cri);
 
 	public int AgetCTotal(CCriteria cri);
 	//댓글 개수

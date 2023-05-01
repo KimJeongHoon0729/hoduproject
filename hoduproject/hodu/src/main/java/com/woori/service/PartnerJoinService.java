@@ -23,6 +23,7 @@ public interface PartnerJoinService {
 	public void insertParnter(PartnerVO pvo);
 	public PartnerVO viewPProfile(String partnerId);
 	public void editPProfile(PartnerVO pvo);
+	public void uploadImg(PartnerVO pvo);
 	
 	// 아이디 중복체크
 	public int pidCheck(PartnerVO pvo);

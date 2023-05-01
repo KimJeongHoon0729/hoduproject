@@ -62,10 +62,10 @@
          		<div class="col-md-6 col-md-offset-3">
 			        <div class="form-group ">
 			           	<form method="post" action="uploadPProfile.do?partnerId=${partnerId }" enctype="multipart/form-data">
-					     <p style="text-align: left; margin-bottom: 10px">사업자등록증</p>
-					     <input type="file" name="file" class="form-control" onchange="readURL(this)" >
-					     <img id="preview">
-					     <input type="submit" class="btn btn-primary" style="margin-top: 15px; font-family: 'Pretendard-Regular';">
+						     <p style="text-align: left; margin-bottom: 10px">사업자등록증</p>
+						     <input type="file" name="file" class="form-control" onchange="readURL(this)" >
+						     <img id="preview">
+						     <input type="submit" class="btn btn-primary" style="margin-top: 15px; font-family: 'Pretendard-Regular';">
 					    </form>  
 			         </div>
 			    </div>

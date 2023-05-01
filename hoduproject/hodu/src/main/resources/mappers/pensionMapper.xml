@@ -84,6 +84,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     </sql>
     
+    <!-- 내 포스트 검색 -->
+    <select id="CMyList" resultType="com.woori.domain.CommunityVO">
+    	select * from community where writer=#{writer}
+    </select>
+    
     	<!-- 게시물 개수 -->
 	<select id="AgetCTotal" resultType="int">
 		select count(*) from community  

@@ -208,7 +208,12 @@ public class PensionController {
 		return "community";
 	}
 	// 내가 쓴 글 리스트
-
+	@RequestMapping("CMyList.do")
+	public String CMyList(CCriteria cri, Model model) {
+		List<CommunityVO> CMyList = pensionService.CMyList(cri);
+		model.addAttribute("CMyList", CMyList);
+		return "community_mypost";
+	}
 	
 	@RequestMapping("CView.do")
 	public String CView(int index, Model model, ReplyVO vo, RedirectAttributes redirect) {

@@ -90,7 +90,9 @@
 	         <form id="roomImg" method="post" enctype="multipart/form-data" action="${path }/roomImg.do?partnerId=${partnerId }">
 				 <p style="text-align: left; margin-bottom: 10px"> 객실 사진 업로드</p>
 			     <p style="width: 102%">
-			     <input id="img_room" type="file" name="multiFile" multiple class="form-control"></p>
+			     <input id="img_room" type="file" name="multiFile" multiple class="form-control" onchange="readURL(this)">
+			     <img id="preview">
+			     </p>
 	             
 	             <div class="find-btn" >
 	             <input class="btn btn-primary" onclick="next();" value="다음" type="button" style="font-family: 'Pretendard-Regular';"/>
@@ -177,6 +179,21 @@
 			
 		}
 	
+	
+		function readURL(input) {
+			  if (input.files && input.files[0]) {
+			    var reader = new FileReader();
+			    reader.onload = function(e) {
+			      document.getElementById('preview').src = e.target.result;
+			      document.getElementById('preview').style.height='300px';
+			      document.getElementById('preview').style.height='300px';
+			    };
+			    reader.readAsDataURL(input.files[0]);
+			  } else {
+			    document.getElementById('preview').src = "";
+			  }
+			}
+		
 	
 
 

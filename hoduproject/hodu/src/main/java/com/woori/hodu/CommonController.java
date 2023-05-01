@@ -1,6 +1,9 @@
 package com.woori.hodu;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
@@ -8,14 +11,18 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.woori.domain.PensionVO;
 
 /**
  * Handles requests for the application home page.
@@ -86,32 +93,37 @@ public class CommonController {
 	//�뙆�씪 �뾽濡쒕뱶
 	
 
-	@PostMapping("uploadPProfile.do")
-	public String fileUpload(@RequestParam("file") MultipartFile businessNum_img, @RequestParam("partnerId") String partnerId, RedirectAttributes redirect, HttpServletRequest req ) {
+	
+	
+	//�렂�뀡 �뙆�씪 �뾽濡쒕뱶
+	
+	@PostMapping("pensionUpload.do")
+	public String pensionUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirect, HttpServletRequest req ) {
 		String filename = "";
 		String uuid= UUID.randomUUID().toString();
 		
-		if(!businessNum_img.isEmpty()) {
-			filename = uuid+"_"+businessNum_img.getOriginalFilename();
-			System.out.println(businessNum_img.getOriginalFilename());
-			
-			String path = req.getSession().getServletContext().getRealPath("/").concat("resources");
-			String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+		if(!file.isEmpty()) {
+			filename = uuid+"_"+file.getOriginalFilename();
+
+//			String path = req.getSession().getServletContext().getRealPath("/").concat("resources");
+			String path = "C:\\tmp\\";
+			String imgUploadPath = path+File.separator;
 			
 			try {
 				new File(imgUploadPath).mkdirs(); 
-				businessNum_img.transferTo(new File(imgUploadPath+filename));
+				file.transferTo(new File(imgUploadPath+filename));
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
 			
 		}
-		redirect.addAttribute("partnerId", partnerId);
-		return "redirect: viewPProfile.do";
+
+		return "redirect: partner/register";
 	}
 	
-	//�렂�뀡 �뙆�씪 �뾽濡쒕뱶
 	
+	
+	/**
 	@PostMapping("pensionUpload.do")
 	public String pensionUpload(@RequestParam("multiFile") List<MultipartFile> multiFileList) {
 		String filename = "";
@@ -138,9 +150,10 @@ public class CommonController {
 		
 		}
 	
-		return "partner/Register";
+		return "partner/register";
 	
-}
+	}
+*/
 	
 	
 }

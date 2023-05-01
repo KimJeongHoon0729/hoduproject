@@ -68,6 +68,11 @@ public class PensionDAOImpl implements PensionDAO {
 	public int AgetCTotal(CCriteria cri) {
 		return sqlsession.selectOne("pension.AgetCTotal", cri);
 	}
+	
+	@Override
+	public List<CommunityVO> CMyList(CCriteria cri) {
+		return sqlsession.selectList("pension.CMyList", cri);
+	}
 	//댓글 개수
 	@Override
 	public String ReplyTotal(int index) {

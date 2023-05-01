@@ -37,7 +37,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		partnerName=#{partnerName},   
 		businessNum=#{businessNum}, 
 		partnerMobile=#{partnerMobile},  
-		partnerEmail=#{partnerEmail}   
+		partnerEmail=#{partnerEmail},
+		where partnerId=#{partnerId}   
+	</update>
+	<update id="uploadImg_business" parameterType="com.woori.domain.PartnerVO">
+		update  partnerjoin  set   
+		img_business=#{img_business}
 		where partnerId=#{partnerId}   
 	</update>
 	
