@@ -117,6 +117,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from qna where Q_idx = #{Q_idx}    
 	</select>
 	
+	
+	<!-- Q 삭제 -->
+	<delete id="QDelete">
+		delete from qna where Q_idx = #{Q_idx}   
+	</delete>	
+	
 	<!-- 리뷰 삽입 -->
 	<insert id="ReviewInsert">
 		INSERT INTO review(userId, R_idx, rating, R_content, pensionName) 

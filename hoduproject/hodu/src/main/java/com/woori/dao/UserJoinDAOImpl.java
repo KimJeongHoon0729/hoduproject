@@ -89,6 +89,13 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 		return sqlSession.selectOne("user.QView", Q_idx);
 	}
 	
+	//Q 삭제
+	@Override
+	public void QDelete(int Q_inx) {
+		sqlSession.delete("user.QDelete", Q_inx);
+	}
+	
+	
 	//리뷰 작성
 	@Override
 	public void ReviewInsert(ReviewVO rvo) {

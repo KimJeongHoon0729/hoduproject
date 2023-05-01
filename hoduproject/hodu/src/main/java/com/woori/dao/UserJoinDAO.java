@@ -34,6 +34,8 @@ public interface UserJoinDAO {
 	public void Q_insert(QnaVO qvo);
 	//Q 확인
 	public QnaVO QView(int Q_idx);
+	//Q 삭제
+	public void QDelete(int Q_inx);
 	
 	//리뷰 작성
 	public void ReviewInsert(ReviewVO rvo);

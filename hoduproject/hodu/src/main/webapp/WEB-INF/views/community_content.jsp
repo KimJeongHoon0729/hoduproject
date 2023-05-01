@@ -148,7 +148,7 @@
 						   <td>${CView.content }</td>
 					   </tr>		  
 					 
-					</table>
+				</table>
 	
 					<c:choose>
 						<c:when test="${sessionScope.userId != CView.writer  }">
@@ -164,6 +164,8 @@
 							</div>
 						</c:when>
 					</c:choose>
+					
+					
 		
 				
 				<br></br>

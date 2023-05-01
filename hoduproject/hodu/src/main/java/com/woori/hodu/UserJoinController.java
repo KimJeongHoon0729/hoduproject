@@ -54,7 +54,7 @@ public class UserJoinController {
 				boolean pwdMatch = pwdEncoder.matches(vo.getUserPw(), result.getUserPw());
 				if(pwdMatch == true ) { //로그인 성공
 				mav.setViewName("index");
-				mav.addObject("msg", "sucess");
+				mav.addObject("msg", "success");
 				session.setAttribute("userId", vo.getUserId());
 				} else {
 					mav.setViewName("login");
@@ -166,7 +166,7 @@ public class UserJoinController {
 			if(result != null) { //로그인 성공
 				redirect.addAttribute("Q_idx", qvo.getQ_idx());
 				mav.setViewName("redirect: QView.do");
-				mav.addObject("msg", "sucess");
+				mav.addObject("msg", "success");
 				
 			} else { //로그인 실패
 				redirect.addAttribute("pageNum", pageNum);
@@ -194,6 +194,14 @@ public class UserJoinController {
 			
 			return "user/q_content";
 		}
+		
+		//Q 삭제
+		@RequestMapping("QDelete.do")
+		public String QDelete(@RequestParam("Q_idx") int Q_idx) {
+			userJoinService.QDelete(Q_idx);
+			return "redirect: QList.do?pageNum=1&amount=10";
+		}
+		
 		//리뷰 작성
 		@RequestMapping("ReviewInsert.do")
 		public String ReviewInsert(ReviewVO rvo, @RequestParam("pensionName") String pensionName, RedirectAttributes redirect) {

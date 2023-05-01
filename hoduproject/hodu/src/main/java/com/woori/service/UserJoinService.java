@@ -34,6 +34,8 @@ public interface UserJoinService {
 	public void Q_insert(QnaVO qvo);
 	//Q 확인
 	public QnaVO QView(int Q_idx, HttpSession session);
+	//Q 삭제
+	public void QDelete(int Q_idx);
 	
 	//리뷰 작성
 	public void ReviewInsert(ReviewVO rvo);

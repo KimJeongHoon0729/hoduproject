@@ -57,15 +57,36 @@
 				</table>
 				</form>
 				
-				<div class="col-sm-3" style="left:340px;">
-				<button class="btn btn-primary btn-block" type="button" onclick="location.href='../../QList.do?pageNum=1&amount=10'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
-				</div>
-				<br></br>
+				<c:choose>
+					<c:when test="${sessionScope.userId != QView.userId}">
+						<div class="col-sm-12" style="text-align: -webkit-center;">
+							<button class="btn btn-primary btn-block" type="button" onclick="location.href='../../QList.do?pageNum=1&amount=10'" style="width: 70px; font-family: 'Pretendard-Regular';">목록</button>
+						</div>
+					</c:when>
+					<c:when test="${sessionScope.userId == QView.userId}">
+						<div class="col-sm-12" style="text-align: -webkit-center;">
+							<button class="btn btn-primary btn-block" type="button" onclick="location.href='../../QList.do?pageNum=1&amount=10'" style="width: 70px; display: inline-block; font-family: 'Pretendard-Regular';">목록</button>
+							<button id="qdelete" class="btn btn-primary btn-block" type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">삭제</button>			
+						</div>
+					</c:when>
+				</c:choose>
 				
 			</div>
 		</div>
 </div>
 <%@ include file="footer.jsp" %>
+
+	<script type="text/javascript">
+	$(function(){
+		$('#qdelete').click(function(){
+			if(confirm("삭제하시겠습니까?")){
+				self.location.href = "QDelete.do?Q_idx=${QView.q_idx}";
+			}
+		})
+	});
+	</script>
+
+
 
 
 </body>

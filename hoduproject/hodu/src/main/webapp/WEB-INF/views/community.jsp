@@ -28,21 +28,6 @@
 						style="font-family: 'Pretendard-Regular';">HODU Community</h2>
 					<p class="sub-heading to-animate"></p>
 					<p style="margin-bottom: 80px"></p>
-					   
-					   <!-- 검색 폼 영역 -->
-					   <!--  
-					<form name="searchForm" action="#" method="get">
-						<p style= "font-size: 18px; margin-left: -45px">
-							<select name="searchType" style="width: 100px; height: 40px;">
-								<option value="ALL">전체검색</option>
-								<option value="SUBJECT">제목</option>
-								<option value="WRITER">작성자</option>
-								<option value="CONTENTS">내용</option>
-							</select> <input type="text" name="searchText" value="" style="width: 350px;" /> <input
-								type="submit" value="검색" style="width: 70px;" />
-						</p>
-					</form>
-					-->
 					
 					<div class="search_wrap">
 				        <div class="search_area">
@@ -101,7 +86,7 @@
 						<button type="button" onclick="alert('로그인이 필요합니다.');location.href='login';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
 					</c:when>
 					<c:otherwise>
-						<button type="button" onclick="location.href='community_mypost';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
+						<button type="button" onclick="location.href='MypostList.do?writer=${CView.writer}';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
 					</c:otherwise>
 					</c:choose>
 				

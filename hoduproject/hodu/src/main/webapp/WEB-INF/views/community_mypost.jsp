@@ -28,21 +28,6 @@
 						style="font-family: 'Pretendard-Regular';">HODU Community</h2>
 					<p class="sub-heading to-animate"></p>
 					<p style="margin-bottom: 80px"></p>
-					   
-					   <!-- 검색 폼 영역 -->
-					   <!--  
-					<form name="searchForm" action="#" method="get">
-						<p style= "font-size: 18px; margin-left: -45px">
-							<select name="searchType" style="width: 100px; height: 40px;">
-								<option value="ALL">전체검색</option>
-								<option value="SUBJECT">제목</option>
-								<option value="WRITER">작성자</option>
-								<option value="CONTENTS">내용</option>
-							</select> <input type="text" name="searchText" value="" style="width: 350px;" /> <input
-								type="submit" value="검색" style="width: 70px;" />
-						</p>
-					</form>
-					-->
 					
 					<div class="search_wrap">
 				        <div class="search_area">
@@ -63,6 +48,7 @@
 					<!-- //검색 폼 영역 -->
 				</div>
 			</div>
+			
 			<p style="margin-bottom: 0px"></p>
 			<div class="container" style="width: 70%;">
 				<table class="table table-hover" id="modalTable" style="text-align: center">
@@ -75,15 +61,18 @@
 							<th style="text-align: center">날짜</th>
 							<th style="text-align: center">댓글 수</th>
 						</tr>
-					 <c:forEach var="community" items="${CList }" varStatus="status" >
-						<tr id="add-btn" onclick="location.href='CView.do?index=${community.index}'" style="cursor:pointer;">
-							<td data-th="Supplier Code">${community.index }</td>
-							<td data-th="Supplier Name">${community.title }</td>
-							<td data-th="Invoice Number">${community.writer }</td>
-							<td data-th="Invoice Date"><fmt:formatDate value="${community.write_date }" pattern="yyyy-MM-dd"/></td>
-							<td data-th="Due Date">${Reply[status.index] } </td>
-						</tr>
-					</c:forEach>
+						
+						<c:forEach var="community" items="${CList }" varStatus="status" >
+							<tr id="add-btn" onclick="location.href='CView.do?index=${community.index}'" style="cursor:pointer;">
+								<td data-th="Supplier Code">${community.index }</td>
+								<td data-th="Supplier Name">${community.title }</td>
+								<td data-th="Invoice Number">${community.writer }</td>
+								<td data-th="Invoice Date"><fmt:formatDate value="${community.write_date }" pattern="yyyy-MM-dd"/></td>
+								<td data-th="Due Date">${Reply[status.index] } </td>
+							</tr>
+						</c:forEach>
+			
+					 
 					</tbody>
 				</table>
 				
@@ -93,6 +82,15 @@
 					</c:when>
 					<c:otherwise>
 						<button type="button" onclick="location.href='community_form';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</button>
+					</c:otherwise>
+					</c:choose>
+					
+					<c:choose>
+					<c:when test="${empty userId && empty partnerId}">
+						<button type="button" onclick="alert('로그인이 필요합니다.');location.href='login';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
+					</c:when>
+					<c:otherwise>
+						<button type="button" onclick="location.href='community_mypost';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
 					</c:otherwise>
 					</c:choose>
 				
@@ -119,6 +117,7 @@
 					</ul>
 				</div>
 			</div>
+			
 		</div>
 </div>
 

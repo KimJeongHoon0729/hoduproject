@@ -207,6 +207,9 @@ public class PensionController {
 		
 		return "community";
 	}
+	// 내가 쓴 글 리스트
+
+	
 	@RequestMapping("CView.do")
 	public String CView(int index, Model model, ReplyVO vo, RedirectAttributes redirect) {
 		List<ReplyVO> ReplyList = pensionService.ReplyList(vo);
@@ -245,7 +248,7 @@ public class PensionController {
 	public String CDelete(@RequestParam("index") int index, RedirectAttributes redirect) {
 		pensionService.CDelete(index);
 		redirect.addFlashAttribute("result", "delete success");
-		return "redirect: CList.do";
+		return "redirect: CList.do?pageNum=1&amount=10";
 	}
 	
 	//댓글 입력 및 출력

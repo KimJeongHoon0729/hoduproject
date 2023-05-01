@@ -96,6 +96,11 @@ public class UserJoinServiceImpl implements UserJoinService {
 		qsession.setAttribute("Q_idx", Q_idx);
 		return userJoin.QView(Q_idx);
 	}
+	//Q 삭제
+	@Override
+	public void QDelete(int Q_idx) {
+		userJoin.QDelete(Q_idx);
+	}
 	
 	//리뷰 작성
 	@Override
