@@ -276,6 +276,15 @@
 					
 					</c:when>
 					<c:otherwise>
+							<div class="container" style="width: 640px;">
+						  <div class="card">
+						    <div class="card-body" style="margin-top: 50px">
+						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">비밀 댓글</h4>
+						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">비밀 댓글입니다.</p>
+						     
+						    </div>
+						  </div>
+						</div>
 					</c:otherwise>
 				</c:choose>	
 				</c:forEach>
