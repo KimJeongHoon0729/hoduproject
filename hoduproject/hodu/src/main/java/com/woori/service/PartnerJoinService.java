@@ -65,4 +65,5 @@ public interface PartnerJoinService {
 	//MyPension 수정
 	public void pensionUpdate(PensionVO vo);
 	
+	
 }

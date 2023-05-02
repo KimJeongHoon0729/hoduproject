@@ -153,6 +153,7 @@ public class PartnerJoinController {
 				}
 				
 			}
+			pvo.setImg_business(filename);
 			partnerJoinService.uploadImg(pvo);
 			redirect.addAttribute("partnerId", partnerId);
 			return "redirect: viewPProfile.do";
