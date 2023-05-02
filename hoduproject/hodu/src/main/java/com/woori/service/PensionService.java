@@ -3,6 +3,7 @@ package com.woori.service;
 import java.util.List;
 
 import com.woori.domain.CCriteria;
+import com.woori.domain.CMyCriteria;
 import com.woori.domain.CommunityVO;
 import com.woori.domain.PensionVO;
 import com.woori.domain.ReplyVO;
@@ -26,7 +27,8 @@ public interface PensionService {
 	public CommunityVO CView(int index);
 	public int AgetCTotal(CCriteria cri);
 	
-	public List<CommunityVO> CMyList(CommunityVO vo);
+	public List<CommunityVO> CMyList(CMyCriteria cri);
+	public int MygetCTotal(CMyCriteria cri);
 	//댓글 개수
 	public String ReplyTotal(int index);
 	//커뮤니티 입력

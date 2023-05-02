@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.woori.domain.CCriteria;
+import com.woori.domain.CMyCriteria;
 import com.woori.domain.CommunityVO;
 import com.woori.domain.PCriteria;
 import com.woori.domain.PensionVO;
@@ -70,8 +71,12 @@ public class PensionDAOImpl implements PensionDAO {
 	}
 	
 	@Override
-	public List<CommunityVO> CMyList(CommunityVO vo) {
-		return sqlsession.selectList("pension.CMyList", vo);
+	public List<CommunityVO> CMyList(CMyCriteria cri) {
+		return sqlsession.selectList("pension.CMyList", cri);
+	}
+	@Override
+	public int MygetCTotal(CMyCriteria cri) {
+		return sqlsession.selectOne("pension.MygetCTotal", cri);
 	}
 	//댓글 개수
 	@Override

@@ -29,23 +29,7 @@
 					<p class="sub-heading to-animate"></p>
 					<p style="margin-bottom: 80px"></p>
 					
-					<div class="search_wrap">
-				        <div class="search_area">
-				        	<select name="type" style="width: 165px; height: 41px;">
-				                <option value="" <c:out value="${cPageMaker.cri.type == null?'selected':'' }"/>>--</option>
-				                <option value="T" <c:out value="${cPageMaker.cri.type eq 'T'?'selected':'' }"/>>제목</option>
-				                <option value="C" <c:out value="${cPageMaker.cri.type eq 'C'?'selected':'' }"/>>내용</option>
-				                <option value="W" <c:out value="${cPageMaker.cri.type eq 'W'?'selected':'' }"/>>작성자</option>
-				                <option value="TC" <c:out value="${cPageMaker.cri.type eq 'TC'?'selected':'' }"/>>제목 + 내용</option>
-				                <option value="TW" <c:out value="${cPageMaker.cri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
-				                <option value="TCW" <c:out value="${cPageMaker.cri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
-				            </select>    
-				            <input type="text" name="keyword" style="width: 440px; height: 41px;">
-				            <button>Search</button>
-				            
-				        </div>
-				    </div>    
-					<!-- //검색 폼 영역 -->
+
 				</div>
 			</div>
 			
@@ -80,32 +64,26 @@
 					
 					<c:choose>
 					<c:when test="${empty userId && empty partnerId}">
-						<button type="button" onclick="alert('로그인이 필요합니다.');location.href='login';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
+						<button type="button" onclick="alert('로그인이 필요합니다.');location.href='login';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</button>
 					</c:when>
 					<c:otherwise>
-						<button type="button" onclick="location.href='community_mypost';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
+						<button type="button" onclick="location.href='community_form';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</button>
 					</c:otherwise>
 					</c:choose>
 				
 				<br></br>
 
-				<form id="moveForm" method="get">
-					<input type="hidden" name="pageNum" value="${cPageMaker.cri.pageNum }">
-	        		<input type="hidden" name="amount" value="${cPageMaker.cri.amount }">   
-	        		<input type="hidden" name="keyword" value="${cPageMaker.cri.keyword }">
-	        		<input type="hidden" name="type" value="${cPageMaker.cri.type }">
-				</form>
-				
+		
 				<div class="text-center">
 					<ul class="pagination">
 						<c:if test="${cPageMaker.prev }">
-						<li><a href="${path }/CList.do?pageNum=${cPageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+						<li><a href="${path }/CMyList.do?pageNum=${cPageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
 						</c:if>
 						<c:forEach var="num" begin="${cPageMaker.startPage }" end="${cPageMaker.endPage }">
-						<li><a href="${path }/CList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+						<li><a href="${path }/CMyList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
 						</c:forEach>
 						<c:if test="${cPageMaker.next }">
-						<li><a href="${path }/CList.do?pageNum=${cPageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+						<li><a href="${path }/CMyList.do?pageNum=${cPageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
 						</c:if>
 					</ul>
 				</div>
@@ -119,37 +97,6 @@
 
 
 
-<script type="text/javascript">
-
-	 
-
-	 
-	    let moveForm = $("#moveForm");
-	 //버튼 클릭
-		$(".search_area button").on("click", function(e){
-        e.preventDefault();
-       
-       let type = $(".search_area select").val();
-       let keyword = $(".search_area input[name='keyword']").val();
-       
-       if(!type){
-           alert("검색 종류를 선택하세요.");
-           return false;
-       }
-       
-       if(!keyword){
-           alert("키워드를 입력하세요.");
-           return false;
-       }        
-   
-       moveForm.find("input[name='type']").val(type);
-       moveForm.find("input[name='keyword']").val(keyword);
-       moveForm.find("input[name='pageNum']").val(1);
-       
-       document.getElementById('moveForm').submit();
-       
-    });
-</script>
 
 
 </body>

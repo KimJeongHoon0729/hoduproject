@@ -3,6 +3,7 @@ package com.woori.dao;
 import java.util.List;
 
 import com.woori.domain.CCriteria;
+import com.woori.domain.CMyCriteria;
 import com.woori.domain.CommunityVO;
 import com.woori.domain.PCriteria;
 import com.woori.domain.PensionVO;
@@ -28,8 +29,9 @@ public interface PensionDAO {
 	public CommunityVO CView(int index);
 	
 	//커뮤니티 마이포스트 출력
-	public List<CommunityVO> CMyList(CommunityVO vo);
-
+	public List<CommunityVO> CMyList(CMyCriteria cri);
+	public int MygetCTotal(CMyCriteria cri);
+	
 	public int AgetCTotal(CCriteria cri);
 	//댓글 개수
 	public String ReplyTotal(int index);

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.woori.dao.PensionDAO;
 import com.woori.domain.CCriteria;
+import com.woori.domain.CMyCriteria;
 import com.woori.domain.CommunityVO;
 import com.woori.domain.PCriteria;
 import com.woori.domain.PensionVO;
@@ -70,10 +71,13 @@ public class PensionServiceImpl implements PensionService {
 	}
 	
 	@Override
-	public List<CommunityVO> CMyList(CommunityVO vo) {
-		return pensionDao.CMyList(vo);
+	public List<CommunityVO> CMyList(CMyCriteria cri) {
+		return pensionDao.CMyList(cri);
 	}
-	
+	@Override
+	public int MygetCTotal(CMyCriteria cri) {
+		return pensionDao.MygetCTotal(cri);
+	}
 	//댓글 개수
 	@Override
 	public String ReplyTotal(int index) {

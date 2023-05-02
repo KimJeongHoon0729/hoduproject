@@ -26,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.woori.domain.CCriteria;
+import com.woori.domain.CMyCriteria;
 import com.woori.domain.CPageMakerVO;
 import com.woori.domain.CommunityVO;
 import com.woori.domain.Criteria;
@@ -209,14 +210,18 @@ public class PensionController {
 	}
 	// 내가 쓴 글 리스트
 	@RequestMapping("CMyList.do")
-	public String CMyList(CommunityVO vo, Model model) {
-		List<CommunityVO> CMyList = pensionService.CMyList(vo);
+	public String CMyList(CMyCriteria cri, Model model) {
+		List<CommunityVO> CMyList = pensionService.CMyList(cri);
 		List<String> reply = new ArrayList<String>(Arrays.asList());
 		for(int i =0; i<CMyList.size();i++) {
 			reply.add(i, pensionService.ReplyTotal(CMyList.get(i).getIndex()));
 		}
+		int total = pensionService.MygetCTotal(cri);
+		
+		CPageMakerVO cPageMaker = new CPageMakerVO(cri, total);
 		model.addAttribute("Reply", reply);
 		model.addAttribute("CMyList", CMyList);
+		model.addAttribute("cPageMaker", cPageMaker);
 		return "community_mypost";
 	}
 	
