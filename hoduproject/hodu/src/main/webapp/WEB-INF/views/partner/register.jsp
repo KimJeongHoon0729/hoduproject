@@ -41,6 +41,7 @@
                  <div class="form-group ">
                      <label for="pensionName" class="sr-only">pensionName</label>
                      <input id="pensionName" name="pensionName" class="form-control" placeholder="펜션명" type="text">
+                     <input id="partnerId" name="partnerId" class="form-control" value="${sessionScope.partnerId }"type="hidden">
                   </div>
 
 						<div class="area"> 
