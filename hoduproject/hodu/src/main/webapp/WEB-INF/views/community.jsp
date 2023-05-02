@@ -86,7 +86,7 @@
 						<button type="button" onclick="alert('로그인이 필요합니다.');location.href='login';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
 					</c:when>
 					<c:otherwise>
-						<button type="button" onclick="location.href='MypostList.do?writer=${CView.writer}';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
+						<button type="button" onclick="location.href='CMyList.do?writer=${sessionScope.userId}';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >내가 쓴 글</button>
 					</c:otherwise>
 					</c:choose>
 				

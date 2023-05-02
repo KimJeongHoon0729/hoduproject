@@ -70,8 +70,8 @@ public class PensionServiceImpl implements PensionService {
 	}
 	
 	@Override
-	public List<CommunityVO> CMyList(CCriteria cri) {
-		return pensionDao.CMyList(cri);
+	public List<CommunityVO> CMyList(CommunityVO vo) {
+		return pensionDao.CMyList(vo);
 	}
 	
 	//댓글 개수

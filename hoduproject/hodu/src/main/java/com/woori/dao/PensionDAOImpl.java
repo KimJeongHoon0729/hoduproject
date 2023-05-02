@@ -70,8 +70,8 @@ public class PensionDAOImpl implements PensionDAO {
 	}
 	
 	@Override
-	public List<CommunityVO> CMyList(CCriteria cri) {
-		return sqlsession.selectList("pension.CMyList", cri);
+	public List<CommunityVO> CMyList(CommunityVO vo) {
+		return sqlsession.selectList("pension.CMyList", vo);
 	}
 	//댓글 개수
 	@Override

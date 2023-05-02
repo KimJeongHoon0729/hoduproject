@@ -209,8 +209,13 @@ public class PensionController {
 	}
 	// 내가 쓴 글 리스트
 	@RequestMapping("CMyList.do")
-	public String CMyList(CCriteria cri, Model model) {
-		List<CommunityVO> CMyList = pensionService.CMyList(cri);
+	public String CMyList(CommunityVO vo, Model model) {
+		List<CommunityVO> CMyList = pensionService.CMyList(vo);
+		List<String> reply = new ArrayList<String>(Arrays.asList());
+		for(int i =0; i<CMyList.size();i++) {
+			reply.add(i, pensionService.ReplyTotal(CMyList.get(i).getIndex()));
+		}
+		model.addAttribute("Reply", reply);
 		model.addAttribute("CMyList", CMyList);
 		return "community_mypost";
 	}

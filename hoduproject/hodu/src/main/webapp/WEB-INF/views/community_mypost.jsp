@@ -62,7 +62,7 @@
 							<th style="text-align: center">댓글 수</th>
 						</tr>
 						
-						<c:forEach var="community" items="${CList }" varStatus="status" >
+						<c:forEach var="community" items="${CMyList }" varStatus="status" >
 							<tr id="add-btn" onclick="location.href='CView.do?index=${community.index}'" style="cursor:pointer;">
 								<td data-th="Supplier Code">${community.index }</td>
 								<td data-th="Supplier Name">${community.title }</td>
@@ -76,14 +76,7 @@
 					</tbody>
 				</table>
 				
-					<c:choose>
-					<c:when test="${empty userId && empty partnerId}">
-						<button type="button" onclick="alert('로그인이 필요합니다.');location.href='login';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</button>
-					</c:when>
-					<c:otherwise>
-						<button type="button" onclick="location.href='community_form';" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</button>
-					</c:otherwise>
-					</c:choose>
+		
 					
 					<c:choose>
 					<c:when test="${empty userId && empty partnerId}">
