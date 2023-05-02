@@ -153,8 +153,8 @@ public class PensionController {
 	}
 	
 	@RequestMapping("roomRegister.do")
-	public String pensionRegister(PensionVO vo, @RequestParam("pensionName") String pensionName,HttpSession session, RedirectAttributes redirect) {
-		pensionService.pensionRegister(vo);
+	public String roomRegister(RoomVO vo, @RequestParam("pensionName") String pensionName,HttpSession session, RedirectAttributes redirect) {
+		pensionService.roomRegister(vo);
 	
 		if(session.getAttribute("pensionName") == null) {
 			redirect.addAttribute("pensionName", vo.getPensionName());
@@ -163,30 +163,33 @@ public class PensionController {
 		}
 		return "partner/roomRegister";
 	}
-	
-	@PostMapping("ImgRegister.do")
-	public String fileUpload(@RequestParam("file") MultipartFile pension_img, HttpServletRequest req ) {
-		String filename = "";
-		String uuid= UUID.randomUUID().toString();
-		
-		if(!pension_img.isEmpty()) {
-			filename = uuid+"_"+pension_img.getOriginalFilename();
-			System.out.println(pension_img.getOriginalFilename());
+	@RequestMapping("pensionRegister.do")
+	public String pensionRegister(PensionVO vo, @RequestParam("file") MultipartFile pension_img, HttpServletRequest req ) {
+		 
+		 String filename = "";
+			String uuid= UUID.randomUUID().toString();
 			
-			String path = req.getSession().getServletContext().getRealPath("/").concat("resources");
-			String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
-			
-			try {
-				new File(imgUploadPath).mkdirs(); 
-				pension_img.transferTo(new File(imgUploadPath+filename));
-			} catch(Exception e) {
-				e.printStackTrace();
+			if(!pension_img.isEmpty()) {
+				filename = uuid+"_"+pension_img.getOriginalFilename();
+				System.out.println(pension_img.getOriginalFilename());
+				
+				String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
+				String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+				
+				try {
+					new File(imgUploadPath).mkdirs(); 
+					pension_img.transferTo(new File(imgUploadPath+filename));
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				vo.setImg_pension(filename);
+				pensionService.pensionRegister(vo);
 			}
 			
-		}
-	
 		return "partner/roomRegister";
 	}
+	
+
 	
 	//커뮤니티 리스트 출력
 	@RequestMapping("CList.do")

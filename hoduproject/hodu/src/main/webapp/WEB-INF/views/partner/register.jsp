@@ -32,7 +32,7 @@
             </div>
           
 
-          <form action="${path }/roomRegister.do" method="post" id="pensionRegister">
+          <form action="${path }/pensionRegister.do" method="post" id="pensionRegister" enctype="multipart/form-data">
                 <div class="container" style="text-align:center;padding-left: 4px">
                 
                 <div class="col-md-6 col-md-offset-3">
@@ -77,21 +77,24 @@
                   
             </div>
          </div>
-         </form>
+         
          <p style="margin-bottom: 14px"></p>
          <div class="col-md-6 col-md-offset-3">
 	         <div class="form-group ">  
-	         <form id="ImgRegister" action="pensionUpload.do" method="post" enctype="multipart/form-data" >
+	         
 				 <p style="text-align: left; margin-bottom: 10px"> 펜션 사진 업로드</p>
 			     <p style="width: 102%">
-				     <input id="img_pension" type="file" name="multiFile" multiple="multiple" class="form-control" onchange="readURL(this)">
+				     <input id="img_pension" type="file" name="file" multiple="multiple" class="form-control" onchange="readURL(this)">
 				     <img id="preview">
-		             <input id="pensionSubmit" class="btn btn-primary" value="다음" type="button" style="font-family: 'Pretendard-Regular'; 
-	             margin-top: 15px; margin-left: 240px;margin-right: 240px"></p>
-			 </form> 
+		            </p>
+			 
+			  <input id="pensionSubmit"  class="btn btn-primary" value="다음" type="button" style="font-family: 'Pretendard-Regular'; 
+	             margin-top: 15px; margin-left: 240px;margin-right: 240px">
 			 </div> 
 		 </div>
+		 </form>
       </div>
+
    
   
 <%@ include file = "../footer.jsp" %>
@@ -123,14 +126,12 @@
 				alert("펜션 이미지를 등록하세요.");
 				img_pension.focus();
 			}
-			
-			document.getElementById('ImgRegister').submit();
 			document.getElementById('pensionRegister').submit();
-
 		});
 		
 	});
 	
+
 	
 	function readURL(input) {
 		if (input.files && input.files[0]) {

@@ -90,70 +90,7 @@ public class CommonController {
 	}
 	
 	
-	//�뙆�씪 �뾽濡쒕뱶
-	
 
-	
-	
-	//�렂�뀡 �뙆�씪 �뾽濡쒕뱶
-	
-	@PostMapping("pensionUpload.do")
-	public String pensionUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirect, HttpServletRequest req ) {
-		String filename = "";
-		String uuid= UUID.randomUUID().toString();
-		
-		if(!file.isEmpty()) {
-			filename = uuid+"_"+file.getOriginalFilename();
-
-//			String path = req.getSession().getServletContext().getRealPath("/").concat("resources");
-			String path = "C:\\tmp\\";
-			String imgUploadPath = path+File.separator;
-			
-			try {
-				new File(imgUploadPath).mkdirs(); 
-				file.transferTo(new File(imgUploadPath+filename));
-			} catch(Exception e) {
-				e.printStackTrace();
-			}
-			
-		}
-
-		return "redirect: partner/register";
-	}
-	
-	
-	
-	/**
-	@PostMapping("pensionUpload.do")
-	public String pensionUpload(@RequestParam("multiFile") List<MultipartFile> multiFileList) {
-		String filename = "";
-		
-		if(!multiFileList.isEmpty()) {
-			for(int i=0;i<multiFileList.size();i++) {
-				
-			filename = multiFileList.get(i).getOriginalFilename();
-			System.out.println(multiFileList.get(i).getOriginalFilename());
-			
-//			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
-//					+ "\\tmp2\\wtpwebapps\\spring\\resources\\images\\";
-			
-			String path = "C:\\tmp\\";
-			
-			try {
-				new File(path).mkdirs(); 
-				multiFileList.get(i).transferTo(new File(path+filename));
-			} catch(Exception e) {
-				e.printStackTrace();
-			}
-			
-			}
-		
-		}
-	
-		return "partner/register";
-	
-	}
-*/
 	
 	
 }
