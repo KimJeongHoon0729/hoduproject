@@ -52,7 +52,7 @@
 	
 					   <tr>
 						   <th style="height:200px; text-align: center;">답변</th>
-						   <td><textarea id="A_content" name="A_content" style='width:100%'>${AView.a_content }</textarea></td>
+						   <td><textarea id="A_content" name="A_content" style='width:100%'  rows="8" cols="50">${AView.a_content }</textarea></td>
 					   </tr>	
 					 
 					</table>

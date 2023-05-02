@@ -50,7 +50,7 @@
                         <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/images/122.png)"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-right">
                            <h2 style="font-family: 'Pretendard-Regular';">가격</h2>
-                           <span class="pricing">${RoomList.price } 원</span>
+                           <span class="pricing"><fmt:formatNumber value="${RoomList.price }" pattern="###,###"/>원</span>
                           </div>
                      </div>
                   </div>

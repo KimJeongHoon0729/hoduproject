@@ -60,7 +60,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	<select id="RList" resultType="com.woori.domain.ReservationVO">
-		select * from reservation where partnerId = #{partnerId} order by reservation_date  
+		select * from reservation where pensionName = #{pensionName} order by reservation_date  
 	</select>
 	
 	<select id="RView" resultType="com.woori.domain.ReservationVO">

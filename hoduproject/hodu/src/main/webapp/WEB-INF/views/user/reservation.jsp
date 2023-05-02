@@ -54,7 +54,7 @@
                   </div>
                    
                     <div class="form-group">
-                     <p style="text-align : left; margin-bottom: 0px">수용 가능한 반려견 사이즈</p>
+                     <p style="text-align : left; margin-bottom: 0px">반려견 사이즈</p>
                    </div>
                   <div class="form-control" style="margin-bottom: 15px">   
                      <p style="font-size: 16px"> 
