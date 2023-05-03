@@ -28,10 +28,15 @@
                      <label for="userId" class="sr-only">userID</label>
                      <input id="userId" name="userId" class="form-control" value="${sessionScope.userId }" placeholder="아이디" type="hidden">
                   </div>
-                  <div class="form-group ">
-                     <label for="roomName" class="sr-only">roomName</label>
-                     <input id="roomName" name="roomName"  class="form-control" placeholder="객실 이름" type="text">
-                  </div>
+                 	<div class="area" style="margin-bottom: 15px"> 
+							<select id="area" class="form-control" name="roomName">
+								<option selected disabled>펜션을 선택하세요.</option>
+								<c:forEach var="RoomSelect" items="${RoomSelect }">
+								<option value="${RoomSelect }">${RoomSelect }</option>
+								</c:forEach>
+							</select>
+							<div id="areaError" class="error"></div>
+						</div>
                   <div class="form-group ">
                      <label for="userName" class="sr-only">userName</label>
                      <input id="userName" name="userName"  class="form-control" placeholder="이름" type="text">

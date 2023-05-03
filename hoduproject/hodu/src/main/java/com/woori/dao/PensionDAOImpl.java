@@ -136,4 +136,9 @@ public class PensionDAOImpl implements PensionDAO {
 	public List<PensionVO> NameSelect(PensionVO vo){
 		return sqlsession.selectList("pension.NameSelect", vo);
 	}
+	//객실 이름 출력
+	@Override
+	public List<RoomVO> RoomSelect(String pensionName){
+		return sqlsession.selectList("pension.RoomSelect", pensionName);
+	}
 }

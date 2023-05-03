@@ -300,5 +300,12 @@ public class PensionController {
 		redirect.addAttribute("pageNum", pageNum);
 		return "user/qna_form";
 	}
+	//객실 이름 출력
+	@RequestMapping("roomName.do")
+	public String RoomSelect(RoomVO vo, Model model,@RequestParam("pensionName") String pensionName){
+		List<RoomVO> RoomSelect = pensionService.RoomSelect(pensionName);
+		model.addAttribute("RoomSelect", RoomSelect);
+		return "user/reservation";
+	}
 }
 

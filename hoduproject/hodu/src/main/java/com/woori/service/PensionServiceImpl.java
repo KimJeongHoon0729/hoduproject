@@ -132,4 +132,8 @@ public class PensionServiceImpl implements PensionService {
 	public List<PensionVO> NameSelect(PensionVO vo){
 		return pensionDao.NameSelect(vo);
 	}
+	//객실 이름 출력
+	public List<RoomVO> RoomSelect(String pensionName){
+		return pensionDao.RoomSelect(pensionName);
+	}
 }

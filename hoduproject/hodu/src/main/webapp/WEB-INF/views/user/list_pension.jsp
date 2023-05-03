@@ -23,7 +23,7 @@
             <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/ReviewList.do?pensionName=${param.pensionName }'">리뷰확인</button>
             
             <c:if test="${sessionScope.userId != null }">
-            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/user/reservation?pensionName=${param.pensionName }'">예약하기</button>
+            <button class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';" onclick="location.href='${path }/roomName.do?pensionName=${param.pensionName }'">예약하기</button>
             </c:if>
             
          </div>

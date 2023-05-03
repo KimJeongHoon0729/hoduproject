@@ -42,7 +42,7 @@
                      <label for="userId" class="sr-only">UserId</label>
                      <input id="userId" name="userId" class="form-control" value="${userId }" type="hidden">
                   </div>
-                	<div class="area"> 
+                	<div class="area" style="margin-bottom: 15px"> 
 							<select id="area" class="form-control" name="pensionName">
 								<option selected disabled>펜션을 선택하세요.</option>
 								<c:forEach var="NameSelect" items="${NameSelect }">
@@ -51,7 +51,6 @@
 							</select>
 							<div id="areaError" class="error"></div>
 						</div>
-						<br>
                   <div class="form-group ">
                      <label for="Q_title" class="sr-only">Q_title</label>
                      <input id="Q_title" name="Q_title"  class="form-control" placeholder="제목" type="text" >

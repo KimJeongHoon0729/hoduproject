@@ -51,4 +51,6 @@ public interface PensionDAO {
 	public void ReplyDelete (int reply_index);
 	//펜션 이름 출력
 	public List<PensionVO> NameSelect(PensionVO vo);
+	//객실 이름 출력
+	public List<RoomVO> RoomSelect(String pensionName);
 }
