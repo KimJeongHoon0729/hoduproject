@@ -82,7 +82,6 @@
 					<div class="fh5co-menu-1">
 						<a href="/user/list_map">펜션 목록</a>
 						<a href="QList.do?pageNum=1&amount=10" >Q&A</a>
-					
 					</div>
 					<div class="fh5co-logo">
 						<a href="/">HODU</a>
@@ -98,7 +97,9 @@
 						<div class="fh5co-menu-2">
 							<a href="/user/mypage">마이페이지</a>
 							<a href="logout.do">로그아웃</a>
-							
+							<c:if test="${userAuth.auth == 1 }">
+							<a href="/admin/memberList" >회원관리</a>
+							</c:if>
 						</div>
 					</c:otherwise>
 				</c:choose>	

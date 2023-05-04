@@ -6,15 +6,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class UserVO {
 
-	 String userId;
-	 String userPw;
-	 String userName;
+	String userId;
+	String userPw;
+	String userName;
 	 
-	 @DateTimeFormat(pattern = "yyyy-MM-dd")
-	 Date userBirth;
-	 String sex;
-	 String userMobile;
-	 String userEmail;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	Date userBirth;
+	String sex;
+	String userMobile;
+	String userEmail;
+	int auth;
 	public String getUserId() {
 		return userId;
 	}
@@ -57,10 +58,16 @@ public class UserVO {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
+	public int getAuth() {
+		return auth;
+	}
+	public void setAuth(int auth) {
+		this.auth = auth;
+	}
 	@Override
 	public String toString() {
 		return "UserVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userBirth=" + userBirth
-				+ ", sex=" + sex + ", userMobile=" + userMobile + ", userEmail=" + userEmail + "]";
+				+ ", sex=" + sex + ", userMobile=" + userMobile + ", userEmail=" + userEmail + ", auth=" + auth + "]";
 	}
 	
 	 

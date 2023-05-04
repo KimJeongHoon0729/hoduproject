@@ -1,11 +1,13 @@
 package com.woori.hodu;
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -101,7 +103,7 @@ public class PartnerJoinController {
 		
 		// 회원가입 post
 		@RequestMapping(value="psignin.do", method = RequestMethod.POST)
-		public String partnerJoin2(PartnerVO pvo) {
+		public String partnerJoin2(PartnerVO pvo, HttpServletResponse response) throws Exception {
 			int result = partnerJoinService.pidCheck(pvo);
 			if(result == 1) {
 				return "/signin";
@@ -110,6 +112,10 @@ public class PartnerJoinController {
 				String pwd = pwdEncoder.encode(inputPw);
 				pvo.setPartnerPw(pwd);
 				partnerJoinService.insertParnter(pvo);
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				out.println("<script>alert('회원가입이 완료되었습니다.'); location.href='/';</script>");
+				out.flush();
 			}
 			
 			return "redirect:/";

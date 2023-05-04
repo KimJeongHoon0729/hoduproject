@@ -52,7 +52,6 @@
 			<div class="container" style="width: 70%;">
 				<table class="table table-hover" id="modalTable" style="text-align: center">
 					<tbody style="font-family: 'Pretendard-Regular';">
-					
 						<tr>
 							<th style="text-align: center">번호</th>
 							<th style="text-align: center">제목</th>
@@ -60,15 +59,15 @@
 							<th style="text-align: center">날짜</th>
 							<th style="text-align: center">댓글 수</th>
 						</tr>
-					 <c:forEach var="community" items="${CList }" varStatus="status" >
-						<tr id="add-btn" onclick="location.href='CView.do?index=${community.index}'" style="cursor:pointer;">
-							<td data-th="Supplier Code">${community.index }</td>
-							<td data-th="Supplier Name">${community.title }</td>
-							<td data-th="Invoice Number">${community.writer }</td>
-							<td data-th="Invoice Date"><fmt:formatDate value="${community.write_date }" pattern="yyyy-MM-dd"/></td>
-							<td data-th="Due Date">${Reply[status.index] } </td>
-						</tr>
-					</c:forEach>
+						 <c:forEach var="community" items="${CList }" varStatus="status" >
+							<tr id="add-btn" onclick="location.href='CView.do?index=${community.index}'" style="cursor:pointer;">
+								<td data-th="Supplier Code">${community.index }</td>
+								<td data-th="Supplier Name">${community.title }</td>
+								<td data-th="Invoice Number">${community.writer }</td>
+								<td data-th="Invoice Date"><fmt:formatDate value="${community.write_date }" pattern="yyyy-MM-dd"/></td>
+								<td data-th="Due Date">${Reply[status.index] } </td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 				

@@ -164,4 +164,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO reservation(roomName,userId, userName, userMobile, userEmail, pensionName, price, dogSize, dogNum, peopleNum, message_to_p, reservation_date) 
 			VALUES(#{roomName},#{userId},#{userName},#{userMobile},#{userEmail},#{pensionName},#{price}, #{dogSize},#{dogNum}, #{peopleNum}, #{message_to_p}, #{reservation_date})
 	</insert>
+	
+	
 </mapper>
