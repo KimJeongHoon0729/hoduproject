@@ -93,13 +93,16 @@
 							<a href="login" >로그인</a>
 						</div>
 					</c:when>
+					<c:when test="${sessionScope.userId == 'admin' || sessionScope.partnerId == 'admin'  }">
+						<div class="fh5co-menu-2">
+							<a href="userList.do" >회원관리</a>
+							<a href="logout.do">로그아웃</a>
+						</div>
+					</c:when>
 					<c:otherwise>
 						<div class="fh5co-menu-2">
 							<a href="/user/mypage">마이페이지</a>
 							<a href="logout.do">로그아웃</a>
-							<c:if test="${userAuth.auth == 1 }">
-							<a href="/admin/memberList" >회원관리</a>
-							</c:if>
 						</div>
 					</c:otherwise>
 				</c:choose>	

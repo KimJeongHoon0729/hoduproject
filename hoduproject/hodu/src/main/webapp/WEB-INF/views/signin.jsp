@@ -155,7 +155,21 @@
 	
 	function fn_idCheck(){
 	
-		document.document.getElementById("user").submit();
+		$.ajax({
+			url : "/idCheck",
+			type : "post",
+			dataType : "json",
+			contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+			data : {"userId" : $("#userId").val()},
+			success : function(data){
+				if(data == 1){
+					alert("사용할 수 없는 아이디입니다.");
+				}else if(data == 0){
+					$("#idCheck").attr("value", "Y");
+					alert("사용 가능한 아이디입니다.");
+				}
+			}
+		})
 		
 		
 	}
@@ -176,7 +190,6 @@
 			}
 		})
 		
-		document.document.getElementById("partner").submit();
 		
 	}		
 	</script>
