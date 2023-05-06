@@ -15,6 +15,7 @@ public class UserVO {
 	String sex;
 	String userMobile;
 	String userEmail;
+	int idx;
 	int auth;
 	public String getUserId() {
 		return userId;
@@ -64,10 +65,17 @@ public class UserVO {
 	public void setAuth(int auth) {
 		this.auth = auth;
 	}
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
 	@Override
 	public String toString() {
 		return "UserVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userBirth=" + userBirth
-				+ ", sex=" + sex + ", userMobile=" + userMobile + ", userEmail=" + userEmail + ", auth=" + auth + "]";
+				+ ", sex=" + sex + ", userMobile=" + userMobile + ", userEmail=" + userEmail + ", idx=" + idx
+				+ ", auth=" + auth + "]";
 	}
 	
 	 

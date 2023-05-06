@@ -7,7 +7,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="userList" resultType="com.woori.domain.UserVO">
 		select * from userjoin
 	</select>
+	
+	<select id="userView" resultType="com.woori.domain.UserVO">
+		select * from userjoin
+	</select>
+	
 	<delete id="userDelete">
 		delete from userjoin where userId=#{userId}
 	</delete>
+	
+	
 </mapper>

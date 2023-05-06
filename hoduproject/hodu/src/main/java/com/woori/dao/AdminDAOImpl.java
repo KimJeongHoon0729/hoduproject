@@ -21,7 +21,7 @@ import com.woori.domain.UserVO;
 public class AdminDAOImpl implements AdminDAO {
 	
 	@Inject
-	SqlSession adminSession;
+	private SqlSession adminSession;
 	
 	@Override
 	public List<UserVO> userList(UserVO vo) {
@@ -29,9 +29,13 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 	
 	@Override
+	public UserVO userView(UserVO vo) {
+		return adminSession.selectOne("admin.userView", vo);
+	}
+	
+	@Override
 	public void userDelete(String userId) {
 		adminSession.delete("admin.userDelete", userId);
 	}
-	
 
 }

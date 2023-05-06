@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.woori.domain.UserVO;
 import com.woori.service.AdminServiceImpl;
@@ -29,11 +28,16 @@ public class AdminController {
 		return "/admin/userList";
 	}
 	
-	@RequestMapping("userDelete.do")
-	public String userDelete(@RequestParam("userId") String userId, Model model) {
-		adminService.userDelete(userId);
-		model.addAttribute("userDelete", userId);
-		return "redirect: userList.do?pageNum=1&amount=10";
+	@RequestMapping("userView.do")
+	public void userView (UserVO vo, Model model) {
+		model.addAttribute("userView", adminService.userView(vo));
 	}
+	
+	@RequestMapping("userDelete.do")
+	public String userDelete(@RequestParam("userId") String userId) {
+		adminService.userDelete(userId);
+		return "redirect: userList.do";
+	}
+	
 	
 }

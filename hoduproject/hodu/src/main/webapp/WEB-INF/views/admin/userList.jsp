@@ -74,7 +74,7 @@
 				
 
 				<br></br>
-
+<!-- 
 				<form id="moveForm" method="get">
 					<input type="hidden" name="pageNum" value="${cPageMaker.cri.pageNum }">
 	        		<input type="hidden" name="amount" value="${cPageMaker.cri.amount }">   
@@ -95,6 +95,7 @@
 						</c:if>
 					</ul>
 				</div>
+ -->
 			</div>
 		</div>
 </div>
@@ -132,11 +133,14 @@
        
     });
 	 
-	 
+
 	$(function(){
 		$('#userDelete').click(function(){
 			if(confirm("삭제하시겠습니까?")){
-				self.location.href = "userDelete.do?userId=${userDelete.userId}";
+				self.location.href = "userDelete.do?userId=${userView.userId}";
+				alert("삭제 되었습니다.");
+			} else{
+				alert("취소 되었습니다.");
 			}
 		})
 	});

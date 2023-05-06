@@ -17,7 +17,8 @@ public interface AdminService {
 	// 회원 리스트 출력
 	public List<UserVO> userList(UserVO vo);
 	
-	// 회원 삭제
+	public UserVO userView(UserVO vo);
+
 	public void userDelete(String userId);
-	
+
 }
