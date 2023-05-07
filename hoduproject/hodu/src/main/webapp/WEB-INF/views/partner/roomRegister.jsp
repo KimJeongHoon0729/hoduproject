@@ -35,7 +35,7 @@
             </div>
           
 
-          <form id="roomInfo" method="post" action="${path }/roomInfo.do?partnerId=${partnerId }">
+          <form id="roomInfo" method="post" action="${path }/roomInfo.do?partnerId=${partnerId }" enctype="multipart/form-data">
                 <div class="container" style="text-align:center;padding-left: 4px">
                 
                 <div class="col-md-6 col-md-offset-3">
@@ -83,14 +83,19 @@
                   <input id="idx" name="idx" value="" type="hidden">
             </div>
          </div>
-         </form>
+
          <p style="margin-bottom: 14px"></p>
          <div class="col-md-6 col-md-offset-3">
 	         <div class="form-group ">  
-	         <form id="roomImg" method="post" enctype="multipart/form-data" action="${path }/roomImg.do?partnerId=${partnerId }">
 				 <p style="text-align: left; margin-bottom: 10px"> 객실 사진 업로드</p>
 			     <p style="width: 102%">
-			     <input id="img_room" type="file" name="multiFile" multiple class="form-control" onchange="readURL(this)">
+				 <input id="img_room1" type="file" name="img_room1" class="form-control" onchange="readURL(this)">
+			  	 <input id="img_room2" type="file" name="img_room2" class="form-control" onchange="readURL(this)">
+			  	 <input id="img_room3" type="file" name="img_room3" class="form-control" onchange="readURL(this)">
+			  	 <input id="img_room4" type="file" name="img_room4" class="form-control" onchange="readURL(this)">
+			  	 <input id="img_room5" type="file" name="img_room5" class="form-control" onchange="readURL(this)">
+			  	 <input id="img_room6" type="file" name="img_room6" class="form-control" onchange="readURL(this)">
+			     
 			     <img id="preview">
 			     </p>
 	             
@@ -98,10 +103,11 @@
 	             <input class="btn btn-primary" onclick="next();" value="다음" type="button" style="font-family: 'Pretendard-Regular';"/>
 	             <input class="btn btn-primary" onclick="_submit();" value="제출" type="button"  style="font-family: 'Pretendard-Regular';"/>
 			 </div>
+			 </div>
+			</div>
 			 </form> 
 			 </div> 
-		 </div>
-      </div>
+      
    
   
 <%@ include file = "../footer.jsp" %>
@@ -117,7 +123,6 @@
 			var dogNum = $("#dogNum").val();
 			var dogSize = $("#dogSize").text();
 			var peopleNum = $("#peopleNum").val();
-			var img_room = $("#img_room").val();
 			
 			if(roomName == ""){
 				alert("객실명을 입력하세요.");
@@ -131,14 +136,10 @@
 			} else if(peopleNum == ""){
 				alert("수용 가능한 방문자 수를 입력하세요.");
 				peopleNum.focus();
-			} else if(img_room == ""){
-				alert("객실 이미지를 등록하세요.");
-				img_room.focus();
-			}
+			} 
 			
 			
 			$('input[name=idx]').attr('value',"0");
-			document.getElementById('roomImg').submit();
 			document.getElementById('roomInfo').submit();
 			
 			console.log($('input[name=idx]').val());
@@ -153,7 +154,6 @@
 			var dogNum = $("#dogNum").val();
 			var dogSize = $("#dogSize").val();
 			var peopleNum = $("#peopleNum").val();
-			var img_room = $("#img_room").val();
 			
 			if(roomName == ""){
 				alert("객실명을 입력하세요.");
@@ -167,12 +167,8 @@
 			} else if(peopleNum == ""){
 				alert("수용 가능한 방문자 수를 입력하세요.");
 				peopleNum.focus();
-			} else if(img_room == ""){
-				alert("객실 이미지를 등록하세요.");
-				img_room.focus();
-			}
+			} 
 			$('input[name=idx]').attr('value',"1");
-			document.getElementById('roomImg').submit();
 			document.getElementById('roomInfo').submit();
 
 			console.log($('input[name=idx]').val());

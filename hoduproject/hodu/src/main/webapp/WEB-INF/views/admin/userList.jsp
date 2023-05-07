@@ -56,15 +56,17 @@
 							<th style="text-align: center">회원 탈퇴</th>
 						</tr>
 						 <c:forEach var="list" items="${userList }" varStatus="status" >
-							<tr>
+							<tr >
 								<td data-th="Supplier Code" width="10%">${list.userId }</td>
 								<td data-th="Supplier Name" width="10%">${list.userName }</td>
 								<td data-th="Invoice Number"><fmt:formatDate value="${list.userBirth }" pattern="yy.MM.dd"/></td>
 								<td data-th="Invoice Number">${list.sex }</td>
 								<td data-th="Invoice Number">${list.userMobile }</td>
 								<td data-th="Invoice Number">${list.userEmail }</td>
-								<td>
-									<button id="userDelete" class="btn btn-primary btn-block" type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px; margin-bottom: 0px">삭제</button>
+								<td id="userDelete">
+									<button class="btn btn-primary btn-block" value="${list.userId }"
+									type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; 
+									margin-top: 0px; margin-bottom: 0px" onclick="call_confirm(${list.userId });">삭제</button>
 								</td>
 							</tr>
 						</c:forEach>
@@ -134,16 +136,15 @@
     });
 	 
 
-	$(function(){
-		$('#userDelete').click(function(){
-			if(confirm("삭제하시겠습니까?")){
-				self.location.href = "userDelete.do?userId=${userView.userId}";
+		function call_confirm(userID){
+			   if(confirm("삭제하시겠습니까?")){
+				location.href = "${path}/userDelete.do?userId="+userID;
 				alert("삭제 되었습니다.");
 			} else{
 				alert("취소 되었습니다.");
 			}
-		})
-	});
+			
+		}
 </script>
 
 

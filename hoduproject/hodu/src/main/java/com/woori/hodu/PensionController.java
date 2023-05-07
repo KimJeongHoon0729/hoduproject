@@ -103,9 +103,111 @@ public class PensionController {
 	}
 	
 	@RequestMapping("roomInfo.do")
-	public String roomInfo(RoomVO vo, @RequestParam("idx") int idx, @RequestParam("pensionName") String pensionName,HttpSession session, RedirectAttributes redirect){
-		pensionService.roomRegister(vo);
+	public String roomInfo(RoomVO vo,@RequestParam("room_img1") MultipartFile room_img1,@RequestParam("room_img2") MultipartFile room_img2,@RequestParam("room_img3") MultipartFile room_img3,
+			@RequestParam("room_img4") MultipartFile room_img4,@RequestParam("room_img5") MultipartFile room_img5,@RequestParam("room_img6") MultipartFile room_img6, @RequestParam("idx") int idx, 
+			@RequestParam("pensionName") String pensionName,HttpSession session, RedirectAttributes redirect){
 		
+		String filename = "";
+
+		String uuid= UUID.randomUUID().toString();
+			
+			if(!room_img1.isEmpty()) {
+				filename = uuid+"_"+room_img1.getOriginalFilename();
+				System.out.println(room_img1.getOriginalFilename());
+				
+				String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
+				String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+				
+				try {
+					new File(imgUploadPath).mkdirs(); 
+					room_img1.transferTo(new File(imgUploadPath+filename));
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				vo.setImg_room1(filename);
+				
+			}
+			if(!room_img2.isEmpty()) {
+				filename = uuid+"_"+room_img2.getOriginalFilename();
+				System.out.println(room_img2.getOriginalFilename());
+				
+				String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
+				String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+				
+				try {
+					new File(imgUploadPath).mkdirs(); 
+					room_img2.transferTo(new File(imgUploadPath+filename));
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				vo.setImg_room2(filename);
+			
+			}
+			if(!room_img3.isEmpty()) {
+				filename = uuid+"_"+room_img3.getOriginalFilename();
+				System.out.println(room_img3.getOriginalFilename());
+				
+				String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
+				String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+				
+				try {
+					new File(imgUploadPath).mkdirs(); 
+					room_img3.transferTo(new File(imgUploadPath+filename));
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				vo.setImg_room3(filename);
+				
+			}
+			if(!room_img4.isEmpty()) {
+				filename = uuid+"_"+room_img4.getOriginalFilename();
+				System.out.println(room_img4.getOriginalFilename());
+				
+				String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
+				String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+				
+				try {
+					new File(imgUploadPath).mkdirs(); 
+					room_img4.transferTo(new File(imgUploadPath+filename));
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				vo.setImg_room4(filename);
+				
+			}
+			if(!room_img5.isEmpty()) {
+				filename = uuid+"_"+room_img5.getOriginalFilename();
+				System.out.println(room_img5.getOriginalFilename());
+				
+				String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
+				String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+				
+				try {
+					new File(imgUploadPath).mkdirs(); 
+					room_img5.transferTo(new File(imgUploadPath+filename));
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				vo.setImg_room5(filename);
+			
+			}
+			if(!room_img6.isEmpty()) {
+				filename = uuid+"_"+room_img6.getOriginalFilename();
+				System.out.println(room_img6.getOriginalFilename());
+				
+				String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
+				String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+				
+				try {
+					new File(imgUploadPath).mkdirs(); 
+					room_img6.transferTo(new File(imgUploadPath+filename));
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				vo.setImg_room6(filename);
+				
+			}
+			pensionService.roomRegister(vo);
 		if(idx == 0) {
 
 			return "partner/roomRegister";
@@ -116,32 +218,6 @@ public class PensionController {
 		
 	}
 	
-	@RequestMapping("roomImg.do")
-	public String roomImg(RoomVO vo, List<MultipartFile> room_img) throws Exception {
-		String filename = "";
-		
-		if(!room_img.isEmpty()) {
-			for(int i=0;i<room_img.size();i++) {
-				
-			filename = room_img.get(i).getOriginalFilename();
-
-			
-			String path = "C:\\Users\\woori\\Documents\\workspace-sts-3.9.18.RELEASE\\.metadata\\.plugins\\org.eclipse.wst.server.core"
-					+ "\\tmp2\\wtpwebapps\\spring\\resources\\images\\";
-			
-			
-				try {
-					new File(path).mkdirs(); 
-					room_img.get(i).transferTo(new File(path+filename));
-				} catch(Exception e) {
-					e.printStackTrace();
-				}
-				vo.setImg_room(filename);
-			
-			}
-		}
-		return "partner/roomRegister";
-	}
 	
 	@RequestMapping("RoomList.do")
 	public String RoomList(RoomVO vo, Model model) {

@@ -30,7 +30,7 @@
                   </div>
                  	<div class="area" style="margin-bottom: 15px"> 
 							<select id="area" class="form-control" name="roomName">
-								<option selected disabled>펜션을 선택하세요.</option>
+								<option selected disabled>객실을 선택하세요.</option>
 								<c:forEach var="RoomSelect" items="${RoomSelect }">
 								<option value="${RoomSelect }">${RoomSelect }</option>
 								</c:forEach>
