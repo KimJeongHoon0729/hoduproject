@@ -94,6 +94,12 @@
 
 						</div>
 					</c:when>
+					<c:when test="${sessionScope.partnerId == 'admin'}">
+						<div class="fh5co-menu-2">
+							<a href="partnerList.do" >파트너관리</a>
+							<a href="logout.do">로그아웃</a>
+						</div>
+					</c:when>
 					<c:otherwise>
 						<div class="fh5co-menu-2">
 							<a href="/partner/myPpage">마이페이지</a>

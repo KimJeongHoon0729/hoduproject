@@ -68,7 +68,6 @@ public class UserJoinServiceImpl implements UserJoinService {
 	//Q 리스트 출력
 	@Override
 	public List<QnaVO> QList(Criteria cri) {
-		// TODO Auto-generated method stub
 		return userJoin.QList(cri);
 	}
 	

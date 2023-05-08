@@ -80,7 +80,7 @@
 			<div class="fh5co-main-nav">
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="/user/list_map">펜션 목록</a>
+						<a href="adminCList.do?pageNum=1&amount=10">커뮤니티</a>
 						<a href="QList.do?pageNum=1&amount=10" >Q&A</a>
 					</div>
 					<div class="fh5co-logo">
@@ -93,9 +93,15 @@
 							<a href="login" >로그인</a>
 						</div>
 					</c:when>
-					<c:when test="${sessionScope.userId == 'admin' || sessionScope.partnerId == 'admin'  }">
+					<c:when test="${sessionScope.userId == 'admin'}">
 						<div class="fh5co-menu-2">
 							<a href="userList.do" >회원관리</a>
+							<a href="logout.do">로그아웃</a>
+						</div>
+					</c:when>
+					<c:when test="${sessionScope.partnerId == 'admin'}">
+						<div class="fh5co-menu-2">
+							<a href="partnerList.do" >파트너관리</a>
 							<a href="logout.do">로그아웃</a>
 						</div>
 					</c:when>

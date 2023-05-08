@@ -29,6 +29,7 @@
 				                <option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>--</option>
 				                <option value="I" <c:out value="${pageMaker.cri.type eq 'I'?'selected':'' }"/>>아이디</option>
 				                <option value="N" <c:out value="${pageMaker.cri.type eq 'N'?'selected':'' }"/>>이름</option>
+				                <option value="B" <c:out value="${pageMaker.cri.type eq 'b'?'selected':'' }"/>>사업자등록번호</option>
 				            </select>    
 				            <input type="text" name="keyword" style="width: 440px; height: 41px;">
 				            <button>Search</button>
@@ -43,26 +44,24 @@
 				<table class="table table-hover" id="modalTable" style="text-align: center">
 					<tbody style="font-family: 'Pretendard-Regular';">
 						<tr>
-							<th style="text-align: center">아이디</th>
-							<th style="text-align: center">이름</th>
-							<th style="text-align: center">생년월일</th>
-							<th style="text-align: center">성별</th>
-							<th style="text-align: center">휴대폰</th>
+							<th style="text-align: center">파트너 아이디</th>
+							<th style="text-align: center">파트너 이름</th>
+							<th style="text-align: center">사업자 등록증</th>
+							<th style="text-align: center">전화번호</th>
 							<th style="text-align: center">이메일</th>
-							<th style="text-align: center">회원 탈퇴</th>
+							<th style="text-align: center">파트너 탈퇴</th>
 						</tr>
-						 <c:forEach var="list" items="${userList }" varStatus="status" >
+						 <c:forEach var="list" items="${partnerList }" varStatus="status" >
 							<tr >
-								<td data-th="Supplier Code" width="10%">${list.userId }</td>
-								<td data-th="Supplier Name" width="10%">${list.userName }</td>
-								<td data-th="Invoice Number"><fmt:formatDate value="${list.userBirth }" pattern="yy.MM.dd"/></td>
-								<td data-th="Invoice Number">${list.sex }</td>
-								<td data-th="Invoice Number">${list.userMobile }</td>
-								<td data-th="Invoice Number">${list.userEmail }</td>
+								<td data-th="Supplier Code" width="10%">${list.partnerId }</td>
+								<td data-th="Supplier Name" width="10%">${list.partnerName }</td>
+								<td data-th="Supplier Name" width="10%">${list.businessNum }</td>
+								<td data-th="Supplier Name" width="10%">${list.partnerMobile }</td>
+								<td data-th="Supplier Name" width="10%">${list.partnerEmail }</td>
 								<td id="userDelete">
-									<button class="btn btn-primary btn-block" value="${list.userId }"
+									<button class="btn btn-primary btn-block" value="${list.partnerId }"
 									type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; 
-									margin-top: 0px; margin-bottom: 0px" onclick="call_confirm(${list.userId });">삭제</button>
+									margin-top: 0px; margin-bottom: 0px" onclick="call_confirm(${list.partnerId });">삭제</button>
 								</td>
 							</tr>
 						</c:forEach>
@@ -82,13 +81,13 @@
 				<div class="text-center">
 					<ul class="pagination">
 						<c:if test="${pageMaker.prev }">
-						<li><a href="${path }/userList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+						<li><a href="${path }/partnerList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
 						</c:if>
 						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-						<li><a href="${path }/userList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+						<li><a href="${path }/partnerList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
 						</c:forEach>
 						<c:if test="${pageMaker.next }">
-						<li><a href="${path }/userList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+						<li><a href="${path }/partnerList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
 						</c:if>
 					</ul>
 				</div>
@@ -130,15 +129,15 @@
     });
 	 
 
-		function call_confirm(userID){
-			   if(confirm("삭제하시겠습니까?")){
-				location.href = "${path}/userDelete.do?userId="+userID;
-				alert("삭제 되었습니다.");
-			} else{
-				alert("취소 되었습니다.");
-			}
-			
+	function call_confirm(partnerID){
+		   if(confirm("삭제하시겠습니까?")){
+			location.href = "${path}/partnerDelete.do?partnerId="+partnerID;
+			alert("삭제 되었습니다.");
+		} else{
+			alert("취소 되었습니다.");
 		}
+		
+	}
 </script>
 
 

@@ -221,6 +221,7 @@ public class PensionController {
 		
 		return "community";
 	}
+	
 	// 내가 쓴 글 리스트
 	@RequestMapping("CMyList.do")
 	public String CMyList(CMyCriteria cri, Model model) {
