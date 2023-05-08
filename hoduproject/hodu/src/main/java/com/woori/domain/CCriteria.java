@@ -21,7 +21,6 @@ public class CCriteria {
 	}
 
 	public CCriteria() {
-		// TODO Auto-generated constructor stub
 		this(1,10);
 		this.skip = 0;
 	}

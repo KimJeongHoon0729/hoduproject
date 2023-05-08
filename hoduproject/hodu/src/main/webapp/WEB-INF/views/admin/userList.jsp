@@ -26,13 +26,9 @@
 					<div class="search_wrap">
 				        <div class="search_area">
 				        	<select name="type" style="width: 165px; height: 41px;">
-				                <option value="" <c:out value="${cPageMaker.cri.type == null?'selected':'' }"/>>--</option>
-				                <option value="T" <c:out value="${cPageMaker.cri.type eq 'T'?'selected':'' }"/>>제목</option>
-				                <option value="C" <c:out value="${cPageMaker.cri.type eq 'C'?'selected':'' }"/>>내용</option>
-				                <option value="W" <c:out value="${cPageMaker.cri.type eq 'W'?'selected':'' }"/>>작성자</option>
-				                <option value="TC" <c:out value="${cPageMaker.cri.type eq 'TC'?'selected':'' }"/>>제목 + 내용</option>
-				                <option value="TW" <c:out value="${cPageMaker.cri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
-				                <option value="TCW" <c:out value="${cPageMaker.cri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
+				                <option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>--</option>
+				                <option value="I" <c:out value="${pageMaker.cri.type eq 'I'?'selected':'' }"/>>아이디</option>
+				                <option value="N" <c:out value="${pageMaker.cri.type eq 'N'?'selected':'' }"/>>이름</option>
 				            </select>    
 				            <input type="text" name="keyword" style="width: 440px; height: 41px;">
 				            <button>Search</button>
@@ -76,28 +72,26 @@
 				
 
 				<br></br>
-<!-- 
 				<form id="moveForm" method="get">
-					<input type="hidden" name="pageNum" value="${cPageMaker.cri.pageNum }">
-	        		<input type="hidden" name="amount" value="${cPageMaker.cri.amount }">   
-	        		<input type="hidden" name="keyword" value="${cPageMaker.cri.keyword }">
-	        		<input type="hidden" name="type" value="${cPageMaker.cri.type }">
+					<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+	        		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">   
+	        		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
+	        		<input type="hidden" name="type" value="${pageMaker.cri.type }">
 				</form>
 				
 				<div class="text-center">
 					<ul class="pagination">
-						<c:if test="${cPageMaker.prev }">
-						<li><a href="${path }/CList.do?pageNum=${cPageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+						<c:if test="${pageMaker.prev }">
+						<li><a href="${path }/userList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
 						</c:if>
-						<c:forEach var="num" begin="${cPageMaker.startPage }" end="${cPageMaker.endPage }">
-						<li><a href="${path }/CList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+						<li><a href="${path }/userList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
 						</c:forEach>
-						<c:if test="${cPageMaker.next }">
-						<li><a href="${path }/CList.do?pageNum=${cPageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+						<c:if test="${pageMaker.next }">
+						<li><a href="${path }/userList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
 						</c:if>
 					</ul>
 				</div>
- -->
 			</div>
 		</div>
 </div>
