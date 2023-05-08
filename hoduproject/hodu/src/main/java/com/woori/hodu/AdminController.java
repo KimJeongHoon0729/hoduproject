@@ -28,10 +28,7 @@ public class AdminController {
 		return "/admin/userList";
 	}
 	
-	@RequestMapping("userView.do")
-	public void userView (UserVO vo, Model model) {
-		model.addAttribute("userView", adminService.userView(vo));
-	}
+	
 	
 	@RequestMapping("userDelete.do")
 	public String userDelete(@RequestParam("userId") String userId) {

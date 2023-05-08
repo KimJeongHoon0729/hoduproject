@@ -32,10 +32,10 @@
                <div class="col-md-8 col-md-offset-2">
                   <h2 class="heading to-animate"  style="font-family: 'Pretendard-Regular';">객실 등록</h2>
                </div>
-            </div>
+            
           
 
-          <form id="roomInfo" method="post" action="${path }/roomInfo.do?partnerId=${partnerId }" enctype="multipart/form-data">
+          <form id="roomInfo" method="post" action="${path }/roomRegister.do" enctype="multipart/form-data">
                 <div class="container" style="text-align:center;padding-left: 4px">
                 
                 <div class="col-md-6 col-md-offset-3">
@@ -44,7 +44,7 @@
                   <div class="form-group">
                      <label for="roomName" class="sr-only">roomName</label>
                      <input id="roomName" name="roomName" class="form-control" placeholder="객실명" type="text">
-                
+                     <input id="partnerId" name="partnerId" value="${sessionScope.partnerId }" type="hidden">
                      <input id="pensionName" name="pensionName" value="${sessionScope.pensionName }" type="hidden">
                  
                   </div>
@@ -82,30 +82,32 @@
                 </div>
                   <input id="idx" name="idx" value="" type="hidden">
             </div>
-         </div>
+         
 
-         <p style="margin-bottom: 14px"></p>
-         <div class="col-md-6 col-md-offset-3">
-	         <div class="form-group ">  
-				 <p style="text-align: left; margin-bottom: 10px"> 객실 사진 업로드</p>
-			     <p style="width: 102%">
-				 <input id="img_room1" type="file" name="img_room1" class="form-control" onchange="readURL(this)">
-			  	 <input id="img_room2" type="file" name="img_room2" class="form-control" onchange="readURL(this)">
-			  	 <input id="img_room3" type="file" name="img_room3" class="form-control" onchange="readURL(this)">
-			  	 <input id="img_room4" type="file" name="img_room4" class="form-control" onchange="readURL(this)">
-			  	 <input id="img_room5" type="file" name="img_room5" class="form-control" onchange="readURL(this)">
-			  	 <input id="img_room6" type="file" name="img_room6" class="form-control" onchange="readURL(this)">
-			     
-			     <img id="preview">
-			     </p>
-	             
-	             <div class="find-btn" >
-	             <input class="btn btn-primary" onclick="next();" value="다음" type="button" style="font-family: 'Pretendard-Regular';"/>
-	             <input class="btn btn-primary" onclick="_submit();" value="제출" type="button"  style="font-family: 'Pretendard-Regular';"/>
-			 </div>
-			 </div>
+	         <p style="margin-bottom: 14px"></p>
+	         <div class="col-md-6 col-md-offset-3">
+		         <div class="form-group ">  
+					 <p style="text-align: left; margin-bottom: 10px"> 객실 사진 업로드</p>
+				     <p style="width: 102%">
+					 <input id="img_room1" type="file" name="file1" class="form-control" onchange="readURL(this)">
+				  	 <input id="img_room2" type="file" name="file2" class="form-control" onchange="readURL(this)">
+				   	 <input id="img_room3" type="file" name="file3" class="form-control" onchange="readURL(this)">
+				  	 <input id="img_room4" type="file" name="file4" class="form-control" onchange="readURL(this)">
+				  	 <input id="img_room5" type="file" name="file5" class="form-control" onchange="readURL(this)">
+				  	 <input id="img_room6" type="file" name="file6" class="form-control" onchange="readURL(this)">
+				      
+				     <img id="preview">
+				     </p>
+		             
+		             <div class="find-btn" >
+		             <input class="btn btn-primary" onclick="next();" value="다음" type="button" style="font-family: 'Pretendard-Regular';"/>
+		             <input class="btn btn-primary" onclick="_submit();" value="제출" type="button"  style="font-family: 'Pretendard-Regular';"/>
+				 </div>
+				 </div>
+				</div>
 			</div>
 			 </form> 
+			 </div>
 			 </div> 
       
    
@@ -123,6 +125,7 @@
 			var dogNum = $("#dogNum").val();
 			var dogSize = $("#dogSize").text();
 			var peopleNum = $("#peopleNum").val();
+			
 			
 			if(roomName == ""){
 				alert("객실명을 입력하세요.");
