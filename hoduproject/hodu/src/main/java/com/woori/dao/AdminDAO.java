@@ -25,7 +25,9 @@ public interface AdminDAO {
 
 	// 파트너 삭제
 	public void partnerDelete(String userId);
-
+	
+	// 게시글 삭제
+	public void communityDelete(int index);
 
 	
 }

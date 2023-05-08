@@ -33,4 +33,6 @@ public interface AdminService {
 	// 파트너 삭제
 	public void partnerDelete(String userId);
 
+	// 커뮤니티 삭제
+	public void communityDelete(int index);
 }

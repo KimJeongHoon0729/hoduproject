@@ -49,6 +49,12 @@ public class AdminDAOImpl implements AdminDAO {
 	public void partnerDelete(String partnerId) {
 		adminSession.delete("admin.partnerDelete", partnerId);
 	}
+	
+	@Override
+	public void communityDelete(int index) {
+		adminSession.delete("admin.communityDelete", index);
+		
+	}
 
 	
 }

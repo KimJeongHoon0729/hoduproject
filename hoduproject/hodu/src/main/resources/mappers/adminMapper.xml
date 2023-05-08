@@ -89,4 +89,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from partnerjoin where partnerId=#{partnerId}
 	</delete>
 	
+	<delete id="communityDelete">
+		delete from community where community.index=#{index}
+	</delete>
+	
 </mapper>

@@ -48,7 +48,10 @@ public class AdminServiceImpl implements AdminService {
 		adminDao.partnerDelete(partnerId);	
 	}
 
-	
+	@Override
+	public void communityDelete(int index) {
+		adminDao.communityDelete(index);
+	}
 
 
 }
