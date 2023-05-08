@@ -4,17 +4,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="admin">
-	
-	<select id="userView" resultType="com.woori.domain.UserVO">
-		select * from userjoin
-	</select>
-	
-	<delete id="userDelete">
-		delete from userjoin where userId=#{userId}
-	</delete>
-	
-	
-<!-- 검색 조건문 -->
+
+	<!-- 검색 조건문 -->
     <sql id="criteria">
         <trim prefix="where (" suffix=")" prefixOverrides="OR">
             <foreach collection="typeArr" item="type">
@@ -34,20 +25,68 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </sql>	
     
     <!-- 회원관리 리스트 출력 -->
-	<select id="userList" resultType="com.woori.domain.UserVO" parameterType="com.woori.domain.UserCriteria">
-		select * from userJoin 
+	<select id="userList" resultType="com.woori.domain.UserVO" parameterType="com.woori.domain.AdminCriteria">
+		select * from userjoin 
 			<if test="keyword != null">
                  <include refid="criteria"></include>
             </if>
-		order by userId DESC    limit #{skip},#{amount} 
+		order by userId ASC    limit #{skip},#{amount} 
 	</select>
 	
 	<!-- 게시물 개수 -->
 	<select id="getTotal" resultType="int">
-		select count(*) from userJoin  
+		select count(*) from userjoin  
 		<if test="keyword != null">
             <include refid="criteria"></include>
         </if>   
 	</select>
+	
+	<delete id="userDelete">
+		delete from userjoin where userId=#{userId}
+	</delete>
+	
+	
+	<!-- 검색 조건문 -->
+    <sql id="Pcriteria">
+        <trim prefix="where (" suffix=")" prefixOverrides="OR">
+            <foreach collection="typeArr" item="type">
+                <trim prefix="OR">
+                    <choose>
+                        <when test="type == 'I'.toString()">
+                            partnerId like concat('%',#{keyword},'%') 
+                        </when>
+                        <when test="type == 'N'.toString()">
+                            partnerName like concat('%',#{keyword},'%') 
+                        </when>
+                        <when test="type == 'B'.toString()">
+                            businessNum like concat('%',#{keyword},'%') 
+                        </when>
+                    </choose>
+                </trim>
+            </foreach>
+        </trim>
+    
+    </sql>	
+    
+    <!-- 파트너관리 리스트 출력 -->
+	<select id="partnerList" resultType="com.woori.domain.PartnerVO" parameterType="com.woori.domain.AdminCriteria">
+		select * from partnerjoin 
+			<if test="keyword != null">
+                 <include refid="Pcriteria"></include>
+            </if>
+		order by partnerId ASC    limit #{skip},#{amount} 
+	</select>
+	
+	<!-- 게시물 개수 -->
+	<select id="pGetTotal" resultType="int">
+		select count(*) from partnerjoin  
+		<if test="keyword != null">
+            <include refid="Pcriteria"></include>
+        </if>   
+	</select>
+	
+	<delete id="partnerDelete">
+		delete from partnerjoin where partnerId=#{partnerId}
+	</delete>
 	
 </mapper>

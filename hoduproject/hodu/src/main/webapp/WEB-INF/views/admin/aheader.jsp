@@ -93,9 +93,15 @@
 							<a href="login" >로그인</a>
 						</div>
 					</c:when>
-					<c:when test="${sessionScope.userId == 'admin' || sessionScope.partnerId == 'admin'  }">
+					<c:when test="${sessionScope.userId == 'admin'}">
 						<div class="fh5co-menu-2">
 							<a href="userList.do" >회원관리</a>
+							<a href="logout.do">로그아웃</a>
+						</div>
+					</c:when>
+					<c:when test="${sessionScope.partnerId == 'admin'}">
+						<div class="fh5co-menu-2">
+							<a href="partnerList.do" >파트너관리</a>
 							<a href="logout.do">로그아웃</a>
 						</div>
 					</c:when>

@@ -7,7 +7,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.woori.dao.AdminDAOImpl;
-import com.woori.domain.UserCriteria;
+import com.woori.domain.AdminCriteria;
+import com.woori.domain.PartnerVO;
 import com.woori.domain.UserVO;
 
 @Service
@@ -17,18 +18,34 @@ public class AdminServiceImpl implements AdminService {
 	AdminDAOImpl adminDao;
 	
 	@Override
-	public List<UserVO> userList(UserCriteria cri) {
+	public List<UserVO> userList(AdminCriteria cri) {
 		return adminDao.userList(cri);
 	}
 	
 	@Override
-	public int getTotal(UserCriteria cri) {
+	public int getTotal(AdminCriteria cri) {
 		return adminDao.getTotal(cri);
 	}
 	
 	@Override
 	public void userDelete(String userId) {
 		adminDao.userDelete(userId);	
+	}
+	
+	
+	@Override
+	public List<PartnerVO> partnerList(AdminCriteria cri) {
+		return adminDao.partnerList(cri);
+	}
+	
+	@Override
+	public int pGetTotal(AdminCriteria cri) {
+		return adminDao.pGetTotal(cri);
+	}
+	
+	@Override
+	public void partnerDelete(String partnerId) {
+		adminDao.partnerDelete(partnerId);	
 	}
 
 	

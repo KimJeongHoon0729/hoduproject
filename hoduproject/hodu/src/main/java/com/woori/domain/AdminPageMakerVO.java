@@ -1,15 +1,15 @@
 package com.woori.domain;
 
-public class UserPageMakerVO {
+public class AdminPageMakerVO {
 	
 	private int startPage;
 	private int endPage;
 	private boolean prev,next;
 	private int total;
 	
-	private UserCriteria cri;
+	private AdminCriteria cri;
 
-	public UserPageMakerVO(UserCriteria cri, int total) {
+	public AdminPageMakerVO(AdminCriteria cri, int total) {
 		
 		this.cri = cri;
 		this.total = total;
@@ -57,15 +57,15 @@ public class UserPageMakerVO {
 	public void setTotal(int total) {
 		this.total = total;
 	}
-	public UserCriteria getCri() {
+	public AdminCriteria getCri() {
 		return cri;
 	}
-	public void setCri(UserCriteria cri) {
+	public void setCri(AdminCriteria cri) {
 		this.cri = cri;
 	}
 	@Override
 	public String toString() {
-		return "CPageMakerVO [startPage=" + startPage + ", endPage=" + endPage + ", prev=" + prev + ", next=" + next
+		return "AdminPageMakerVO [startPage=" + startPage + ", endPage=" + endPage + ", prev=" + prev + ", next=" + next
 				+ ", total=" + total + ", cri=" + cri + "]";
 	}
 

@@ -2,7 +2,7 @@ package com.woori.domain;
 
 import java.util.Arrays;
 
-public class UserCriteria {
+public class AdminCriteria {
 
 	private int pageNum;
 	private int amount;
@@ -11,14 +11,15 @@ public class UserCriteria {
 	private String type;
 	private String[] typeArr;
 	private String userId;
+	private String partnerId;
 	
-	public UserCriteria() {
+	public AdminCriteria() {
 		// TODO Auto-generated constructor stub
 		this(1,10);
 		this.skip = 0;
 	}
 	
-	public UserCriteria(int pageNum, int amount) {
+	public AdminCriteria(int pageNum, int amount) {
 		this.pageNum = pageNum;
 		this.amount = amount;
 		this.skip = (pageNum-1)*amount;
@@ -84,10 +85,19 @@ public class UserCriteria {
 		this.userId = userId;
 	}
 
+	public String getPartnerId() {
+		return partnerId;
+	}
+
+	public void setPartnerId(String partnerId) {
+		this.partnerId = partnerId;
+	}
+
 	@Override
 	public String toString() {
-		return "UserCriteria [pageNum=" + pageNum + ", amount=" + amount + ", skip=" + skip + ", keyword=" + keyword
-				+ ", type=" + type + ", typeArr=" + Arrays.toString(typeArr) + ", userId=" + userId + "]";
+		return "AdminCriteria [pageNum=" + pageNum + ", amount=" + amount + ", skip=" + skip + ", keyword=" + keyword
+				+ ", type=" + type + ", typeArr=" + Arrays.toString(typeArr) + ", userId=" + userId + ", partnerId="
+				+ partnerId + "]";
 	}
 
 	
