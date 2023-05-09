@@ -146,7 +146,9 @@
 	
 					<div class="col-sm-12" style="text-align: -webkit-center;">
 						<button class="btn btn-primary btn-block" type="button" onclick="location.href='adminCList.do?pageNum=1&amount=10'" style="width: 70px; display: inline-block; font-family: 'Pretendard-Regular';">목록</button>
-						<button id="cdelete" class="btn btn-primary btn-block" type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">삭제</button>			
+						<button id="cdelete" class="btn btn-primary btn-block" type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px">삭제</button>		
+						
+						
 					</div>
 					
 		
@@ -262,7 +264,13 @@
 							<div class="container" style="width: 640px;">
 						  <div class="card">
 						    <div class="card-body" style="margin-top: 50px">
-						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">비밀 댓글</h4>
+						      
+						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">비밀 댓글
+						      <button id="cdelete" class="btn btn-primary btn-block" type="button" style="width: 8%; height: 24px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px;padding-left: 11px;padding-top: 3px" >삭제</button>
+
+						      </h4>
+						      		
+						      						      
 						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">비밀 댓글입니다.</p>
 						     
 						    </div>

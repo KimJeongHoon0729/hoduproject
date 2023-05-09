@@ -106,6 +106,7 @@
 							<a href="logout.do">로그아웃</a>
 						</div>
 					</c:when>
+					
 					<c:when test="${sessionScope.partnerId == 'admin'}">
 						<div class="fh5co-menu-1">
 							<a href="adminCList.do">커뮤니티</a>
@@ -120,12 +121,47 @@
 						</div>
 					</c:when>
 					
-					<c:otherwise>
+					<c:when test="${sessionScope.userid != null && sessionScope.userId != 'admin'}">
+						<div class="fh5co-menu-1">
+							<a href="user/list_map">펜션 목록</a>
+							<a href="QList.do?pageNum=1&amount=10" >Q&A</a>
+						</div>
+						<div class="fh5co-logo">
+							<a href="/">HODU</a>
+						</div>
 						<div class="fh5co-menu-2">
-							<a href="/user/mypage">마이페이지</a>
+							<a href="user/mypage" >마이페이지</a>
 							<a href="logout.do">로그아웃</a>
 						</div>
-					</c:otherwise>
+					</c:when>
+					
+					<c:when test="${sessionScope.partnerId != null && sessionScope.partnerId != 'admin'}">
+						<div class="fh5co-menu-1">
+							<a href="user/list_map">내 펜션 관리</a>
+							<a href="QList.do?pageNum=1&amount=10" >Q&A</a>
+						</div>
+						<div class="fh5co-logo">
+							<a href="/">HODU</a>
+						</div>
+						<div class="fh5co-menu-2">
+							<a href="/partner/myPpage">마이페이지</a>
+							<a href="../../logout.do">로그아웃</a>
+						</div>
+					</c:when>
+				<c:otherwise>
+					<div class="fh5co-menu-1">
+						<a href="/user/list_map">펜션 목록</a>
+						<a href="QList.do?pageNum=1&amount=10" >Q&A</a>
+					</div>
+					<div class="fh5co-logo">
+						<a href="/">HODU</a>
+					</div>
+					<div class="fh5co-menu-2">
+						<a href="/user/mypage">마이페이지</a>
+						<a href="logout.do">로그아웃</a>
+					</div>
+				</c:otherwise>
+				
 				</c:choose>	
 				</div>
 				
