@@ -40,24 +40,24 @@
 				</div>
 			</div>
 			<p style="margin-bottom: 0px"></p>
-			<div class="container" style="width: 100%;">
+			<div class="container" style="width: 80%;">
 				<table class="table table-hover" id="modalTable" style="text-align: center">
 					<tbody style="font-family: 'Pretendard-Regular';">
 						<tr>
 							<th style="text-align: center">파트너 아이디</th>
 							<th style="text-align: center">파트너 이름</th>
-							<th style="text-align: center">사업자 등록증</th>
+							<th style="text-align: center">사업자 등록번호</th>
 							<th style="text-align: center">전화번호</th>
 							<th style="text-align: center">이메일</th>
-							<th style="text-align: center">파트너 탈퇴</th>
+							<th style="text-align: center;">파트너 탈퇴</th>
 						</tr>
 						 <c:forEach var="list" items="${partnerList }" varStatus="status" >
 							<tr >
-								<td data-th="Supplier Code" width="10%">${list.partnerId }</td>
-								<td data-th="Supplier Name" width="10%">${list.partnerName }</td>
-								<td data-th="Supplier Name" width="10%">${list.businessNum }</td>
-								<td data-th="Supplier Name" width="10%">${list.partnerMobile }</td>
-								<td data-th="Supplier Name" width="10%">${list.partnerEmail }</td>
+								<td data-th="Supplier Code" width="15%">${list.partnerId }</td>
+								<td data-th="Supplier Name" width="15%">${list.partnerName }</td>
+								<td data-th="Supplier Name">${list.businessNum }</td>
+								<td data-th="Supplier Name">${list.partnerMobile }</td>
+								<td data-th="Supplier Name" width="30%">${list.partnerEmail }</td>
 								<td id="userDelete">
 									<button class="btn btn-primary btn-block" value="${list.partnerId }"
 									type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; 

@@ -55,6 +55,11 @@ public class AdminDAOImpl implements AdminDAO {
 		adminSession.delete("admin.communityDelete", index);
 		
 	}
+	
+	@Override
+	public void qnaDelete(int Q_idx) {
+		adminSession.delete("admin.qnaDelete", Q_idx);
+	}
 
 	
 }

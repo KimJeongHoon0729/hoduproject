@@ -91,8 +91,8 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	
 	//Q 삭제
 	@Override
-	public void QDelete(int Q_inx) {
-		sqlSession.delete("user.QDelete", Q_inx);
+	public void QDelete(int Q_idx) {
+		sqlSession.delete("user.QDelete", Q_idx);
 	}
 	
 	

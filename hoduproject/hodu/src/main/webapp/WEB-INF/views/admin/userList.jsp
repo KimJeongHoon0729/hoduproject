@@ -130,15 +130,15 @@
     });
 	 
 
-		function call_confirm(userID){
-			   if(confirm("삭제하시겠습니까?")){
-				location.href = "${path}/userDelete.do?userId="+userID;
-				alert("삭제 되었습니다.");
-			} else{
-				alert("취소 되었습니다.");
-			}
-			
+	function call_confirm(userID){
+		   if(confirm("삭제하시겠습니까?")){
+			location.href = "${path}/userDelete.do?userId="+userID;
+			alert("삭제 되었습니다.");
+		} else{
+			alert("취소 되었습니다.");
 		}
+		
+	}
 </script>
 
 

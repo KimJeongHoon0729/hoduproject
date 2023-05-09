@@ -81,7 +81,7 @@
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
 						<a href="adminCList.do?pageNum=1&amount=10">커뮤니티</a>
-						<a href="QList.do?pageNum=1&amount=10" >Q&A</a>
+						<a href="adminQList.do?pageNum=1&amount=10" >Q&A</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="/">HODU</a>

@@ -52,20 +52,14 @@
 							<th style="text-align: center">작성자</th>
 							<th style="text-align: center">날짜</th>
 							<th style="text-align: center">댓글 수</th>
-							<th style="text-align: center">삭제</th>
 						</tr>
 						 <c:forEach var="community" items="${CList }" varStatus="status" >
-							<tr id="add-btn" onclick="location.href='CView.do?index=${community.index}'" style="cursor:pointer;">
+							<tr id="add-btn" onclick="location.href='adminCView.do?index=${community.index}'" style="cursor:pointer;">
 								<td data-th="Supplier Code">${community.index }</td>
 								<td data-th="Supplier Name">${community.title }</td>
 								<td data-th="Invoice Number">${community.writer }</td>
 								<td data-th="Invoice Date"><fmt:formatDate value="${community.write_date }" pattern="yyyy-MM-dd"/></td>
 								<td data-th="Due Date">${Reply[status.index] } </td>
-								<td id="userDelete">
-									<button class="btn btn-primary btn-block" value="${community.index }"
-									type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; 
-									margin-top: 0px; margin-bottom: 0px" onclick="call_confirm(${community.index });">삭제</button>
-								</td>
 							</tr>
 						</c:forEach>
 					</tbody>

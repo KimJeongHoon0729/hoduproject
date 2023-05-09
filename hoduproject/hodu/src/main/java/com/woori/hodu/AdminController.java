@@ -10,16 +10,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.woori.domain.AdminCriteria;
 import com.woori.domain.AdminPageMakerVO;
 import com.woori.domain.CCriteria;
 import com.woori.domain.CPageMakerVO;
 import com.woori.domain.CommunityVO;
+import com.woori.domain.Criteria;
+import com.woori.domain.PageMakerVO;
 import com.woori.domain.PartnerVO;
+import com.woori.domain.QnaVO;
+import com.woori.domain.ReplyVO;
 import com.woori.domain.UserVO;
 import com.woori.service.AdminServiceImpl;
 import com.woori.service.PensionServiceImpl;
+import com.woori.service.UserJoinServiceImpl;
 
 @Controller
 public class AdminController {
@@ -30,6 +36,8 @@ public class AdminController {
 	@Inject
 	PensionServiceImpl pensionService;
 	
+	@Inject
+	UserJoinServiceImpl userJoinService;
 
 	@RequestMapping("userList.do")
 	public String userList (AdminCriteria cri, Model model) {
@@ -102,5 +110,49 @@ public class AdminController {
 		adminService.communityDelete(index);
 		return "redirect: adminCList.do?pageNum=1&amount=10";
 	}
+	
+	
+
+	@RequestMapping("adminQList.do")
+	public String adminQList(Criteria cri, Model qmodel) {
+
+		List<QnaVO> QList = userJoinService.QList(cri);
+		qmodel.addAttribute("QList",QList);
+		
+		int total = userJoinService.getTotal(cri);
+		
+		PageMakerVO pageMaker = new PageMakerVO(cri, total);
+		
+		qmodel.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/qna_list";
+	}	
+	
+	//Q 삭제
+	@RequestMapping("qnaDelete.do")
+	public String qnaDelete(@RequestParam("Q_idx") int Q_idx) {
+		adminService.qnaDelete(Q_idx);
+		return "redirect: adminQList.do?pageNum=1&amount=10";
+	}
+	
+	// 어드민 커뮤니티 컨텐츠
+	@RequestMapping("adminCView.do")
+	public String CView(int index, Model model, ReplyVO vo, RedirectAttributes redirect) {
+		List<ReplyVO> ReplyList = pensionService.ReplyList(vo);
+		model.addAttribute("ReplyList",ReplyList);
+		redirect.addAttribute("index", index);
+		model.addAttribute("CView", pensionService.CView(index));
+
+		return "admin/community_content";
+	}
+	
+	//커뮤니티 삭제
+	@RequestMapping("adminCDelete.do")
+	public String CDelete(@RequestParam("index") int index, RedirectAttributes redirect) {
+		pensionService.CDelete(index);
+		redirect.addFlashAttribute("result", "delete success");
+		return "redirect: adminCList.do?pageNum=1&amount=10";
+	}
+	
 	
 }

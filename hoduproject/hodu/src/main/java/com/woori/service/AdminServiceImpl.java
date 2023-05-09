@@ -52,6 +52,11 @@ public class AdminServiceImpl implements AdminService {
 	public void communityDelete(int index) {
 		adminDao.communityDelete(index);
 	}
+	
+	@Override
+	public void qnaDelete(int Q_idx) {
+		adminDao.qnaDelete(Q_idx);
+	}
 
 
 }

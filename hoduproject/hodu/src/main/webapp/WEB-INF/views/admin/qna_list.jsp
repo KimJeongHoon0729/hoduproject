@@ -113,7 +113,7 @@
 			<div class="row text-center fh5co-heading row-padded">
 				<div class="col-md-8 col-md-offset-2">
 					<h2 class="heading to-animate"
-						style="font-family: 'Pretendard-Regular';">QnA List</h2>
+						style="font-family: 'Pretendard-Regular';">Admin QnA List</h2>
 					<p class="sub-heading to-animate"></p>
 					<p style="margin-bottom: 80px"></p>
 					   
@@ -138,7 +138,7 @@
 				</div>
 			</div>
 			<p style="margin-bottom: 0px"></p>
-			<div class="container" style="width: 70%;">
+			<div class="container" style="width: 100%;">
 				<table class="table table-hover" id="modalTable" style="text-align: center">
 					<tbody style="font-family: 'Pretendard-Regular';">
 					
@@ -146,14 +146,17 @@
 							<th style="text-align: center">번호</th>
 							<th style="text-align: center">제목</th>
 							<th style="text-align: center">작성자</th>
+							<th style="text-align: center; width: 40%">답변내용</th>
 							<th style="text-align: center">날짜</th>
 							<th style="text-align: center">답변완료</th>
+							<th style="text-align: center">삭제</th>
 						</tr>
 					 <c:forEach var="question" items="${QList }" >
-						<tr id="add-btn" data-value="${question.q_idx }" style="cursor:pointer;">
+						<tr id="add-btn" style="cursor:pointer;">
 							<td data-th="Supplier Code">${question.q_idx }</td>
 							<td data-th="Supplier Name">${question.q_title }</td>
 							<td data-th="Invoice Number">${question.userId }</td>
+							<td data-th="Invoice Number">${question.a_content }</td>
 							<td data-th="Invoice Date"><fmt:formatDate value="${question.q_date }" pattern="yyyy-MM-dd"/></td>
 							<c:choose>
 								<c:when test="${question.a_content != null }">
@@ -163,18 +166,15 @@
 								<td data-th="Due Date">작성중</td>
 							</c:otherwise>
 							</c:choose>
+							<td id="userDelete">
+								<button class="btn btn-primary btn-block" value="${question.q_idx }"
+								type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; 
+								margin-top: 0px; margin-bottom: 0px" onclick="call_confirm(${question.q_idx });">삭제</button>
+							</td>
 						</tr>
 					</c:forEach>
 					</tbody>
 				</table>
-				<c:choose>
-				<c:when test="${empty userId}">
-					<a class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" onclick="alert('로그인이 필요합니다.');location.href='login';" >글쓰기</a>
-				</c:when>
-				<c:otherwise>
-					<a href="pensionName.do?pageNum=1&amount=10" class="btn btn-default pull-right" style="font-family: 'Pretendard-Regular'; font-size: 15px;" >글쓰기</a>
-				</c:otherwise>
-				</c:choose>
 				<br></br>
 
 				<form id="moveForm" method="get">
@@ -187,13 +187,13 @@
 				<div class="text-center">
 					<ul class="pagination">
 						<c:if test="${pageMaker.prev }">
-						<li><a href="${path }/QList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+						<li><a href="${path }/adminQList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
 						</c:if>
 						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-						<li><a href="${path }/QList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+						<li><a href="${path }/adminQList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
 						</c:forEach>
 						<c:if test="${pageMaker.next }">
-						<li><a href="${path }/QList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+						<li><a href="${path }/adminQList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
 						</c:if>
 					</ul>
 				</div>
@@ -201,76 +201,14 @@
 		</div>
 </div>
 
-<!-- 모달 -->
-<div class="modal" id="modal">
-<form action="Q_pwCheck.do" id="frm">
-  <div class="modal_body">
-    <div class="m_head">
-      <div class="modal_title">게시글 비밀번호를 작성해주세요.</div>
-      <div class="close_btn" id="close_btn">X</div>
-    </div>
-    <div class="m_body">
-      <div class="modal_label">비밀번호</div>
-      <input type="hidden" name="pageNum" value="1"/>
-      <input type="hidden" name="amount" value="10"/>
-      <input type="hidden" name="Q_idx" class="input_box" id="Q_idx"/>
-      <input type="password" name="Q_pw" class="input_box" id="des_box"/>
-    </div>
-    <div class="m_footer">
-      <div class="modal_btn cancle" id="close_btn">취소</div>
-      <div class="modal_btn save" id="save_btn">제출</div>
-    </div>
-  </div>
-  </form>
-</div>
-<!-- 모달 -->
+
 <%@ include file="afooter.jsp" %>
 
 
 
 <script type="text/javascript">
-	//click on 라벨 추가 모달 열기
-	$(document).on('click', '#add-btn', function (e) {
-		 console.log(idx);
-	  $('#modal').addClass('show');
-	});
-	
-	// 모달 닫기
-	$(document).on('click', '#close_btn', function (e) {
-		$('#modal').removeClass('show');
 
-});
-	// 제출
-	$(document).on('click', '#save_btn', function (e) {
-		 document.getElementById("Q_idx").value = idx; 
-		 document.getElementById('frm').submit();
-
-});
-	 $("#modalTable tr").click(function(){     
-		 
-	        var str = ""
-	        var tdArr = new Array();    // 배열 선언
-	            
-	        // 현재 클릭된 Row(<tr>)
-	        var tr = $(this);
-	        var td = tr.children();
-	        
-	        // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
-	        console.log("클릭한 Row의 모든 데이터 : "+tr.text());
-	                
-	   
-	        // td.eq(index)를 통해 값을 가져올 수도 있다.
-	        idx = td.eq(0).text();
-	       
-
-	 });
 	 
-	 const urlParams = new URL(location.href).searchParams;
-	 const msg = urlParams.get('msg');
-	 if(msg=='fail'){
-		 alert("비밀번호가 틀렸습니다.");
-         history.back();
-	 }
 	 
 	    let moveForm = $("#moveForm");
 	 //버튼 클릭
@@ -297,6 +235,17 @@
        document.getElementById('moveForm').submit();
        
     });
+	 
+	 
+	function call_confirm(Q_idx){
+		   if(confirm("삭제하시겠습니까?")){
+			location.href = "${path}/qnaDelete.do?Q_idx="+Q_idx;
+			alert("삭제 되었습니다.");
+		} else{
+			alert("취소 되었습니다.");
+		}
+		
+	}
 </script>
 
 

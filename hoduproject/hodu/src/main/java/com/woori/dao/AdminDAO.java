@@ -28,6 +28,9 @@ public interface AdminDAO {
 	
 	// 게시글 삭제
 	public void communityDelete(int index);
+	
+	// qna 삭제
+	public void qnaDelete(int Q_idx);
 
 	
 }
