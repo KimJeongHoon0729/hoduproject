@@ -123,7 +123,7 @@
 			var roomName = $("#roomName").val();
 			var price = $("#price").val();
 			var dogNum = $("#dogNum").val();
-			var dogSize = $("#dogSize").text();
+			var dogSize = var dogSize = $("input[name=dogSize]:checkbox:checked").length;
 			var peopleNum = $("#peopleNum").val();
 			
 			
@@ -134,8 +134,11 @@
 				alert("객실 가격을 입력하세요.");
 				price.focus();
 			} else if(dogNum == ""){
-				alert("수용 가능한 반려견 사이즈를 입력하세요.");
+				alert("수용 가능한 반려견 수를 입력하세요.");
 				dogNum.focus();
+			} else if(dogSize < 1){
+				alert("반려견 사이즈를 선택하세요.");
+				return false;
 			} else if(peopleNum == ""){
 				alert("수용 가능한 방문자 수를 입력하세요.");
 				peopleNum.focus();

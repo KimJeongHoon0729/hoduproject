@@ -88,7 +88,7 @@
 				     <img id="preview">
 		            </p>
 			 
-			  <input id="pensionSubmit"  class="btn btn-primary" value="다음" type="button" style="font-family: 'Pretendard-Regular'; 
+			  <input id="pensionSubmit" class="btn btn-primary" value="다음" type="button" style="font-family: 'Pretendard-Regular'; 
 	             margin-top: 15px; margin-left: 240px;margin-right: 240px">
 			 </div> 
 		 </div>

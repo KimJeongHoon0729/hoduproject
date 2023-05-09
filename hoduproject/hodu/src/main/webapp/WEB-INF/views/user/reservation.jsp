@@ -17,7 +17,7 @@
                </div>
             </div>
                 <div class="container" style="text-align:center;padding-left: 4px">
-                <form action="${path }/RInsert.do?pensionName=${param.pensionName }">
+                <form id="reservation" action="${path }/RInsert.do?pensionName=${param.pensionName }">
                 <div class="col-md-6 col-md-offset-3">
                   <h3 style="font-family: 'Pretendard-Regular';">Reservation</h3>
                   <div class="form-group ">
@@ -50,7 +50,7 @@
                      <input id="userEmail" name="userEmail" class="form-control" placeholder="이메일" type="text">
                   </div>
                   <div class="form-group ">
-                     <label for="price" class="sr-only">userEmail</label>
+                     <label for="price" class="sr-only">price</label>
                      <input id="price" name="price" class="form-control" placeholder="가격" type="number">
                   </div>
                   <div class="form-group ">
@@ -62,11 +62,11 @@
                      <p style="text-align : left; margin-bottom: 0px">반려견 사이즈</p>
                    </div>
                   <div class="form-control" style="margin-bottom: 15px">   
-                     <p style="font-size: 16px"> 
+                   <p style="font-size: 16px"> 
                       <input type='checkbox' name='dogSize' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
                       <input type='checkbox' name='dogSize' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
                       <input type='checkbox' name='dogSize' value='대형견' /> 대형견 (25Kg 이상)
-                  </p>
+                   </p>
                 </div>       
                   <div class="form-group ">
                      <label for="dogNum" class="sr-only">dogNum</label>
@@ -80,7 +80,7 @@
                      <textarea class="message_area form-control" name="message_to_p" rows="8" cols="50" placeholder="펜션에 미리 전달한 사항을 작성해 주세요"></textarea>
                    </div>               
                    <div class="form-group ">
-                     <button class="btn btn-primary" type="submit" style="font-family: 'Pretendard-Regular';">제출</button>
+                     <button id="reservationBtn" class="btn btn-primary" type="button" style="font-family: 'Pretendard-Regular';">제출</button>
                    </div>   
             </div>
             </form>
@@ -88,5 +88,48 @@
       </div>
    </div>
 <%@ include file="footer.jsp" %>
+
+<script>
+$(document).ready(function(){
+	$("#reservationBtn").click(function(){
+		var reservation_date = $("#reservation_date").val();
+		var room = document.getElementById("area");
+		var room_option = room.options[room.selectedIndex].text;
+		var userName = $("#userName").val();
+		var userMobile = $("#userMobile").val();
+		var dogSize = $("input[name=dogSize]:checkbox:checked").length;
+		var dogNum = $("#dogNum").val();
+		var peopleNum = $("#peopleNum").val();
+		
+		if(reservation_date == ""){
+			alert("예약날짜를 입력하세요.");
+			reservation_date.focus();
+	 	} else if(room_option == "객실을 선택하세요."){
+			alert("객실을 선택하세요.");
+			room_option.focus();
+		} else if(userName == ""){
+			alert("이름을 입력하세요.");
+			userName.focus();
+		} else if(userMobile == ""){
+			alert("전화번호를 입력하세요.");
+			userMobile.focus();
+		} else if(dogSize < 1){
+			alert("반려견 사이즈를 선택하세요.");
+			return false;
+		} else if(dogNum == ""){
+			alert("반려견 수를 입력하세요");
+			dogNum.focus();
+		} else if(peopleNum == ""){
+			alert("방문자 수를 입력하세요");
+			peopleNum.focus();
+		}
+		document.getElementById('reservation').submit();
+	});
+	
+});
+
+</script>
+
+
 </body>
 </html>
