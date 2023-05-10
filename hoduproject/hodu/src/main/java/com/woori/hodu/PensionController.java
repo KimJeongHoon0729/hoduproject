@@ -155,12 +155,19 @@ public class PensionController {
 				} catch(Exception e) {
 					e.printStackTrace();
 				}
-				vo.setImg_room1(filename1);
-				vo.setImg_room2(filename2);
-				vo.setImg_room3(filename3);
-				vo.setImg_room4(filename4);
-				vo.setImg_room5(filename5);
-				vo.setImg_room6(filename6);
+				if(!img_room1.isEmpty()) {
+		               vo.setImg_room1(filename1);
+		            } else if(!img_room2.isEmpty()) {
+		               vo.setImg_room2(filename2);
+		            } else if(!img_room3.isEmpty()) {
+		               vo.setImg_room3(filename3);
+		            } else if(!img_room4.isEmpty()) {
+		               vo.setImg_room4(filename4);
+		            } else if(!img_room5.isEmpty()) {
+		               vo.setImg_room5(filename5);
+		            } else if(!img_room6.isEmpty()) {
+		               vo.setImg_room6(filename6);
+		            }
 				pensionService.roomRegister(vo);
 			}
 				if(idx == 0) {
@@ -174,7 +181,7 @@ public class PensionController {
 	}
 
 	@RequestMapping("pensionRegister.do")
-	public String pensionRegister(PensionVO vo, @RequestParam("file") MultipartFile pension_img, HttpServletRequest req ) {
+	public String pensionRegister(PensionVO vo, @RequestParam("file") MultipartFile pension_img, HttpServletRequest req,HttpSession session) {
 		 
 		 String filename = "";
 			String uuid= UUID.randomUUID().toString();
@@ -195,7 +202,7 @@ public class PensionController {
 				vo.setImg_pension(filename);
 				pensionService.pensionRegister(vo);
 			}
-			
+			session.setAttribute("pensionName", vo.getPensionName());
 		return "partner/roomRegister";
 	}
 	
