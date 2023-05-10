@@ -31,6 +31,9 @@ public interface AdminDAO {
 	
 	// qna 삭제
 	public void qnaDelete(int Q_idx);
+	
+	// 댓글 삭제
+	public void replyDelete(int reply_index);
 
 	
 }

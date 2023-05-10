@@ -100,4 +100,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from qna where Q_idx = #{Q_idx}   
 	</delete>	
 	
+	<!-- 댓글 삭제 -->
+	<delete id="replyDelete">
+		delete from reply where reply_index = #{reply_index }   
+	</delete>	
+	
 </mapper>

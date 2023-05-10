@@ -57,6 +57,11 @@ public class AdminServiceImpl implements AdminService {
 	public void qnaDelete(int Q_idx) {
 		adminDao.qnaDelete(Q_idx);
 	}
+	
+	@Override
+	public void replyDelete(int reply_index) {
+		adminDao.replyDelete(reply_index);	
+	}
 
 
 }

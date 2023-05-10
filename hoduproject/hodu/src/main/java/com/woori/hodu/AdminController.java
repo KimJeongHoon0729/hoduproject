@@ -137,7 +137,7 @@ public class AdminController {
 	
 	// 어드민 커뮤니티 컨텐츠
 	@RequestMapping("adminCView.do")
-	public String CView(int index, Model model, ReplyVO vo, RedirectAttributes redirect) {
+	public String adminCView(int index, Model model, ReplyVO vo, RedirectAttributes redirect) {
 		List<ReplyVO> ReplyList = pensionService.ReplyList(vo);
 		model.addAttribute("ReplyList",ReplyList);
 		redirect.addAttribute("index", index);
@@ -148,11 +148,18 @@ public class AdminController {
 	
 	//커뮤니티 삭제
 	@RequestMapping("adminCDelete.do")
-	public String CDelete(@RequestParam("index") int index, RedirectAttributes redirect) {
+	public String adminCDelete(@RequestParam("index") int index, RedirectAttributes redirect) {
 		pensionService.CDelete(index);
 		redirect.addFlashAttribute("result", "delete success");
 		return "redirect: adminCList.do?pageNum=1&amount=10";
 	}
 	
+	// 댓글 삭제
+	@RequestMapping("adminReplyDelete.do")
+	public String adminReplyDelete(@RequestParam("reply_index") int reply_index, RedirectAttributes redirect, int index) {
+		adminService.replyDelete(reply_index);
+		redirect.addAttribute("index", index);
+		return "redirect: adminCView.do";
+	}
 	
 }

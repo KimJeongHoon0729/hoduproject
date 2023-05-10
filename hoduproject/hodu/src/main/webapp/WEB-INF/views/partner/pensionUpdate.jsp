@@ -27,7 +27,7 @@
             <div class="row text-center fh5co-heading row-padded" >
             
                <div class="col-md-8 col-md-offset-2">
-                  <h2 class="heading to-animate"  style="font-family: 'Pretendard-Regular';">펜션 등록</h2>
+                  <h2 class="heading to-animate"  style="font-family: 'Pretendard-Regular';">펜션 정보 수정</h2>
                </div>
             </div>
           

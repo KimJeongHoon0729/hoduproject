@@ -181,103 +181,17 @@
 						</div>
 				
 				<c:forEach var="Reply_list" items="${ReplyList }" varStatus="vs">
-				<c:choose>
-					<c:when test="${Reply_list.secret == 'secret' && sessionScope.userId==Reply_list.writer}">
 					<div class="container" style="width: 640px;">
-						  <div class="card">
-						    <div class="card-body" style="margin-top: 50px">
-						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">${Reply_list.writer } 
-						      <c:if test="${Reply_list.secret == 'secret' }"></c:if>
-						      <fmt:formatDate value="${Reply_list.reply_date }" pattern="yyyy-MM-dd HH:mm:ss"/></h4>
-						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">${Reply_list.reply_content }</p>
-						      <c:if test="${sessionScope.userId == Reply_list.writer || sessionScope.partnerId == Reply_list.writer}">
-						      <a id="add-btn" data-value="${Reply_list.reply_index }" class="card-link" style="cursor:pointer;">수정</a>
-						      <a href="${path }/ReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
-						      </c:if>
-						    </div>
-						  </div>
-						</div>
-					</c:when>
-					<c:when test="${Reply_list.secret == 'secret' && sessionScope.partnerId==Reply_list.writer}">
-					    <div class="container" style="width: 640px;">
-						  <div class="card">
-						    <div class="card-body" style="margin-top: 50px">
-						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">${Reply_list.writer } 
-						      <c:if test="${Reply_list.secret == 'secret' }"></c:if>
-						      <fmt:formatDate value="${Reply_list.reply_date }" pattern="yyyy-MM-dd HH:mm:ss"/></h4>
-						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">${Reply_list.reply_content }</p>
-						      <a id="add-btn" data-value="${Reply_list.reply_index }" class="card-link">수정</a>
-						      <a href="${path }/ReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
-						    </div>
-						  </div>
-						</div>
-					</c:when>
-					<c:when test="${Reply_list.secret == 'secret' && sessionScope.partnerId==CView.writer}">
-					<div class="container" style="width: 640px;">
-						  <div class="card">
-						    <div class="card-body" style="margin-top: 50px">
-						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">${Reply_list.writer } 
-						      <c:if test="${Reply_list.secret == 'secret' }"></c:if>
-						      <fmt:formatDate value="${Reply_list.reply_date }" pattern="yyyy-MM-dd HH:mm:ss"/></h4>
-						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">${Reply_list.reply_content }</p>
-   						      <c:if test="${sessionScope.userId == Reply_list.writer || sessionScope.partnerId == Reply_list.writer}">
-						      <a id="add-btn" data-value="${Reply_list.reply_index }" class="card-link">수정</a>
-						      <a href="${path }/ReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
-								</c:if>
-						    </div>
-						  </div>
-						</div>
-					</c:when>
-					<c:when test="${Reply_list.secret == 'secret' && sessionScope.userId==CView.writer}">
-					<div class="container" style="width: 640px;">
-						  <div class="card">
-						    <div class="card-body" style="margin-top: 50px">
-						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">${Reply_list.writer } 
-						      <c:if test="${Reply_list.secret == 'secret' }"></c:if>
-						      <fmt:formatDate value="${Reply_list.reply_date }" pattern="yyyy-MM-dd HH:mm:ss"/></h4>
-						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">${Reply_list.reply_content }</p>
-						      <c:if test="${sessionScope.userId == Reply_list.writer || sessionScope.partnerId == Reply_list.writer}">
-						      <a id="add-btn" data-value="${Reply_list.reply_index }" class="card-link">수정</a>
-						      <a href="${path }/ReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
-							</c:if>
-						    </div>
-						  </div>
-						</div>
-					</c:when>
-					<c:when test="${Reply_list.secret != 'secret' }">
-					<div class="container" style="width: 640px;">
-						  <div class="card">
-						    <div class="card-body" style="margin-top: 50px">
-						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">${Reply_list.writer } 
-						      <fmt:formatDate value="${Reply_list.reply_date }" pattern="yyyy-MM-dd HH:mm:ss"/></h4>
-						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">${Reply_list.reply_content }</p>
-						      <c:if test="${sessionScope.userId == Reply_list.writer || sessionScope.partnerId == Reply_list.writer}">
-						      <a id="add-btn" data-value="${Reply_list.reply_index }" class="card-link">수정</a>
-						      <a href="${path }/ReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
-							</c:if>
-						    </div>
-						  </div>
-						</div>
-					
-					</c:when>
-					<c:otherwise>
-							<div class="container" style="width: 640px;">
-						  <div class="card">
-						    <div class="card-body" style="margin-top: 50px">
-						      
-						      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">비밀 댓글
-						      <button id="cdelete" class="btn btn-primary btn-block" type="button" style="width: 8%; height: 24px; font-family: 'Pretendard-Regular'; display: inline-block; margin-top: 0px;padding-left: 11px;padding-top: 3px" >삭제</button>
-
-						      </h4>
-						      		
-						      						      
-						      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">비밀 댓글입니다.</p>
-						     
-						    </div>
-						  </div>
-						</div>
-					</c:otherwise>
-				</c:choose>	
+					  <div class="card">
+					    <div class="card-body" style="margin-top: 50px">
+					      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">${Reply_list.writer } 
+					      <fmt:formatDate value="${Reply_list.reply_date }" pattern="yyyy-MM-dd HH:mm:ss"/></h4>
+					      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">${Reply_list.reply_content }</p>
+					      <a href="${path }/adminReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
+					    
+					    </div>
+					  </div>
+					</div>
 				</c:forEach>
 			</div>
 		</div>

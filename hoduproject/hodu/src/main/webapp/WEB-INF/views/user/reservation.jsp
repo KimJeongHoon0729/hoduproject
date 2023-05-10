@@ -50,10 +50,6 @@
                      <input id="userEmail" name="userEmail" class="form-control" placeholder="이메일" type="text">
                   </div>
                   <div class="form-group ">
-                     <label for="price" class="sr-only">price</label>
-                     <input id="price" name="price" class="form-control" placeholder="가격" type="number">
-                  </div>
-                  <div class="form-group ">
                      <input id="pensionName" name="pensionName" value="${param.pensionName }"  class="form-control" placeholder="펜션이름" type="hidden">
           
                   </div>
