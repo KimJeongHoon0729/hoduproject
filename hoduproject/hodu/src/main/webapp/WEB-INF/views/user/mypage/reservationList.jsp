@@ -36,7 +36,7 @@
 		                           </div>       
 		              				<div class="fh5co-food-pricing" >
 					  					<button class="btn btn-primary me-md-2" type="button" onclick="location.href='UserRView.do?reservation_idx=${Reservation.reservation_idx}'" style="font-family: 'Pretendard-Regular';">수정</button>
-					 					<button class="btn btn-primary" type="button" onclick="call_confirm();" style="font-family: 'Pretendard-Regular';">취소</button>
+					 					<button class="btn btn-primary" type="button" onclick="call_confirm(${Reservation.reservation_idx});" style="font-family: 'Pretendard-Regular';">취소</button>
 					 				</div>  
 			 				</c:forEach>                                      
 					  </li>
@@ -48,10 +48,9 @@
 	</div>
 </div>
 <script type="text/javascript">
-	function call_confirm(){
+	function call_confirm(idx){
 	
 	if(confirm("예약을 취소하시겠습니까?")){
-		var idx = $('input[name=reservation_idx]').val();
 		location.href="${path }/deleteReservation.do?reservation_idx="+idx;
 		alert("정상적으로 처리되었습니다.");
 	}else{

@@ -31,7 +31,7 @@
     	wtpwebapps\\spring\\resources\\images"/>  
     </beans:bean>
     
-    <beans:bean id="AdminInterceptor" class="com.woori.interceptor.AdminInterceptor" />
+   <!--   <beans:bean id="AdminInterceptor" class="com.woori.interceptor.AdminInterceptor" />
 
 	<interceptors>
 	 <interceptor>
@@ -39,7 +39,7 @@
 	  <beans:ref bean="AdminInterceptor" />
 	 </interceptor>
 	</interceptors>
-	
+	-->
 	<context:component-scan base-package="com.woori.hodu" />
 	
 	
