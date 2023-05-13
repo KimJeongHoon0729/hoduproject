@@ -93,33 +93,7 @@
 							<a href="login" >로그인</a>
 						</div>
 					</c:when>
-					<c:when test="${sessionScope.userId == 'admin' }">
-						<div class="fh5co-menu-1">
-							<a href="adminCList.do">커뮤니티</a>
-							<a href="adminQList.do?pageNum=1&amount=10" >Q&A</a>
-						</div>
-						<div class="fh5co-logo">
-							<a href="/">HODU</a>
-						</div>
-						<div class="fh5co-menu-2">
-							<a href="userList.do" >회원관리</a>
-							<a href="logout.do">로그아웃</a>
-						</div>
-					</c:when>
-					
-					<c:when test="${sessionScope.partnerId == 'admin'}">
-						<div class="fh5co-menu-1">
-							<a href="adminCList.do">커뮤니티</a>
-							<a href="adminQList.do?pageNum=1&amount=10" >Q&A</a>
-						</div>
-						<div class="fh5co-logo">
-							<a href="/">HODU</a>
-						</div>
-						<div class="fh5co-menu-2">
-							<a href="partnerList.do" >파트너관리</a>
-							<a href="logout.do">로그아웃</a>
-						</div>
-					</c:when>
+				
 					
 					<c:when test="${sessionScope.userid != null && sessionScope.userId != 'admin'}">
 						<div class="fh5co-menu-1">

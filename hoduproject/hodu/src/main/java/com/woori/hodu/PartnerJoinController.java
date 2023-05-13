@@ -59,7 +59,11 @@ public class PartnerJoinController {
 			if(presult != null) {
 				boolean PpwdMatch = pwdEncoder.matches(pvo.getPartnerPw(), presult.getPartnerPw());
 				if(PpwdMatch == true){//로그인 성공
-					if(partnerJoinService.sessionPensionName(pvo.getPartnerId()) != null) {
+					if(presult.getPartnerId().equals("admin")) {
+						mav.setViewName("/admin/admin");
+						return mav;
+					}
+					else if(partnerJoinService.sessionPensionName(pvo.getPartnerId()) != null) {
 						mav.addObject("pensionName", partnerJoinService.sessionPensionName(pvo.getPartnerId()));
 						psession.setAttribute("partnerId", pvo.getPartnerId());
 						psession.setAttribute("pensionName", partnerJoinService.sessionPensionName(pvo.getPartnerId()));
@@ -70,6 +74,7 @@ public class PartnerJoinController {
 						mav.setViewName("pindex");	
 						mav.addObject("pmsg", "sucess");
 					}
+				
 				} else { //로그인 실패
 				mav.setViewName("login");
 				mav.addObject("pmsg", "fail");	
@@ -106,6 +111,10 @@ public class PartnerJoinController {
 		public String partnerJoin2(PartnerVO pvo, HttpServletResponse response) throws Exception {
 			int result = partnerJoinService.pidCheck(pvo);
 			if(result == 1) {
+				response.setContentType("text/html; charset=UTF-8");
+	            PrintWriter out = response.getWriter();
+	            out.println("<script>alert('중복된 아이디입니다.'); location.href='/';</script>");
+	            out.flush(); 
 				return "/signin";
 			} else if(result == 0) {
 				String inputPw = pvo.getPartnerPw();

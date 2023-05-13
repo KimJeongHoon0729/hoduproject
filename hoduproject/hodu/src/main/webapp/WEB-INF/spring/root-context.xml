@@ -49,4 +49,5 @@
 	<context:component-scan base-package="com.woori.domain"></context:component-scan>
 	<context:component-scan base-package="com.woori.service"></context:component-scan>
 	<context:component-scan base-package="com.woori.config"></context:component-scan>
+	<context:component-scan base-package="com.woori.interceptor"></context:component-scan>
 </beans>

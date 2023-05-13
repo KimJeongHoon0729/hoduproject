@@ -80,29 +80,29 @@
 			<div class="fh5co-main-nav">
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="adminCList.do?pageNum=1&amount=10">커뮤니티</a>
-						<a href="adminQList.do?pageNum=1&amount=10" >Q&A</a>
+						<a href="/admin/adminCList.do?pageNum=1&amount=10">커뮤니티</a>
+						<a href="/admin/adminQList.do?pageNum=1&amount=10" >Q&A</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="/">HODU</a>
+						<a href="/admin">HODU</a>
 					</div>
 				<c:choose>
 					<c:when test="${sessionScope.userId == null && sessionScope.partnerId == null}">
 						<div class="fh5co-menu-2">				
 							<a href="signin" >회원 가입</a>
-							<a href="login" >로그인</a>
+							<a href="/login" >로그인</a>
 						</div>
 					</c:when>
 					<c:when test="${sessionScope.userId == 'admin'}">
 						<div class="fh5co-menu-2">
-							<a href="userList.do" >회원관리</a>
-							<a href="logout.do">로그아웃</a>
+							<a href="/admin/userList.do" >회원관리</a>
+							<a href="/admin/logout.do">로그아웃</a>
 						</div>
 					</c:when>
 					<c:when test="${sessionScope.partnerId == 'admin'}">
 						<div class="fh5co-menu-2">
-							<a href="partnerList.do" >파트너관리</a>
-							<a href="logout.do">로그아웃</a>
+							<a href="/admin/partnerList.do" >파트너관리</a>
+							<a href="/admin/logout.do">로그아웃</a>
 						</div>
 					</c:when>
 					<c:otherwise>

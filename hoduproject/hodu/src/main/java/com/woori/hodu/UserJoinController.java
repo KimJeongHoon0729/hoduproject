@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -26,6 +27,7 @@ import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
+import com.woori.interceptor.AdminInterceptor;
 import com.woori.service.UserJoinServiceImpl;
 
 @Controller
@@ -57,7 +59,12 @@ public class UserJoinController {
 				mav.addObject("msg", "success");
 				mav.addObject("userAuth", result);
 				session.setAttribute("userId", vo.getUserId());
-				
+			
+					if(result.getUserId().equals("admin")) {
+					
+						mav.setViewName("/admin/admin");
+						return mav;
+					}
 				} else {
 					mav.setViewName("login");
 					mav.addObject("msg", "fail");
@@ -95,6 +102,10 @@ public class UserJoinController {
 		public String userJoin2(UserVO vo, HttpServletResponse response) throws Exception {
 			int result = userJoinService.idCheck(vo);
 			if(result == 1) {
+				response.setContentType("text/html; charset=UTF-8");
+	            PrintWriter out = response.getWriter();
+	            out.println("<script>alert('중복된 아이디입니다.'); location.href='/';</script>");
+	            out.flush(); 
 				return "/signin";
 			} else if(result == 0) {
 				String inputPass = vo.getUserPw();

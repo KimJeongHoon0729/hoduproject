@@ -49,10 +49,11 @@
 </div>
 <script type="text/javascript">
 	function call_confirm(idx){
+		
 	
 	if(confirm("예약을 취소하시겠습니까?")){
 		location.href="${path }/deleteReservation.do?reservation_idx="+idx;
-		alert("정상적으로 처리되었습니다.");
+		alert("정상적으로 처리되었습니다.");9
 	}else{
 		alert("취소되었습니다.");
 	}	
