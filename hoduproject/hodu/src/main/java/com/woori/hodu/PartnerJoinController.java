@@ -1,6 +1,7 @@
 package com.woori.hodu;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.UUID;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.woori.AWS.AWSS3Service;
 import com.woori.domain.PCriteria;
 import com.woori.domain.PPageMakerVO;
 import com.woori.domain.PartnerVO;
@@ -147,22 +150,27 @@ public class PartnerJoinController {
 			return "partner/myPpage/myPpage";
 		}
 		
+		@Autowired
+		private AWSS3Service s3Service;
 		
 		@PostMapping("uploadPProfile.do")
-		public String fileUpload(@RequestParam("file") MultipartFile businessNum_img, @RequestParam("partnerId") String partnerId, RedirectAttributes redirect, HttpServletRequest req, @ModelAttribute PartnerVO pvo) {
+		public String fileUpload(@RequestParam("file") MultipartFile businessNum_img, @RequestParam("partnerId") String partnerId, RedirectAttributes redirect, HttpServletRequest req, @ModelAttribute PartnerVO pvo) throws Exception {
+			
+			
+			
 			String filename = "";
 			String uuid= UUID.randomUUID().toString();
 			
+			
 			if(!businessNum_img.isEmpty()) {
 				filename = uuid+"_"+businessNum_img.getOriginalFilename();
-
-//				String path = req.getSession().getServletContext().getRealPath("/").concat("resources");
-				String path = "C:\\tmp\\";
-				String imgUploadPath = path+File.separator;
+				
+				//String path = req.getSession().getServletContext().getRealPath("/").concat("resources");
+				//String path = " https://s3.ap-northeast-2.amazonaws.com/hodu";
+				//String imgUploadPath = path+File.separator;
 				
 				try {
-					new File(imgUploadPath).mkdirs(); 
-					businessNum_img.transferTo(new File(imgUploadPath+filename));
+					s3Service.uploadObject(businessNum_img, filename);
 				} catch(Exception e) {
 					e.printStackTrace();
 				}

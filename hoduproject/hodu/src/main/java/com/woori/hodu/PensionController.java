@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.woori.AWS.AWSS3Service;
 import com.woori.domain.CCriteria;
 import com.woori.domain.CMyCriteria;
 import com.woori.domain.CPageMakerVO;
@@ -46,6 +48,9 @@ public class PensionController {
 	
 	@Inject
 	private PensionService pensionService;
+	
+	@Autowired
+	private AWSS3Service s3Service;
 	
 	@RequestMapping("likeList.do")
 	public String likeList(PensionVO vo, Model model) {
@@ -141,17 +146,17 @@ public class PensionController {
 				System.out.println(img_room5.getOriginalFilename());
 				filename6 = uuid+"_"+img_room6.getOriginalFilename();
 				System.out.println(img_room6.getOriginalFilename());
-				String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
-				String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+				//String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
+				//String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
 				
 				try {
-					new File(imgUploadPath).mkdirs(); 
-					img_room1.transferTo(new File(imgUploadPath+filename1));
-					img_room2.transferTo(new File(imgUploadPath+filename2));
-					img_room3.transferTo(new File(imgUploadPath+filename3));
-					img_room4.transferTo(new File(imgUploadPath+filename4));
-					img_room5.transferTo(new File(imgUploadPath+filename5));
-					img_room6.transferTo(new File(imgUploadPath+filename6));
+					s3Service.uploadObject(img_room1, filename1);
+					s3Service.uploadObject(img_room2, filename2);
+					s3Service.uploadObject(img_room3, filename3);
+					s3Service.uploadObject(img_room4, filename4);
+					s3Service.uploadObject(img_room5, filename5);
+					s3Service.uploadObject(img_room6, filename6);
+					
 				} catch(Exception e) {
 					e.printStackTrace();
 				}
@@ -190,12 +195,11 @@ public class PensionController {
 				filename = uuid+"_"+pension_img.getOriginalFilename();
 				System.out.println(pension_img.getOriginalFilename());
 				
-				String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
-				String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
+				//String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
+				//String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
 				
 				try {
-					new File(imgUploadPath).mkdirs(); 
-					pension_img.transferTo(new File(imgUploadPath+filename));
+					s3Service.uploadObject(pension_img, filename);
 				} catch(Exception e) {
 					e.printStackTrace();
 				}
