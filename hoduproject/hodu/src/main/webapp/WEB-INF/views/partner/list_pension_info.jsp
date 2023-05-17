@@ -36,7 +36,7 @@
                      <li>
                         <div class="fh5co-food-desc">
                            <figure>
-                              <img src="/resources/list_images/${myPension.img_pension }" class="img-responsive"
+                              <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//${myPension.img_pension }" class="img-responsive"
                                  alt="Free HTML5 Templates by FREEHTML5.co">
                            </figure>
                            <div>

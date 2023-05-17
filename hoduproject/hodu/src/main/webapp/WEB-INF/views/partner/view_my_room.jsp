@@ -38,7 +38,7 @@
                      <li>
                         <div class="fh5co-food-desc">
                            <figure>
-                              <img src="https://hodu.s3.ap-northeast-2.amazonaws.com/${ViewMyRoom.img_room1 }" class="img-responsive"
+                              <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//${ViewMyRoom.img_room1 }" class="img-responsive"
                                  alt="Free HTML5 Templates by FREEHTML5.co">
                            </figure>
                            <div>

@@ -31,14 +31,14 @@ $(document).ready(function(e) {
       <div class="container">
          <div class="row text-center fh5co-heading row-padded">
             <div>
-               <img src="/resources/images/dog.png" height="64px" width="64px" style="margin-bottom: -50px">
+               <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//dog.png" height="64px" width="64px" style="margin-bottom: -50px">
             </div>
             <div class="col-md-8 col-md-offset-2">
                <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">Pension List</h2>
                <p class="sub-heading to-animate" style="font-family: 'Pretendard-Regular';">원하는 지역을 선택해주세요.</p>
             </div>
             <div>
-               <img src="/resources/list_images/지도.png" usemap="#image-map">
+               <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//지도.png" usemap="#image-map">
             
             <map name="image-map">
                 <area target="_self" alt="강원" title="강원" href="${path }/likeList.do?region=강원" coords="396,111,415,109,434,101,459,101,479,105,509,103,536,103,556,96,573,77,579,52,586,66,591,86,602,99,607,119,616,134,623,152,634,158,643,172,649,185,664,198,675,209,680,228,690,246,699,257,709,273,714,299,695,313,667,311,648,312,643,303,630,310,628,318,613,308,595,305,577,300,557,287,537,288,527,286,511,296,495,288,502,265,502,224,470,212,465,180,472,171,471,156,460,149,436,130,426,129,411,133,398,123,395,117" shape="poly">

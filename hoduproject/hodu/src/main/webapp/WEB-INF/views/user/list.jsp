@@ -52,7 +52,7 @@
                      <li>
                         <div class="fh5co-food-desc">
                            <figure>
-                              <img src="/resources/list_images/${pension_like.img_pension }" class="img-responsive"
+                              <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//${pension_like.img_pension }" class="img-responsive"
                                  alt="Free HTML5 Templates by FREEHTML5.co">
                            </figure>
                            <div>
@@ -93,7 +93,7 @@
                      <li>
                         <div class="fh5co-food-desc">
                            <figure>
-                              <img src="/resources/list_images/${pension_money.img_pension }" class="img-responsive"
+                              <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//${pension_money.img_pension }" class="img-responsive"
                                  alt="Free HTML5 Templates by FREEHTML5.co">
                            </figure>
                            <div>

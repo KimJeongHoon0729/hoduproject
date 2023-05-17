@@ -105,15 +105,15 @@
 
       <div id="fh5co-about" data-section="about">
          <div class="fh5co-2col fh5co-bg to-animate-2">
-         <img src="/resources/images/3.jpg" style="width: 100%; height: 100%;">
+         <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//3.jpg" style="width: 100%; height: 100%;">
          </div>
          <div class="fh5co-2col fh5co-text">
             <h2 class="heading to-animate">About Us</h2>
             <p class="to-animate" style="font-size:18px;"><span class="firstcharacter">
-            </span>쉼 없는 일상속에서 휴식과 영감을 얻기 위해, 
+            </span>쉼 없는 일상 속에서 휴식과 영감을 얻기 위해, 
 					놀고싶은 순간 망설임 없이, 
 					나의 영원한 단짝 반려견과 함께 편안한 하루를 선물하고 싶은 HODU STAY 입니다.
-					저희 호두스테이는 소중한 반려견과 함께 누구나 마음편히 놀 수 있도록 정보를 제공해주는 회사입니다.
+					저희 호두스테이는 소중한 반려견과 함께 누구나 마음 편히 놀 수 있도록 정보를 제공해주는 회사입니다.
 					호두스테이는 국내 최다 반려견 숙박업소를 보유하고 있습니다. 
 					위치정보를 활용하여 다양한 국내외 상품을 쉽고 빠르게 검색, 예약할 수 있으며
 					고객 편의 서비스를 통해 안심하고 즐기는 환경을 제공하고 있습니다.
@@ -137,22 +137,22 @@
                      
                      <li>
                         <blockquote>
-                           <img alt="오류" src="/resources/images/광고3.jpg">
+                           <img alt="오류" src="https://hodu.s3.ap-northeast-2.amazonaws.com//광고3.jpg">
                         </blockquote>
                      </li>
                      <li>
                         <blockquote>
-                          <img alt="오류" src="/resources/images/광고2.jpg">
+                          <img alt="오류" src="https://hodu.s3.ap-northeast-2.amazonaws.com//광고2.jpg">
                         </blockquote>
                      </li>
                      <li>
                         <blockquote>
-                           <img alt="오류" src="/resources/images/광고1.jpg">
+                           <img alt="오류" src="https://hodu.s3.ap-northeast-2.amazonaws.com//광고1.jpg">
                         </blockquote>
                      </li>
                      <li>
                         <blockquote>
-                           <img alt="오류" src="/resources/images/광고4.jpg">
+                           <img alt="오류" src="https://hodu.s3.ap-northeast-2.amazonaws.com//광고4.jpg">
                         </blockquote>
                      </li>
                      

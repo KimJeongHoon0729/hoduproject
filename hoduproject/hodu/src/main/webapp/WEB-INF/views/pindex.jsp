@@ -103,7 +103,7 @@
 
 		  <div id="fh5co-about" data-section="about">
          <div class="fh5co-2col fh5co-bg to-animate-2">
-         <img src="/resources/images/3.jpg" style="width: 100%; height: 100%;">
+         <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//3.jpg" style="width: 100%; height: 100%;">
          </div>
          <div class="fh5co-2col fh5co-text">
             <h2 class="heading to-animate">About Us</h2>
@@ -135,22 +135,22 @@
                      
                       <li>
                         <blockquote>
-                           <img alt="오류" src="/resources/images/광고3.jpg">
+                           <img alt="오류" src="https://hodu.s3.ap-northeast-2.amazonaws.com//광고3.jpg">
                         </blockquote>
                      </li>
                      <li>
                         <blockquote>
-                          <img alt="오류" src="/resources/images/광고2.jpg">
+                          <img alt="오류" src="https://hodu.s3.ap-northeast-2.amazonaws.com//광고2.jpg">
                         </blockquote>
                      </li>
                      <li>
                         <blockquote>
-                           <img alt="오류" src="/resources/images/광고1.jpg">
+                           <img alt="오류" src="https://hodu.s3.ap-northeast-2.amazonaws.com//광고1.jpg">
                         </blockquote>
                      </li>
                      <li>
                         <blockquote>
-                           <img alt="오류" src="/resources/images/광고4.jpg">
+                           <img alt="오류" src="https://hodu.s3.ap-northeast-2.amazonaws.com//광고4.jpg">
                         </blockquote>
                      </li>
                      
