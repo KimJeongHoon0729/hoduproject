@@ -27,6 +27,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.amazonaws.services.gluedatabrew.model.Metadata;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.woori.AWS.AWSS3Service;
 import com.woori.domain.CCriteria;
 import com.woori.domain.CMyCriteria;
@@ -130,49 +132,45 @@ public class PensionController {
 		 	String filename4 = "";
 		 	String filename5 = "";
 		 	String filename6 = "";
-		 	
+		 	ObjectMetadata metaData = new ObjectMetadata();
 			String uuid= UUID.randomUUID().toString();
-			
 			if(!img_room1.isEmpty()||!img_room2.isEmpty()||!img_room3.isEmpty()||!img_room4.isEmpty()||!img_room5.isEmpty()||!img_room6.isEmpty()) {
-				filename1 = uuid+"_"+img_room1.getOriginalFilename();
-				System.out.println(img_room1.getOriginalFilename());
-				filename2 = uuid+"_"+img_room2.getOriginalFilename();
-				System.out.println(img_room2.getOriginalFilename());
-				filename3 = uuid+"_"+img_room3.getOriginalFilename();
-				System.out.println(img_room3.getOriginalFilename());
-				filename4 = uuid+"_"+img_room4.getOriginalFilename();
-				System.out.println(img_room4.getOriginalFilename());
-				filename5 = uuid+"_"+img_room5.getOriginalFilename();
-				System.out.println(img_room5.getOriginalFilename());
-				filename6 = uuid+"_"+img_room6.getOriginalFilename();
-				System.out.println(img_room6.getOriginalFilename());
+			
 				//String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
 				//String imgUploadPath = path+File.separator+"imgUpload"+File.separator;
 				
 				try {
-					s3Service.uploadObject(img_room1, filename1);
-					s3Service.uploadObject(img_room2, filename2);
-					s3Service.uploadObject(img_room3, filename3);
-					s3Service.uploadObject(img_room4, filename4);
-					s3Service.uploadObject(img_room5, filename5);
-					s3Service.uploadObject(img_room6, filename6);
+					if(!img_room1.isEmpty()) {
+						   filename1 = uuid+"_"+img_room1.getOriginalFilename();
+			               vo.setImg_room1(filename1);
+			               s3Service.uploadObject(img_room1, filename1);
+			            } if(!img_room2.isEmpty()) {
+			            	filename2 = uuid+"_"+img_room2.getOriginalFilename();
+			               vo.setImg_room2(filename2);
+			               s3Service.uploadObject(img_room2, filename2);
+			            } if(!img_room3.isEmpty()) {
+			            	filename3 = uuid+"_"+img_room3.getOriginalFilename();
+			               vo.setImg_room3(filename3);
+			               s3Service.uploadObject(img_room3, filename3);
+			            } if(!img_room4.isEmpty()) {
+			            	filename4 = uuid+"_"+img_room4.getOriginalFilename();
+			               vo.setImg_room4(filename4);
+			               s3Service.uploadObject(img_room4, filename4);
+			            } if(!img_room5.isEmpty()) {
+			            	filename5 = uuid+"_"+img_room5.getOriginalFilename();
+			               vo.setImg_room5(filename5);
+			               s3Service.uploadObject(img_room5, filename5);
+			            } if(!img_room6.isEmpty()) {
+			            	filename6 = uuid+"_"+img_room6.getOriginalFilename();
+			               vo.setImg_room6(filename6);
+			               s3Service.uploadObject(img_room6, filename6);
+			            }
+					
 					
 				} catch(Exception e) {
 					e.printStackTrace();
 				}
-				if(!img_room1.isEmpty()) {
-		               vo.setImg_room1(filename1);
-		            } else if(!img_room2.isEmpty()) {
-		               vo.setImg_room2(filename2);
-		            } else if(!img_room3.isEmpty()) {
-		               vo.setImg_room3(filename3);
-		            } else if(!img_room4.isEmpty()) {
-		               vo.setImg_room4(filename4);
-		            } else if(!img_room5.isEmpty()) {
-		               vo.setImg_room5(filename5);
-		            } else if(!img_room6.isEmpty()) {
-		               vo.setImg_room6(filename6);
-		            }
+				
 				pensionService.roomRegister(vo);
 			}
 				if(idx == 0) {

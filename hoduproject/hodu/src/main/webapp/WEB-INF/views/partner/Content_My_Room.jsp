@@ -27,7 +27,7 @@
  
                <div class="fh5co-grid">
                   <div class="fh5co-v-half to-animate-2">
-                     <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/imgUpload/${ContentMyRoom.img_room1 })"></div>
+                     <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://hodu.s3.ap-northeast-2.amazonaws.com//${ContentMyRoom.img_room1 })"></div>
                      <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                         <h2 style="font-family: 'Pretendard-Regular';">객실 이름</h2>
                         <span class="pricing">${ContentMyRoom.roomName }</span>
@@ -35,14 +35,14 @@
                   </div>
                   <div class="fh5co-v-half">
                      <div class="fh5co-h-row-2 to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/imgUpload/${ContentMyRoom.img_room2 })"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://hodu.s3.ap-northeast-2.amazonaws.com//${ContentMyRoom.img_room2 })"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-left">
                            <h2 style="font-family: 'Pretendard-Regular';">수용가능한 반려견 크기</h2>
                            <span class="pricing">${ContentMyRoom.dogSize } </span>
                           </div>
                      </div>
                      <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/imgUpload/${ContentMyRoom.img_room3 })"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://hodu.s3.ap-northeast-2.amazonaws.com//${ContentMyRoom.img_room3 })"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-right">
                            <h2 style="font-family: 'Pretendard-Regular';">가격</h2>
                            <span class="pricing">${ContentMyRoom.price } 원</span>
@@ -52,14 +52,14 @@
 
                   <div class="fh5co-v-half">
                      <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/imgUpload/${ContentMyRoom.img_room4 })"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://hodu.s3.ap-northeast-2.amazonaws.com//${ContentMyRoom.img_room4 })"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-right">
                            <h2 style="font-family: 'Pretendard-Regular';">수용가능한 반려견 수</h2>
                            <span class="pricing">${ContentMyRoom.dogNum } 마리</span>
                           </div>
                      </div>
                      <div class="fh5co-h-row-2 to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/imgUpload/${ContentMyRoom.img_room5 })"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://hodu.s3.ap-northeast-2.amazonaws.com//${ContentMyRoom.img_room5 })"></div>
                         <div class="fh5co-v-col-2 fh5co-text arrow-left">
                            <h2 style="font-family: 'Pretendard-Regular';">수용가능한 인원수</h2>
                            <span class="pricing">${ContentMyRoom.peopleNum } 명</span>
@@ -67,7 +67,7 @@
                      </div>
                   </div>
                   <div class="fh5co-v-half to-animate-2">
-                     <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(/resources/imgUpload/${ContentMyRoom.img_room6 })"></div>
+                     <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(https://hodu.s3.ap-northeast-2.amazonaws.com//${ContentMyRoom.img_room6 })"></div>
                      <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                         <h2 style="font-family: 'Pretendard-Regular';">세부사항</h2>
                        <span class="pricing"></span> 
