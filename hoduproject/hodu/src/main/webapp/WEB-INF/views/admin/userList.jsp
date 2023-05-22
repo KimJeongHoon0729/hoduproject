@@ -19,7 +19,7 @@
 			<div class="row text-center fh5co-heading row-padded">
 				<div class="col-md-8 col-md-offset-2">
 					<h2 class="heading to-animate"
-						style="font-family: 'Pretendard-Regular';">HODU Community</h2>
+						style="font-family: 'Pretendard-Regular';">Member Management</h2>
 					<p class="sub-heading to-animate"></p>
 					<p style="margin-bottom: 80px"></p>
 					
@@ -62,7 +62,7 @@
 								<td id="userDelete">
 									<button class="btn btn-primary btn-block" value="${list.userId }"
 									type="button" style="width: 70px; font-family: 'Pretendard-Regular'; display: inline-block; 
-									margin-top: 0px; margin-bottom: 0px" onclick="call_confirm(${list.userId });">삭제</button>
+									margin-top: 0px; margin-bottom: 0px" onclick="call_confirm('${list.userId }');">삭제</button>
 								</td>
 							</tr>
 						</c:forEach>
@@ -82,13 +82,13 @@
 				<div class="text-center">
 					<ul class="pagination">
 						<c:if test="${pageMaker.prev }">
-						<li><a href="${path }/userList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+						<li><a href="${path }/admin/userList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
 						</c:if>
 						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-						<li><a href="${path }/userList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+						<li><a href="${path }/admin/userList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
 						</c:forEach>
 						<c:if test="${pageMaker.next }">
-						<li><a href="${path }/userList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+						<li><a href="${path }/admin/userList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
 						</c:if>
 					</ul>
 				</div>
@@ -130,9 +130,9 @@
     });
 	 
 
-	function call_confirm(userID){
+	function call_confirm(userId){
 		   if(confirm("삭제하시겠습니까?")){
-			location.href = "${path}/userDelete.do?userId="+userID;
+			location.href = "${path}/admin/userDelete.do?userId="+userId;
 			alert("삭제 되었습니다.");
 		} else{
 			alert("취소 되었습니다.");

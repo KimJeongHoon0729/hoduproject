@@ -187,7 +187,7 @@
 					      <h4 class="card-title" style="font-family: 'Pretendard-Regular';">${Reply_list.writer } 
 					      <fmt:formatDate value="${Reply_list.reply_date }" pattern="yyyy-MM-dd HH:mm:ss"/></h4>
 					      <p class="card-text" style="font-family: 'Pretendard-Regular'; margin-bottom: 0px">${Reply_list.reply_content }</p>
-					      <a href="${path }/adminReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
+					      <a href="${path }/admin/adminReplyDelete.do?reply_index=${Reply_list.reply_index }&index=${CView.index }" class="card-link">삭제</a>
 					    
 					    </div>
 					  </div>
@@ -254,6 +254,9 @@
 		$('#cdelete').click(function(){
 			if(confirm("삭제하시겠습니까?")){
 				self.location.href = "adminCDelete.do?index=${CView.index}";
+				alert("삭제 되었습니다.");
+			} else{
+				alert("취소 되었습니다.");
 			}
 		})
 	});

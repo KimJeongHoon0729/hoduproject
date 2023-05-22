@@ -69,7 +69,7 @@ public class AdminController {
 	
 	
 	
-	@RequestMapping("userDelete.do")
+	@RequestMapping("admin/userDelete.do")
 	public String userDelete(@RequestParam("userId") String userId) {
 		adminService.userDelete(userId);
 		return "redirect: /admin/userList.do";

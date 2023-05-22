@@ -77,13 +77,13 @@
 				<div class="text-center">
 					<ul class="pagination">
 						<c:if test="${cPageMaker.prev }">
-						<li><a href="${path }/adminCList.do?pageNum=${cPageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+						<li><a href="${path }/admin/adminCList.do?pageNum=${cPageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
 						</c:if>
 						<c:forEach var="num" begin="${cPageMaker.startPage }" end="${cPageMaker.endPage }">
-						<li><a href="${path }/adminCList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+						<li><a href="${path }/admin/adminCList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
 						</c:forEach>
 						<c:if test="${cPageMaker.next }">
-						<li><a href="${path }/adminCList.do?pageNum=${cPageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+						<li><a href="${path }/admin/adminCList.do?pageNum=${cPageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
 						</c:if>
 					</ul>
 				</div>
@@ -129,7 +129,7 @@
 	 
 	function call_confirm(index){
 		   if(confirm("삭제하시겠습니까?")){
-			location.href = "${path}/communityDelete.do?index="+index;
+			location.href = "${path}/admin/communityDelete.do?index="+index;
 			alert("삭제 되었습니다.");
 		} else{
 			alert("취소 되었습니다.");

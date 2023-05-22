@@ -187,13 +187,13 @@
 				<div class="text-center">
 					<ul class="pagination">
 						<c:if test="${pageMaker.prev }">
-						<li><a href="${path }/adminQList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
+						<li><a href="${path }/admin/adminQList.do?pageNum=${pageMaker.startPage-1 }&amount=10" style="color:#5e493a">이전</a></li>
 						</c:if>
 						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-						<li><a href="${path }/adminQList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
+						<li><a href="${path }/admin/adminQList.do?pageNum=${num}&amount=10" style="color:#5e493a">${num }</a></li>
 						</c:forEach>
 						<c:if test="${pageMaker.next }">
-						<li><a href="${path }/adminQList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
+						<li><a href="${path }/admin/adminQList.do?pageNum=${pageMaker.endPage+1 }&amount=10" style="color:#5e493a">다음</a></li>
 						</c:if>
 					</ul>
 				</div>
@@ -239,7 +239,7 @@
 	 
 	function call_confirm(Q_idx){
 		   if(confirm("삭제하시겠습니까?")){
-			location.href = "${path}/qnaDelete.do?Q_idx="+Q_idx;
+			location.href = "${path}/admin/qnaDelete.do?Q_idx="+Q_idx;
 			alert("삭제 되었습니다.");
 		} else{
 			alert("취소 되었습니다.");
