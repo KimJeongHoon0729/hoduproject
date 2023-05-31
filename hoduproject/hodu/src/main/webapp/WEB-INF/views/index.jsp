@@ -158,6 +158,19 @@
                      
                      
                   </ul>
+                  
+                  <div class="container" style="text-align:center;padding-left: 4px;margin-bottom: 50px">
+         		<div class="col-md-6 col-md-offset-3">
+			        <div class="form-group ">
+			           	<form method="post" action="test.do" enctype="multipart/form-data">
+						     <p style="text-align: left; margin-bottom: 10px">반려동물 AI숙소 추천</p>
+						     <input type="file" name="image" class="form-control" onchange="readURL(this)" >
+						     <img id="preview">
+						     <input type="submit" class="btn btn-primary" style="margin-top: 15px; font-family: 'Pretendard-Regular';">
+					    </form>  
+			         </div>
+			    </div>
+		</div>
                </div>
 
             </div>
@@ -193,6 +206,21 @@
    </script>
    <!-- Main JS -->
    <script src="/resources/js/main.js"></script>
+	<script>
+	function readURL(input) {
+		  if (input.files && input.files[0]) {
+		    var reader = new FileReader();
+		    reader.onload = function(e) {
+		      document.getElementById('preview').src = e.target.result;
+		      document.getElementById('preview').style.height='300px';
+		      document.getElementById('preview').style.height='300px';
+		    };
+		    reader.readAsDataURL(input.files[0]);
+		  } else {
+		    document.getElementById('preview').src = "";
+		  }
+		}
+	</script>
 
    </body>
 </html>
