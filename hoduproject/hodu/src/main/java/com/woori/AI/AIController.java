@@ -61,6 +61,7 @@ public class AIController {
 	        JSONParser parser = new JSONParser();
 	        JSONObject jsonobject = (JSONObject) parser.parse(response);
 	        System.out.print(jsonobject.get("file_name"));
+	        System.out.print(jsonobject.get("number"));
 	        //System.out.print(jsonobject.get("image"));
 	        
 	        // create output file
