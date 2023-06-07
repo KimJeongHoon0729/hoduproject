@@ -162,7 +162,7 @@
                   <div class="container" style="text-align:center;padding-left: 4px;margin-bottom: 50px">
          		<div class="col-md-6 col-md-offset-3">
 			        <div class="form-group ">
-			           	<form method="post" action="test.do" enctype="multipart/form-data">
+			           	<form method="post" action="AI.do" enctype="multipart/form-data">
 						     <p style="text-align: left; margin-bottom: 10px">반려동물 AI숙소 추천</p>
 						     <input type="file" name="image" class="form-control" onchange="readURL(this)" >
 						     <img id="preview">

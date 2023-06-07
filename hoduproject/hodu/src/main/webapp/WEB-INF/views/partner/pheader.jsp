@@ -81,6 +81,7 @@
 					<div class="fh5co-menu-1">
 						<a href="../MyPension.do?partnerId=${sessionScope.partnerId }">내 펜션 관리</a>
 						<a href="../AList.do?pageNum=1&amount=10&pensionName=${sessionScope.pensionName }">Q&A</a>
+						<a href="CList.do?pageNum=1&amount=10" >커뮤니티</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="/p">HODU</a>

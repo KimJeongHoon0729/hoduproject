@@ -22,15 +22,15 @@ public class PensionServiceImpl implements PensionService {
 	@Inject
 	PensionDAO pensionDao;
 	
+	//펜션 추천순 리스트
 	@Override
 	public List<PensionVO> likeList(PensionVO vo) {
-		// TODO Auto-generated method stub
 		return pensionDao.likeList(vo);
 	}
 
+	//펜션 가격순 리스트
 	@Override
 	public List<PensionVO> moneyList(PensionVO vo) {
-		// TODO Auto-generated method stub
 		return pensionDao.moneyList(vo);
 	}
 	@Override
@@ -136,4 +136,10 @@ public class PensionServiceImpl implements PensionService {
 	public List<RoomVO> RoomSelect(String pensionName){
 		return pensionDao.RoomSelect(pensionName);
 	}
+	// ai 추천 리스트
+	@Override
+	public List<PensionVO> aiRecommend(PensionVO vo) {
+		return pensionDao.aiRecommend(vo);
+	}
 }
+

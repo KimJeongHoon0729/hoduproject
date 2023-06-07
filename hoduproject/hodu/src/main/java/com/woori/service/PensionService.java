@@ -11,8 +11,13 @@ import com.woori.domain.ReviewVO;
 import com.woori.domain.RoomVO;
 
 public interface PensionService {
+	
+	//펜션 추천순 리스트
 	public List<PensionVO> likeList(PensionVO vo);
+	
+	//펜션 가격순 리스트
 	public List<PensionVO> moneyList(PensionVO vo);
+	
 	public String rating(String pensionName);
 	public void roomRegister(RoomVO vo);
 	public String price(String pensionName);
@@ -49,4 +54,7 @@ public interface PensionService {
 	public List<PensionVO> NameSelect(PensionVO vo);
 	//객실 이름 출력
 	public List<RoomVO> RoomSelect(String pensionName);
+	//ai 추천 리스트
+	public List<PensionVO> aiRecommend(PensionVO vo);
+
 }

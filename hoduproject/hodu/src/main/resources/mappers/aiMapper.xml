@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ai">
+   <select id="aiRecommend" resultType="com.woori.domain.PensionVO">
+      SELECT p.pensionName, p.img_pension, p.region, p.address, p.message, AVG(re.rating) AS avg_rating
+      FROM pension p
+      LEFT JOIN room ro ON p.pensionName = ro.pensionName 
+      LEFT JOIN review re ON p.pensionName = re.pensionName
+      GROUP BY p.pensionName, ro.dogNum
+      HAVING <![CDATA[MAX(ro.dogNum) >= #{dogNum}]]>
+
+   </select>
+</mapper>
+
+<!-- 
+<mapper namespace="ai">
+	<select id="aiRecommend" resultType="com.woori.domain.PensionVO">
+		SELECT p.pensionName, p.img_pension, p.region, p.address, p.message, AVG(re.rating) AS avg_rating
+		FROM pension p
+		LEFT JOIN review re ON p.pensionName = re.pensionName
+		WHERE <![CDATA[p.dogNum >= #{dogNum}]]>
+		GROUP BY p.pensionName
+	</select>
+</mapper>
+
+ -->

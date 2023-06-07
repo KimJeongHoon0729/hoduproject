@@ -1,80 +1,145 @@
 package com.woori.AI;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.List;
+import java.util.UUID;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
-
-import java.io.File;
-import java.util.Base64;
+import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.woori.AWS.AWSS3Service;
+import com.woori.domain.PensionVO;
+import com.woori.domain.RoomVO;
+import com.woori.service.PensionService;
 
 
 @Controller
 public class AIController {
+	
+		@Inject
+		private PensionService pensionService;
+		
+		@Autowired
+		private AWSS3Service s3Service;
+		
+		private JSONObject jsonobject;
 
-	    
-	    private final String url="http://15.165.230.31:5000/detect";
+       
+       private final String url="http://15.165.230.31:5000/detect";
 
-	    private String getBase64String(MultipartFile multipartFile) throws Exception {
-	        byte[] bytes = multipartFile.getBytes();
-	        return Base64.getEncoder().encodeToString(bytes);
-	    }
+       private String getBase64String(MultipartFile multipartFile) throws Exception {
+           byte[] bytes = multipartFile.getBytes();
+           return Base64.getEncoder().encodeToString(bytes);
+       }
+       
+       @RequestMapping("AIRecommendChk.do")
+       public String AIRecommendChk() {
+    	   
+    	   return "AIRecommendChk";
+       }
+       
 
-	    @RequestMapping("test.do")
-	    public String requestToFlask(@RequestParam("image") MultipartFile image, RedirectAttributes redirect) throws Exception {
-	        RestTemplate restTemplate = new RestTemplate();
-	        String fileName = image.getOriginalFilename();
-	        // Header set
-	        HttpHeaders httpHeaders = new HttpHeaders();
-	        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-	        
+       @RequestMapping("AI.do")
+       public String requestToFlask(@RequestParam("image") MultipartFile image, RedirectAttributes redirect, HttpSession session) throws Exception {
+           RestTemplate restTemplate = new RestTemplate();
+           String fileName = image.getOriginalFilename();
+           // Header set
+           HttpHeaders httpHeaders = new HttpHeaders();
+           httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+           
 
-	        // Body set
-	        MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
-	        String imageFileString = getBase64String(image);
-	        body.add("filename", fileName);
-	        body.add("image", imageFileString);
+           // Body set
+           MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
+           String imageFileString = getBase64String(image);
+           body.add("filename", fileName);
+           body.add("image", imageFileString);
 
-	        // Message
-	        HttpEntity<?> requestMessage = new HttpEntity<>(body, httpHeaders);
-	        //HttpEntity<JSONObject> httpEntity = new HttpEntity<JSONObject>(jsonObject, httpHeaders);
-	        // Request
-	        HttpEntity<String> request = restTemplate.postForEntity(url, requestMessage, String.class);
+           // Message
+           HttpEntity<?> requestMessage = new HttpEntity<>(body, httpHeaders);
+           //HttpEntity<JSONObject> httpEntity = new HttpEntity<JSONObject>(jsonObject, httpHeaders);
+           // Request
+           HttpEntity<String> request = restTemplate.postForEntity(url, requestMessage, String.class);
 
-	        // Response 파싱
-	        String response = restTemplate.postForObject(url, requestMessage, String.class);
-	        //ResponseEntity<Map> response = restTemplate.exchange("http://127.0.0.1:5000/detect",HttpMethod.POST, requestMessage, String.class);
-	        
-	        //System.out.print(response);
-	        JSONParser parser = new JSONParser();
-	        JSONObject jsonobject = (JSONObject) parser.parse(response);
-	        System.out.print(jsonobject.get("file_name"));
-	        System.out.print(jsonobject.get("number"));
-	        //System.out.print(jsonobject.get("image"));
-	        
-	        // create output file
-	        File outputFile = new File("C:\\Users\\user\\Desktop\\woori.jpg");
-	        byte[] decodedBytes = Base64.getDecoder().decode((String)(jsonobject.get("image")));
-	        FileUtils.writeByteArrayToFile(outputFile, decodedBytes);
+           // Response 파싱
+           String response = restTemplate.postForObject(url, requestMessage, String.class);
+           //ResponseEntity<Map> response = restTemplate.exchange("http://127.0.0.1:5000/detect",HttpMethod.POST, requestMessage, String.class);
+           
+           JSONParser parser = new JSONParser();
+           jsonobject = (JSONObject) parser.parse(response);
+           System.out.println(jsonobject.get("file_name"));
+           System.out.println(jsonobject.get("number"));
+           //System.out.print(jsonobject.get("image"));
+           
+           // create output file
+           File outputFile = new File("C:\\AIImages\\woori.jpg");
+           byte[] decodedBytes = Base64.getDecoder().decode((String)(jsonobject.get("image")));
+           FileUtils.writeByteArrayToFile(outputFile, decodedBytes);
 
+           
+           System.out.println(jsonobject.get("number").getClass().getName());
 
+           redirect.addAttribute("AIDog", jsonobject.get("number"));
 
-	        return "redirect:/";
-	    }
+           return "redirect:/AIRecommendChk.do";
+       }
+       
+       @RequestMapping("AIRecommend.do")
+		public String AIRecommend(Model model, PensionVO vo) {
+	    	try {
+	    		List<PensionVO> aiRecommendList = pensionService.aiRecommend(vo);
+		    	List<String> rating = new ArrayList<String>(Arrays.asList());
+				List<String> price = new ArrayList<String>(Arrays.asList());
+				
+				for(int i =0; i<aiRecommendList.size();i++) {
+					if(pensionService.rating(aiRecommendList.get(i).getPensionName()) != null) {
+					rating.add(i, pensionService.rating(aiRecommendList.get(i).getPensionName()));
+					} else {
+						rating.add(i, "첫 후기를 작성해주세요.");
+					}
+					if(pensionService.price(aiRecommendList.get(i).getPensionName()) != null) {
+						price.add(i, pensionService.price(aiRecommendList.get(i).getPensionName()));
+					} else {
+						price.add(i, "정보가 없습니다.");
+					}
+					
+					model.addAttribute("rating", rating);
+					model.addAttribute("price", price);
+					model.addAttribute("aiRecommendLists", aiRecommendList);
+						
+				}
+			} catch (NullPointerException e) {
+				e.printStackTrace();
+			}
+			
+		
 
-	}
+			
 
+			System.out.println("AIRecommend에서 실행 : " + jsonobject.get("number"));
+			
+			return "AIRecommend";
+		}
+       
 
-
+   }

@@ -10,6 +10,8 @@ public class PensionVO {
 	String message;
 	int price_mean;
 	int like_mean;
+	int dogNum;
+
 	private String partnerId;
 	
 	public String getPartnerId() {
@@ -66,11 +68,18 @@ public class PensionVO {
 	public void setLike_mean(int like_mean) {
 		this.like_mean = like_mean;
 	}
+
+	public int getDogNum() {
+		return dogNum;
+	}
+	public void setDogNum(int dogNum) {
+		this.dogNum = dogNum;
+	}
 	@Override
 	public String toString() {
 		return "PensionVO [P_idx=" + P_idx + ", img_pension=" + img_pension + ", region=" + region + ", pensionName="
 				+ pensionName + ", address=" + address + ", message=" + message + ", price_mean=" + price_mean
-				+ ", like_mean=" + like_mean + ", partnerId=" + partnerId + "]";
+				+ ", like_mean=" + like_mean + ", dogNum=" + dogNum + ", partnerId=" + partnerId + "]";
 	}
 
 	
