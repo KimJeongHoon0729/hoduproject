@@ -10,10 +10,8 @@ import org.springframework.stereotype.Repository;
 import com.woori.domain.CCriteria;
 import com.woori.domain.CMyCriteria;
 import com.woori.domain.CommunityVO;
-import com.woori.domain.PCriteria;
 import com.woori.domain.PensionVO;
 import com.woori.domain.ReplyVO;
-import com.woori.domain.ReviewVO;
 import com.woori.domain.RoomVO;
 
 @Repository
@@ -24,13 +22,11 @@ public class PensionDAOImpl implements PensionDAO {
 	
 	@Override
 	public List<PensionVO> likeList(PensionVO vo) {
-		// TODO Auto-generated method stub
 		return sqlsession.selectList("pension.likeList", vo);
 	}
 	
 	@Override
 	public List<PensionVO> moneyList(PensionVO vo) {
-		// TODO Auto-generated method stub
 		return sqlsession.selectList("pension.moneyList", vo);
 	}
 	@Override
@@ -44,7 +40,6 @@ public class PensionDAOImpl implements PensionDAO {
 
 	@Override
 	public void roomRegister(RoomVO vo) {
-		// TODO Auto-generated method stub
 		sqlsession.insert("pension.roomRegister", vo);
 	}
 
@@ -140,5 +135,10 @@ public class PensionDAOImpl implements PensionDAO {
 	@Override
 	public List<RoomVO> RoomSelect(String pensionName){
 		return sqlsession.selectList("pension.RoomSelect", pensionName);
+	}
+	// ai 추천 리스트
+	@Override
+	public List<PensionVO> aiRecommend(PensionVO vo) {
+		return sqlsession.selectList("ai.aiRecommend", vo);
 	}
 }

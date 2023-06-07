@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -27,7 +26,6 @@ import com.woori.domain.QnaVO;
 import com.woori.domain.ReservationVO;
 import com.woori.domain.ReviewVO;
 import com.woori.domain.UserVO;
-import com.woori.interceptor.AdminInterceptor;
 import com.woori.service.UserJoinServiceImpl;
 
 @Controller

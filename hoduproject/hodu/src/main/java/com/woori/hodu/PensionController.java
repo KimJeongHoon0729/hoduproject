@@ -1,12 +1,7 @@
 package com.woori.hodu;
 
-import java.io.File;
-import java.lang.System.Logger;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,34 +9,25 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.Param;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.amazonaws.services.gluedatabrew.model.Metadata;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.woori.AWS.AWSS3Service;
 import com.woori.domain.CCriteria;
 import com.woori.domain.CMyCriteria;
 import com.woori.domain.CPageMakerVO;
 import com.woori.domain.CommunityVO;
-import com.woori.domain.Criteria;
-import com.woori.domain.PPageMakerVO;
-import com.woori.domain.PageMakerVO;
 import com.woori.domain.PensionVO;
 import com.woori.domain.ReplyVO;
-import com.woori.domain.ReviewVO;
 import com.woori.domain.RoomVO;
-import com.woori.service.PensionService;
+import com.woori.service.PensionServiceImpl;
 
 @Controller
 public class PensionController {
@@ -49,7 +35,7 @@ public class PensionController {
 	private static final org.slf4j.Logger logger = LoggerFactory.getLogger(PensionController.class);
 	
 	@Inject
-	private PensionService pensionService;
+	private PensionServiceImpl pensionService;
 	
 	@Autowired
 	private AWSS3Service s3Service;
@@ -125,7 +111,7 @@ public class PensionController {
 	public String roomRegister(RoomVO vo, @RequestParam("file1") MultipartFile img_room1,@RequestParam("file2") MultipartFile img_room2,
 			@RequestParam("file3") MultipartFile img_room3,@RequestParam("file4") MultipartFile img_room4, @RequestParam("file5") MultipartFile img_room5,
 			@RequestParam("file6") MultipartFile img_room6,@RequestParam("idx") int idx) {
-		 	System.out.println("시작");
+		
 		 	String filename1 = "";
 		 	String filename2 = "";
 		 	String filename3 = "";
@@ -191,7 +177,6 @@ public class PensionController {
 			
 			if(!pension_img.isEmpty()) {
 				filename = uuid+"_"+pension_img.getOriginalFilename();
-				System.out.println(pension_img.getOriginalFilename());
 				
 				//String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";
 				//String imgUploadPath = path+File.separator+"imgUpload"+File.separator;

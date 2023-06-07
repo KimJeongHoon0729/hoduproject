@@ -50,7 +50,7 @@
                   <ul>
                   <c:forEach var="pension_like" items="${likeList }" varStatus="status" >
                      <li>
-                        <div class="fh5co-food-desc">
+                         <div class="fh5co-food-desc">
                            <figure>
                               <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//${pension_like.img_pension }" class="img-responsive"
                                  alt="Free HTML5 Templates by FREEHTML5.co">
@@ -59,7 +59,7 @@
                               <h3 style="font-family: 'Pretendard-Regular';"><a href="${path }/RoomList.do?pensionName=${pension_like.pensionName }">${pension_like.pensionName }</a></h3>
                               <c:choose>
 	                              <c:when test="${rating[status.index]=='첫 후기를 작성해주세요.' }">
-	                              	<p>첫 후기를 작성해주세요.</p>
+	                              	 <p>첫 후기를 작성해주세요.</p>
                               	  </c:when>
 	                              <c:otherwise>
 	                             	 <p>${rating[status.index] } 별점 평균</p>

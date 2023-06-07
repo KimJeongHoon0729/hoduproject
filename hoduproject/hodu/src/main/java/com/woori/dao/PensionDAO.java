@@ -5,16 +5,17 @@ import java.util.List;
 import com.woori.domain.CCriteria;
 import com.woori.domain.CMyCriteria;
 import com.woori.domain.CommunityVO;
-import com.woori.domain.PCriteria;
 import com.woori.domain.PensionVO;
 import com.woori.domain.ReplyVO;
-import com.woori.domain.ReviewVO;
 import com.woori.domain.RoomVO;
 
 public interface PensionDAO {
-
+	
+	//펜션 추천순 리스트
 	public List<PensionVO> likeList(PensionVO vo);
+	//펜션 가격순 리스트
 	public List<PensionVO> moneyList(PensionVO vo);
+	
 	public String rating(String pensionName);
 	public String price(String pensionName);
 	public void roomRegister(RoomVO vo);
@@ -53,4 +54,7 @@ public interface PensionDAO {
 	public List<PensionVO> NameSelect(PensionVO vo);
 	//객실 이름 출력
 	public List<RoomVO> RoomSelect(String pensionName);
+	//ai 추천 리스트
+	public List<PensionVO> aiRecommend(PensionVO vo);
+	
 }

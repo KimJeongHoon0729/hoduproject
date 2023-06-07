@@ -1,88 +1,78 @@
 package com.woori.hodu;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.woori.domain.CommunityVO;
-
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
-	@RequestMapping("user/reservation")
+	@RequestMapping("/reservation")
 	public String reservation() {
 
 		
 		return "user/reservation";
 	}
 
-	@RequestMapping("user/review")
+	@RequestMapping("/review")
 	public String review() {
 
 		
 		return "user/review";
 	}
 	
-	@RequestMapping("user/review_list")
+	@RequestMapping("/review_list")
 	public String reviewList() {
 		return "user/review_list";
 	}
 	
-	@RequestMapping("user/qna_list")
+	@RequestMapping("/qna_list")
 	public String qna_list() {
 
 		
 		return "user/qna_list";
 	}
-	
-	@RequestMapping("qna_form")
-	public String qna_form() {
 
-		
-		return "user/qna_form";
-	}
 	
-	
-	@RequestMapping("user/mypage")
+	@RequestMapping("/mypage")
 	public String mypage() {
 
 		
 		return "user/mypage/mypage";
 	}
 	
-	@RequestMapping("user/mypage/reservationList")
+	@RequestMapping("/mypage/reservationList")
 	public String my_reservationList() {
 		
 		return "user/mypage/reservationList";
 	}
-	@RequestMapping("user/mypage/reservationContent_update")
+	@RequestMapping("/mypage/reservationContent_update")
 	public String my_reservationListContent_update() {
 		
 		return "user/mypage/reservationContent_update";
 	}
 	
 	
-	@RequestMapping("user/mypage/editProfile")
+	@RequestMapping("/mypage/editProfile")
 	public String my_editProfile() {
 		
 		return "user/mypage/editProfile";
 	}
 	
-	@RequestMapping("user/list_map")
+	@RequestMapping("/list_map")
 	public String list_map() {
 
 		
 		return "user/list_map";
 	}
-	@RequestMapping("user/list_pension")
+	@RequestMapping("/list_pension")
 	public String list_pension() {
 
 		
 		return "user/list_pension";
 	}
 	
-	@RequestMapping("user/q_content")
+	@RequestMapping("/q_content")
 	public String q_content() {
 
 		
