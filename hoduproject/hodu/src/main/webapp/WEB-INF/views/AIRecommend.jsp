@@ -29,7 +29,7 @@
                <div class="form-group ">
 	           	<form method="post" action="AIRecommend.do?AIDog=${param.AIDog }" enctype="multipart/form-data">  
 	           	     <label for="dogNum" class="sr-only">dogNum</label>
-				     <input id="dogNum" name="dogNum" class="form-control" type="number" value=${param.AIDog }>
+				     <input id="dogNum" name="dogNum" class="form-control" type="number">
 				     <input type="submit" class="btn btn-primary" value="다시제출" style="margin-top: 15px; font-family: 'Pretendard-Regular';">
 			    </form>  
 			   </div>

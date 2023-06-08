@@ -152,8 +152,7 @@ public class PartnerJoinController {
 		
 		@PostMapping("uploadPProfile.do")
 		public String fileUpload(@RequestParam("file") MultipartFile businessNum_img, @RequestParam("partnerId") String partnerId, RedirectAttributes redirect, HttpServletRequest req, @ModelAttribute PartnerVO pvo) throws Exception {
-			
-			
+
 			
 			String filename = "";
 			String uuid= UUID.randomUUID().toString();
@@ -162,9 +161,6 @@ public class PartnerJoinController {
 			if(!businessNum_img.isEmpty()) {
 				filename = uuid+"_"+businessNum_img.getOriginalFilename();
 				
-				//String path = req.getSession().getServletContext().getRealPath("/").concat("resources");
-				//String path = " https://s3.ap-northeast-2.amazonaws.com/hodu";
-				//String imgUploadPath = path+File.separator;
 				
 				try {
 					s3Service.uploadObject(businessNum_img, filename);

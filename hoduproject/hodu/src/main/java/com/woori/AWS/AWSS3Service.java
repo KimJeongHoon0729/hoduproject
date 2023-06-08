@@ -22,6 +22,9 @@ public class AWSS3Service {
 	public  String uploadObject(MultipartFile multipartFile, String storedFileName) throws IOException {
 		String filePath = "/"+storedFileName;
 		s3Client.putObject(new PutObjectRequest(bucketName, filePath, multipartFile.getInputStream(),null));
+		
+		System.out.println(s3Client.getUrl(bucketName, filePath).toString());
+		
 		return s3Client.getUrl(bucketName, filePath).toString();
 	}
 	

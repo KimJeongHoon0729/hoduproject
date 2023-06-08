@@ -21,16 +21,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.woori.AWS.AWSS3Service;
+import com.woori.domain.AIImageVO;
 import com.woori.domain.PensionVO;
-import com.woori.domain.RoomVO;
+import com.woori.service.AIImageService;
 import com.woori.service.PensionService;
 
 
@@ -39,6 +41,9 @@ public class AIController {
 	
 		@Inject
 		private PensionService pensionService;
+		
+		@Inject
+		private AIImageService aiImageService;
 		
 		@Autowired
 		private AWSS3Service s3Service;
@@ -56,6 +61,8 @@ public class AIController {
        @RequestMapping("AIRecommendChk.do")
        public String AIRecommendChk() {
     	   
+    	   
+    	   
     	   return "AIRecommendChk";
        }
        
@@ -64,10 +71,13 @@ public class AIController {
        public String requestToFlask(@RequestParam("image") MultipartFile image, RedirectAttributes redirect, HttpSession session) throws Exception {
            RestTemplate restTemplate = new RestTemplate();
            String fileName = image.getOriginalFilename();
+           
+           
+           
            // Header set
            HttpHeaders httpHeaders = new HttpHeaders();
            httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-           
+          
 
            // Body set
            MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
@@ -96,10 +106,9 @@ public class AIController {
            byte[] decodedBytes = Base64.getDecoder().decode((String)(jsonobject.get("image")));
            FileUtils.writeByteArrayToFile(outputFile, decodedBytes);
 
-           
-           System.out.println(jsonobject.get("number").getClass().getName());
-
            redirect.addAttribute("AIDog", jsonobject.get("number"));
+           
+           System.out.println("정상 실행");
 
            return "redirect:/AIRecommendChk.do";
        }
@@ -131,10 +140,6 @@ public class AIController {
 			} catch (NullPointerException e) {
 				e.printStackTrace();
 			}
-			
-		
-
-			
 
 			System.out.println("AIRecommend에서 실행 : " + jsonobject.get("number"));
 			

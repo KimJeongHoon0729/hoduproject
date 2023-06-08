@@ -118,8 +118,7 @@ public class PensionController {
 		 	String filename4 = "";
 		 	String filename5 = "";
 		 	String filename6 = "";
-		 	ObjectMetadata metaData = new ObjectMetadata();
-			String uuid= UUID.randomUUID().toString();
+		 	String uuid= UUID.randomUUID().toString();
 			if(!img_room1.isEmpty()||!img_room2.isEmpty()||!img_room3.isEmpty()||!img_room4.isEmpty()||!img_room5.isEmpty()||!img_room6.isEmpty()) {
 			
 				//String path = "C:\\Users\\user\\git\\hoduproject\\hoduproject\\hodu\\src\\main\\webapp\\resources";

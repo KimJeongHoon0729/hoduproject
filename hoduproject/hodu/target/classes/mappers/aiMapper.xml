@@ -13,7 +13,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       HAVING <![CDATA[MAX(ro.dogNum) >= #{dogNum}]]>
 
    </select>
+   
+   <insert id="aiImageUpload">
+	  INSERT INTO aiimage (img_ai) VALUES (#{img_ai})
+   
+   </insert>
+   
 </mapper>
+
+
+
+
 
 <!-- 
 <mapper namespace="ai">

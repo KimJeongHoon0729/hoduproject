@@ -24,15 +24,22 @@
                <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">AI Recommend Check</h2>
                <p class="sub-heading to-animate"></p>
             </div>
-               </div>
+         </div>
                
-             <div class="form-group ">
-          	<form method="post" action="AIRecommend.do?AIDog=${param.AIDog }" enctype="multipart/form-data">  
-		      <label for="dogNum" class="sr-only">dogNum</label>
-		      <input id="dogNum" name="dogNum" class="form-control" type="number" value=${param.AIDog }>
-		      <input type="submit" class="btn btn-primary" value="다시제출" style="margin-top: 15px; font-family: 'Pretendard-Regular';">
-	        </form>  
-	        </div>
+         <div class="fh5co-food-desc">
+             <figure>
+                <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//${AIImage.img_ai }" class="img-responsive"
+                   alt="Free HTML5 Templates by FREEHTML5.co">
+             </figure>
+         </div>
+               
+         <div class="form-group ">
+         	<form method="post" action="AIRecommend.do?AIDog=${param.AIDog }" enctype="multipart/form-data">  
+	           <label for="dogNum" class="sr-only">dogNum</label>
+	           <input id="dogNum" name="dogNum" class="form-control" type="number" value=${param.AIDog }>
+	           <input type="submit" class="btn btn-primary" value="다시제출" style="margin-top: 15px; font-family: 'Pretendard-Regular';">
+            </form>  
+	     </div>
       </div>
    </div>
    <%@ include file="footer.jsp"%>
