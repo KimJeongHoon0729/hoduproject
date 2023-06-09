@@ -37,6 +37,7 @@ public class AWSConfiguration implements WebMvcConfigurer {
 							.build();
 		return s3Builder;
 	}
-
+	
+	
 	
 	}

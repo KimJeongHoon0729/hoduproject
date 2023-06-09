@@ -1,5 +1,6 @@
 package com.woori.AI;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +9,8 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FileUtils;
@@ -27,8 +30,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.amazonaws.services.kafka.model.S3;
 import com.woori.AWS.AWSS3Service;
 import com.woori.domain.AIImageVO;
 import com.woori.domain.PensionVO;
@@ -60,7 +65,6 @@ public class AIController {
        
        @RequestMapping("AIRecommendChk.do")
        public String AIRecommendChk() {
-    	   
     	   
     	   
     	   return "AIRecommendChk";
@@ -102,19 +106,31 @@ public class AIController {
            //System.out.print(jsonobject.get("image"));
            
            // create output file
-           File outputFile = new File("C:\\AIImages\\woori.jpg");
+           File outputFile = new File("/home/ec2-user/temp.jpg");
+           //File outputFile = new File("C:\\Users\\user\\Desktop\\temp.jpg");
            byte[] decodedBytes = Base64.getDecoder().decode((String)(jsonobject.get("image")));
            FileUtils.writeByteArrayToFile(outputFile, decodedBytes);
-
+          
+           s3Service.uploadObject(outputFile, "temp.jpg");
+           outputFile.delete();
+           //File temp = File.createTempFile("temp_", ".jpg");
+           //FileUtils.writeByteArrayToFile(temp, decodedBytes);
+           
+           //System.out.println(temp.getAbsolutePath().toString());
+           //System.out.println(temp.getName().toString());
            redirect.addAttribute("AIDog", jsonobject.get("number"));
            
+           //redirect.addAttribute("ImgPath", temp.getAbsolutePath().toString());
+           
            System.out.println("정상 실행");
-
+           
+           
            return "redirect:/AIRecommendChk.do";
        }
        
        @RequestMapping("AIRecommend.do")
 		public String AIRecommend(Model model, PensionVO vo) {
+    	   
 	    	try {
 	    		List<PensionVO> aiRecommendList = pensionService.aiRecommend(vo);
 		    	List<String> rating = new ArrayList<String>(Arrays.asList());

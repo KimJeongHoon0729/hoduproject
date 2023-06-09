@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta charset="UTF-8">
 <title>Pension List</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,8 +27,8 @@
          </div>
                
          <div class="fh5co-food-desc">
-             <figure>
-                <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//${AIImage.img_ai }" class="img-responsive"
+             <figure style="text-align: -webkit-center">
+                <img src="https://hodu.s3.ap-northeast-2.amazonaws.com//temp.jpg" class="img-responsive"
                    alt="Free HTML5 Templates by FREEHTML5.co">
              </figure>
          </div>
