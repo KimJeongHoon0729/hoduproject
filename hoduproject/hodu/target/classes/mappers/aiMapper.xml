@@ -13,27 +13,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       HAVING <![CDATA[MAX(ro.dogNum) >= #{dogNum}]]>
 
    </select>
-   
-   <insert id="aiImageUpload">
-	  INSERT INTO aiimage (img_ai) VALUES (#{img_ai})
-   
-   </insert>
-   
 </mapper>
-
-
-
-
-
-<!-- 
-<mapper namespace="ai">
-	<select id="aiRecommend" resultType="com.woori.domain.PensionVO">
-		SELECT p.pensionName, p.img_pension, p.region, p.address, p.message, AVG(re.rating) AS avg_rating
-		FROM pension p
-		LEFT JOIN review re ON p.pensionName = re.pensionName
-		WHERE <![CDATA[p.dogNum >= #{dogNum}]]>
-		GROUP BY p.pensionName
-	</select>
-</mapper>
-
- -->

@@ -8,7 +8,7 @@ function join_check(){
     var userEmail = document.getElementById("userEmail");
 
     
-/*
+
     if(userId.value == ""){
         alert("아이디를 입력하세요.");
         userId.focus();
@@ -62,7 +62,7 @@ function join_check(){
         userEmail.focus();
         return false;
     }
-*/
+
     document.join_form.submit();
 
 }
@@ -78,7 +78,7 @@ function pjoin_check(){
     var partnerEmail = document.getElementById("partnerEmail");
 
     
-/*
+
     if(partnerId.value == ""){
         alert("아이디를 입력하세요.");
         partnerId.focus();
@@ -138,7 +138,7 @@ function pjoin_check(){
         partnerEmail.focus();
         return false;
     }
-*/
+
     document.pjoin_form.submit();
 
 }
