@@ -162,9 +162,10 @@
                   <div class="container" style="text-align:center;padding-left: 4px;margin-bottom: 50px">
          		<div class="col-md-6 col-md-offset-3">
 			        <div class="form-group ">
-			           	<form method="post" action="AI.do" enctype="multipart/form-data">
-						     <p style="text-align: left; margin-bottom: 10px">반려동물 AI숙소 추천</p>
-						     <input type="file" name="image" class="form-control" onchange="readURL(this)" >
+			           	<form method="post" action="AI.do" enctype="multipart/form-data" id="AIForm">
+						     <h3 style="text-align: left; margin-bottom: 10px;  font-family: 'Pretendard-Regular'; ">반려동물 AI숙소 추천</h3>
+						     <p style="text-align: left; margin-bottom: 10px">* JPG 파일만 입력 가능합니다.</p>
+						     <input type="file" name="image" id="image" class="form-control" onchange="readURL(this)" accept="image/jpg"/>
 						     <img id="preview">
 						     <input type="submit" class="btn btn-primary" style="margin-top: 15px; font-family: 'Pretendard-Regular';">
 					    </form>  
@@ -220,6 +221,21 @@
 		    document.getElementById('preview').src = "";
 		  }
 		}
+	$('input[type="file"]').change(function () {
+	if( $("#image").val() != "" ){
+
+		var ext = $('#image').val().split('.').pop().toLowerCase();
+
+		      if($.inArray(ext, ['jpg']) == -1) {
+
+			 alert('jpg 파일만 업로드 할수 있습니다.');
+
+			 return;
+
+		      }
+
+		}
+	});
 	</script>
 
    </body>

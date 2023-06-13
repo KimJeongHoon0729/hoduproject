@@ -172,7 +172,7 @@ public class PartnerJoinController {
 			pvo.setImg_business(filename);
 			partnerJoinService.uploadImg(pvo);
 			redirect.addAttribute("partnerId", partnerId);
-			return "redirect: viewPProfile.do";
+			return "redirect:viewPProfile.do";
 		}
 		
 		// 아이디 중복 체크
@@ -211,7 +211,7 @@ public class PartnerJoinController {
 		public String RDelete(int reservation_idx, HttpSession rsession, RedirectAttributes redirect) {
 			partnerJoinService.RDelete(reservation_idx);
 			redirect.addAttribute("partnerId", rsession.getAttribute("partnerId"));
-			return "redirect: RList.do";
+			return "redirect:RList.do";
 		}
 		
 		//예약 수정
@@ -226,7 +226,7 @@ public class PartnerJoinController {
 		public String RUpdate(@ModelAttribute ReservationVO rvo, @RequestParam("reservation_idx") int reservation_idx, RedirectAttributes redirect) {
 			partnerJoinService.RUpdate(rvo);
 			redirect.addAttribute("reservation_idx", reservation_idx);
-			return "redirect: RView.do";
+			return "redirect:RView.do";
 		}
 		
 		
@@ -258,7 +258,7 @@ public class PartnerJoinController {
 		public String Aregister(@ModelAttribute QnaVO vo,@RequestParam("Q_idx") int Q_idx, RedirectAttributes redirect) {
 			partnerJoinService.ARegister(vo);
 			redirect.addAttribute("Q_idx", Q_idx);
-			return "redirect: AView.do";
+			return "redirect:AView.do";
 		}
 		//MyPension 출력
 		@RequestMapping("MyPension.do")
@@ -293,7 +293,7 @@ public class PartnerJoinController {
 		public String roomUpdate(RoomVO vo, @RequestParam("room_idx") int room_idx, RedirectAttributes redirect) {
 			partnerJoinService.roomUpdate(vo);
 			redirect.addAttribute("room_idx", vo.getRoom_idx());
-			return "redirect: ContentMyRoom.do";
+			return "redirect:ContentMyRoom.do";
 		}
 		//MyPension 출력
 		@RequestMapping("ViewPension.do")
@@ -306,7 +306,7 @@ public class PartnerJoinController {
 		public String pensionUpdate(PensionVO vo, HttpSession session, RedirectAttributes redirect) {
 			partnerJoinService.pensionUpdate(vo);
 			redirect.addAttribute("partnerId", session.getAttribute("partnerId"));
-			return "redirect: MyPension.do";
+			return "redirect:MyPension.do";
 		}
 }
 

@@ -176,13 +176,13 @@ public class UserJoinController {
 			ModelAndView mav = new ModelAndView();
 			if(result != null) { //로그인 성공
 				redirect.addAttribute("Q_idx", qvo.getQ_idx());
-				mav.setViewName("redirect: QView.do");
+				mav.setViewName("redirect:QView.do");
 				mav.addObject("msg", "success");
 				
 			} else { //로그인 실패
 				redirect.addAttribute("pageNum", pageNum);
 				redirect.addAttribute("amount", amount);
-				mav.setViewName("redirect: QList.do");
+				mav.setViewName("redirect:QList.do");
 				mav.addObject("msg", "fail");
 			}
 			return mav;
@@ -195,7 +195,7 @@ public class UserJoinController {
 			userJoinService.Q_insert(qvo);
 			redirect.addAttribute("pageNum", pageNum);
 			redirect.addAttribute("amount", amount);
-			return "redirect: QList.do";
+			return "redirect:QList.do";
 		}
 		
 		//Q 확인
@@ -210,7 +210,7 @@ public class UserJoinController {
 		@RequestMapping("QDelete.do")
 		public String QDelete(@RequestParam("Q_idx") int Q_idx) {
 			userJoinService.QDelete(Q_idx);
-			return "redirect: QList.do?pageNum=1&amount=10";
+			return "redirect:QList.do?pageNum=1&amount=10";
 		}
 		
 		//리뷰 작성
@@ -218,7 +218,7 @@ public class UserJoinController {
 		public String ReviewInsert(ReviewVO rvo, @RequestParam("pensionName") String pensionName, RedirectAttributes redirect) {
 			userJoinService.ReviewInsert(rvo);
 			redirect.addAttribute("pensionName", pensionName);
-			return "redirect: ReviewList.do";
+			return "redirect:ReviewList.do";
 		}
 		
 		//R 리스트 출력
@@ -246,14 +246,14 @@ public class UserJoinController {
 		public String UserRUpdate(ReservationVO rvo,HttpSession session, RedirectAttributes redirect) {
 			userJoinService.UserRUpdate(rvo);
 			redirect.addAttribute("userId", session.getAttribute("userId"));
-			return "redirect: ReservationList.do";
+			return "redirect:ReservationList.do";
 		}
 		
 		@RequestMapping("deleteReservation.do")
 		public String deleteReservation(int reservation_idx, HttpSession session, RedirectAttributes redirect) {
 			userJoinService.DeleteReservation(reservation_idx);
 			redirect.addAttribute("userId", session.getAttribute("userId"));
-			return "redirect: ReservationList.do";
+			return "redirect:ReservationList.do";
 		}
 		
 		//예약하기
@@ -261,7 +261,7 @@ public class UserJoinController {
 		public String RInsert(ReservationVO rvo,RedirectAttributes redirect, HttpSession session) {
 			userJoinService.RInsert(rvo);
 			redirect.addAttribute("userId", session.getAttribute("userId"));
-			return "redirect: ReservationList.do";
+			return "redirect:ReservationList.do";
 		}
 }
 

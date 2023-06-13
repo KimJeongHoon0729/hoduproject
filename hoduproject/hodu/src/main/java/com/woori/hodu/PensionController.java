@@ -245,7 +245,7 @@ public class PensionController {
 	@RequestMapping("CInsert.do")
 	public String CInsert(CommunityVO vo, Model model) {
 		pensionService.CInsert(vo);
-		return "redirect: CList.do";
+		return "redirect:CList.do";
 	}
 	//커뮤니티 수정
 	@RequestMapping("CUpdate.do")
@@ -253,7 +253,7 @@ public class PensionController {
 		pensionService.CUpdate(vo);
 		
 		redirect.addAttribute("index", vo.getIndex());
-		return "redirect: CView.do";
+		return "redirect:CView.do";
 	}
 	@RequestMapping("CView2.do")
 	public String CView2(int index, Model model, ReplyVO vo, RedirectAttributes redirect) {
@@ -270,7 +270,7 @@ public class PensionController {
 	public String CDelete(@RequestParam("index") int index, RedirectAttributes redirect) {
 		pensionService.CDelete(index);
 		redirect.addFlashAttribute("result", "delete success");
-		return "redirect: CList.do?pageNum=1&amount=10";
+		return "redirect:CList.do?pageNum=1&amount=10";
 	}
 	
 	//댓글 입력 및 출력
@@ -278,21 +278,21 @@ public class PensionController {
 	public String ReplyInsert(ReplyVO vo, RedirectAttributes redirect, @RequestParam("index") int index) {
 		pensionService.ReplyInsert(vo);
 		redirect.addAttribute("index", index);
-		return "redirect: CView.do";
+		return "redirect:CView.do";
 	}
 	//댓글 수정
 	@RequestMapping("ReplyUpdate.do")
 	public String ReplyUpdate (ReplyVO vo, RedirectAttributes redirect) {
 		pensionService.ReplyUpdate(vo);
 		redirect.addAttribute("index", vo.getIndex());
-		return "redirect: CView.do";
+		return "redirect:CView.do";
 	}
 	//댓글 삭제
 	@RequestMapping("ReplyDelete.do")
 	public String ReplyDelete (int reply_index,RedirectAttributes redirect,@RequestParam("index") int index) {
 		pensionService.ReplyDelete(reply_index);
 		redirect.addAttribute("index", index);
-		return "redirect: CView.do";
+		return "redirect:CView.do";
 	}
 	
 	//펜션 이름 출력

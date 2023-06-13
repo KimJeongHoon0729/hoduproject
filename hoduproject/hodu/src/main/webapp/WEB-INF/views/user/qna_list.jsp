@@ -213,8 +213,8 @@
       <div class="modal_label">비밀번호</div>
       <input type="hidden" name="pageNum" value="1"/>
       <input type="hidden" name="amount" value="10"/>
-      <input type="hidden" name="Q_idx" class="input_box" id="Q_idx"/>
-      <input type="password" name="Q_pw" class="input_box" id="des_box"/>
+      <input type="hidden" name="q_idx" class="input_box" id="Q_idx"/>
+      <input type="password" name="q_pw" class="input_box" id="des_box"/>
     </div>
     <div class="m_footer">
       <div class="modal_btn cancle" id="close_btn">취소</div>

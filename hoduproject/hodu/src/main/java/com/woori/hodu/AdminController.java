@@ -71,7 +71,7 @@ public class AdminController {
 	@RequestMapping("/userDelete.do")
 	public String userDelete(@RequestParam("userId") String userId) {
 		adminService.userDelete(userId);
-		return "redirect: /admin/userList.do";
+		return "redirect:/admin/userList.do";
 	}
 	
 	
@@ -94,7 +94,7 @@ public class AdminController {
 	@RequestMapping("/partnerDelete.do")
 	public String partnerDelete(@RequestParam("partnerId") String partnerId) {
 		adminService.userDelete(partnerId);
-		return "redirect: /admin/partnerList.do";
+		return "redirect:/admin/partnerList.do";
 	}
 	
 	
@@ -122,7 +122,7 @@ public class AdminController {
 	@RequestMapping("/communityDelete.do")
 	public String communityDelete(@RequestParam("index") int index) {
 		adminService.communityDelete(index);
-		return "redirect: /admin/adminCList.do?pageNum=1&amount=10";
+		return "redirect:/admin/adminCList.do?pageNum=1&amount=10";
 	}
 	
 	
@@ -146,7 +146,7 @@ public class AdminController {
 	@RequestMapping("/qnaDelete.do")
 	public String qnaDelete(@RequestParam("Q_idx") int Q_idx) {
 		adminService.qnaDelete(Q_idx);
-		return "redirect: /admin/adminQList.do?pageNum=1&amount=10";
+		return "redirect:/admin/adminQList.do?pageNum=1&amount=10";
 	}
 	
 	// 어드민 커뮤니티 컨텐츠
@@ -165,7 +165,7 @@ public class AdminController {
 	public String adminCDelete(@RequestParam("index") int index, RedirectAttributes redirect) {
 		pensionService.CDelete(index);
 		redirect.addFlashAttribute("result", "delete success");
-		return "redirect: /admin/adminCList.do?pageNum=1&amount=10";
+		return "redirect:/admin/adminCList.do?pageNum=1&amount=10";
 	}
 	
 	// 댓글 삭제
@@ -173,7 +173,7 @@ public class AdminController {
 	public String adminReplyDelete(@RequestParam("reply_index") int reply_index, RedirectAttributes redirect, int index) {
 		adminService.replyDelete(reply_index);
 		redirect.addAttribute("index", index);
-		return "redirect: /admin/adminCView.do";
+		return "redirect:/admin/adminCView.do";
 	}
 	@RequestMapping("/logout.do")
 	public ModelAndView logout(HttpSession session) {
