@@ -27,17 +27,17 @@
                            		<div class="fh5co-food-desc">     
                            			<input type="hidden" name="reservation_idx" id="reservation_idx" value="${Reservation.reservation_idx }"> 
 									<div>
-		                                 <h3 style="font-family: 'Pretendard-Regular';">${Reservation.pensionName }</h3>
-		                                 <p style="font-family: 'Pretendard-Regular';"><fmt:formatDate value="${Reservation.reservation_date }" pattern="yyyy-MM-dd"/></p>
-		                             </div>
+		                               <h3 style="font-family: 'Pretendard-Regular';">${Reservation.pensionName }</h3>
+		                               <p style="font-family: 'Pretendard-Regular';"><fmt:formatDate value="${Reservation.reservation_date }" pattern="yyyy-MM-dd"/></p>
+		                            </div>
                           		 </div>    
-		                           <div class="fh5co-food-pricing" style="font-family: 'Pretendard-Regular';">
-		                              <fmt:formatNumber value="${Reservation.price}" pattern="###,###"/> 원
-		                           </div>       
-		              				<div class="fh5co-food-pricing" >
-					  					<button class="btn btn-primary me-md-2" type="button" onclick="location.href='UserRView.do?reservation_idx=${Reservation.reservation_idx}'" style="font-family: 'Pretendard-Regular';">수정</button>
-					 					<button class="btn btn-primary" type="button" onclick="call_confirm(${Reservation.reservation_idx});" style="font-family: 'Pretendard-Regular';">취소</button>
-					 				</div>  
+		                         <div class="fh5co-food-pricing" style="font-family: 'Pretendard-Regular';">
+		                            <fmt:formatNumber value="${Reservation.price}" pattern="###,###"/> 원
+		                         </div>       
+		              		     <div class="fh5co-food-pricing" >
+					  			    <button class="btn btn-primary me-md-2" type="button" onclick="location.href='UserRView.do?reservation_idx=${Reservation.reservation_idx}'" style="font-family: 'Pretendard-Regular';">수정</button>
+					 				<button class="btn btn-primary" type="button" onclick="call_confirm(${Reservation.reservation_idx});" style="font-family: 'Pretendard-Regular';">취소</button>
+					 			 </div>  
 			 				</c:forEach>                                      
 					  </li>
 					 </ul>

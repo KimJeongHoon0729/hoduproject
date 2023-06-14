@@ -138,7 +138,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="ReservationList" resultType="com.woori.domain.ReservationVO">
 		select * from reservation re 
 		LEFT JOIN room ro ON re.roomName = ro.roomName
-		where userId = #{userId}
+		where userId = #{userId} OR reservation_idx=#{reservation_idx}
 	</select>
 	
 	<!-- 나의 예약 정보 출력 -->

@@ -238,8 +238,10 @@ public class UserJoinController {
 		}
 		
 		@RequestMapping("UserRView.do")
-		public String UserRView(int reservation_idx, Model model) {
-			model.addAttribute("UserRView", userJoinService.UserRView(reservation_idx));
+		public String UserRView(int reservation_idx, Model model, ReservationVO rvo) {
+			List<ReservationVO> reservationList = userJoinService.ReservationList(rvo);
+			model.addAttribute("UserRView", userJoinService.UserRView(reservation_idx));		
+			model.addAttribute("ReservationList", reservationList);
 			return "user/mypage/reservationContent_update";
 		}
 		@RequestMapping("UserRUpdate.do")

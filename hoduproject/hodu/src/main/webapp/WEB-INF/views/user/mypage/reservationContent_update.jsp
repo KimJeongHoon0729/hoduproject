@@ -76,8 +76,14 @@
                </tr>
                
                 <tr>
-                  <th style="text-align: center;">펜션가격</th>
-                  <td>${UserRView.price }</td>
+                  <th style="text-align: center;">객실가격</th>
+                  <td>
+                     <c:forEach var="Reservation" items="${ReservationList }">  
+                        <div class="fh5co-food-pricing" style="font-family: 'Pretendard-Regular';">
+                           <fmt:formatNumber value="${Reservation.price}" pattern="###,###"/> 원
+                        </div>       	
+			 	    </c:forEach>  
+			 	</td>
                </tr>
 
                <tr>
