@@ -136,7 +136,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 나의 예약 목록 출력 -->
 	<select id="ReservationList" resultType="com.woori.domain.ReservationVO">
-		select * from reservation where userId = #{userId}
+		select * from reservation re 
+		LEFT JOIN room ro ON re.roomName = ro.roomName
+		where userId = #{userId}
 	</select>
 	
 	<!-- 나의 예약 정보 출력 -->
@@ -161,8 +163,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	<!-- 예약 하기 -->
 	<insert id="RInsert">
-		INSERT INTO reservation(roomName,userId, userName, userMobile, userEmail, pensionName, price, dogSize, dogNum, peopleNum, message_to_p, reservation_date) 
-			VALUES(#{roomName},#{userId},#{userName},#{userMobile},#{userEmail},#{pensionName},#{price}, #{dogSize},#{dogNum}, #{peopleNum}, #{message_to_p}, #{reservation_date})
+		INSERT INTO reservation(roomName,userId, userName, userMobile, userEmail, pensionName, dogSize, dogNum, peopleNum, message_to_p, reservation_date) 
+			VALUES(#{roomName},#{userId},#{userName},#{userMobile},#{userEmail},#{pensionName}, #{dogSize},#{dogNum}, #{peopleNum}, #{message_to_p}, #{reservation_date})
 	</insert>
 	
 	
