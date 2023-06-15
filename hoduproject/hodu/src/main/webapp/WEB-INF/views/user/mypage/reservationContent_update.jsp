@@ -37,7 +37,13 @@
               
               <tr>
                   <th style="width: 200px; text-align: center;">예약일</th>
-                  <th><input id="reservation_date" name="reservation_date" type="date">&nbsp;&nbsp;기존 예약일 : <fmt:formatDate value="${UserRView.reservation_date }" pattern="yyyy-MM-dd"/></th>
+                  <th>
+                  <input id="reservation_Sdate" name="reservation_Sdate" type="date">&nbsp;&nbsp;
+                  <input id="reservation_Edate" name="reservation_Edate" type="date"><br>
+                  기존 예약일 : 
+                  <fmt:formatDate value="${UserRView.reservation_Sdate }" pattern="yyyy-MM-dd"/> ~
+                  <fmt:formatDate value="${UserRView.reservation_Edate }" pattern="yyyy-MM-dd"/>
+                  </th>
                </tr>
              
                <tr>
@@ -94,7 +100,7 @@
                <tr>
                   <th style="text-align: center;">반려견 사이즈</th>
                   <th>
-               		<p style="font-size: 16px; text-align: center;"> 
+               		<p style="font-size: 16px; text-align: center; margin-bottom: 0px"> 
 		                <input type='checkbox' name='dogSize' value='소형견' /> 소형견 (10Kg 미만)&nbsp;&nbsp;&nbsp;
 		                <input type='checkbox' name='dogSize' value='중형견' /> 중형견 (10kg~25Kg 미만)&nbsp;&nbsp;&nbsp;
 		                <input type='checkbox' name='dogSize' value='대형견' /> 대형견 (25Kg 이상)

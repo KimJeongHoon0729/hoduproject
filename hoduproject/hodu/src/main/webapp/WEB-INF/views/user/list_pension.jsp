@@ -15,7 +15,6 @@
             <div class="row text-center fh5co-heading row-padded">
                <div class="col-md-8 col-md-offset-2">
                   <h2 class="heading to-animate" style="font-family: 'Pretendard-Regular';">${param.pensionName }</h2>
-                  <p class="sub-heading to-animate">예약 시 펜션 이름을 정확히 작성해 주세요.</p>
                </div>
             </div>
          

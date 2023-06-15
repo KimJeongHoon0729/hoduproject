@@ -152,7 +152,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		dogSize=#{dogSize},   
 		peopleNum=#{peopleNum},    
 		message_to_p=#{message_to_p},  
-		reservation_date=#{reservation_date}   
+		reservation_Sdate=#{reservation_Sdate} 
+		reservation_Edate=#{reservation_Edate}  
 		where reservation_idx=#{reservation_idx}   
 	</update>
 	<!-- 예약 삭제 -->
@@ -163,8 +164,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	<!-- 예약 하기 -->
 	<insert id="RInsert">
-		INSERT INTO reservation(roomName,userId, userName, userMobile, userEmail, pensionName, dogSize, dogNum, peopleNum, message_to_p, reservation_date) 
-			VALUES(#{roomName},#{userId},#{userName},#{userMobile},#{userEmail},#{pensionName}, #{dogSize},#{dogNum}, #{peopleNum}, #{message_to_p}, #{reservation_date})
+		INSERT INTO reservation(roomName,userId, userName, userMobile, userEmail, pensionName, dogSize, dogNum, peopleNum, message_to_p, reservation_Sdate, reservation_Edate) 
+			VALUES(#{roomName},#{userId},#{userName},#{userMobile},#{userEmail},#{pensionName}, #{dogSize},#{dogNum}, #{peopleNum}, #{message_to_p}, #{reservation_Sdate}, #{reservation_Edate})
 	</insert>
 	
 	
