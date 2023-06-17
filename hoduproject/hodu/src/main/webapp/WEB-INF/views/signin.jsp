@@ -113,7 +113,7 @@
 		           </div>
 		            <div class="form-group ">
 		              <label for="businessNum" class="sr-only">businessNum</label>
-		              <input id="businessNum" name="businessNum" class="form-control" placeholder="사업자 등록 번호" type="text">
+		              <input id="businessNum" name="businessNum" class="form-control" placeholder="사업자 등록 번호(ex:123-12-12345)" type="text">
 		           </div>
 		            <div class="form-group ">
 		              <label for="partnerMobile" class="sr-only">partnerMobile</label>
