@@ -249,10 +249,7 @@ public class UserJoinController {
 			model.addAttribute("ReservationList", reservationList);
 			model.addAttribute("ReservationSdate", Sdate.format(reservationList.get(0).getReservation_Sdate()));
 			model.addAttribute("ReservationEdate", Edate.format(reservationList.get(0).getReservation_Edate()));
-			
-			
-			
-			
+	
 			return "user/mypage/reservationContent_update";
 		}
 		
@@ -276,8 +273,6 @@ public class UserJoinController {
 		public String RInsert(ReservationVO rvo,RedirectAttributes redirect, HttpSession session) {
 			userJoinService.RInsert(rvo);
 			redirect.addAttribute("userId", session.getAttribute("userId"));
-			
-			System.out.println(rvo.getReservation_Sdate());
 			return "redirect:ReservationList.do";
 		}
 }

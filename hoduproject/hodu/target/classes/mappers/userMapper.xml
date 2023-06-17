@@ -148,13 +148,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 나의 예약 수정 -->
 	<update id="UserRUpdate" parameterType="com.woori.domain.ReservationVO">
-		update  reservation  set   
-		dogSize=#{dogSize},   
-		peopleNum=#{peopleNum},    
+		UPDATE  reservation  SET
+		dogSize=#{dogSize}, 
+		userName=#{userName},  
+		peopleNum=#{peopleNum},   
+		userEmail=#{userEmail},  
+		userMobile=#{userMobile},  
+		dogNum=#{dogNum},   
 		message_to_p=#{message_to_p},  
 		reservation_Sdate=#{reservation_Sdate},
 		reservation_Edate=#{reservation_Edate} 
-		where reservation_idx=#{reservation_idx}   
+		WHERE reservation_idx=#{reservation_idx}   
 	</update>
 	<!-- 예약 삭제 -->
 	<delete id="deleteReservation">
