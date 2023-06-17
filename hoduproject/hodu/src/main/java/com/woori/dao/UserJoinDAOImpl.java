@@ -118,6 +118,8 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	public ReservationVO UserRView(int reservation_idx) {
 		return sqlSession.selectOne("user.UserRView", reservation_idx);
 	}
+	
+	//예약 수정
 	@Override
 	public void UserRUpdate(ReservationVO rvo) {
 		sqlSession.update("user.UserRUpdate", rvo);

@@ -1,6 +1,8 @@
 package com.woori.hodu;
 
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -240,10 +242,21 @@ public class UserJoinController {
 		@RequestMapping("UserRView.do")
 		public String UserRView(int reservation_idx, Model model, ReservationVO rvo) {
 			List<ReservationVO> reservationList = userJoinService.ReservationList(rvo);
-			model.addAttribute("UserRView", userJoinService.UserRView(reservation_idx));		
+			SimpleDateFormat Sdate = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat Edate = new SimpleDateFormat("yyyy-MM-dd");
+
+			model.addAttribute("UserRView", userJoinService.UserRView(reservation_idx));	
 			model.addAttribute("ReservationList", reservationList);
+			model.addAttribute("ReservationSdate", Sdate.format(reservationList.get(0).getReservation_Sdate()));
+			model.addAttribute("ReservationEdate", Edate.format(reservationList.get(0).getReservation_Edate()));
+			
+			
+			
+			
 			return "user/mypage/reservationContent_update";
 		}
+		
+		// 예약 수정
 		@RequestMapping("UserRUpdate.do")
 		public String UserRUpdate(ReservationVO rvo,HttpSession session, RedirectAttributes redirect) {
 			userJoinService.UserRUpdate(rvo);
@@ -263,6 +276,8 @@ public class UserJoinController {
 		public String RInsert(ReservationVO rvo,RedirectAttributes redirect, HttpSession session) {
 			userJoinService.RInsert(rvo);
 			redirect.addAttribute("userId", session.getAttribute("userId"));
+			
+			System.out.println(rvo.getReservation_Sdate());
 			return "redirect:ReservationList.do";
 		}
 }

@@ -38,11 +38,8 @@
               <tr>
                   <th style="width: 200px; text-align: center;">예약일</th>
                   <th>
-                  <input id="reservation_Sdate" name="reservation_Sdate" type="date">&nbsp;&nbsp;
-                  <input id="reservation_Edate" name="reservation_Edate" type="date"><br>
-                  기존 예약일 : 
-                  <fmt:formatDate value="${UserRView.reservation_Sdate }" pattern="yyyy-MM-dd"/> ~
-                  <fmt:formatDate value="${UserRView.reservation_Edate }" pattern="yyyy-MM-dd"/>
+                  <input id="reservation_Sdate" name="reservation_Sdate" type="date" value="${ReservationSdate }">&nbsp;&nbsp;
+                  <input id="reservation_Edate" name="reservation_Edate" type="date" value="${ReservationEdate }"><br>
                   </th>
                </tr>
              
@@ -53,7 +50,7 @@
 
                <tr>
                   <th style="width: 200px; text-align: center;">예약자</th>
-                  <th>${UserRView.userName }</th>
+                  <th><input value="${UserRView.userName }" id="userName" name="userName" type="text"></th>
                </tr>
 				
 				<tr>
@@ -63,12 +60,12 @@
 					
 			   <tr>
                   <th style="width: 200px; text-align: center;">이메일</th>
-                  <th>${UserRView.userEmail }</th>
+                  <th><input value="${UserRView.userEmail }" id="userEmail" name="userEmail" type="tel"></th>
                </tr>	
 					
                <tr>
                   <th style="text-align: center;">전화번호</th>
-                  <th>${UserRView.userMobile }</th>
+                  <th><input value="${UserRView.userMobile }" id="userMobile" name="userMobile" type="text"></th>
                </tr>
 
                <tr>

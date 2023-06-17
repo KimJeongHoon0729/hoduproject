@@ -122,6 +122,8 @@ public class UserJoinServiceImpl implements UserJoinService {
 	public ReservationVO UserRView(int reservation_idx) {
 		return userJoin.UserRView(reservation_idx);
 	}
+	
+	//예약 수정
 	@Override
 	public void UserRUpdate(ReservationVO rvo) {
 		userJoin.UserRUpdate(rvo);

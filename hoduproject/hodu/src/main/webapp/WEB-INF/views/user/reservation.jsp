@@ -67,10 +67,10 @@
 							</p>
 						</div>
 						<div class="form-group ">
-							<label for="dogNum" class="sr-only">dogNum</label> <input id="dogNum" name="dogNum" class="form-control" placeholder="강아지 수" type="number">
+							<label for="dogNum" class="sr-only">dogNum</label> <input id="dogNum" name="dogNum" class="form-control" placeholder="방문 반려견 수" type="number">
 						</div>
 						<div class="form-group ">
-							<label for="peopleNum" class="sr-only">peopleNum</label> <input id="peopleNum" name="peopleNum" class="form-control" placeholder="인원"
+							<label for="peopleNum" class="sr-only">peopleNum</label> <input id="peopleNum" name="peopleNum" class="form-control" placeholder="방문 인원수"
 								type="text">
 						</div>
 						<div class="message">
